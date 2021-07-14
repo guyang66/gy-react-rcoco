@@ -1,3 +1,4 @@
-import Detail from './goodsDetail'
-import './goodsDetail.styl'
-export default Detail
+import Detail from './goodsDetail';
+import './goodsDetail.styl';
+
+export default Detail;

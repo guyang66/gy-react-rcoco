@@ -1,4 +1,4 @@
-import Frame from './frame'
-import './frame.styl'
+import Frame from './frame';
+import './frame.styl';
 
-export default Frame
+export default Frame;

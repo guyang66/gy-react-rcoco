@@ -1,3 +1,4 @@
-import GoodsItem from './goods-item'
-import './goods-item.styl'
-export default GoodsItem
+import GoodsItem from './goods-item';
+import './goods-item.styl';
+
+export default GoodsItem;

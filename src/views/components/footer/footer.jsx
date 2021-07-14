@@ -15,7 +15,7 @@ export default class extends React.Component {
           <img src={qrcode} className="code-img"/>
           <div className="code-text">扫一扫，联系我们</div>
         </div>
-        <div className="footer-code">
+        <div className="footer-code mar-b20">
           <img src={qrcode} className="code-img"/>
           <div className="code-text">扫一扫，联系我们</div>
         </div>

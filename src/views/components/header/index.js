@@ -1,3 +1,4 @@
-import Header from './header'
-import './header.styl'
-export default Header
+import Header from './header';
+import './header.styl';
+
+export default Header;

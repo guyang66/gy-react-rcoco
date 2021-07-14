@@ -1,5 +1,5 @@
-import React, {Component} from "react";
-import {Button} from "antd";
+import React, { Component } from "react";
+import { Button, Carousel } from "antd";
 import { Link } from 'react-router-dom'
 import GoodsItem from "../components/goods-item";
 
@@ -7,20 +7,14 @@ import BannerProduct from "../banner/bannerProduct";
 import BannerTop from "../banner/bannerTop";
 import BannerRose from '../banner/bannerRose'
 
-import { Carousel } from 'antd'
-export default class App extends Component {
+export default class Home extends Component {
   constructor(props) {
     super(props);
   }
+
   render() {
-    const {history} = this.props
-    const contentStyle = {
-      height: '160px',
-      color: '#fff',
-      lineHeight: '160px',
-      textAlign: 'center',
-      background: '#364d79',
-    };
+    const { history, pageCol } = this.props
+    console.log(history)
     return (
       <div className="home-main">
         <div className="carouse-wrap">
@@ -30,8 +24,6 @@ export default class App extends Component {
             <BannerRose />
           </Carousel>
         </div>
-
-
         <Link to={'/goodsDetail'}>
           <Button className="btn-jump" type="primary" size="large"></Button>
         </Link>

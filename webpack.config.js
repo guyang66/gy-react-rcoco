@@ -1,20 +1,19 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const TerserPlugin = require("terser-webpack-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 // const UglifyJsPlugin = require('uglifyjs-webpack-plugin') // webpack4推荐使用terser，可以并行压缩
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
-const CleanWebpackPlugin = require('clean-webpack-plugin')
-const fs = require('fs-extra')
-const safeParser = require('postcss-safe-parser')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const safeParser = require('postcss-safe-parser');
 
-const publickPath = '如果有cdn可以设置cdn路径，没有的话dev环境直接走dist/static，或者外部资源下载到本地，从本地引入'
+// const publickPath = '如果有cdn可以设置cdn路径，没有的话dev环境直接走dist/static，或者外部资源下载到本地，从本地引入';
 
-const IS_DEV_ENV = process.env.NODE_ENV ===  'development'
-const IS_PRD_ENV = process.env.NODE_ENV ===  'production'
+const IS_DEV_ENV = process.env.NODE_ENV === 'development';
+const IS_PRD_ENV = process.env.NODE_ENV === 'production';
 
 module.exports = {
-  mode: process.env.NODE_ENV ===  'development' ?  'development' : 'production',
+  mode: process.env.NODE_ENV === 'development' ? 'development' : 'production',
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -32,8 +31,8 @@ module.exports = {
           minSize: 0,
           minChunks: 2,
           enforce: true,
-        }
-      }
+        },
+      },
     },
     minimizer: [
       new TerserPlugin({
@@ -41,9 +40,9 @@ module.exports = {
           mangle: true,
           compress: {
             drop_console: true,
-            drop_debugger: true
-          }
-        }
+            drop_debugger: true,
+          },
+        },
       }),
       new OptimizeCSSAssetsPlugin({
         assetNameRegExp: /\.css$/g,
@@ -54,19 +53,26 @@ module.exports = {
           },
         },
       }),
-    ]
+    ],
   },
   devServer: {
-    contentBase: './dist', //设置服务器访问的基本目录
-    host: 'localhost',
+    contentBase: './dist', // 设置服务器访问的基本目录
+    compress: true,
+    inline: true,
+    hot: true, // 热替换，无需刷新整个页面，只需要更新改动的视图
+    // host: 'localhost',
+    host: '192.168.10.42',
     port: 3001,
-    open: true
+    open: true,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+    },
   },
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/, //配置要处理的文件格式，一般使用正则表达式匹配
-        loader: 'babel-loader', //使用的加载器名称
+        test: /\.(js|jsx)$/, // 配置要处理的文件格式，一般使用正则表达式匹配
+        loader: 'babel-loader', // 使用的加载器名称
         exclude: /node_modules/,
       },
       // {
@@ -97,19 +103,19 @@ module.exports = {
           },
         }],
       },
-    ]
+    ],
   },
   resolve: {
     alias: {
       ASSETS: path.resolve(__dirname, 'src/assets')
     },
-    extensions: ['.js', '.jsx', '.json']
+    extensions: ['.js', '.jsx', '.json'],
   },
   externals: {
     antd: 'antd',
     moment: 'moment',
     react: 'React',
-    'react-dom': 'ReactDOM'
+    'react-dom': 'ReactDOM',
   },
   plugins: [
     new MiniCssExtractPlugin({
@@ -118,11 +124,11 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: IS_PRD_ENV ? './public/index.prd.html' : './public/index.html',
-      filename: "index.html",
+      filename: 'index.html',
       favicon: path.resolve('public/favicon.ico')
     }),
-  ]
-}
+  ],
+};
 
 if (IS_PRD_ENV) {
   const cleanPlugin = new CleanWebpackPlugin([path.join(__dirname, 'dist')])

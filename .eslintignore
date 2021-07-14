@@ -5,3 +5,5 @@ node_modules
 resource
 src/icon
 static-cache
+tar/*
+package-lock.json
