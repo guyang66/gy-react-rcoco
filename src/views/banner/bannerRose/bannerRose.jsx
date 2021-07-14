@@ -1,5 +1,5 @@
-import React from "react";
-import s2 from '../../../img/donggua.png'
+import React from 'react';
+import s2 from '../../../img/donggua.png';
 
 export default class BannerTop extends React.Component {
   render() {
@@ -13,9 +13,9 @@ export default class BannerTop extends React.Component {
               <div className="b-desc">马卡龙色系不止可以运用在食物上，建筑物这样配色也是出奇的好看</div>
             </div>
           </div>
-          <img src={s2} className="banner-img"/>
+          <img src={s2} className="banner-img" alt="go young" />
         </div>
       </div>
-    )
+    );
   }
 }

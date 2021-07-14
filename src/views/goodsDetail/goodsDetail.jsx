@@ -1,24 +1,24 @@
-import React from "react";
-import img1 from '../../img/fanqie.jpg'
-import {Button} from 'antd'
+import React from 'react';
+import { Button } from 'antd';
+import img1 from '../../img/fanqie.jpg';
 
 export default class GoodsDetail extends React.Component {
   constructor(props) {
     super(props);
   }
+
   jumpPage = () => {
-    this.props.history.replace({
-      pathname: '/'
-    })
+    const { history } = this.props;
+    history.replace({
+      pathname: '/',
+    });
   }
+
   render() {
-    const { history } =  this.props
-    console.log(history)
-    console.log(this.props)
     return (
       <div className="goods-main">
         <div className="goods-img">
-          <img src={img1}/>
+          <img src={img1} alt="go young" />
         </div>
         <div className="goods-desc">
           番茄起源中心是南美洲的安第斯山地带。在秘鲁、厄瓜多尔、
@@ -29,6 +29,6 @@ export default class GoodsDetail extends React.Component {
         </div>
         <Button onClick={this.jumpPage}>跳转</Button>
       </div>
-    )
+    );
   }
 }

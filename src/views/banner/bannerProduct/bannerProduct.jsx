@@ -1,5 +1,6 @@
-import React from "react";
-import s1 from '../../../img/svg/s1.svg'
+import React from 'react';
+import s1 from '../../../img/svg/s1.svg';
+
 export default class BannerProduct extends React.Component {
   render() {
     return (
@@ -9,9 +10,9 @@ export default class BannerProduct extends React.Component {
             <div className="b-title">智源</div>
             <div className="b-desc">全球最顶尖的特工组织</div>
           </div>
-          <img src={s1}/>
+          <img src={s1} alt="go young" />
         </div>
       </div>
-    )
+    );
   }
 }

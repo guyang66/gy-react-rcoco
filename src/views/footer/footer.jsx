@@ -1,5 +1,5 @@
-import React from "react"
-import qrcode from '../../../img/qrcode.jpg'
+import React from 'react';
+import qrcode from '../../img/qrcode.jpg';
 
 export default class extends React.Component {
   render() {
@@ -12,14 +12,14 @@ export default class extends React.Component {
           <div className="mess">联系邮箱：123467780@qq.com</div>
         </div>
         <div className="footer-code">
-          <img src={qrcode} className="code-img"/>
+          <img src={qrcode} className="code-img" alt="go young" />
           <div className="code-text">扫一扫，联系我们</div>
         </div>
         <div className="footer-code mar-b20">
-          <img src={qrcode} className="code-img"/>
+          <img src={qrcode} className="code-img" alt="go young" />
           <div className="code-text">扫一扫，联系我们</div>
         </div>
       </div>
-    )
+    );
   }
 }

@@ -1,6 +1,5 @@
 import React from 'react';
 import './nav.styl';
-import { Link } from 'react-router-dom';
 
 const menu = [
   {
@@ -38,17 +37,9 @@ export default class Nav extends React.Component {
         {
           menu.map((item, index) => (
             <span className="nav-item" key={`nav-bar-${index}`}>
-              {
-                item.isLink ? (
-                  <Link to={item.href}>
-                    {item.title}
-                  </Link>
-                ) : (
-                  <a href={item.href}>
-                    {item.title}
-                  </a>
-                )
-              }
+              <a href={item.href}>
+                {item.title}
+              </a>
 
             </span>
           ))
