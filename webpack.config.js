@@ -6,6 +6,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const safeParser = require('postcss-safe-parser');
+const webpack = require('webpack')
 
 // const publickPath = '如果有cdn可以设置cdn路径，没有的话dev环境直接走dist/static，或者外部资源下载到本地，从本地引入';
 
@@ -133,6 +134,9 @@ module.exports = {
 if (IS_PRD_ENV) {
   const cleanPlugin = new CleanWebpackPlugin([path.join(__dirname, 'dist')])
   module.exports.plugins = module.exports.plugins.concat(cleanPlugin)
+} else {
+  const HotModulePlugin = new webpack.HotModuleReplacementPlugin()
+  module.exports.plugins = module.exports.plugins.concat(HotModulePlugin)
 }
 
 // 复制静态资源到打包目录dist

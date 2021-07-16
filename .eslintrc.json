@@ -19,7 +19,8 @@
     "react/no-deprecated": "off", // 可能将被废弃的函数警告
     // 没有交互的元素不允许有事件，可以添加role属性变成"有交互"的元素,如button、link、checkbox、radio、option...
     "jsx-a11y/no-noninteractive-element-interactions": "off",
-    "jsx-a11y/click-events-have-key-events": "off"
+    "jsx-a11y/click-events-have-key-events": "off",
+    "import/named": "off"
   },
   "parserOptions": {
     "ecmaVersion": 6,

@@ -5,39 +5,17 @@ import {
 } from 'antd';
 import { observer } from 'mobx-react';
 import Nav from '../components/nav';
+import { columnData } from '../common/data';
 
 const menu = [
   {
     title: '首页',
     href: '/',
     isLink: true,
-  },
-  {
-    title: '栏目',
-    href: '/#course',
-    isAnchor: true,
-  },
-  {
-    title: '产品',
-    isAnchor: true,
-    href: '/#product',
-
-  },
-  {
-    title: '关于我们',
-    isAnchor: true,
-    href: '/#about',
-  },
-  {
-    title: '联系我们',
-    isAnchor: true,
-    href: '/#contact',
-  },
-];
+  }].concat(columnData);
 
 @observer
 export default class header extends React.Component {
-  // eslint-disable-next-line no-useless-constructor
   constructor(props) {
     super(props);
     this.state = {
@@ -85,7 +63,7 @@ export default class header extends React.Component {
           查看更多
         </Button>
         <Drawer
-          title="查看更多产品"
+          title="查看更多水果"
           placement="right"
           closable={false}
           onClose={this.onClose}
@@ -108,10 +86,10 @@ export default class header extends React.Component {
     <header className="pc-header">
       <Row justify="center" align="middle" type="flex" className="header-container">
         <Col>
-          <div className="logo-text">打造杭州舒适圈9</div>
+          <div className="logo-text">水果大杂烩</div>
         </Col>
         <Col>
-          <Nav />
+          <Nav menu={menu} />
         </Col>
       </Row>
     </header>

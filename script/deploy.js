@@ -64,7 +64,7 @@ const installPackages = async () => {
 }
 
 const upload = async () => {
-  console.log(chalk.blue('............开始上传包............'))
+  console.log(chalk.blue('............开始上传压缩包............'))
   const params = [path.resolve(__dirname, './sh/upload.sh'), user, pwd, serverIp, targetDir]
   const result = spawn('expect', params, options)
 
@@ -101,6 +101,8 @@ const execute = () => {
   result.on('close', (data, msg) => {
     if (data === 0) {
       console.log(chalk.green('部署完成！！'))
+      const orderDelete = 'rm -rf ./tar/*'
+      shell(orderDelete)
     } else {
       console.log(chalk.red(`部署失败！${msg}`))
     }
@@ -113,8 +115,6 @@ const tarDist = async () => {
   await shell(orderCopy)
   const orderCompress = 'tar -czvf ./tar/deploy.tar.gz ./tar/dist'
   await shell(orderCompress)
-  const orderDelete = 'rm -rf ./tar/*'
-  await shell(orderDelete)
   console.log(chalk.cyan('............压缩完成............'))
 }
 
