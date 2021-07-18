@@ -83,7 +83,7 @@ export default class header extends React.Component {
   }
 
   renderPCNavView = () => (
-    <>
+    <Fragment>
       <div style={{ width: '100%', height: '80px', backgroundColor: 'orange' }} />
       <header className="pc-header">
         <Row justify="center" align="middle" type="flex" className="header-container">
@@ -95,7 +95,7 @@ export default class header extends React.Component {
           </Col>
         </Row>
       </header>
-    </>
+    </Fragment>
   )
 
   render() {

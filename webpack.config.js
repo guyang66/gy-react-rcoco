@@ -91,6 +91,7 @@ module.exports = {
           'less-loader',
         ],
       },
+      // 图片不要超过244 kb 看看怎么优化
       {
         test: /\.(jpg|jpeg|png|gif|svg)$/,
         use: [{

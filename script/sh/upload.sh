@@ -7,6 +7,8 @@ set targetDir [lindex $argv 3]
 
 spawn scp ./tar/deploy.tar.gz $user@$serverIp:$targetDir
 
+set timeout 30
+
 expect {
 "(yes/no)?"
   {
