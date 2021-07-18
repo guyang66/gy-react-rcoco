@@ -13,12 +13,18 @@
     align-items center
     .banner-text
       height 400px
+      display flex
+      flex-direction column
+      justify-content space-between
       .b-title
         color white
         font-size 48px
       .b-desc
         color white
-        font-size 24px
+        font-size 20px
+    .banner-img
+      width 600px
+      height 600px
 
 @media (max-width: 500px)
   .banner-product
@@ -26,10 +32,18 @@
       flex-direction column
       .banner-text
         order 2
-        //background-color red
         height 200px
-        margin-top 50px
-      img
+        width 80%
+        justify-content flex-start
+        align-items center
+        .b-title
+          color white
+          font-size 24px
+          margin-bottom 30px
+        .b-desc
+          color white
+          font-size 16px
+      .banner-img
         order 1
         width 60%
         height auto

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 import {
   Row, Col, Drawer, Button,
@@ -60,10 +60,10 @@ export default class header extends React.Component {
     return (
       <div className="h5-header">
         <Button className="h5-header-wrap" onClick={this.openDrawer}>
-          查看更多
+          查看分类
         </Button>
         <Drawer
-          title="查看更多水果"
+          title="导航"
           placement="right"
           closable={false}
           onClose={this.onClose}
@@ -83,16 +83,19 @@ export default class header extends React.Component {
   }
 
   renderPCNavView = () => (
-    <header className="pc-header">
-      <Row justify="center" align="middle" type="flex" className="header-container">
-        <Col>
-          <div className="logo-text">水果大杂烩</div>
-        </Col>
-        <Col>
-          <Nav menu={menu} />
-        </Col>
-      </Row>
-    </header>
+    <>
+      <div style={{ width: '100%', height: '80px', backgroundColor: 'orange' }} />
+      <header className="pc-header">
+        <Row justify="center" align="middle" type="flex" className="header-container">
+          <Col>
+            <div className="logo-text">水果小姐</div>
+          </Col>
+          <Col>
+            <Nav menu={menu} />
+          </Col>
+        </Row>
+      </header>
+    </>
   )
 
   render() {

@@ -13,6 +13,7 @@ export default class GoodsItem extends React.Component {
   }
 
   render() {
+    console.log(goodsData);
     return (
       <div className="goods-item-content">
         {
@@ -24,7 +25,7 @@ export default class GoodsItem extends React.Component {
                 {
                   item.goods.map((value, count) => (
                     <div className="goods-cell-one" key={`goods-${count}`}>
-                      <img src={value.img} onClick={this.jumpPage} alt="go young" />
+                      <img src={value.img} onClick={() => this.jumpPage()} alt="go young" />
                       <div className="goods-name">
                         {value.name}
                       </div>

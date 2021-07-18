@@ -53,7 +53,7 @@ export default class App extends Component {
     return (
       <div className="frame">
         <Header pageCol={store.pageCol} />
-        {store.pageCol === 'ss' ? null : <div style={{ width: '100%', height: '80px' }} />}
+        {/* {store.pageCol === 'ss' ? null : <div style={{ width: '100%', height: '80px' }} />} */}
         <Provider store={store}>
           {/* {children} */}
           <Routers />

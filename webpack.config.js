@@ -63,6 +63,7 @@ module.exports = {
     hot: true, // 热替换，无需刷新整个页面，只需要更新改动的视图
     // host: 'localhost',
     host: '192.168.10.42',
+    // host: '192.168.3.10',
     port: 3001,
     open: true,
     headers: {
@@ -76,14 +77,10 @@ module.exports = {
         loader: 'babel-loader', // 使用的加载器名称
         exclude: /node_modules/,
       },
-      // {
-      //     test: /\.js$/,
-      //     enforce: 'pre', //加载器的执行顺序，不设置为正常执行，pre（前）|post（后），eslint是检查代码规范，应该在编译前就执行
-      //     loader: 'eslint-loader',
-      // },
+      // 使用extract-text-webpack-plugin 将样式提取，此组件并不支持热更新。只会重新打包但是并不会刷新页面,但是styleloader可以享受热更新
       {
         test: /\.styl$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'stylus-loader']
+        use: ['style-loader', 'css-loader', 'postcss-loader', 'stylus-loader']
       },
       {
         test: /\.(le|c)ss$/,
