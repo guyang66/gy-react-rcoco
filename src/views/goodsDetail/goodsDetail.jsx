@@ -27,7 +27,6 @@ export default class GoodsDetail extends React.Component {
           大体上又分为普通番茄和秘鲁番茄两个复合体种群。普通番茄群中包括：普通番茄、细叶番茄、奇士曼尼番茄、小花番茄和奇美留斯凯番茄、
           多毛番茄；秘鲁番茄群中包括智利番茄和秘鲁番茄。
         </div>
-        <Button onClick={this.jumpPage}>跳转</Button>
       </div>
     );
   }

@@ -61,8 +61,8 @@ module.exports = {
     compress: true,
     inline: true,
     hot: true, // 热替换，无需刷新整个页面，只需要更新改动的视图
-    // host: 'localhost',
-    host: '192.168.10.42',
+    host: 'localhost',
+    // host: '192.168.10.42',
     // host: '192.168.3.10',
     port: 3001,
     open: true,

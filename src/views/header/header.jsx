@@ -88,7 +88,7 @@ export default class header extends React.Component {
       <header className="pc-header">
         <Row justify="center" align="middle" type="flex" className="header-container">
           <Col>
-            <div className="logo-text">水果小姐</div>
+            <div className="logo-text" onClick={() => { window.location = '/' }}>水果小姐</div>
           </Col>
           <Col>
             <Nav menu={menu} />
