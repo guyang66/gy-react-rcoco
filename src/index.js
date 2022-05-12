@@ -1,9 +1,27 @@
-import ReactDom from 'react-dom';
 import React from 'react';
-import './index.styl';
-import Frame from './views/frame';
+import ReactDOM from 'react-dom';
+import {Provider} from "mobx-react";
+import {ConfigProvider} from "antd";
+import stores from '@store'
+import Router from "./router";
+import './index.css';
+import 'antd/dist/antd.less'
 
-ReactDom.render(
-  <Frame />,
-  document.getElementById('app'),
+const App = () => {
+  return (
+    <ConfigProvider>
+      <Provider {...stores}>
+        <Router />
+      </Provider>
+    </ConfigProvider>
+  )
+}
+
+ReactDOM.render(
+  // <React.StrictMode>
+  //   <App />
+  // </React.StrictMode>
+  <App />,
+  document.getElementById('root')
 );
+

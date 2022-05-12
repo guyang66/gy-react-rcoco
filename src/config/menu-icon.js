@@ -1,0 +1,45 @@
+// 菜单icon，暂时用antd的icons代替
+import {
+  AppstoreOutlined,
+  UserOutlined,
+  DesktopOutlined,
+  MacCommandOutlined,
+  MenuOutlined,
+  ProfileOutlined,
+  TeamOutlined,
+  HomeOutlined,
+  ContainerOutlined,
+  ConsoleSqlOutlined,
+  UserSwitchOutlined,
+  FileDoneOutlined,
+  ReconciliationOutlined,
+  HourglassOutlined,
+  DatabaseOutlined,
+  FrownOutlined,
+  LinkOutlined,
+  TrademarkOutlined,
+} from '@ant-design/icons';
+
+const menuIcon = {
+  default: <MenuOutlined />,
+  appstoreOutlined: <AppstoreOutlined />,
+  menuOutlined: <MenuOutlined />,
+  desktopOutlined: <DesktopOutlined />,
+  userOutlined: <UserOutlined />,
+  teamOutlined: <TeamOutlined />,
+  homeOutlined: <HomeOutlined />,
+  macCommandOutlined: <MacCommandOutlined />,
+  frownOutlined: <FrownOutlined />,
+  userSwitchOutlined: <UserSwitchOutlined />,
+  fileDoneOutlined: <FileDoneOutlined />,
+  profileOutlined: <ProfileOutlined />,
+  reconciliationOutlined: <ReconciliationOutlined />,
+  hourglassOutlined: <HourglassOutlined />,
+  databaseOutlined: <DatabaseOutlined />,
+  containerOutlined: <ContainerOutlined />,
+  consoleSqlOutlined: <ConsoleSqlOutlined />,
+  linkOutlined: <LinkOutlined />,
+  trademarkOutlined: <TrademarkOutlined />,
+}
+
+export default menuIcon;
