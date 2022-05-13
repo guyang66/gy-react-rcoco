@@ -6,7 +6,7 @@ export default {
 
   getUserMenu(params) {
     return fetch({
-      url: urlPrefix + 'menu/user/auth',
+      url: urlPrefix + 'menu/auth',
       method: 'get',
       params,
     })
@@ -14,7 +14,7 @@ export default {
 
   getRoute(params) {
     return fetch({
-      url: urlPrefix + 'route/user/auth',
+      url: urlPrefix + 'route/auth',
       method: 'get',
       params,
     })
@@ -47,6 +47,14 @@ export default {
   getComponentPermission(params) {
     return fetch({
       url: urlPrefix + 'permission/component/auth',
+      method: 'get',
+      params,
+    })
+  },
+
+  getCaptcha(params) {
+    return fetch({
+      url: urlPrefix + 'getCaptcha',
       method: 'get',
       params,
     })

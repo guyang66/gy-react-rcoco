@@ -4,4 +4,7 @@
 4、外部资源
 5、fetch封装（统一处理）、login组件、
 6、eslint
-7、layout、路由组织
+7、layout、路由组织、代码组织
+8、api mock
+9、karma+mocha+sinon+chai 单元测试
+10、token串掉

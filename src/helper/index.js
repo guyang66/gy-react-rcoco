@@ -87,45 +87,10 @@ const hasCPermission = (key, appStore, reverse) => {
   return !!result
 }
 
-/**
- * 封装io，拦截api，header添加authorization，取到最新的token
- * @param obj
- * @returns {*}
- */
-const wrapIo = (obj)=>{
-  for(const key in obj){
-    if(!Object.prototype.hasOwnProperty.call(obj,key)){
-      continue
-    }
-
-    obj[key] = new Proxy(obj[key],{
-      apply(target, thisArg, argArray) {
-        if(!argArray || argArray.length < 1){
-          // 一个参数都没有的情况
-          return Reflect.apply(target, thisArg, [{},{authorization: getToken()}])
-        }
-        if(argArray.length < 2){
-          // 只传入了url params
-          argArray.push({
-            authorization: getToken(),
-          })
-        } else {
-          argArray[1].authorization = getToken()
-        }
-
-        // 原流程继续执行
-        return Reflect.apply(target, thisArg, argArray)
-      },
-    })
-  }
-  return obj
-}
-
 export default {
   getToken,
   removeToken,
   setToken,
   hasCPermission,
   computeMenus,
-  wrapIo,
 }

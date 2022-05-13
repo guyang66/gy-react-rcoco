@@ -5,6 +5,8 @@ import {Link} from "react-router-dom";
 import Hamburger from "@components/hamburger";
 import BreadCrumb from "@components/bread-crumb";
 import './index.styl'
+import defaultIcon from '@assets/images/avator/default.png'
+
 import {inject, observer} from "mobx-react";
 
 const {Header} = Layout;
@@ -87,7 +89,7 @@ const HeaderLayout = (props) => {
                 <div className="dropdown-wrap">
                   <Dropdown overlay={menuView}>
                     <div>
-                      <Avatar shape="square" size="medium" src={user.avatar} />
+                      <Avatar shape="square" size="medium" src={user.avatar ? user.avatar : defaultIcon} />
                       <CaretDownOutlined className="icon-down" style={{color: "rgba(0, 0, 0, .3)"}} />
                     </div>
                   </Dropdown>

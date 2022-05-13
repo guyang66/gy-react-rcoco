@@ -3,6 +3,8 @@ import {Row, Col, Input, Button, message, Upload, Spin, Radio, Popover, Modal} f
 import {LoadingOutlined, PlusOutlined, EyeTwoTone, EyeInvisibleOutlined} from '@ant-design/icons';
 import {inject, observer} from "mobx-react";
 import apiUser from '@api/user'
+import apiConfig from '@api/config'
+import defaultIcon from '@assets/images/avator/default.png'
 
 import helper from '@helper'
 import "./index.styl";
@@ -14,6 +16,7 @@ const Person = (props) => {
       authorization: helper.getToken(),
     },
     name: 'userAvatar',
+    url: '/admin/api/uploadV2/auth',
     body: {
       name: 'userAvatar',
       dir: 'img/userAvatar',
@@ -102,9 +105,9 @@ const Person = (props) => {
         const result = info.file.response
         if(result.success){
           message.success('上传成功！')
-          setImgUrl(result.content)
+          setImgUrl(result.data)
         } else {
-          message.error(`上传失败：${  result.error.message}`)
+          message.error('上传失败：' + result.errorMessage)
         }
       }
     }
@@ -133,11 +136,12 @@ const Person = (props) => {
       name: uploadConfig.body.name,
       overwrite: radioCheck,
       dir: uploadConfig.body.dir,
+      enctype: 'multipart/form-data'
     }
   }
 
   const getCaptcha = () =>{
-    apiUser.getCaptcha().then(data=>{
+    apiConfig.getCaptcha().then(data=>{
       setVerifyCode(data)
     })
   }
@@ -149,12 +153,12 @@ const Person = (props) => {
     }
 
     if(newPassword.password !== newPassword.confirmPassword){
-      message.warning('密码两次输入不能为空！')
+      message.warning('密码两次输入不同！')
       return
     }
 
     if(!newPassword.verifyCode || newPassword.verifyCode === ''){
-      message.warning('验证码不能为空为空！')
+      message.warning('请输入验证码！')
       return
     }
 
@@ -168,7 +172,7 @@ const Person = (props) => {
       setNewPassword({})
       setPassVisible(false)
     }).catch(error=>{
-      message.error(error.message)
+      message.error(error)
     })
 
   }
@@ -232,14 +236,14 @@ const Person = (props) => {
                 <>
                   <div className="avatar-edit-wrap FBH FBAC mar-l10">
                     {
-                      imgUrl ? <img src={imgUrl} className="avatar" alt="" /> : <div className="avatar-empty FBV FBAC FBJC">暂无头像</div>
+                      imgUrl ? <img src={imgUrl} className="avatar" alt="头像" /> : <img src={defaultIcon} className="avatar" alt="默认头像" />
                     }
                     <Upload
                       name={uploadConfig.name}
                       listType="picture-card"
                       className="avatar-uploader"
                       showUploadList={false}
-                      action="/admin/api/upload/auth"
+                      action={uploadConfig.url}
                       headers={uploadConfig.header}
                       data={getUploadBody}
                       beforeUpload={beforeUpload}
@@ -259,7 +263,12 @@ const Person = (props) => {
                     </Popover>
                   </div>
                 </> : (
-                  user.avatar ? <img src={user.avatar} className="avatar" alt="" /> : <div className="avatar-empty FBV FBAC FBJC">暂无头像</div>
+                  user.avatar ? <img src={user.avatar} className="avatar" alt="头像" /> : (
+                    <>
+                      <img src={defaultIcon} className="avatar" alt="默认头像" />
+                      <span>(系统默认头像)</span>
+                    </>
+                  )
                 )
             }
           </Col>

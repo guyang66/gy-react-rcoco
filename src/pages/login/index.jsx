@@ -27,7 +27,7 @@ const Login = (props) => {
       message.success('登录成功！')
       handleUserInfo(data)
     }).catch(error=>{
-      message.error(`登录失败：${error.message}`)
+      message.error('登录失败:' + error)
     })
   };
 

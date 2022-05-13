@@ -1,14 +1,31 @@
 import fetch from '@common/fetch'
+const urlPrefix = '/admin/api/user/'
+import helper from '@helper'
 
-const urlPrefix = '/admin/api/'
-
-export default  {
-
+const Api = {
   getUserInfo(params) {
     return fetch({
-      url: urlPrefix + 'user/getUserInfo/auth',
+      url: urlPrefix + 'getUserInfo/auth',
       method: 'get',
       params,
     })
   },
+
+  updateUserInfo (params) {
+    return fetch({
+      url: urlPrefix + 'updateUserInfo/auth',
+      method: 'post',
+      data: params,
+    })
+  },
+
+  updatePassword (params) {
+    return fetch({
+      url: urlPrefix + 'updatePassword/auth',
+      method: 'post',
+      data: params,
+    })
+  },
 }
+
+export default Api
