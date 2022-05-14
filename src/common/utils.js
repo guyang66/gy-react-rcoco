@@ -64,6 +64,20 @@ const verifyPhoneFormat = (phone) => {
   return (/^1[3456789]\d{9}$/.test(phone))
 }
 
+const getFixUrl = (url) => {
+  if(!url || url === ''){
+    return ''
+  }
+  if(url.indexOf('http') > -1 || url.indexOf('https') > -1) {
+    return url
+  }
+  if(process.env.NODE_ENV === 'development'){
+    return 'http://localhost:8090' + url
+  }
+  // 生产环境可以怎么搞
+  return  `${  window.location.origin  }${url}`
+}
+
 export default  {
   getMenuIconByKey,
   getCurrentDate,
@@ -71,4 +85,5 @@ export default  {
   getDateDir,
   verifyEmailFormat,
   verifyPhoneFormat,
+  getFixUrl,
 }

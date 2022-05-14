@@ -10,7 +10,8 @@ import settingStore from "../store/setting-store";
 // 所以每个fetch需要重写headers中的authorization，但是每个请求都需要加这个参数，要是新的协作者不知道这个情况（祈祷他是copy代码），很容易漏写，倒时候权限错乱出现奇怪的bug。。
 // 比如前一个人登录了超级管理员，登出之后，后一个人再游客登录就能获得超级管理员的权限
 // 显然易见，这是一个公共参数，我希望的是有一个类似守卫一样的东西，直接帮我做掉
-// 方法1、用proxy包裹 api对象 ，比如 scr/api/config.js , 导出一个对象，那么proxy就能设置setter和getter，拦截到每个api，然后重写掉headers中的authorization即可。
+// 方法1：用proxy包裹 api对象 ，比如 scr/api/config.js , 导出一个对象，那么proxy就能设置setter和getter，拦截到每个api，然后重写掉headers中的authorization即可。
+// 方法2：直接用axios自带的拦截器
 
 const service = axios.create({
   baseURL: '', // api的base_url
@@ -36,12 +37,14 @@ service.interceptors.request.use(config=>{
 })
 
 service.interceptors.response.use(
-  response => {
+  (response,rr) => {
     /**
      * response.data.success是false抛错
      */
     if (response.data.success === false) {
+
       if(response.data.errorCode === 4005 || response.data.errorCode === '4005'){
+        // 登录异常的处理
         const {logoutDialog , setLogoutDialog} = settingStore
         if(logoutDialog){
           // 因为一个页面可能有多个接口调用，如果有多个就会导致显示多个notification
@@ -74,8 +77,13 @@ service.interceptors.response.use(
           },
         })
         helper.removeToken()
-        return Promise.reject(response.data.errorMessage)
       }
+      // todo：全局通用设置，这里统一处理response.data.success = false的情况，这样各个地方就不需要一直catch promise了
+      // 约定：需要特殊处理的就在config中加参数比如初始化fetch的时候加一个overHandle = true ，额外处理error
+      if(!response.config.overHandle){
+        message.error(response.data.errorMessage)
+      }
+      return Promise.reject(response.data.errorMessage)
     }
     return response.data.data
   },
