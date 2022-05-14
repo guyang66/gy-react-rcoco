@@ -472,7 +472,7 @@ const IndexBanner = () => {
         <Modal
           title="编辑banner"
           centered
-          className="index-banner-modal-wrap"
+          className="modal-view-wrap"
           maskClosable={false}
           maskStyle={{
             backgroundColor: 'rgba(0,0,0,0.1)',

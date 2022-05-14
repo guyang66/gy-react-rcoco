@@ -223,7 +223,7 @@ const IndexModule = () => {
   }
 
   return (
-    <div className="index-module-container">
+    <div className="index-news-container">
       <div className="index-module-wrap">
         <div className="prompt-text mar-l20 mar-t20 mar-b20">to：首页缓存？</div>
         <div className="table-wrap">
@@ -310,7 +310,7 @@ const IndexModule = () => {
                     <Modal
                       title="编辑新闻"
                       centered
-                      className="index-module-modal-wrap"
+                      className="modal-view-wrap"
                       maskClosable={false}
                       maskStyle={{
                         backgroundColor: 'rgba(0,0,0,0.1)',
