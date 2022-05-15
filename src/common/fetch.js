@@ -15,7 +15,7 @@ import settingStore from "../store/setting-store";
 
 const service = axios.create({
   baseURL: '', // api的base_url
-  timeout: 50000,// 请求超时时间
+  timeout: 15000,// 请求超时时间
   headers: {
     authorization: helper.getToken(),
   },

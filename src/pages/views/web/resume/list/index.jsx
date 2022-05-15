@@ -127,8 +127,6 @@ const ResumeModule = (props) => {
 
     apiResume.getResumeList(p).then(data=>{
       modifyMapData(tabKey, data)
-    }).catch(error=>{
-      message.error(error.message)
     })
   }
 
@@ -146,8 +144,13 @@ const ResumeModule = (props) => {
     apiResume.updateResume({id, content: {status}}).then(()=>{
       message.success('修改成功！')
       getList(tabKey)
-    }).catch(error=>{
-      message.error(error.message)
+    })
+  }
+
+  const updateIsTop = (id, isTop)=> {
+    apiResume.updateResume({id, content: {isTop}}).then(()=>{
+      message.success('修改成功！')
+      getList(tabKey)
     })
   }
 
@@ -155,8 +158,7 @@ const ResumeModule = (props) => {
     apiResume.deleteResume({id}).then(()=>{
       message.success('删除成功！')
       getList(tabKey)
-    }).catch(error=>{
-      message.error(error.message)
+    }).catch(()=>{
     }).finally(()=>{
       setIsModalVisible(false)
       setHandleId(null)
@@ -177,10 +179,10 @@ const ResumeModule = (props) => {
       return ''
     }
     if(type === 'place'){
-      return placeMap[key].name ? placeMap[key].name : key
+      return placeMap[key] ? placeMap[key].name : key
     }
     if(type === 'category'){
-      return categoryMap[key].name ? categoryMap[key].name : key
+      return categoryMap[key] ? categoryMap[key].name : key
     }
     return key
   }
@@ -376,7 +378,11 @@ const ResumeModule = (props) => {
                         align="center"
                         render={(status)=>{
                           return (
-                            <span>{status.isTop === 1 ? '是' : '否'}</span>
+                            <>
+                              {
+                                status.isTop === 1 ? <span className="online-text">是</span> : <span className="offline-text">否</span>
+                              }
+                            </>
                           )
                         }}
                       />
@@ -407,7 +413,7 @@ const ResumeModule = (props) => {
                               <Button
                                 className="btn-nature mar-10"
                                 onClick={()=>{
-                                  history.push({pathname: '/admin/web/resume/detail', state: {id: status._id}})
+                                  history.push({pathname: '/admin/web/resume/detail', state: {id: status._id}, search: '?id=' + status._id})
                                 }}
                               >
                                 详情
@@ -415,7 +421,7 @@ const ResumeModule = (props) => {
                               <Button
                                 className="btn-primary mar-10"
                                 onClick={()=>{
-                                  history.push({pathname: '/admin/web/resume/detail', state: {id: status._id, edit: 'Y'}, search: '?edit=Y'})
+                                  history.push({pathname: '/admin/web/resume/detail', state: {id: status._id, edit: 'Y'}, search: '?id=' + status._id + '&edit=Y'})
                                 }}
                               >
                                 编辑
@@ -456,6 +462,31 @@ const ResumeModule = (props) => {
                               >
                                 删除
                               </Button>
+                              {
+                                status.isTop === 1 ? (
+                                  <Button
+                                    className="btn-danger mar-10"
+                                    onClick={
+                                      ()=>{
+                                        updateIsTop(status._id, 0)
+                                      }
+                                    }
+                                  >
+                                    取消置顶
+                                  </Button>
+                                ) : (
+                                  <Button
+                                    className="btn-warm mar-10"
+                                    onClick={
+                                      ()=>{
+                                        updateIsTop(status._id, 1)
+                                      }
+                                    }
+                                  >
+                                    置顶
+                                  </Button>
+                                )
+                              }
                             </div>
                           )
                         }}
@@ -483,15 +514,25 @@ const ResumeModule = (props) => {
             })
           }
         </Tabs>
-        <Button
-          className="btn-add"
-          type="primary"
-          onClick={()=>{
-            history.push({pathname: '/admin/web/resume/add'})
-          }}
-        >
-          新增岗位
-        </Button>
+        <div className="FBH btn-wrap">
+          <Button
+            className="mar-r20"
+            type="primary"
+            onClick={()=>{
+              history.push({pathname: '/admin/web/resume/type'})
+            }}
+          >
+            类型管理
+          </Button>
+          <Button
+            className="btn-success"
+            onClick={()=>{
+              history.push({pathname: '/admin/web/resume/detail',state: {edit: 'Y', new: 'Y'}, search: '?new=Y'})
+            }}
+          >
+            新增岗位
+          </Button>
+        </div>
       </div>
 
       <Modal
@@ -510,5 +551,4 @@ const ResumeModule = (props) => {
     </div>
   )
 }
-
 export default withRouter(ResumeModule)

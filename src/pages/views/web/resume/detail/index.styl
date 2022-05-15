@@ -1,0 +1,91 @@
+@import '~@common/common'
+.resume-detail-container
+  width 100%
+  height 100%
+  .resume-detail-wrap
+    margin 20px
+    min-height calc(100% - 40px)
+    background-color white
+    border-radius 2px
+    box-shadow 0 2px 4px rgba(0,21,41,.08)
+    position relative
+    .resume-title
+      font-weight 500
+      height 60px
+      font-size 14px
+      line-height 60px
+      color text-color-333
+      margin-left 20px
+    .content-wrap
+      margin-left 20px
+      margin-right 20px
+      margin-bottom 60px
+      min-height 200px
+      .normal-cell
+        flex-direction row
+        display flex
+        align-items center
+        min-height 40px
+        .cell-title
+          color text-color-666
+          white-space nowrap
+          min-width 100px
+          max-height 40px
+          line-height 40px
+          padding-right 10px
+        .normal-select
+          width 300px
+        .cell-normal-text
+          color text-color-666
+        .normal-switch
+          margin-right 20px
+        .color-orange
+          color orange
+        .cell-content
+          color text-color-666
+          line-height 40px
+
+          .tag-view-choose
+            min-width 60px
+            padding-left 16px
+            padding-right 16px
+            height 32px
+            line-height 32px
+            cursor pointer
+            text-align center
+            font-size 14px
+            border 1px solid #eeeeee
+            position relative
+            .tag-choose-icon
+              position absolute
+              width 20px
+              height 20px
+              right 0
+              top 0
+          .tag-view
+            width 32px
+            height 32px
+            color #ffffff
+            line-height 32px
+            text-align center
+            font-size 14px
+            display inline-block
+            background-color #ff6b6b
+          .p-text
+            color text-color-666
+          .desc-input
+            margin-bottom 20px
+          .delete-wrap
+            width 80px
+            height 40px
+            flex-direction row
+            display flex
+            align-items center
+            justify-content center
+            .delete-btn
+              color #f56c6c
+              cursor pointer
+        .normal-input
+          width 300px
+        .w-600
+          width 600px

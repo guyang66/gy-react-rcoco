@@ -59,4 +59,12 @@ export default {
       params,
     })
   },
+
+  getCommonTag(params) {
+    return fetch({
+      url: urlPrefix + 'tag/online/auth',
+      method: 'get',
+      params,
+    })
+  },
 }

@@ -82,9 +82,6 @@ const IndexModule = () => {
         })
         setArticlesMap(tmp)
       }
-    }).catch(err=>{
-      console.log(err)
-    }).finally(()=>{
       setSelectLoading(false)
     })
   }

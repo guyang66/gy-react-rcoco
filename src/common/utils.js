@@ -14,6 +14,20 @@ const getCurrentDate = (t, symbol = '-') =>{
   return `${  y  }${symbol  }${m < 10 ? (`0${  m}`) : m  }${symbol  }${d < 10 ? (`0${  d}`) : d}`
 }
 
+const getDateString = (t) => {
+  if(!t){
+    t = new Date()
+  }
+
+  if(!(t instanceof Date)){
+    t = new Date(t)
+  }
+  const y = t.getFullYear()
+  const m = t.getMonth() + 1
+  const d = t.getDate()
+  return  y + '年' + (m < 10 ? '0' + m : m) + '月' +(d < 10 ? '0' + d : d) + '日'
+}
+
 const getCurrentDateYYDDMMhhmmss = (t) => {
   if(!t){
     t = new Date()
@@ -86,4 +100,5 @@ export default  {
   verifyEmailFormat,
   verifyPhoneFormat,
   getFixUrl,
+  getDateString,
 }

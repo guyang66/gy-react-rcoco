@@ -3,8 +3,7 @@ import WebIndexBanner from "@pages/views/web/index/banner";
 import WebIndexColumn from "@pages/views/web/index/column";
 import ResumeList from "@pages/views/web/resume/list";
 import ResumeType from "@pages/views/web/resume/type";
-
-// import ResumeDetail from "@pages/views/web/resume/detail";
+import ResumeDetail from "@pages/views/web/resume/detail";
 // import ResumeAdd from "@pages/views/web/resume/add";
 // import resourceList from "@pages/views/web/resource/list";
 // import resourceDetail from "@pages/views/web/resource/detail";
@@ -60,24 +59,15 @@ const privateRoutes = [
     backUrl: '',
     component: ResumeType,
   },
-  // {
-  //   path: '/admin/web/resume/detail',
-  //   name: '岗位详情',
-  //   exact: true,
-  //   key: 'web_resume_detail',
-  //   role: [],
-  //   backUrl: '',
-  //   component: ResumeDetail,
-  // },
-  // {
-  //   path: '/admin/web/resume/add',
-  //   name: '新增岗位',
-  //   exact: true,
-  //   key: 'web_resume_add',
-  //   role: [],
-  //   backUrl: '',
-  //   component: ResumeAdd,
-  // },
+  {
+    path: '/admin/web/resume/detail',
+    name: '岗位详情',
+    exact: true,
+    key: 'web_resume_detail',
+    role: [],
+    backUrl: '',
+    component: ResumeDetail,
+  },
   // {
   //   path: '/admin/web/resource/list',
   //   name: '资源列表',

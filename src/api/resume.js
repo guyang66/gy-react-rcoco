@@ -114,4 +114,20 @@ export default {
       data: params,
     })
   },
+
+  getResumeDetail (params) {
+    return fetch({
+      url: urlPrefix + 'detail/auth',
+      method: 'get',
+      params,
+    })
+  },
+
+  saveResume (params) {
+    return fetch({
+      url: urlPrefix + 'save/auth',
+      method: 'post',
+      data: params,
+    })
+  },
 }
