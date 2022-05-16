@@ -130,4 +130,37 @@ export default {
       data: params,
     })
   },
+
+  getResumeTag (params) {
+    return fetch({
+      url: urlPrefix + 'tag/list/auth',
+      method: 'get',
+      params,
+    })
+  },
+
+  updateResumeTag (params) {
+    return fetch({
+      url: urlPrefix + 'tag/update/auth',
+      method: 'post',
+      data: params,
+    })
+  },
+
+  deleteResumeTag (params) {
+    return fetch({
+      url: urlPrefix + 'tag/delete/auth',
+      method: 'get',
+      params,
+    })
+  },
+
+  saveResumeTag (params) {
+    return fetch({
+      url: urlPrefix + 'tag/save/auth',
+      method: 'post',
+      data: params,
+    })
+  },
+
 }

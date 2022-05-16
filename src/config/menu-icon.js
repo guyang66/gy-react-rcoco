@@ -18,6 +18,7 @@ import {
   FrownOutlined,
   LinkOutlined,
   TrademarkOutlined,
+  ContactsOutlined,
 } from '@ant-design/icons';
 
 const menuIcon = {
@@ -40,6 +41,7 @@ const menuIcon = {
   consoleSqlOutlined: <ConsoleSqlOutlined />,
   linkOutlined: <LinkOutlined />,
   trademarkOutlined: <TrademarkOutlined />,
+  contactsOutlined: <ContactsOutlined />,
 }
 
 export default menuIcon;

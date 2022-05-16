@@ -394,7 +394,7 @@ const IndexModule = () => {
         title="新增分类"
         width={400}
         cancelText="取消"
-        className="add-modal"
+        className="add-modal-view-wrap"
         okText="确定"
         onOk={()=>{
           saveInfo(checkItem)

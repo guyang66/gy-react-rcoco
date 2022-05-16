@@ -19,6 +19,10 @@ const ResumeModule = (props) => {
   const [searchCategory, setSearchCategory] = useState('all')
   const [searchPlace, setSearchPlace] = useState('all')
 
+  const [sortVisible, setSortVisible] = useState(false) // 排序弹窗显示
+  const [sortNumber, setSortNumber] = useState(null)    //  排序的序号绑定值
+  const [orderSort, setOrderSort] = useState(null)
+
   const [isModalVisible, setIsModalVisible] = useState(false)
   const [handleId, setHandleId] = useState(null)
 
@@ -125,6 +129,10 @@ const ResumeModule = (props) => {
       p.searchKey = search
     }
 
+    if(orderSort && orderSort !== ''){
+      p.orderSort = orderSort
+    }
+
     apiResume.getResumeList(p).then(data=>{
       modifyMapData(tabKey, data)
     })
@@ -138,12 +146,24 @@ const ResumeModule = (props) => {
 
   useEffect(()=>{
     getList(tabKey)
-  },[tabKey, pageParams])
+  },[tabKey, pageParams, orderSort])
 
   const updateStatus = (id, status)=> {
     apiResume.updateResume({id, content: {status}}).then(()=>{
       message.success('修改成功！')
       getList(tabKey)
+    })
+  }
+
+  const updateSort = () => {
+    const id = handleId
+    const order = sortNumber - 0
+    apiResume.updateResume({id, content: {order}}).then(()=>{
+      message.success('修改成功！')
+      getList(tabKey)
+      setSortNumber(null)
+      setSortVisible(false)
+      setHandleId(null)
     })
   }
 
@@ -301,6 +321,13 @@ const ResumeModule = (props) => {
                       dataSource={item.list}
                       loading={item.loading}
                       scroll={{x: '100%'}}
+                      onChange={(pagination,filters,sorter)=>{
+                        if(sorter){
+                          if(sorter.columnKey === 'order'){
+                            setOrderSort(sorter.order)
+                          }
+                        }
+                      }}
                       pagination={false}
                     >
                       <Column
@@ -373,20 +400,6 @@ const ResumeModule = (props) => {
                         }}
                       />
                       <Column
-                        title="是否置顶"
-                        width={60}
-                        align="center"
-                        render={(status)=>{
-                          return (
-                            <>
-                              {
-                                status.isTop === 1 ? <span className="online-text">是</span> : <span className="offline-text">否</span>
-                              }
-                            </>
-                          )
-                        }}
-                      />
-                      <Column
                         title="其他"
                         width={100}
                         align="center"
@@ -398,6 +411,21 @@ const ResumeModule = (props) => {
                                 ,
                               </span>
                               <span>{status.education}</span>
+                            </>
+                          )
+                        }}
+                      />
+                      <Column title="排序" dataIndex="order" sorter sortOrder={orderSort} key="order" width={80} align="center" />
+                      <Column
+                        title="是否置顶"
+                        width={60}
+                        align="center"
+                        render={(status)=>{
+                          return (
+                            <>
+                              {
+                                status.isTop === 1 ? <span className="online-text">是</span> : <span className="offline-text">否</span>
+                              }
                             </>
                           )
                         }}
@@ -451,17 +479,6 @@ const ResumeModule = (props) => {
                                   </Button>
                                 )
                               }
-                              <Button
-                                className="btn-delete mar-10"
-                                onClick={
-                                  ()=>{
-                                    setHandleId(status._id)
-                                    setIsModalVisible(true)
-                                  }
-                                }
-                              >
-                                删除
-                              </Button>
                               {
                                 status.isTop === 1 ? (
                                   <Button
@@ -487,6 +504,29 @@ const ResumeModule = (props) => {
                                   </Button>
                                 )
                               }
+                              <Button
+                                className="btn-tag mar-10"
+                                onClick={
+                                  ()=>{
+                                    setHandleId(status._id)
+                                    setSortNumber(status.order)
+                                    setSortVisible(true)
+                                  }
+                                }
+                              >
+                                排序
+                              </Button>
+                              <Button
+                                className="btn-delete mar-10"
+                                onClick={
+                                  ()=>{
+                                    setHandleId(status._id)
+                                    setIsModalVisible(true)
+                                  }
+                                }
+                              >
+                                删除
+                              </Button>
                             </div>
                           )
                         }}
@@ -525,6 +565,15 @@ const ResumeModule = (props) => {
             类型管理
           </Button>
           <Button
+            className="mar-r20"
+            type="primary"
+            onClick={()=>{
+              history.push({pathname: '/admin/web/resume/tag'})
+            }}
+          >
+            标签管理
+          </Button>
+          <Button
             className="btn-success"
             onClick={()=>{
               history.push({pathname: '/admin/web/resume/detail',state: {edit: 'Y', new: 'Y'}, search: '?new=Y'})
@@ -534,6 +583,26 @@ const ResumeModule = (props) => {
           </Button>
         </div>
       </div>
+
+      <Modal
+        visible={sortVisible}
+        centered
+        width={300}
+        title="排序（序号越大，越靠前）"
+        okText="保存"
+        cancelText="取消"
+        onOk={updateSort}
+        onCancel={()=>setSortVisible(false)}
+      >
+        <div className="FBH FBAC FBJC">
+          <Input
+            type="number"
+            className="text-center"
+            onChange={e =>{ setSortNumber(e.target.value - 0)}}
+            value={sortNumber}
+          />
+        </div>
+      </Modal>
 
       <Modal
         visible={isModalVisible}

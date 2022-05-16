@@ -4,6 +4,10 @@ import WebIndexColumn from "@pages/views/web/index/column";
 import ResumeList from "@pages/views/web/resume/list";
 import ResumeType from "@pages/views/web/resume/type";
 import ResumeDetail from "@pages/views/web/resume/detail";
+import ResumeTag from "@pages/views/web/resume/tag";
+import CaseList from "@pages/views/web/case/list";
+import CaseTag from "@pages/views/web/case/tag";
+
 // import ResumeAdd from "@pages/views/web/resume/add";
 // import resourceList from "@pages/views/web/resource/list";
 // import resourceDetail from "@pages/views/web/resource/detail";
@@ -67,6 +71,33 @@ const privateRoutes = [
     role: [],
     backUrl: '',
     component: ResumeDetail,
+  },
+  {
+    path: '/admin/web/resume/tag',
+    name: '标签管理',
+    exact: true,
+    key: 'web_resume_tag',
+    role: [],
+    backUrl: '',
+    component: ResumeTag,
+  },
+  {
+    path: '/admin/web/case/list',
+    name: '客户案例',
+    exact: true,
+    key: 'web_case_list',
+    role: [],
+    backUrl: '',
+    component: CaseList,
+  },
+  {
+    path: '/admin/web/case/tag',
+    name: '热门标签',
+    exact: true,
+    key: 'web_case_tag',
+    role: [],
+    backUrl: '',
+    component: CaseTag,
   },
   // {
   //   path: '/admin/web/resource/list',
