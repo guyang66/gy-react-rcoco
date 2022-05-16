@@ -1,8 +1,14 @@
 import React, {useState, useEffect, useRef} from "react";
 import "./index.styl";
-import apiCase from '@api/case'
+import apiActivity from '@api/activity'
 import {message, Table, Button, Modal, Input, Tag, Select, Pagination, Upload, Switch} from 'antd';
-import {LoadingOutlined, MenuFoldOutlined, MenuUnfoldOutlined, PlusOutlined, SearchOutlined} from "@ant-design/icons";
+import {
+  LoadingOutlined,
+  MenuFoldOutlined,
+  MenuUnfoldOutlined,
+  PlusOutlined,
+  SearchOutlined,
+} from "@ant-design/icons";
 import utils from '@utils'
 import helper from '@helper'
 
@@ -10,7 +16,6 @@ const {Column} = Table;
 const {Option} = Select
 const {TextArea} = Input;
 
-// todo: module名字
 const IndexModule = () => {
 
   // 图片上传配置
@@ -18,33 +23,32 @@ const IndexModule = () => {
     header: {
       authorization: helper.getToken(),
     },
-    name: 'caseLogo',
+    name: 'activityCover',
     url: '/admin/api/uploadV2/auth',
     body: {
-      name: 'caseLogo',
-      dir: 'case/logo/' + utils.getDateDir(new Date()),
+      name: 'activityCover',
+      dir: 'activity/hot/bg/' + utils.getDateDir(new Date()),
       overwrite: 'Y',
     },
   }
-  const [list, setList] = useState([])  // table 数据源
-  const [total, setTotal] = useState([])  // table 数据源
 
+  const [list, setList] = useState([])  // table 数据源
+  const [total, setTotal] = useState(null)
   const [tableLoading, setTableLoading] = useState(true) // table是否数据加载中
   const [searchStatus, setSearchStatus] = useState(2)
   const [itemExpand, setItemExpand] = useState(false) // (跳转链接)列是否展开
-
-  const [editVisible, setEditVisible] = useState(false) // 编辑弹窗显示
-  const [checkItem, setCheckItem] = useState({})        // 当前操作的行数据源
-
-  const [isAdd, setIsAdd] = useState(false)
-  const [deleteVisible, setDeleteVisible] = useState(false)
-  const [isAddVisible, setIsAddVisible] = useState(false)
 
   const [sortVisible, setSortVisible] = useState(false) // 排序弹窗显示
   const [sortNumber, setSortNumber] = useState(null)    //  排序的序号绑定值
   const [orderSort, setOrderSort] = useState(null)
 
+  const [editVisible, setEditVisible] = useState(false) // 编辑弹窗显示
+  const [checkItem, setCheckItem] = useState({})        // 当前操作的行数据源
+
+  const [deleteVisible, setDeleteVisible] = useState(false)
   const [uploadLoading, setUploadLoading] = useState(false) // 是否在上传中
+
+  const [isAdd, setIsAdd] = useState(false)
 
   const [pageParams, setPageParams] = useState({
     page: 1,
@@ -55,82 +59,98 @@ const IndexModule = () => {
   const searchRef = useRef()
 
   const getList = () => {
+    setTableLoading(true)
     const search = searchRef.current.state.value
     const p = {
-      searchKey: search,
+      type: 'brand',
       page: pageParams.page,
       pageSize: pageParams.pageSize,
     }
-    if(searchStatus - 0 !== 2) {
+    if(searchStatus !== 2 && searchStatus !== '2') {
       p.status = searchStatus
     }
     if(search && search !== ''){
       p.searchKey = search
     }
-
     if(orderSort && orderSort !== ''){
       p.orderSort = orderSort
     }
 
-    setTableLoading(true)
-    apiCase.getCaseList(p).then(data=>{
+    apiActivity.getActivityList(p).then(data=>{
       if(!data){
         return
       }
-      setList(data.list)
       setTotal(data.total)
+      setList(data.list)
       setTableLoading(false)
     })
   }
 
   useEffect(()=>{
     getList()
-  },[pageParams, orderSort])
+  },[orderSort, pageParams])
 
   const handleModal = (state) => {
-    const keyString = state.key ? state.key.toString() : ''
-    const target = state.target === '_blank'
-    const nofollow = !!state.nofollow
-    setIsAdd(false)
-    setCheckItem({...state, key: keyString, target, nofollow})
+    // 这里数组有深拷贝
+    setCheckItem({
+      title: state.title,
+      desc: state.desc,
+      cover: state.cover,
+      href: state.href,
+      nofollow: !!state.nofollow,
+      target: state.target === '_blank',
+      status: state.status,
+      order: state.order,
+      _id: state._id,
+      remark: state.remark || '',
+      btnText: state.btnText,
+    })
     setEditVisible(true)
   }
 
-  const confirmPre = (isNew) => {
-    const target = checkItem
-    if(!target.title || target.title === ''){
-      message.warning('标题不能为空！')
+  const confirmPre = () => {
+    if(!checkItem.title || checkItem.title === ''){
+      message.warning('名字不能为空！')
       return
     }
-    if(!target.desc || target.desc === ''){
+
+    if(!checkItem.desc || checkItem.desc === ''){
       message.warning('描述不能为空！')
       return
     }
 
-    if(!target.icon || target.icon === ''){
-      message.warning('图片不能为空！')
+    if(!checkItem.cover || checkItem.cover === ''){
+      message.warning('封面图不能为空！')
       return
     }
 
-    if(!target.href || target.href === ''){
-      message.warning('描述不能为空！')
+    if(!checkItem.btnText || checkItem.btnText === ''){
+      message.warning('按钮名字不能为空！')
+      return
+    }
+
+    if(!checkItem.href || checkItem.href === ''){
+      message.warning('跳转链接不能为空！')
       return
     }
 
     const content = {
-      title: target.title,
-      desc: target.desc,
-      key: target.key ? target.key.split(',') : '',
-      icon: target.icon,
-      href: target.href,
-      nofollow: !!target.nofollow,
+      title: checkItem.title,
+      desc: checkItem.desc,
+      cover: checkItem.cover,
+      nofollow: !!checkItem.nofollow,
+      btnText: checkItem.btnText,
+      href: checkItem.href,
     }
-    if(target.target){
-      content.target = '_blank'
-    }
-    if(isNew){
+
+    if(isAdd){
+      content.target = content.target ? '_blank' : ''
       saveInfo(content)
-      return;
+      return
+    }
+
+    if(checkItem.target){
+      content.target = '_blank'
     }
     updateItem(checkItem._id, content)
   }
@@ -140,7 +160,7 @@ const IndexModule = () => {
   }
 
   const updateItem = (id, content) => {
-    apiCase.updateCase({id, content}).then(()=>{
+    apiActivity.updateActivity({id, content, type: 'brand'}).then(()=>{
       message.success('修改成功！')
       getList()
       setCheckItem({})
@@ -150,17 +170,9 @@ const IndexModule = () => {
     })
   }
 
-  const updateSort = () => {
-    const id = checkItem._id
-    const content = {
-      order: sortNumber - 0,
-    }
-    updateItem(id, content)
-  }
-
   const deleteItem = () => {
     const id = checkItem._id
-    apiCase.deleteCase({id}).then(()=>{
+    apiActivity.deleteActivity({id, type: 'brand'}).then(()=>{
       message.success('修改成功！')
       getList()
       setDeleteVisible(false)
@@ -169,13 +181,21 @@ const IndexModule = () => {
   }
 
   const saveInfo = (content) => {
-    apiCase.saveCase({content}).then(()=>{
+    apiActivity.saveActivity({content, type: 'brand'}).then(()=>{
       message.success('修改成功！')
       getList()
       setEditVisible(false)
       setCheckItem({})
       setIsAdd(false)
     })
+  }
+
+  const updateSort = () => {
+    const id = checkItem._id
+    const content = {
+      order: sortNumber - 0,
+    }
+    updateItem(id, content)
   }
 
   const beforeUpload = (file) => {
@@ -197,7 +217,7 @@ const IndexModule = () => {
         const result = info.file.response
         if(result.success){
           message.success('上传成功！')
-          setCheckItem({...checkItem, icon: result.data})
+          setCheckItem({...checkItem, cover: result.data})
         } else {
           message.error(`上传失败：${  result.errorMessage}`)
         }
@@ -222,18 +242,17 @@ const IndexModule = () => {
   }
 
   return (
-    <div className="case-list-container">
-
+    <div className="activity-product-container">
       <div className="resume-search-wrap">
         <Tag color="#4169E1" className="search-title" icon={<SearchOutlined />}>筛选</Tag>
         <div className="search-container">
           <div className="FBH FBAC mar-l20 h-80">
-            <div className="n-title">岗位名字：</div>
+            <div className="n-title">关键词：</div>
             <Input
               className="n-input mar-l10"
               allowClear
               ref={searchRef}
-              placeholder="请输入标题/岗位/描述"
+              placeholder="请输入标题/描述/key"
             />
           </div>
           <div className="FBH FBAC mar-l20 h-80">
@@ -273,10 +292,9 @@ const IndexModule = () => {
           </Button>
         </div>
       </div>
-
       <div className="index-module-wrap">
         <div className="FBH FBJ mar-t20 mar-b20">
-          <div className="main-color mar-l20">简历标签</div>
+          <div className="main-color mar-l20">品牌活动</div>
           <Button
             className="btn-add mar-r20"
             type="primary"
@@ -286,15 +304,18 @@ const IndexModule = () => {
               setCheckItem({
                 title: '',
                 desc: '',
-                key: '',
-                icon: '',
-                href: '',
+                order: 1,
+                status: 1,
+                remark: '',
+                cover: null,
                 nofollow: false,
+                href: '',
                 target: false,
+                btnText: '查看详情',
               })
             }}
           >
-            新增案例
+            新增
           </Button>
         </div>
         <div className="table-wrap">
@@ -323,35 +344,14 @@ const IndexModule = () => {
                 )
               }}
             />
-            <Column title="标题" dataIndex="title" key="title" width={100} align="center" />
-            <Column title="描述" dataIndex="desc" key="desc" width={160} align="center" />
+            <Column title="名字" dataIndex="title" key="title" width={100} align="center" />
+            <Column title="描述" dataIndex="desc" key="desc" width={150} align="center" />
             <Column
-              title="关键词"
-              width={100}
-              align="center"
-              render={(status)=>{
-                return (
-                  <>
-                    {
-                      (status.key || []).map((item,index)=>{
-                        return (
-                          <span key={item}>
-                            {item}
-                            {index < (status.key.length - 1) ? ',' : ''}
-                          </span>
-                        )
-                      })
-                    }
-                  </>
-                )
-              }}
-            />
-            <Column
-              title="logo"
-              width={100}
+              title="cover"
+              width={140}
               align="center"
               render={status=>{
-                return <img className="logo-img" src={utils.getFixUrl(status.icon)} alt="" />
+                return <img className="cover-img" src={utils.getFixUrl(status.cover)} alt="封面图" />
               }}
             />
             <Column
@@ -391,7 +391,6 @@ const IndexModule = () => {
                 )
               }}
             />
-            <Column title="排序" dataIndex="order" sorter sortOrder={orderSort} key="order" width={80} align="center" />
             <Column
               title="状态"
               width={80}
@@ -406,6 +405,7 @@ const IndexModule = () => {
                 )
               }}
             />
+            <Column title="排序" dataIndex="order" sorter sortOrder={orderSort} key="order" width={80} align="center" />
             <Column
               title="操作"
               width={200}
@@ -414,11 +414,11 @@ const IndexModule = () => {
               render={(state)=> {
                 return (
                   <div>
-                    <Button className="btn-danger mar-r20" onClick={()=>{handleModal(state)}}>编辑</Button>
+                    <Button className="btn-danger mar-r20 mar-b10" onClick={()=>{handleModal(state)}}>编辑</Button>
                     {
                       state.status === 1 ? (
                         <Button
-                          className="btn-warning mar-r20"
+                          className="btn-warning mar-r20 mar-b10"
                           onClick={
                             ()=>{
                               updateStatus(state._id, 0)
@@ -429,7 +429,7 @@ const IndexModule = () => {
                         </Button>
                       ) : (
                         <Button
-                          className="btn-success mar-r20"
+                          className="btn-success mar-r20 mar-b10"
                           onClick={
                             ()=>{
                               updateStatus(state._id, 1)
@@ -453,7 +453,7 @@ const IndexModule = () => {
                       排序
                     </Button>
                     <Button
-                      className="btn-delete"
+                      className="btn-delete mar-b10"
                       onClick={
                         ()=>{
                           setCheckItem(state)
@@ -470,7 +470,7 @@ const IndexModule = () => {
 
           {
             list.length > 0 ? (
-              <div className="FBH FBAC FBJC pagination-wrap">
+              <div className="FBH FBAC FBJC pagination-wrap mar-t40">
                 <Pagination
                   current={pageParams.page}
                   onChange={e=>{
@@ -505,67 +505,6 @@ const IndexModule = () => {
       </Modal>
 
       <Modal
-        visible={isAddVisible}
-        title="新增标签"
-        width={400}
-        cancelText="取消"
-        className="add-modal-view-wrap"
-        okText="确定"
-        onOk={()=>{
-          saveInfo()
-        }}
-        onCancel={()=>{
-          setCheckItem({})
-          setIsAddVisible(false)
-        }}
-      >
-        <div>
-          <div className="FBH modal-cell">
-            <div className="normal-title">mainKey：</div>
-            <Input
-              className="normal-input"
-              placeholder="请输入名字"
-              value={checkItem.mainKey}
-              disabled
-            />
-          </div>
-          <div className="FBH modal-cell">
-            <div className="normal-title">key：</div>
-            <Input
-              className="normal-input"
-              placeholder="请输入名字"
-              value={checkItem.key}
-              onChange={e=>{
-                setCheckItem({...checkItem, key: e.target.value})
-              }}
-            />
-          </div>
-          <div className="FBH modal-cell">
-            <div className="normal-title">名字：</div>
-            <Input
-              className="normal-input"
-              placeholder="请输入名字"
-              value={checkItem.name}
-              onChange={e=>{
-                setCheckItem({...checkItem, name: e.target.value})
-              }}
-            />
-          </div>
-          <div className="FBH modal-cell">
-            <div className="normal-title">备注：</div>
-            <Input
-              className="normal-input"
-              placeholder="请输入key"
-              value={checkItem.remark}
-              onChange={e=>{
-                setCheckItem({...checkItem, remark: e.target.value})
-              }}
-            />
-          </div>
-        </div>
-      </Modal>
-
-      <Modal
         visible={sortVisible}
         centered
         width={300}
@@ -586,7 +525,7 @@ const IndexModule = () => {
       </Modal>
 
       <Modal
-        title={isAdd ? '新增案例' : '编辑案例'}
+        title="编辑"
         centered
         className="add-modal-view-wrap edit-modal-view"
         maskClosable={false}
@@ -594,9 +533,7 @@ const IndexModule = () => {
           backgroundColor: 'rgba(0,0,0,0.1)',
         }}
         visible={editVisible}
-        onOk={()=>{
-          confirmPre(isAdd)
-        }}
+        onOk={confirmPre}
         okText="保存"
         cancelText="取消"
         onCancel={() => {
@@ -606,42 +543,34 @@ const IndexModule = () => {
       >
         <div>
           <div className="FBH modal-cell">
-            <div className="normal-title">标题：</div>
+            <div className="normal-title">名字：</div>
             <Input
               className="normal-input"
-              placeholder="请输入标题"
+              placeholder="请输入名字"
               value={checkItem.title}
-              onChange={e =>{ setCheckItem({...checkItem, title: e.target.value}
-              )}}
+              onChange={e=>{
+                setCheckItem({...checkItem, title: e.target.value})
+              }}
             />
           </div>
           <div className="FBH modal-cell">
             <div className="normal-title">描述：</div>
             <TextArea
-              className="textarea-input"
+              className="input-input"
+              style={{minHeight: '80px'}}
               value={checkItem.desc}
               key="sys-summary"
-              onChange={e =>{ setCheckItem({...checkItem, desc: e.target.value}
-              )}}
-            />
-          </div>
-          <div className="FBH modal-cell">
-            <div className="normal-title">关键词：</div>
-            <Input
-              className="normal-input"
-              placeholder="请输入关键词，每个词以英文逗号（,）分开"
-              value={checkItem.key}
-              onChange={e=>{
-                setCheckItem({...checkItem, key: e.target.value})
+              onChange={e =>{
+                setCheckItem({...checkItem, desc: e.target.value})
               }}
             />
           </div>
           <div className="FBH modal-cell">
-            <div className="normal-title">logo：</div>
+            <div className="normal-title">封面图：</div>
             <div className="FBV">
               <div className="FBH">
                 {
-                  checkItem.icon ? <img src={utils.getFixUrl(checkItem.icon)} className="item-img" alt="" /> : <div className="empty-img">暂无主图</div>
+                  checkItem.cover ? <img src={utils.getFixUrl(checkItem.cover)} className="item-img" alt="" /> : <div className="empty-img">暂无主图</div>
                 }
                 <Upload
                   name={uploadConfig.name}
@@ -657,14 +586,24 @@ const IndexModule = () => {
                   { uploadButton }
                 </Upload>
               </div>
-              <div className="remark-text prompt-text mar-t10">注：标准尺寸为正方形（如80px x 80px、100px x 100px都可）</div>
             </div>
           </div>
           <div className="FBH modal-cell">
-            <div className="normal-title">跳转链接：</div>
+            <div className="normal-title">按钮名字：</div>
             <Input
               className="normal-input"
-              placeholder="请输入跳转链接"
+              placeholder="请输入按钮名字"
+              value={checkItem.btnText}
+              onChange={e=>{
+                setCheckItem({...checkItem, btnText: e.target.value})
+              }}
+            />
+          </div>
+          <div className="FBH modal-cell">
+            <div className="normal-title">链接：</div>
+            <Input
+              className="normal-input"
+              placeholder="请输入链接"
               value={checkItem.href}
               onChange={e=>{
                 setCheckItem({...checkItem, href: e.target.value})
@@ -680,9 +619,7 @@ const IndexModule = () => {
                 {...checkItem, target: e}
               )}}
             />
-          </div>
-          <div className="FBH modal-cell">
-            <div className="normal-title">添加nofollow：</div>
+            <div className="normal-title mar-l20">是否添加nofollow：</div>
             <Switch
               checked={checkItem.nofollow}
               className="mar-l10"

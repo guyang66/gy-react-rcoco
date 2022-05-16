@@ -7,6 +7,9 @@ import ResumeDetail from "@pages/views/web/resume/detail";
 import ResumeTag from "@pages/views/web/resume/tag";
 import CaseList from "@pages/views/web/case/list";
 import CaseTag from "@pages/views/web/case/tag";
+import ActivityProduct from "@pages/views/web/activity/product";
+import ActivityHot from "@pages/views/web/activity/hot";
+import ActivityBrand from "@pages/views/web/activity/brand";
 
 // import ResumeAdd from "@pages/views/web/resume/add";
 // import resourceList from "@pages/views/web/resource/list";
@@ -98,6 +101,33 @@ const privateRoutes = [
     role: [],
     backUrl: '',
     component: CaseTag,
+  },
+  {
+    path: '/admin/web/activity/product',
+    name: '热门标签',
+    exact: true,
+    key: 'web_activity_product',
+    role: [],
+    backUrl: '',
+    component: ActivityProduct,
+  },
+  {
+    path: '/admin/web/activity/hot',
+    name: '热门标签',
+    exact: true,
+    key: 'web_activity_hot',
+    role: [],
+    backUrl: '',
+    component: ActivityHot,
+  },
+  {
+    path: '/admin/web/activity/brand',
+    name: '热门标签',
+    exact: true,
+    key: 'web_activity_brand',
+    role: [],
+    backUrl: '',
+    component: ActivityBrand,
   },
   // {
   //   path: '/admin/web/resource/list',
