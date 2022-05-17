@@ -3,6 +3,8 @@
 
 .mar-10
   margin 10px
+.mar-20
+  margin 20px
 
 .mar-t5
   margin-top 5px
@@ -97,113 +99,178 @@
   background-color #f1b8f1!important
   border-color #f1b8f1!important
   box-shadow none!important
-.online-text
+.btn-folk,.btn-folk:hover,.btn-folk:after,.btn-folk:focus
+  color #fff!important
+  background-color #ac5e74!important
+  border-color #ac5e74!important
+  box-shadow none!important
+.btn-error,.btn-error:hover,.btn-error:after,.btn-error:focus
+  color #fff!important
+  background-color red!important
+  border-color red!important
+  box-shadow none!important
+.color-success
   color #67c23a
-.offline-text
+.color-red
   color red
-.main-color
+.color-main
  color #4169E1
-.grey-color
+.color-light-grey
  color #898989
-.gold-color
+.color-gold
   color gold
+.color-orange
+  color orange
 
+.w-200
+  width 200px!important
+.w-300
+  width 300px!important
+.w-400
+  width 400px!important
+.w-500
+  width 500px!important
+.w-600
+  width 600px!important
+.width100
+  width 100%
+.max-w-800
+  min-width 800px!important
+
+.h-40
+  height 40px!important
+.h-100
+  height 100px!important
+.h-144
+  height 144px!important
+.h-164
+  height 164px!important
+.h-184
+  height 184px!important
+.h-200
+  height 200px!important
+.h-300
+  height 300px!important
+.min-h-200
+  min-height 200px!important
+// 模块view
+.module-view-wrap
+  margin 20px
+  min-height calc(100%)
+  background-color white
+  border-radius 2px
+  overflow hidden
+  box-shadow 0 2px 4px rgba(0,21,41,.08)
+  position relative
+  .module-title
+    color #4169E1
+    font-size 14px
+    font-weight bold
+    line-height 32px
+  .table-wrap
+    margin 20px
+    min-height 300px
+    .thumb-img
+      width 120px
+      height 80px
+    .cover-img
+      width 80px
+      height 80px
+    .banner-img
+      width 128px
+      height 52px
+    .button-wrap
+      margin 20px
+  .operate-view-wrap
+    position absolute
+    top 20px
+    right 20px
+
+.module-search-view-wrap
+  margin 20px
+  min-height 100px
+  background-color white
+  border-radius 2px
+  box-shadow 0 2px 4px rgba(0,21,41,.08)
+  .search-title
+    margin-top 20px
+    height 30px
+    line-height 30px
+    padding-left 20px
+    width 100px
+    padding-right 20px
+    font-weight 500
+    border-radius 20px
+    margin-left 20px
+  .search-container
+    flex-direction row
+    display flex
+    flex-wrap wrap
+    .h-80
+      height 80px
+    .cell-title
+      white-space nowrap
+      overflow hidden
+      text-align center
+      padding-right 10px
+    .search-input
+      max-width 200px
+    .search-select
+      width 200px
+  .button-view-wrap
+    width 100%
+    display flex
+    justify-content flex-end
+    flex-direction row
+    height 60px
+
+// 弹窗
 .modal-view-wrap
+  .normal-cell
+    width 100%
   .item-cell
+    width 100%
     min-height 40px
-    .prompt-text
-      color orange
+    position relative
+    .cover-img,.img-uploader
+      width 102px
+      height 102px
+      display block
+    .empty-img
+      width 102px
+      height 102px
+      display block
+      border 1px solid #eeeeee
+      line-height 102px
+      text-align center
+    .cell-right
+      width calc(100% - 80px)
     .item-title
-      min-width 80px
+      min-width 50px
       max-height 60px
       line-height 40px
       color text-color-666
-    .button-cell-input
-      width 600px
-    .input-input
-      max-width 800px
-    .w-400
-      width 400px
-    .w-200
-      width 200px
-    .w-600
-      width 600px
-    .item-img
-      width 532px
-      height 144px
-    .item-img-h5
-      height 194px
-      width 144px
-    .empty-img
-      width 144px
-      height 144px
-      display flex
-      justify-content center
-      align-items center
-      color text-color-666
-      border 1px solid #d9d9d9
-    .normal-select
-      min-width 150px
-    .img-uploader
-      height 100%
-      width 400px
-      .ant-upload-select-picture-card
-        min-height 144px
-        min-width 144px
-        width 144px
-        flex-direction column
-        display flex
-        align-items center
-        justify-content center
-        height auto
-        .h5-upload
-          width 144px
-          height 194px
-          flex-direction column
-          display flex
-          align-items center
-          justify-content center
-    .remark-text
-      color color-r2
-      height 20px
-      line-height 20px
     .item-desc
       min-height 40px
-    .n-select
-      min-width 120px
-  .h-100
-    height 100px
-  .h-144
-    height 144px
-  .h-164
-    height 164px
-  .h-184
-    height 184px
-.add-modal-view-wrap
-  .modal-cell
-    min-height 40px
-    width 100%
-    margin-bottom 20px
-    align-items center
-    .textarea-input
-      min-height 80px
-    .normal-title
-      white-space nowrap
-      padding-right 10px
-      line-height 40px
-      min-width 70px
-    .normal-input
-      width 100%
-    .p-text
-      color text-color-666
+      max-width 100%
+      position relative
+      overflow hidden
+      .desc
+        max-width calc(100% - 140px)
+        overflow hidden
+        white-space nowrap
+        text-overflow ellipsis
+    .normal-select
+      min-width 150px
+    .remark-text
+      color color-r2
+      height 28px
       line-height 28px
-      height 28px
-      margin 0
-    .desc-input
-      margin-bottom 20px
+    .select-view
+      min-width 120px
     .delete-wrap
-      width 80px
-      height 28px
+      width 40px
+      height 20px
       flex-direction row
       display flex
       align-items center
@@ -216,11 +283,35 @@
       color #ffffff
       padding-right 12px
       padding-left 12px
+      height 20px
       border-radius 2px
     .tag-outline
       border 1px solid #4169E1
       color #4169E1
       padding-right 12px
+      height 20px
       padding-left 12px
       border-radius 2px
+
+// 去掉antd modal 自带样式
+.sample-view-modal
+  .normal-content
+    padding-top 24px
+    padding-left 24px
+  .ant-modal-content
+    .ant-modal-body
+      padding 0
+    .ant-modal-header
+      border none
+    .ant-modal-footer
+      border none
+
+// 排序modal
+.sort-module-view-wrap
+  width 100%
+  .sort-input
+    text-align center
+    width 100%
+    padding-left 20px
+    padding-right 20px
 

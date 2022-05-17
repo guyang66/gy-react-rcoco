@@ -159,12 +159,11 @@ const IndexModule = () => {
 
   return (
     <div className="resume-type-container">
-      <div className="index-module-wrap">
+      <div className="module-view-wrap min-h-200">
         <div className="FBH FBJ mar-t20 mar-b20">
           <div className="module-title mar-l20">岗位类型分类</div>
           <Button
-            className="btn-add mar-r20"
-            type="primary"
+            className="btn-success mar-r20"
             onClick={()=>{
               setCurrentType('category')
               setIsAddVisible(true)
@@ -210,7 +209,7 @@ const IndexModule = () => {
                 return (
                   <>
                     {
-                      status.status === 1 ? <span className="online-text">已上线</span> : <span className="offline-text">已下线</span>
+                      status.status === 1 ? <span className="color-success">已上线</span> : <span className="color-red">已下线</span>
                     }
                   </>
                 )
@@ -224,11 +223,10 @@ const IndexModule = () => {
               render={(status)=> {
                 return (
                   <div>
-                    <Button className="btn-warning mar-r20 mar-b10 mar-t10" onClick={()=>{deleteItem(status._id, 'category')}}>删除</Button>
                     {
                       status.status === 1 ? (
                         <Button
-                          className="btn-danger mar-r20 mar-b10 mar-t10"
+                          className="btn-danger mar-10"
                           onClick={()=>{
                             updateStatus(status._id, 0, 'category')
                           }}
@@ -237,7 +235,7 @@ const IndexModule = () => {
                         </Button>
                       ) : (
                         <Button
-                          className="btn-success mar-r20 mar-b10 mar-t10"
+                          className="btn-success mar-10"
                           onClick={()=>{
                             updateStatus(status._id, 1, 'category')
                           }}
@@ -247,7 +245,7 @@ const IndexModule = () => {
                       )
                     }
                     <Button
-                      className="btn-nature mar-b10 mar-t10"
+                      className="btn-tag mar-10"
                       onClick={()=>{
                         setCurrentType('category')
                         setCheckItem(status)
@@ -257,6 +255,7 @@ const IndexModule = () => {
                     >
                       排序
                     </Button>
+                    <Button className="btn-delete mar-10" onClick={()=>{deleteItem(status._id, 'category')}}>删除</Button>
                   </div>
                 ) }}
             />
@@ -264,12 +263,11 @@ const IndexModule = () => {
         </div>
       </div>
 
-      <div className="index-module-wrap">
+      <div className="module-view-wrap min-h-200">
         <div className="FBH FBJ mar-t20 mar-b20">
           <div className="module-title mar-l20">岗位地区分类</div>
           <Button
-            className="btn-add mar-r20"
-            type="primary"
+            className="btn-success mar-r20"
             onClick={()=>{
               setCurrentType('place')
               setIsAddVisible(true)
@@ -315,7 +313,7 @@ const IndexModule = () => {
                 return (
                   <>
                     {
-                      status.status === 1 ? <span className="online-text">已上线</span> : <span className="offline-text">已下线</span>
+                      status.status === 1 ? <span className="color-success">已上线</span> : <span className="color-red">已下线</span>
                     }
                   </>
                 )
@@ -329,11 +327,10 @@ const IndexModule = () => {
               render={(status)=> {
                 return (
                   <div>
-                    <Button className="btn-warning mar-r20 mar-b10 mar-t10" onClick={()=>{deleteItem(status._id, 'place')}}>删除</Button>
                     {
                       status.status === 1 ? (
                         <Button
-                          className="btn-danger mar-r20 mar-b10 mar-t10"
+                          className="btn-danger mar-10"
                           onClick={()=>{
                             updateStatus(status._id, 0, 'place')
                           }}
@@ -342,7 +339,7 @@ const IndexModule = () => {
                         </Button>
                       ) : (
                         <Button
-                          className="btn-success mar-r20 mar-b10 mar-t10"
+                          className="btn-success mar-10"
                           onClick={()=>{
                             updateStatus(status._id, 1, 'place')
                           }}
@@ -352,7 +349,7 @@ const IndexModule = () => {
                       )
                     }
                     <Button
-                      className="btn-nature mar-b10 mar-t10"
+                      className="btn-tag mar-10"
                       onClick={()=>{
                         setCurrentType('place')
                         setCheckItem(status)
@@ -362,6 +359,7 @@ const IndexModule = () => {
                     >
                       排序
                     </Button>
+                    <Button className="btn-delete mar-10" onClick={()=>{deleteItem(status._id, 'place')}}>删除</Button>
                   </div>
                 ) }}
             />
@@ -373,6 +371,7 @@ const IndexModule = () => {
         visible={sortVisible}
         centered
         width={300}
+        className="sort-module-view-wrap"
         title="排序（序号越大，越靠前）"
         okText="保存"
         cancelText="取消"
@@ -382,7 +381,7 @@ const IndexModule = () => {
         <div className="FBH FBAC FBJC">
           <Input
             type="number"
-            className="text-center"
+            className="sort-input"
             onChange={e =>{ setSortNumber(e.target.value - 0)}}
             value={sortNumber}
           />
@@ -394,7 +393,7 @@ const IndexModule = () => {
         title="新增分类"
         width={400}
         cancelText="取消"
-        className="add-modal-view-wrap"
+        className="modal-view-wrap"
         okText="确定"
         onOk={()=>{
           saveInfo(checkItem)
@@ -405,10 +404,9 @@ const IndexModule = () => {
         }}
       >
         <div>
-          <div className="FBH modal-cell">
-            <div className="normal-title">名字：</div>
+          <div className="item-cell FBH FBAC">
+            <div className="item-title">名字：</div>
             <Input
-              className="normal-input"
               placeholder="请输入名字"
               value={checkItem.name}
               onChange={e=>{
@@ -416,10 +414,9 @@ const IndexModule = () => {
               }}
             />
           </div>
-          <div className="FBH modal-cell">
-            <div className="normal-title">key：</div>
+          <div className="item-cell FBH FBAC">
+            <div className="item-title">key：</div>
             <Input
-              className="normal-input"
               placeholder="请输入key"
               value={checkItem.key}
               onChange={e=>{

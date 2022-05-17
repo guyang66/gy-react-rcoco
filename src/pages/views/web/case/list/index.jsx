@@ -224,22 +224,22 @@ const IndexModule = () => {
   return (
     <div className="case-list-container">
 
-      <div className="resume-search-wrap">
+      <div className="module-search-view-wrap">
         <Tag color="#4169E1" className="search-title" icon={<SearchOutlined />}>筛选</Tag>
         <div className="search-container">
           <div className="FBH FBAC mar-l20 h-80">
-            <div className="n-title">岗位名字：</div>
+            <div className="cell-title">岗位名字：</div>
             <Input
-              className="n-input mar-l10"
+              className="search-input mar-l10"
               allowClear
               ref={searchRef}
               placeholder="请输入标题/岗位/描述"
             />
           </div>
           <div className="FBH FBAC mar-l20 h-80">
-            <div className="n-title">上线：</div>
+            <div className="cell-title">上线：</div>
             <Select
-              className="n-search"
+              className="search-select"
               value={searchStatus}
               onChange={
                 (e)=>{
@@ -253,7 +253,7 @@ const IndexModule = () => {
             </Select>
           </div>
         </div>
-        <div className="btns-container">
+        <div className="button-view-wrap">
           <Button
             className="btn-info mar-r20"
             onClick={()=>{
@@ -274,12 +274,11 @@ const IndexModule = () => {
         </div>
       </div>
 
-      <div className="index-module-wrap">
+      <div className="module-view-wrap min-h-200">
         <div className="FBH FBJ mar-t20 mar-b20">
-          <div className="main-color mar-l20">简历标签</div>
+          <div className="module-title mar-l20">简历标签</div>
           <Button
-            className="btn-add mar-r20"
-            type="primary"
+            className="btn-success mar-r20"
             onClick={()=>{
               setIsAdd(true)
               setEditVisible(true)
@@ -381,7 +380,7 @@ const IndexModule = () => {
                 return (
                   <>
                     {
-                      itemExpand ? <a href={utils.getFixUrl(status.href)} target="_blank" rel="noreferrer">{utils.getFixUrl(status.href)}</a> : (
+                      itemExpand ? <a href={utils.getFixUrl(status.href)} target="_blank" >{utils.getFixUrl(status.href)}</a> : (
                         <span>
                           {`${status.href.slice(0,12)  }...`}
                         </span>
@@ -400,7 +399,7 @@ const IndexModule = () => {
                 return (
                   <>
                     {
-                      status.status === 1 ? <span className="online-text">已上线</span> : <span className="offline-text">已下线</span>
+                      status.status === 1 ? <span className="color-success">已上线</span> : <span className="color-red">已下线</span>
                     }
                   </>
                 )
@@ -414,11 +413,11 @@ const IndexModule = () => {
               render={(state)=> {
                 return (
                   <div>
-                    <Button className="btn-danger mar-r20" onClick={()=>{handleModal(state)}}>编辑</Button>
+                    <Button className="btn-primary mar-10" onClick={()=>{handleModal(state)}}>编辑</Button>
                     {
                       state.status === 1 ? (
                         <Button
-                          className="btn-warning mar-r20"
+                          className="btn-danger mar-10"
                           onClick={
                             ()=>{
                               updateStatus(state._id, 0)
@@ -429,7 +428,7 @@ const IndexModule = () => {
                         </Button>
                       ) : (
                         <Button
-                          className="btn-success mar-r20"
+                          className="btn-success mar-10"
                           onClick={
                             ()=>{
                               updateStatus(state._id, 1)
@@ -441,7 +440,7 @@ const IndexModule = () => {
                       )
                     }
                     <Button
-                      className="btn-tag mar-r20"
+                      className="btn-tag mar-10"
                       onClick={
                         ()=>{
                           setCheckItem(state)
@@ -453,7 +452,7 @@ const IndexModule = () => {
                       排序
                     </Button>
                     <Button
-                      className="btn-delete"
+                      className="btn-delete mar-10"
                       onClick={
                         ()=>{
                           setCheckItem(state)
@@ -467,10 +466,9 @@ const IndexModule = () => {
                 ) }}
             />
           </Table>
-
           {
             list.length > 0 ? (
-              <div className="FBH FBAC FBJC pagination-wrap">
+              <div className="FBH FBAC FBJC mar-t40">
                 <Pagination
                   current={pageParams.page}
                   onChange={e=>{
@@ -489,8 +487,9 @@ const IndexModule = () => {
 
       <Modal
         visible={deleteVisible}
-        className="resource-list-normal-modal"
+        className="sample-view-modal"
         width={400}
+        title="确定要删除吗（不可恢复）？"
         cancelText="取消"
         okText="确定"
         onOk={()=>{
@@ -500,16 +499,14 @@ const IndexModule = () => {
           setDeleteVisible(false)
           setCheckItem({})
         }}
-      >
-        <p className="normal-content">确定要删除吗（不可恢复）？</p>
-      </Modal>
+      />
 
       <Modal
         visible={isAddVisible}
         title="新增标签"
         width={400}
         cancelText="取消"
-        className="add-modal-view-wrap"
+        className="modal-view-wrap"
         okText="确定"
         onOk={()=>{
           saveInfo()
@@ -520,19 +517,17 @@ const IndexModule = () => {
         }}
       >
         <div>
-          <div className="FBH modal-cell">
-            <div className="normal-title">mainKey：</div>
+          <div className="item-cell FBH FBAC">
+            <div className="item-title">mainKey：</div>
             <Input
-              className="normal-input"
               placeholder="请输入名字"
               value={checkItem.mainKey}
               disabled
             />
           </div>
-          <div className="FBH modal-cell">
-            <div className="normal-title">key：</div>
+          <div className="item-cell FBH FBAC">
+            <div className="item-title">key：</div>
             <Input
-              className="normal-input"
               placeholder="请输入名字"
               value={checkItem.key}
               onChange={e=>{
@@ -540,10 +535,9 @@ const IndexModule = () => {
               }}
             />
           </div>
-          <div className="FBH modal-cell">
-            <div className="normal-title">名字：</div>
+          <div className="item-cell FBH FBAC">
+            <div className="item-title">名字：</div>
             <Input
-              className="normal-input"
               placeholder="请输入名字"
               value={checkItem.name}
               onChange={e=>{
@@ -551,10 +545,9 @@ const IndexModule = () => {
               }}
             />
           </div>
-          <div className="FBH modal-cell">
-            <div className="normal-title">备注：</div>
+          <div className="item-cell FBH FBAC">
+            <div className="item-title">备注：</div>
             <Input
-              className="normal-input"
               placeholder="请输入key"
               value={checkItem.remark}
               onChange={e=>{
@@ -572,13 +565,14 @@ const IndexModule = () => {
         title="排序（序号越大，越靠前）"
         okText="保存"
         cancelText="取消"
+        className="sort-module-view-wrap"
         onOk={updateSort}
         onCancel={()=>setSortVisible(false)}
       >
         <div className="FBH FBAC FBJC">
           <Input
             type="number"
-            className="text-center"
+            className="sort-input"
             onChange={e =>{ setSortNumber(e.target.value - 0)}}
             value={sortNumber}
           />
@@ -641,7 +635,7 @@ const IndexModule = () => {
             <div className="FBV">
               <div className="FBH">
                 {
-                  checkItem.icon ? <img src={utils.getFixUrl(checkItem.icon)} className="item-img" alt="" /> : <div className="empty-img">暂无主图</div>
+                  checkItem.icon ? <img src={utils.getFixUrl(checkItem.icon)} className="logo-img" alt="" /> : <div className="empty-img">暂无主图</div>
                 }
                 <Upload
                   name={uploadConfig.name}
@@ -657,7 +651,7 @@ const IndexModule = () => {
                   { uploadButton }
                 </Upload>
               </div>
-              <div className="remark-text prompt-text mar-t10">注：标准尺寸为正方形（如80px x 80px、100px x 100px都可）</div>
+              <div className="remark-text color-orange mar-t10">注：标准尺寸为正方形（如80px x 80px、100px x 100px都可）</div>
             </div>
           </div>
           <div className="FBH modal-cell">

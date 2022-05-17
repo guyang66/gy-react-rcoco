@@ -104,7 +104,7 @@ const privateRoutes = [
   },
   {
     path: '/admin/web/activity/product',
-    name: '热门标签',
+    name: '产品活动',
     exact: true,
     key: 'web_activity_product',
     role: [],
@@ -113,7 +113,7 @@ const privateRoutes = [
   },
   {
     path: '/admin/web/activity/hot',
-    name: '热门标签',
+    name: '热门活动',
     exact: true,
     key: 'web_activity_hot',
     role: [],
@@ -122,7 +122,7 @@ const privateRoutes = [
   },
   {
     path: '/admin/web/activity/brand',
-    name: '热门标签',
+    name: '品牌活动',
     exact: true,
     key: 'web_activity_brand',
     role: [],

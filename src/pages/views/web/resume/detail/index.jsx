@@ -50,8 +50,6 @@ const ResumeDetail = (props) => {
       })
       setColumn(data)
       setColumnMap(map)
-    }).catch(error=>{
-      message.error(error.message)
     })
   }
 
@@ -262,7 +260,7 @@ const ResumeDetail = (props) => {
   }
 
   const filterTag = () => {
-    let tmp = []
+    const tmp = []
     tagDataList.forEach(item=>{
       if(item.choose){
         tmp.push(item.key)
@@ -317,17 +315,15 @@ const ResumeDetail = (props) => {
       apiResume.saveResume({content: requestParams}).then(()=>{
         message.success('保存成功')
         history.push({pathname: '/admin/web/resume/list'})
-      }).catch(error=>{
-        message.error(error.message)
       })
-    } else {
-      apiResume.updateResume({id: editDetail._id, content: requestParams}).then(()=>{
-        message.success('保存成功')
-        history.push({pathname: '/admin/web/resume/detail', state: {id: resumeId}, search: '?id=' + resumeId})
-      }).catch(error=>{
-        message.error(error.message)
-      })
+      return true
     }
+
+    apiResume.updateResume({id: editDetail._id, content: requestParams}).then(()=>{
+      message.success('保存成功')
+      history.push({pathname: '/admin/web/resume/detail', state: {id: resumeId}, search: '?id=' + resumeId})
+    })
+    return true
   }
 
   if((!resumeId || resumeId === '') && !isNew){
@@ -341,15 +337,15 @@ const ResumeDetail = (props) => {
 
   return (
     <div className="resume-detail-container">
-      <div className="resume-detail-wrap">
-        <div className="resume-title">{ isEdit ? '岗位编辑' : '岗位详情'}</div>
+      <div className="resume-detail-wrap module-view-wrap">
+        <div className="module-title mar-t20 mar-l20">{ isEdit ? '岗位编辑' : '岗位详情'}</div>
         <div className="content-wrap">
           <div className="normal-cell">
             <div className="cell-title">标题：</div>
             {
               isEdit ? (
                 <Input
-                  className="normal-input"
+                  className="w-300"
                   placeholder="请输入标题"
                   onChange={e =>{
                     setEditDetail({...editDetail, title: e.target.value})
@@ -366,7 +362,7 @@ const ResumeDetail = (props) => {
             {
               isEdit ? (
                 <Input
-                  className="normal-input w-600"
+                  className="w-600"
                   placeholder="请输入岗位描述"
                   onChange={e =>{
                     setEditDetail({...editDetail, desc: e.target.value})
@@ -384,7 +380,7 @@ const ResumeDetail = (props) => {
             {
               isEdit ? (
                 <Input
-                  className="normal-input"
+                  className="w-300"
                   placeholder="请输入岗位名称"
                   onChange={e =>{
                     setEditDetail({...editDetail, department: e.target.value})
@@ -467,7 +463,7 @@ const ResumeDetail = (props) => {
             {
               isEdit ? (
                 <Input
-                  className="normal-input"
+                  className="w-300"
                   placeholder="请输入工作经验"
                   onChange={e =>{
                     setEditDetail({...editDetail, experience: e.target.value})
@@ -484,7 +480,7 @@ const ResumeDetail = (props) => {
             {
               isEdit ? (
                 <Input
-                  className="normal-input"
+                  className="w-300"
                   placeholder="请输入学历要求"
                   onChange={e =>{
                     setEditDetail({...editDetail, education: e.target.value})
@@ -499,7 +495,7 @@ const ResumeDetail = (props) => {
             {
               isEdit ? (
                 <Input
-                  className="normal-input"
+                  className="w-300"
                   placeholder="请输入发布时间"
                   onChange={e =>{
                     setEditDetail({...editDetail, date: e.target.value})
@@ -514,7 +510,7 @@ const ResumeDetail = (props) => {
             {
               isEdit ? (
                 <Input
-                  className="normal-input"
+                  className="w-300"
                   placeholder="请输入联系方式"
                   onChange={e =>{
                     setEditDetail({...editDetail, contact: e.target.value})
@@ -530,7 +526,7 @@ const ResumeDetail = (props) => {
             {
               isEdit ? (
                 <Input
-                  className="normal-input"
+                  className="w-300"
                   placeholder="请输入链接"
                   onChange={e =>{
                     setEditDetail({...editDetail, href: e.target.value})
@@ -564,12 +560,12 @@ const ResumeDetail = (props) => {
           </div>
 
           <div className="normal-cell" style={{height: 'auto', alignItems: 'flex-start'}}>
-            <div className="cell-title mar-t20">岗位职责：</div>
-            <div className="cell-content mar-t30">
+            <div className="cell-title">岗位职责：</div>
+            <div className="cell-content">
               {
                 (isNew ? editDetail.duty : resumeDetail.duty).map((item, index)=>{
                   return (
-                    <div className="FBH" key={`desc${  index}`}>
+                    <div className="FBH h-40" key={`desc${  index}`}>
                       <p className="p-text">
                         {index + 1}
                         .
@@ -593,9 +589,8 @@ const ResumeDetail = (props) => {
               }
               {
                 (isEdit && addItem === 'duty') ? (
-                  <div className="FBH">
+                  <div className="FBH mar-b10">
                     <Input
-                      className="desc-input"
                       value={editItem}
                       onChange={(e)=>{
                         setEditItem(e.target.value)
@@ -603,7 +598,7 @@ const ResumeDetail = (props) => {
                       style={{minWidth: '600px'}}
                     />
                     <Button
-                      className="btn-warning mar-l20"
+                      className="btn-primary mar-l20"
                       onClick={()=>{
                         addItemConfirm('duty')
                       }}
@@ -637,8 +632,8 @@ const ResumeDetail = (props) => {
           </div>
 
           <div className="normal-cell" style={{height: 'auto', alignItems: 'flex-start'}}>
-            <div className="cell-title mar-t20">岗位要求：</div>
-            <div className="cell-content mar-t30">
+            <div className="cell-title">岗位要求：</div>
+            <div className="cell-content">
               {
                 (isNew ? editDetail.require : resumeDetail.require).map((item, index)=>{
                   return (
@@ -666,9 +661,8 @@ const ResumeDetail = (props) => {
               }
               {
                 (isEdit && addItem === 'require') ? (
-                  <div className="FBH">
+                  <div className="FBH mar-b10">
                     <Input
-                      className="desc-input"
                       value={editItem}
                       onChange={(e)=>{
                         setEditItem(e.target.value)
@@ -676,7 +670,7 @@ const ResumeDetail = (props) => {
                       style={{minWidth: '600px'}}
                     />
                     <Button
-                      className="btn-warning mar-l20"
+                      className="btn-primary mar-l20"
                       onClick={()=>{
                         addItemConfirm('require')
                       }}
@@ -739,9 +733,8 @@ const ResumeDetail = (props) => {
               }
               {
                 (isEdit && addItem === 'pluses') ? (
-                  <div className="FBH">
+                  <div className="FBH mar-b10">
                     <Input
-                      className="desc-input"
                       value={editItem}
                       onChange={(e)=>{
                         setEditItem(e.target.value)
@@ -749,7 +742,7 @@ const ResumeDetail = (props) => {
                       style={{minWidth: '600px'}}
                     />
                     <Button
-                      className="btn-warning mar-l20"
+                      className="btn-primary mar-l20"
                       onClick={()=>{
                         addItemConfirm('pluses')
                       }}
@@ -815,7 +808,7 @@ const ResumeDetail = (props) => {
                       取消
                     </Button>
                   )}
-                  <Button className="btn-success" onClick={saveInfo} style={{width: '100px'}}>保存</Button>
+                  <Button className="btn-primary" onClick={saveInfo} style={{width: '100px'}}>保存</Button>
                 </div>
               </div>
             ) : (
@@ -823,7 +816,7 @@ const ResumeDetail = (props) => {
                 <div className="cell-title" />
                 <div className="cell-content">
                   <Button
-                    className="btn-primary"
+                    className="btn-success"
                     onClick={()=>{
                       history.push({pathname: '/admin/web/resume/detail', state: {id: resumeId, edit: 'Y'}, search: '?id=' + resumeId + '&edit=Y'})
                     }}

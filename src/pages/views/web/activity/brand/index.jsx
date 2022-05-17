@@ -243,22 +243,22 @@ const IndexModule = () => {
 
   return (
     <div className="activity-product-container">
-      <div className="resume-search-wrap">
+      <div className="module-search-view-wrap">
         <Tag color="#4169E1" className="search-title" icon={<SearchOutlined />}>筛选</Tag>
         <div className="search-container">
           <div className="FBH FBAC mar-l20 h-80">
-            <div className="n-title">关键词：</div>
+            <div className="cell-title">关键词：</div>
             <Input
-              className="n-input mar-l10"
+              className="search-input mar-l10"
               allowClear
               ref={searchRef}
               placeholder="请输入标题/描述/key"
             />
           </div>
           <div className="FBH FBAC mar-l20 h-80">
-            <div className="n-title">上线：</div>
+            <div className="cell-title">上线：</div>
             <Select
-              className="n-search"
+              className="search-select"
               value={searchStatus}
               onChange={
                 (e)=>{
@@ -272,7 +272,7 @@ const IndexModule = () => {
             </Select>
           </div>
         </div>
-        <div className="btns-container">
+        <div className="button-view-wrap">
           <Button
             className="btn-info mar-r20"
             onClick={()=>{
@@ -292,12 +292,11 @@ const IndexModule = () => {
           </Button>
         </div>
       </div>
-      <div className="index-module-wrap">
+      <div className="module-view-wrap min-h-200">
         <div className="FBH FBJ mar-t20 mar-b20">
-          <div className="main-color mar-l20">品牌活动</div>
+          <div className="module-title mar-l20">品牌活动</div>
           <Button
-            className="btn-add mar-r20"
-            type="primary"
+            className="btn-success mar-r20"
             onClick={()=>{
               setIsAdd(true)
               setEditVisible(true)
@@ -347,11 +346,11 @@ const IndexModule = () => {
             <Column title="名字" dataIndex="title" key="title" width={100} align="center" />
             <Column title="描述" dataIndex="desc" key="desc" width={150} align="center" />
             <Column
-              title="cover"
+              title="封面"
               width={140}
               align="center"
               render={status=>{
-                return <img className="cover-img" src={utils.getFixUrl(status.cover)} alt="封面图" />
+                return <img className="thumb-img" src={utils.getFixUrl(status.cover)} alt="封面图" />
               }}
             />
             <Column
@@ -381,7 +380,7 @@ const IndexModule = () => {
                 return (
                   <>
                     {
-                      itemExpand ? <a href={utils.getFixUrl(status.href)} target="_blank" rel="noreferrer">{utils.getFixUrl(status.href)}</a> : (
+                      itemExpand ? <a href={utils.getFixUrl(status.href)} target="_blank" >{utils.getFixUrl(status.href)}</a> : (
                         <span>
                           {`${status.href.slice(0,12)  }...`}
                         </span>
@@ -399,7 +398,7 @@ const IndexModule = () => {
                 return (
                   <>
                     {
-                      status.status === 1 ? <span className="online-text">已上线</span> : <span className="offline-text">已下线</span>
+                      status.status === 1 ? <span className="color-success">已上线</span> : <span className="color-red">已下线</span>
                     }
                   </>
                 )
@@ -414,11 +413,11 @@ const IndexModule = () => {
               render={(state)=> {
                 return (
                   <div>
-                    <Button className="btn-danger mar-r20 mar-b10" onClick={()=>{handleModal(state)}}>编辑</Button>
+                    <Button className="btn-primary mar-10" onClick={()=>{handleModal(state)}}>编辑</Button>
                     {
                       state.status === 1 ? (
                         <Button
-                          className="btn-warning mar-r20 mar-b10"
+                          className="btn-danger mar-10"
                           onClick={
                             ()=>{
                               updateStatus(state._id, 0)
@@ -429,7 +428,7 @@ const IndexModule = () => {
                         </Button>
                       ) : (
                         <Button
-                          className="btn-success mar-r20 mar-b10"
+                          className="btn-success mar-10"
                           onClick={
                             ()=>{
                               updateStatus(state._id, 1)
@@ -441,7 +440,7 @@ const IndexModule = () => {
                       )
                     }
                     <Button
-                      className="btn-tag mar-r20"
+                      className="btn-tag mar-10"
                       onClick={
                         ()=>{
                           setCheckItem(state)
@@ -453,7 +452,7 @@ const IndexModule = () => {
                       排序
                     </Button>
                     <Button
-                      className="btn-delete mar-b10"
+                      className="btn-delete mar-10"
                       onClick={
                         ()=>{
                           setCheckItem(state)
@@ -489,9 +488,10 @@ const IndexModule = () => {
 
       <Modal
         visible={deleteVisible}
-        className="resource-list-normal-modal"
+        className="sample-view-modal"
         width={400}
         cancelText="取消"
+        title="确定要删除吗（不可恢复）？"
         okText="确定"
         onOk={()=>{
           deleteItem()
@@ -500,9 +500,7 @@ const IndexModule = () => {
           setDeleteVisible(false)
           setCheckItem({})
         }}
-      >
-        <p className="normal-content">确定要删除吗（不可恢复）？</p>
-      </Modal>
+      />
 
       <Modal
         visible={sortVisible}
@@ -510,6 +508,7 @@ const IndexModule = () => {
         width={300}
         title="排序（序号越大，越靠前）"
         okText="保存"
+        className="sort-module-view-wrap"
         cancelText="取消"
         onOk={updateSort}
         onCancel={()=>setSortVisible(false)}
@@ -517,7 +516,7 @@ const IndexModule = () => {
         <div className="FBH FBAC FBJC">
           <Input
             type="number"
-            className="text-center"
+            className="sort-input"
             onChange={e =>{ setSortNumber(e.target.value - 0)}}
             value={sortNumber}
           />
@@ -527,7 +526,7 @@ const IndexModule = () => {
       <Modal
         title="编辑"
         centered
-        className="add-modal-view-wrap edit-modal-view"
+        className="modal-view-wrap activity-product-module"
         maskClosable={false}
         maskStyle={{
           backgroundColor: 'rgba(0,0,0,0.1)',
@@ -542,10 +541,9 @@ const IndexModule = () => {
         width={800}
       >
         <div>
-          <div className="FBH modal-cell">
-            <div className="normal-title">名字：</div>
+          <div className="item-cell FBH FBAC">
+            <div className="item-title">名字：</div>
             <Input
-              className="normal-input"
               placeholder="请输入名字"
               value={checkItem.title}
               onChange={e=>{
@@ -553,24 +551,24 @@ const IndexModule = () => {
               }}
             />
           </div>
-          <div className="FBH modal-cell">
-            <div className="normal-title">描述：</div>
+          <div className="item-cell FBH FBAC">
+            <div className="item-title">描述：</div>
             <TextArea
-              className="input-input"
               style={{minHeight: '80px'}}
               value={checkItem.desc}
+              placeholder="请输入描述"
               key="sys-summary"
               onChange={e =>{
                 setCheckItem({...checkItem, desc: e.target.value})
               }}
             />
           </div>
-          <div className="FBH modal-cell">
-            <div className="normal-title">封面图：</div>
+          <div className="item-cell FBH FBAC mar-t10 mar-b10">
+            <div className="item-title">封面图：</div>
             <div className="FBV">
               <div className="FBH">
                 {
-                  checkItem.cover ? <img src={utils.getFixUrl(checkItem.cover)} className="item-img" alt="" /> : <div className="empty-img">暂无主图</div>
+                  checkItem.cover ? <img src={utils.getFixUrl(checkItem.cover)} className="activity-img" alt="" /> : <div className="empty-img">暂无主图</div>
                 }
                 <Upload
                   name={uploadConfig.name}
@@ -588,8 +586,8 @@ const IndexModule = () => {
               </div>
             </div>
           </div>
-          <div className="FBH modal-cell">
-            <div className="normal-title">按钮名字：</div>
+          <div className="item-cell FBH FBAC">
+            <div className="item-title" style={{minWidth: '65px'}}>按钮名字：</div>
             <Input
               className="normal-input"
               placeholder="请输入按钮名字"
@@ -599,8 +597,8 @@ const IndexModule = () => {
               }}
             />
           </div>
-          <div className="FBH modal-cell">
-            <div className="normal-title">链接：</div>
+          <div className="item-cell FBH FBAC">
+            <div className="item-title" style={{minWidth: '65px'}}>跳转链接：</div>
             <Input
               className="normal-input"
               placeholder="请输入链接"
@@ -610,8 +608,8 @@ const IndexModule = () => {
               }}
             />
           </div>
-          <div className="FBH modal-cell">
-            <div className="normal-title">是否新窗口打开：</div>
+          <div className="item-cell FBH FBAC">
+            <div className="item-title">是否新窗口打开：</div>
             <Switch
               checked={checkItem.target}
               className="mar-l10"
@@ -619,7 +617,7 @@ const IndexModule = () => {
                 {...checkItem, target: e}
               )}}
             />
-            <div className="normal-title mar-l20">是否添加nofollow：</div>
+            <div className="item-title mar-l20">是否添加nofollow：</div>
             <Switch
               checked={checkItem.nofollow}
               className="mar-l10"

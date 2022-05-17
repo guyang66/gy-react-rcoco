@@ -43,7 +43,7 @@ const Login = (props) => {
   return (
     <DocumentTitle title="用户登录">
       <div className="login-container FBV FBAC" style={{background: `url(${bg}) no-repeat 100%`, backgroundSize: '100% 100%'}}>
-        <div className="login-title-container mar-b40">
+        <div className="logicell-title-container mar-b40">
           <div className="logo-wrap">
             <img src={logo} alt="" />
           </div>

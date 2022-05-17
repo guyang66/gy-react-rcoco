@@ -19,6 +19,7 @@ const IndexBanner = () => {
     url: '/admin/api/uploadV2/auth',
     body: {
       name: 'indexBanners',
+      // 用时间戳作为文件夹名字就可以保证不会同名覆盖
       dir: 'index/banner/' + utils.getDateDir(new Date()),
       overwrite: 'Y',
     },
@@ -55,8 +56,6 @@ const IndexBanner = () => {
         return -1
 
       })
-      // console.log(listTmp)
-      console.log(JSON.stringify(listTmp))
       setList(listTmp)
       setTableLoading(false)
     })
@@ -153,7 +152,6 @@ const IndexBanner = () => {
   );
 
   const getUploadBody = () => {
-    // 用时间戳作为文件夹名字就可以保证不会同名覆盖
     return {
       name: uploadConfig.body.name,
       overwrite: uploadConfig.body.overwrite,
@@ -239,10 +237,10 @@ const IndexBanner = () => {
 
   return (
     <div className="index-banner-container">
-      <div className="banner-title-wrap">
-        <div className="FBH button-wrap">
+      <div className="module-view-wrap">
+        <div className="FBH">
           <Button
-            className="btn-primary"
+            className="btn-primary mar-t20 mar-l20"
             onClick={()=>{
               setCheckItem({
                 order: 1,
@@ -260,7 +258,7 @@ const IndexBanner = () => {
             新增banner
           </Button>
         </div>
-        <div className="prompt-text mar-l20 mar-b20">todo: 官网首页如果流量大的话，一般需要缓存数据，不然每一个人来访问都需要查询一次数据库，我们直接把数据缓存起来，修改了之后就刷掉缓存，减少首屏渲染时间和服务器压力</div>
+        <div className="color-orange mar-20">todo: 官网首页如果流量大的话，一般需要缓存数据，不然每一个人来访问都需要查询一次数据库，我们直接把数据缓存起来，修改了之后就刷掉缓存，减少首屏渲染时间和服务器压力</div>
         <div className="table-wrap">
           <Table
             bordered
@@ -305,7 +303,7 @@ const IndexBanner = () => {
               align="center"
               render={status=>{
                 return (
-                  <img className="index-img" src={utils.getFixUrl(status.backgroundImg)} alt="" />
+                  <img className="banner-img" src={utils.getFixUrl(status.backgroundImg)} alt="" />
                 )
               }}
             />
@@ -352,7 +350,7 @@ const IndexBanner = () => {
                 return (
                   <>
                     {
-                      itemExpand ? <a href={utils.getFixUrl(status.href)} target="_blank" rel="noreferrer">{utils.getFixUrl(status.href)}</a> : (
+                      itemExpand ? <a href={utils.getFixUrl(status.href)} target="_blank" >{utils.getFixUrl(status.href)}</a> : (
                         <span>
                           {`${status.href.slice(0,12)  }...`}
                         </span>
@@ -371,7 +369,7 @@ const IndexBanner = () => {
                 return (
                   <>
                     {
-                      status.status === 1 ? <span className="online-text">已上线</span> : <span className="offline-text">已下线</span>
+                      status.status === 1 ? <span className="color-success">已上线</span> : <span className="color-red">已下线</span>
                     }
                   </>
                 )
@@ -443,36 +441,9 @@ const IndexBanner = () => {
         </div>
 
         <Modal
-          visible={sortVisible}
-          centered
-          width={300}
-          title="排序（序号越大，越靠前）"
-          okText="保存"
-          cancelText="取消"
-          onOk={()=>{
-            updateSortNumber()
-          }}
-          onCancel={()=>{
-            setSortNumber(null)
-            setSortVisible(false)
-            setCheckItem({})
-          }}
-        >
-          <div className="FBH FBAC FBJC">
-            <Input
-              type="number"
-              onChange={(e)=>{
-                setSortNumber(e.target.value)
-              }}
-              value={sortNumber}
-            />
-          </div>
-        </Modal>
-
-        <Modal
           title="编辑banner"
           centered
-          className="modal-view-wrap"
+          className="modal-view-wrap index-banner-module"
           maskClosable={false}
           maskStyle={{
             backgroundColor: 'rgba(0,0,0,0.1)',
@@ -491,7 +462,7 @@ const IndexBanner = () => {
           <div className="item-cell FBH FBAC">
             <div className="item-title">标题：</div>
             <Input
-              className="input-input w-400"
+              className="w-400"
               value={checkItem.title}
               onChange={e =>{ setCheckItem(
                 {...checkItem, title: e.target.value}
@@ -502,18 +473,19 @@ const IndexBanner = () => {
             <div className="item-title">文案：</div>
             {
               checkItem.desc && (
-                <div className="FBV">
+                <div className="FBV cell-right">
                   {
                     checkItem.desc.map((item,index)=>{
                       return (
                         <div className="item-desc FBH FBAC" key={`description${  index}`}>
-                          <span>
+                          <span className="desc">
                             {index+1}
                             .
                             {item}
                           </span>
                           <Button
-                            className="btn-delete mar-l40"
+                            className="btn-delete mar-l20"
+                            size="small"
                             onClick={()=>{
                               const tmp = [...checkItem.desc]
                               tmp.splice(index, 1)
@@ -546,6 +518,7 @@ const IndexBanner = () => {
                       /> : (
                         <Button
                           className="btn-success mar-b10 mar-t10"
+                          size="small"
                           onClick={()=>{
                             setEditNewDesc(true)
                           }}
@@ -561,16 +534,16 @@ const IndexBanner = () => {
           </div>
 
           <div className="item-cell FBH mar-b20 mar-t10">
-            <div className="item-title">主图：</div>
+            <div className="item-title haha">主图：</div>
             <div>
               <div className="FBH">
                 {
-                  checkItem.backgroundImg ? <img src={utils.getFixUrl(checkItem.backgroundImg)} className="item-img" alt="" /> : <div className="empty-img">暂无主图</div>
+                  checkItem.backgroundImg ? <img src={utils.getFixUrl(checkItem.backgroundImg)} className="banner-upload-img" alt="" /> : <div className="empty-img">暂无主图</div>
                 }
                 <Upload
                   name={uploadConfig.name}
                   listType="picture-card"
-                  className="img-uploader mar-l20"
+                  className="img-uploader mar-l10"
                   showUploadList={false}
                   beforeUpload={beforeUpload}
                   headers={uploadConfig.header}
@@ -581,33 +554,33 @@ const IndexBanner = () => {
                   { uploadButton }
                 </Upload>
               </div>
-              <div className="remark-text prompt-text">注：banner标准尺寸为PC端1920 X 535px</div>
-              <div className="remark-text prompt-text">图片命名规范：务必不含中文，且命名请务必和其他文件名字重合</div>
+              <div className="remark-text color-orange">注：banner标准尺寸为PC端1920 X 535px</div>
+              <div className="remark-text color-orange">图片命名规范：务必不含中文，且命名请务必和其他文件名字重合</div>
             </div>
           </div>
 
           <div className="item-cell FBH FBAC">
             <div className="item-title">图片alt：</div>
             <Input
-              className="input-input w-200"
+              className="w-200"
               value={checkItem.alt}
               onChange={e =>{ setCheckItem(
                 {...checkItem, alt: e.target.value}
               )}}
             />
-            <div className="prompt-text">（图片的alt属性，图片加载失败时显示的文案，seo相关）</div>
+            <div className="color-orange">（图片的alt属性，图片加载失败时显示的文案，seo相关）</div>
           </div>
 
           <div className="item-cell FBH FBAC">
             <div className="item-title">key：</div>
             <Input
-              className="input-input w-200"
+              className="w-200"
               value={checkItem.key}
               onChange={e =>{ setCheckItem(
                 {...checkItem, key: e.target.value}
               )}}
             />
-            <div className="prompt-text mar-l10">key是唯一标记，请和其他banner的保持key不同</div>
+            <div className="color-orange mar-l10">key是唯一标记，请和其他banner的保持key不同</div>
           </div>
 
           <div className="item-cell FBH FBAC">
@@ -648,7 +621,7 @@ const IndexBanner = () => {
                 <div className="item-title">按钮文案：</div>
 
                 <Input
-                  className="input-input w-200"
+                  className="w-200"
                   value={checkItem.btnText}
                   placeholder="请输入按钮文案"
                   onChange={e =>{ setCheckItem(
@@ -661,10 +634,10 @@ const IndexBanner = () => {
           {
             checkItem.button && checkItem.action === 'link' ? (
               <div className="item-cell FBH mar-l100">
-                <div className="item-title" style={{lineHeight: '70px'}}>跳转链接：</div>
-                <div className="FBV mar-t20">
+                <div className="item-title">跳转链接：</div>
+                <div className="FBV">
                   <Input
-                    className="button-cell-input"
+                    className="w-600"
                     value={checkItem.href}
                     placeholder="请输入跳转链接"
                     onChange={e =>{ setCheckItem(
@@ -672,8 +645,8 @@ const IndexBanner = () => {
                     )}}
                   />
                   {/* eslint-disable-next-line react/no-unescaped-entities */}
-                  <div className="prompt-text" style={{height: '30px', lineHeight: '30px'}}>如果跳转表单页，格式为: /form?from=/index&action=banner_book，表明从"首页"的"中台书banner"跳转过去的</div>
-                  <div className="prompt-text" style={{height: '30px', lineHeight: '30px'}}>务必给到埋点key，from表示从哪个页面跳转到表单的，action表示点击的哪个按钮触发的。</div>
+                  {/* todo: what 如果跳转表单页，格式为: /form?from=/index&action=banner_book，表明从"首页"的"中台书banner"跳转过去的*/}
+                  <div className="color-orange" style={{height: '30px', lineHeight: '30px'}}>务必给到埋点key，from表示从哪个页面跳转到表单的，action表示点击的哪个按钮触发的。</div>
                 </div>
               </div>
             ) : null
@@ -689,7 +662,7 @@ const IndexBanner = () => {
                     {...checkItem, nofollow: e}
                   )}}
                 />
-                <div className="prompt-text">（添加表示爬虫不爬取该链接，除去友链交换外，一般外部链接需要添加，seo相关）</div>
+                <div className="color-orange">（添加表示爬虫不爬取该链接，除去友链交换外，一般外部链接需要添加，seo相关）</div>
               </div>
             ) : null
           }
@@ -704,14 +677,14 @@ const IndexBanner = () => {
                     {...checkItem, target: e ? '_blank' : '_self'}
                   )}}
                 />
-                <div className="prompt-text">（设置开启，则会在新的浏览器打开该链接，站内链接一般可不开启，站外链接开启)</div>
+                <div className="color-orange">（设置开启，则会在新的浏览器打开该链接，站内链接一般可不开启，站外链接开启)</div>
               </div>
             ) : null
           }
           <div className="item-cell FBH FBAC">
             <div className="item-title">主题：</div>
             <Select
-              className="n-select"
+              className="select-view"
               onChange={e=>{
                 setCheckItem({...checkItem, type: e})
               }}
@@ -720,16 +693,46 @@ const IndexBanner = () => {
               <Option value="default" key="default">默认</Option>
               <Option value="black" key="black">黑色</Option>
             </Select>
-            <div className="prompt-text">（black主题用于深色背景图，此时导航栏颜色为黑色，文案为白色；white主题则和black主题相反）</div>
+            <div className="color-orange">（black主题用于深色背景图，此时导航栏颜色为黑色，文案为白色；white主题则和black主题相反）</div>
+          </div>
+        </Modal>
+
+        <Modal
+          visible={sortVisible}
+          centered
+          width={300}
+          title="排序（序号越大，越靠前）"
+          okText="保存"
+          cancelText="取消"
+          className="sort-module-view-wrap"
+          onOk={()=>{
+            updateSortNumber()
+          }}
+          onCancel={()=>{
+            setSortNumber(null)
+            setSortVisible(false)
+            setCheckItem({})
+          }}
+        >
+          <div className="FBH FBAC FBJC">
+            <Input
+              type="number"
+              className="sort-input"
+              onChange={(e)=>{
+                setSortNumber(e.target.value)
+              }}
+              value={sortNumber}
+            />
           </div>
         </Modal>
 
         <Modal
           visible={deleteVisible}
-          className="resource-list-normal-modal"
+          className="sample-view-modal"
           width={400}
           cancelText="取消"
           okText="确定"
+          title="确定要删除吗（不可恢复）？"
           onOk={()=>{
             deleteItem()
           }}
@@ -737,9 +740,7 @@ const IndexBanner = () => {
             setDeleteVisible(false)
             setCheckItem({})
           }}
-        >
-          <p className="normal-content">确定要删除吗（不可恢复）？</p>
-        </Modal>
+        />
       </div>
     </div>
   )

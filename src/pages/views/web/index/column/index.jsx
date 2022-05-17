@@ -92,7 +92,7 @@ const IndexModule = () => {
           order: target.order,
           status: target.status,
           nofollow: target.nofollow,
-          target: target.openInNewWindow ? '_blank' : null
+          target: target.openInNewWindow ? '_blank' : null,
         } : {...item, order: sortNumber}
         tmp.push(obj)
       } else {
@@ -116,8 +116,8 @@ const IndexModule = () => {
 
   return (
     <div className="index-column-container">
-      <div className="index-module-wrap">
-        <div className="prompt-text mar-l20 mar-t20 mar-b20">to：首页缓存？</div>
+      <div className="module-view-wrap">
+        <div className="color-orange mar-20">to：首页缓存？</div>
         <div className="table-wrap">
           <Table
             bordered
@@ -166,7 +166,7 @@ const IndexModule = () => {
                 return (
                   <>
                     {
-                      itemExpand ? <a href={utils.getFixUrl(status.href)} target="_blank" rel="noreferrer">{utils.getFixUrl(status.href)}</a> : (
+                      itemExpand ? <a href={utils.getFixUrl(status.href)} target="_blank" >{utils.getFixUrl(status.href)}</a> : (
                         <span>
                           {status.href.slice(0,12)}
                           ...
@@ -186,85 +186,8 @@ const IndexModule = () => {
               render={(state, data, index)=> {
                 return (
                   <div>
-                    <Button className="btn-danger mar-r20" onClick={()=>{handleModal(state, 'edit', index)}}>编辑</Button>
-                    <Button className="btn-success" onClick={()=>{handleModal(state, 'sort', index)}}>排序</Button>
-                    <Modal
-                      title="编辑新闻"
-                      centered
-                      className="modal-view-wrap"
-                      maskClosable={false}
-                      maskStyle={{
-                        backgroundColor: 'rgba(0,0,0,0.1)',
-                      }}
-                      visible={editVisible}
-                      onOk={confirmPre}
-                      okText="保存"
-                      cancelText="取消"
-                      onCancel={() => {
-                        setEditVisible(false)
-                      }}
-                      width={600}
-                    >
-                      <div className="item-cell FBH FBAC">
-                        <div className="item-title">标题：</div>
-                        {
-                          checkItem.title ? <Input
-                            className="input-input"
-                            key="cus-title"
-                            onChange={e =>{ setCheckItem(
-                              {...checkItem, title: e.target.value}
-                            )}}
-                            value={checkItem.title}
-                          /> : null
-                        }
-                      </div>
-
-                      <div className="item-cell h-100 FBH">
-                        <div className="item-title">描述：</div>
-                        {
-                          checkItem.text ? <TextArea
-                            className="input-input"
-                            key="cus-summray"
-                            onChange={e =>{ setCheckItem({...checkItem, text: e.target.value}
-                            )}}
-                            value={checkItem.text}
-                          /> : null
-                        }
-                      </div>
-                      <div className="item-cell FBH FBAC">
-                        <div className="item-title">链接：</div>
-                        {
-                          checkItem.href ? <Input
-                            key="cus-href"
-                            className="input-input"
-                            onChange={e =>{ setCheckItem(
-                              {...checkItem, href: e.target.value}
-                            )}}
-                            value={checkItem.href}
-                          /> : null
-                        }
-                      </div>
-                      <div className="item-cell FBH FBAC">
-                        <div className="item-title">是否新页面打开：</div>
-                        <Switch
-                          checked={checkItem.openInNewWindow}
-                          className="mar-l10"
-                          onChange={e =>{ setCheckItem(
-                            {...checkItem, openInNewWindow: e}
-                          )}}
-                        />
-                      </div>
-                      <div className="item-cell FBH FBAC">
-                        <div className="item-title">是否设置nofollow：</div>
-                        <Switch
-                          checked={checkItem.nofollow}
-                          className="mar-l10"
-                          onChange={e =>{ setCheckItem(
-                            {...checkItem, nofollow: e}
-                          )}}
-                        />
-                      </div>
-                    </Modal>
+                    <Button className="btn-primary mar-10" onClick={()=>{handleModal(state, 'edit', index)}}>编辑</Button>
+                    <Button className="btn-warning mar-10" onClick={()=>{handleModal(state, 'sort', index)}}>排序</Button>
                   </div>
                 ) }}
             />
@@ -273,23 +196,98 @@ const IndexModule = () => {
       </div>
 
       <Modal
+        title="编辑新闻"
+        centered
+        className="modal-view-wrap"
+        maskClosable={false}
+        maskStyle={{
+          backgroundColor: 'rgba(0,0,0,0.1)',
+        }}
+        visible={editVisible}
+        onOk={confirmPre}
+        okText="保存"
+        cancelText="取消"
+        onCancel={() => {
+          setEditVisible(false)
+        }}
+        width={600}
+      >
+        <div className="item-cell FBH FBAC">
+          <div className="item-title">标题：</div>
+          {
+            checkItem.title ? <Input
+              key="cus-title"
+              onChange={e =>{ setCheckItem(
+                {...checkItem, title: e.target.value}
+              )}}
+              value={checkItem.title}
+            /> : null
+          }
+        </div>
+
+        <div className="item-cell h-100 FBH">
+          <div className="item-title">描述：</div>
+          {
+            checkItem.text ? <TextArea
+              className="input-input"
+              key="cus-summary"
+              onChange={e =>{ setCheckItem({...checkItem, text: e.target.value}
+              )}}
+              value={checkItem.text}
+            /> : null
+          }
+        </div>
+        <div className="item-cell FBH FBAC">
+          <div className="item-title">链接：</div>
+          {
+            checkItem.href ? <Input
+              key="cus-href"
+              onChange={e =>{ setCheckItem(
+                {...checkItem, href: e.target.value}
+              )}}
+              value={checkItem.href}
+            /> : null
+          }
+        </div>
+        <div className="item-cell FBH FBAC">
+          <div className="item-title">是否新页面打开：</div>
+          <Switch
+            checked={checkItem.openInNewWindow}
+            className="mar-l10"
+            onChange={e =>{ setCheckItem(
+              {...checkItem, openInNewWindow: e}
+            )}}
+          />
+        </div>
+        <div className="item-cell FBH FBAC">
+          <div className="item-title">是否设置nofollow：</div>
+          <Switch
+            checked={checkItem.nofollow}
+            className="mar-l10"
+            onChange={e =>{ setCheckItem(
+              {...checkItem, nofollow: e}
+            )}}
+          />
+        </div>
+      </Modal>
+
+      <Modal
         visible={confirmVisible}
         centered
+        className="sample-view-modal"
+        width={400}
         okText="保存"
+        title="确定要提交保存的修改吗？"
         cancelText="取消"
         onOk={()=>{saveInfo('item')}}
         onCancel={()=>setConfirmVisible(false)}
-      >
-        <p>
-          <ExclamationCircleOutlined style={{color: '#ff4d4f', fontSize: '14px'}} />
-          <span className="mar-l10">确定要提交保存的修改吗？</span>
-        </p>
-      </Modal>
+      />
 
       <Modal
         visible={sortVisible}
         centered
         width={300}
+        className="sort-module-view-wrap"
         title="排序（序号越大，越靠前）"
         okText="保存"
         cancelText="取消"
@@ -299,7 +297,7 @@ const IndexModule = () => {
         <div className="FBH FBAC FBJC">
           <Input
             type="number"
-            className="text-center"
+            className="sort-input"
             onChange={e =>{ setSortNumber(e.target.value - 0)}}
             value={sortNumber}
           />

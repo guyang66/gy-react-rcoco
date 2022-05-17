@@ -4,7 +4,7 @@ import {Provider} from "mobx-react";
 import {ConfigProvider} from "antd";
 import stores from '@store'
 import Router from "./router";
-import './index.css';
+import './index.styl';
 import 'antd/dist/antd.less'
 
 const App = () => {

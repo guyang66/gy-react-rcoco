@@ -221,8 +221,8 @@ const IndexModule = () => {
 
   return (
     <div className="index-news-container">
-      <div className="index-module-wrap">
-        <div className="prompt-text mar-l20 mar-t20 mar-b20">to：首页缓存？</div>
+      <div className="module-view-wrap">
+        <div className="color-orange mar-20">to：首页缓存？</div>
         <div className="table-wrap">
           <Table
             bordered
@@ -249,7 +249,7 @@ const IndexModule = () => {
               align="center"
               render={status=>{
                 return (
-                  <img className="index-img" src={utils.getFixUrl(status.cover)} alt="主图" />
+                  <img className="cover-img" src={utils.getFixUrl(status.cover)} alt="主图" />
                 )
               }}
             />
@@ -282,7 +282,7 @@ const IndexModule = () => {
                 return (
                   <>
                     {
-                      itemExpand ? <a href={utils.getFixUrl(status.href)} target="_blank" rel="noreferrer">{utils.getFixUrl(status.href)}</a> : (
+                      itemExpand ? <a href={utils.getFixUrl(status.href)} target="_blank" >{utils.getFixUrl(status.href)}</a> : (
                         <span>
                           {status.href.slice(0,12)}
                           ...
@@ -302,179 +302,8 @@ const IndexModule = () => {
               render={(state, data, index)=> {
                 return (
                   <div>
-                    <Button className="btn-danger mar-r20" onClick={()=>{handleModal(state, 'edit', index)}}>编辑</Button>
-                    <Button className="btn-success" onClick={()=>{handleModal(state, 'sort', index)}}>排序</Button>
-                    <Modal
-                      title="编辑新闻"
-                      centered
-                      className="modal-view-wrap"
-                      maskClosable={false}
-                      maskStyle={{
-                        backgroundColor: 'rgba(0,0,0,0.1)',
-                      }}
-                      visible={editVisible}
-                      onOk={confirmPre}
-                      okText="保存"
-                      cancelText="取消"
-                      onCancel={() => {
-                        setEditVisible(false)
-                        setEditType('customize')
-                      }}
-                      width={1000}
-                    >
-                      <div className="item-cell FBH FBAC">
-                        <Radio.Group
-                          value={editType}
-                          buttonStyle="solid"
-                          onChange={e=>{setEditType(e.target.value)}}
-                          size="large"
-                        >
-                          <Radio.Button value="customize">自定义导入</Radio.Button>
-                          <Radio.Button value="system">从文章列表导入</Radio.Button>
-                        </Radio.Group>
-                      </div>
-                      <div className="item-cell FBH FBAC">
-                        <div className="item-title">标题：</div>
-                        {
-                          isEditSystem ? <Input
-                            className="input-input"
-                            value={systemItem.title}
-                            key="sys-title"
-                            onChange={e =>{ setSystemItem(
-                              {...systemItem, title: e.target.value}
-                            )}}
-                          /> : (
-                            checkItem.title ? <Input
-                              className="input-input"
-                              key="cus-title"
-                              onChange={e =>{ setCheckItem(
-                                {...checkItem, title: e.target.value}
-                              )}}
-                              value={checkItem.title}
-                            /> : null
-                          )
-                        }
-                      </div>
-
-                      <div className="item-cell h-184 FBH mar-b20">
-                        <div className="item-title">主图：</div>
-                        <div>
-                          <div className="FBH">
-                            {
-                              isEditSystem ? (
-                                systemItem.cover ? <img src={utils.getFixUrl(systemItem.cover)} className="item-img" alt="" /> : <div className="empty-img">暂无主图</div>
-                              ) : (
-                                checkItem.cover ? <img src={utils.getFixUrl(checkItem.cover)} className="item-img" alt="" /> : <div className="empty-img">暂无主图</div>
-                              )
-                            }
-                            <Upload
-                              name={uploadConfig.name}
-                              listType="picture-card"
-                              className="img-uploader mar-l20"
-                              showUploadList={false}
-                              beforeUpload={beforeUpload}
-                              headers={uploadConfig.header}
-                              onChange={handleChange}
-                              data={uploadConfig.body}
-                              action={uploadConfig.url}
-                            >
-                              { uploadButton }
-                            </Upload>
-                          </div>
-                          <div className="remark-text">注：图片标准尺寸为450 x 450px，请上传尽量符合标准的图片，避免图片被拉伸</div>
-                          <div className="remark-text">   图片命名规范：务必不含有中文，且请勿和其它已上传图片名字重复</div>
-                        </div>
-                      </div>
-
-                      <div className="item-cell h-100 FBH">
-                        <div className="item-title">摘要：</div>
-                        {
-                          isEditSystem ? (
-                            <TextArea
-                              className="input-input"
-                              value={systemItem.summary}
-                              key="sys-summary"
-                              onChange={e =>{ setSystemItem({...systemItem, summary: e.target.value}
-                              )}}
-                            />
-                          ) : (
-                            checkItem.summary ? <TextArea
-                              className="input-input"
-                              key="cus-summray"
-                              onChange={e =>{ setCheckItem({...checkItem, summary: e.target.value}
-                              )}}
-                              value={checkItem.summary}
-                            /> : null
-                          )
-                        }
-                      </div>
-                      <div className="item-cell FBH FBAC">
-                        <div className="item-title">时间：</div>
-                        {
-                          isEditSystem ? (
-                            <Input
-                              className="input-input"
-                              value={systemItem.date}
-                              key="sys-datetime"
-                              onChange={e =>{ setSystemItem(
-                                {...systemItem, date: e.target.value}
-                              )}}
-                            />
-                          ) : (
-                            checkItem.date ? <Input
-                              className="input-input"
-                              key="cus-datetime"
-                              onChange={e =>{ setCheckItem(
-                                {...checkItem, date: e.target.value}
-                              )}}
-                              value={checkItem.date}
-                            /> : null
-                          )
-                        }
-                      </div>
-                      <div className="item-cell FBH FBAC">
-                        <div className="item-title">链接：</div>
-                        {
-                          isEditSystem ? (
-                            <Input disabled className="input-input" key="sys-href" value={systemItem.href} />
-                          ) : (
-                            checkItem.href ? <Input
-                              key="cus-href"
-                              className="input-input"
-                              onChange={e =>{ setCheckItem(
-                                {...checkItem, href: e.target.value}
-                              )}}
-                              value={checkItem.href}
-                            /> : null
-                          )
-                        }
-                      </div>
-                      {
-                        isEditSystem ? (
-                          <div className="item-cell FBH FBAC">
-                            <div className="item-title">选择已有文章：</div>
-                            <Select
-                              showSearch
-                              style={{width: 400}}
-                              placeholder="请选择一片文章导入"
-                              optionFilterProp="children"
-                              onSelect={selectChoose}
-                              loading={selectLoading}
-                              filterOption={(input, option) =>
-                                option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
-                            >
-                              {
-                                articles.map( item=>{
-                                  return (
-                                    <Option value={item._id} key={item._id}>{item.title}</Option>
-                                  )
-                                })
-                              }
-                            </Select>
-                          </div>
-                        ) : null
-                      }
-                    </Modal>
+                    <Button className="btn-primary mar-10" onClick={()=>{handleModal(state, 'edit', index)}}>编辑</Button>
+                    <Button className="btn-warning mar-10" onClick={()=>{handleModal(state, 'sort', index)}}>排序</Button>
                   </div>
                 ) }}
             />
@@ -483,23 +312,193 @@ const IndexModule = () => {
       </div>
 
       <Modal
+        title="编辑新闻"
+        centered
+        className="modal-view-wrap"
+        maskClosable={false}
+        maskStyle={{
+          backgroundColor: 'rgba(0,0,0,0.1)',
+        }}
+        visible={editVisible}
+        onOk={confirmPre}
+        okText="保存"
+        cancelText="取消"
+        onCancel={() => {
+          setEditVisible(false)
+          setEditType('customize')
+        }}
+        width={1000}
+      >
+        <div className="item-cell FBH FBAC">
+          <Radio.Group
+            value={editType}
+            buttonStyle="solid"
+            onChange={e=>{setEditType(e.target.value)}}
+          >
+            <Radio.Button value="customize">自定义导入</Radio.Button>
+            <Radio.Button value="system">从文章列表导入</Radio.Button>
+          </Radio.Group>
+        </div>
+        <div className="item-cell FBH FBAC">
+          <div className="item-title">标题：</div>
+          {
+            isEditSystem ? <Input
+              className="input-input"
+              value={systemItem.title}
+              key="sys-title"
+              onChange={e =>{ setSystemItem(
+                {...systemItem, title: e.target.value}
+              )}}
+            /> : (
+              checkItem.title ? <Input
+                className="input-input"
+                key="cus-title"
+                onChange={e =>{ setCheckItem(
+                  {...checkItem, title: e.target.value}
+                )}}
+                value={checkItem.title}
+              /> : null
+            )
+          }
+        </div>
+
+        <div className="item-cell h-184 FBH mar-b20">
+          <div className="item-title">主图：</div>
+          <div>
+            <div className="FBH">
+              {
+                isEditSystem ? (
+                  systemItem.cover ? <img src={utils.getFixUrl(systemItem.cover)} className="cover-img" alt="" /> : <div className="empty-img">暂无主图</div>
+                ) : (
+                  checkItem.cover ? <img src={utils.getFixUrl(checkItem.cover)} className="cover-img" alt="" /> : <div className="empty-img">暂无主图</div>
+                )
+              }
+              <Upload
+                name={uploadConfig.name}
+                listType="picture-card"
+                className="img-uploader mar-l20"
+                showUploadList={false}
+                beforeUpload={beforeUpload}
+                headers={uploadConfig.header}
+                onChange={handleChange}
+                data={uploadConfig.body}
+                action={uploadConfig.url}
+              >
+                { uploadButton }
+              </Upload>
+            </div>
+            <div className="remark-text">注：图片标准尺寸为450 x 450px，请上传尽量符合标准的图片，避免图片被拉伸</div>
+            <div className="remark-text">   图片命名规范：务必不含有中文，且请勿和其它已上传图片名字重复</div>
+          </div>
+        </div>
+
+        <div className="item-cell h-100 FBH">
+          <div className="item-title">摘要：</div>
+          {
+            isEditSystem ? (
+              <TextArea
+                className="input-input"
+                value={systemItem.summary}
+                key="sys-summary"
+                onChange={e =>{ setSystemItem({...systemItem, summary: e.target.value}
+                )}}
+              />
+            ) : (
+              checkItem.summary ? <TextArea
+                className="input-input"
+                key="cus-summray"
+                onChange={e =>{ setCheckItem({...checkItem, summary: e.target.value}
+                )}}
+                value={checkItem.summary}
+              /> : null
+            )
+          }
+        </div>
+        <div className="item-cell FBH FBAC">
+          <div className="item-title">时间：</div>
+          {
+            isEditSystem ? (
+              <Input
+                className="input-input"
+                value={systemItem.date}
+                key="sys-datetime"
+                onChange={e =>{ setSystemItem(
+                  {...systemItem, date: e.target.value}
+                )}}
+              />
+            ) : (
+              checkItem.date ? <Input
+                className="input-input"
+                key="cus-datetime"
+                onChange={e =>{ setCheckItem(
+                  {...checkItem, date: e.target.value}
+                )}}
+                value={checkItem.date}
+              /> : null
+            )
+          }
+        </div>
+        <div className="item-cell FBH FBAC">
+          <div className="item-title">链接：</div>
+          {
+            isEditSystem ? (
+              <Input disabled className="input-input" key="sys-href" value={systemItem.href} />
+            ) : (
+              checkItem.href ? <Input
+                key="cus-href"
+                className="input-input"
+                onChange={e =>{ setCheckItem(
+                  {...checkItem, href: e.target.value}
+                )}}
+                value={checkItem.href}
+              /> : null
+            )
+          }
+        </div>
+        {
+          isEditSystem ? (
+            <div className="item-cell FBH FBAC">
+              <div className="item-title">选择已有文章：</div>
+              <Select
+                showSearch
+                style={{width: 400}}
+                placeholder="请选择一片文章导入"
+                optionFilterProp="children"
+                onSelect={selectChoose}
+                loading={selectLoading}
+                filterOption={(input, option) =>
+                  option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
+              >
+                {
+                  articles.map( item=>{
+                    return (
+                      <Option value={item._id} key={item._id}>{item.title}</Option>
+                    )
+                  })
+                }
+              </Select>
+            </div>
+          ) : null
+        }
+      </Modal>
+
+      <Modal
         visible={confirmVisible}
         centered
+        className="sample-view-modal"
+        width={400}
         okText="保存"
+        title="确定要提交保存的修改吗？"
         cancelText="取消"
         onOk={()=>{saveInfo('item')}}
         onCancel={()=>setConfirmVisible(false)}
-      >
-        <p>
-          <ExclamationCircleOutlined style={{color: '#ff4d4f', fontSize: '14px'}} />
-          <span className="mar-l10">确定要提交保存的修改吗？</span>
-        </p>
-      </Modal>
+      />
 
       <Modal
         visible={sortVisible}
         centered
         width={300}
+        className="sort-module-view-wrap"
         title="排序（序号越大，越靠前）"
         okText="保存"
         cancelText="取消"
@@ -509,7 +508,7 @@ const IndexModule = () => {
         <div className="FBH FBAC FBJC">
           <Input
             type="number"
-            className="text-center"
+            className="sort-input"
             onChange={e =>{ setSortNumber(e.target.value - 0)}}
             value={sortNumber}
           />

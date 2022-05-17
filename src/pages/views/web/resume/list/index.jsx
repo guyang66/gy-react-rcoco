@@ -209,22 +209,22 @@ const ResumeModule = (props) => {
 
   return (
     <div className="resume-list-container">
-      <div className="resume-search-wrap">
+      <div className="module-search-view-wrap">
         <Tag color="#4169E1" className="search-title" icon={<SearchOutlined />}>筛选</Tag>
         <div className="search-container">
           <div className="FBH FBAC mar-l20 h-80">
-            <div className="n-title">岗位名字：</div>
+            <div className="cell-title">岗位名字：</div>
             <Input
-              className="n-input mar-l10"
+              className="search-input mar-l10"
               allowClear
               ref={searchRef}
               placeholder="请输入标题/岗位/描述"
             />
           </div>
           <div className="FBH FBAC mar-l20 h-80">
-            <div className="n-title">上线：</div>
+            <div className="cell-title">上线：</div>
             <Select
-              className="n-search"
+              className="search-select"
               value={searchStatus}
               onChange={
                 (e)=>{
@@ -238,9 +238,9 @@ const ResumeModule = (props) => {
             </Select>
           </div>
           <div className="FBH FBAC mar-l20 h-80">
-            <div className="n-title">岗位分类：</div>
+            <div className="cell-title">岗位分类：</div>
             <Select
-              className="n-search"
+              className="search-select"
               value={searchCategory}
               loading={categorySelectLoading}
               onChange={
@@ -262,9 +262,9 @@ const ResumeModule = (props) => {
             </Select>
           </div>
           <div className="FBH FBAC mar-l20 h-80">
-            <div className="n-title">地区分类：</div>
+            <div className="cell-title">地区分类：</div>
             <Select
-              className="n-search"
+              className="search-select"
               value={searchPlace}
               loading={placeSelectLoading}
               onChange={
@@ -284,7 +284,7 @@ const ResumeModule = (props) => {
             </Select>
           </div>
         </div>
-        <div className="btns-container">
+        <div className="button-view-wrap">
           <Button
             className="btn-info mar-r20"
             onClick={()=>{
@@ -307,8 +307,8 @@ const ResumeModule = (props) => {
         </div>
       </div>
 
-      <div className="resume-table-wrap">
-        <Tabs onChange={tabChange} type="card" className="tabs-wrap">
+      <div className="module-view-wrap min-h-200">
+        <Tabs onChange={tabChange} type="card" className="tabs-view-wrap">
           {
             column.map((item) =>{
               return (
@@ -424,7 +424,7 @@ const ResumeModule = (props) => {
                           return (
                             <>
                               {
-                                status.isTop === 1 ? <span className="online-text">是</span> : <span className="offline-text">否</span>
+                                status.isTop === 1 ? <span className="color-success">是</span> : <span className="color-red">否</span>
                               }
                             </>
                           )
@@ -432,12 +432,12 @@ const ResumeModule = (props) => {
                       />
                       <Column
                         title="操作"
-                        width={200}
+                        width={300}
                         fixed="right"
                         align="center"
                         render={(status)=>{
                           return (
-                            <div className="FBH FBJC" style={{flexWrap: 'wrap'}}>
+                            <div className="FBH FBJC FLW">
                               <Button
                                 className="btn-nature mar-10"
                                 onClick={()=>{
@@ -457,7 +457,7 @@ const ResumeModule = (props) => {
                               {
                                 status.status === 1 ? (
                                   <Button
-                                    className="btn-warning mar-10"
+                                    className="btn-danger mar-10"
                                     onClick={
                                       ()=>{
                                         updateStatus(status._id,0)
@@ -482,7 +482,7 @@ const ResumeModule = (props) => {
                               {
                                 status.isTop === 1 ? (
                                   <Button
-                                    className="btn-danger mar-10"
+                                    className="btn-folk mar-10"
                                     onClick={
                                       ()=>{
                                         updateIsTop(status._id, 0)
@@ -531,12 +531,11 @@ const ResumeModule = (props) => {
                           )
                         }}
                       />
-
                     </Table>
                   }
                   {
                     item.list.length > 0 ? (
-                      <div className="FBH FBAC FBJC pagination-wrap">
+                      <div className="FBH FBAC FBJC mar-t40">
                         <Pagination
                           current={pageParams.page}
                           onChange={e=>{
@@ -554,10 +553,9 @@ const ResumeModule = (props) => {
             })
           }
         </Tabs>
-        <div className="FBH btn-wrap">
+        <div className="FBH operate-view-wrap">
           <Button
-            className="mar-r20"
-            type="primary"
+            className="btn-primary mar-r20"
             onClick={()=>{
               history.push({pathname: '/admin/web/resume/type'})
             }}
@@ -565,8 +563,7 @@ const ResumeModule = (props) => {
             类型管理
           </Button>
           <Button
-            className="mar-r20"
-            type="primary"
+            className="btn-primary mar-r20"
             onClick={()=>{
               history.push({pathname: '/admin/web/resume/tag'})
             }}
@@ -588,6 +585,7 @@ const ResumeModule = (props) => {
         visible={sortVisible}
         centered
         width={300}
+        className="sort-module-view-wrap"
         title="排序（序号越大，越靠前）"
         okText="保存"
         cancelText="取消"
@@ -597,7 +595,7 @@ const ResumeModule = (props) => {
         <div className="FBH FBAC FBJC">
           <Input
             type="number"
-            className="text-center"
+            className="sort-input"
             onChange={e =>{ setSortNumber(e.target.value - 0)}}
             value={sortNumber}
           />
@@ -606,17 +604,16 @@ const ResumeModule = (props) => {
 
       <Modal
         visible={isModalVisible}
-        className="resume-list-normal-modal"
+        className="sample-view-modal"
         width={400}
+        title="确定要删除该岗位吗？"
         cancelText="取消"
         okText="确定"
         onOk={()=>{
           deleteItem(handleId)
         }}
         onCancel={()=>{setIsModalVisible(false)}}
-      >
-        <p className="normal-content">确定要删除该岗位吗？</p>
-      </Modal>
+      />
     </div>
   )
 }

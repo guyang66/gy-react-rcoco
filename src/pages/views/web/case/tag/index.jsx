@@ -16,10 +16,11 @@ const IndexModule = () => {
   const [orderSort, setOrderSort] = useState(null)
 
   const [deleteVisible, setDeleteVisible] = useState(false)
-  const [isAddVisible, setIsAddVisible] = useState(false)
   const [handleId, setHandleId] = useState(null)
   const [sortNumber, setSortNumber] = useState(null)    //  排序的序号绑定值
   const [sortVisible, setSortVisible] = useState(false) // 排序弹窗显示
+
+  const [isAdd, setIsAdd] = useState(false)
   const getList = () => {
     setTableLoading(true)
     const p = {}
@@ -55,14 +56,32 @@ const IndexModule = () => {
   }
 
   const confirmPre = () => {
-    const target = checkItem
-    if(!target.name || target.name === ''){
+    const {key} = checkItem
+    if(!checkItem.name || checkItem.name === ''){
       message.warning('名字不能为空！')
       return
     }
+
+    if((!checkItem.key || checkItem.key === '') && isAdd){
+      message.warning('key不能为空！')
+      return
+    }
+
+    if(keyMap[key] && isAdd){
+      message.warning('key 已存在！')
+      return
+    }
+
     const content = {
-      name: target.name,
-      remark: target.remark || '',
+      name: checkItem.name,
+      remark: checkItem.remark || '',
+    }
+    if(isAdd){
+      content.mainKey = checkItem.mainKey
+      content.key = checkItem.key
+      content.status = checkItem.status
+      saveInfo(content)
+      return;
     }
     updateItem(checkItem._id, content)
   }
@@ -101,40 +120,25 @@ const IndexModule = () => {
   }
 
   const saveInfo = () => {
-    const {key} = checkItem
-    if(keyMap[key]){
-      message.warning('key 已存在！')
-      return
-    }
-
-    if(!checkItem.name || checkItem.name === ''){
-      message.warning('name不能为空！')
-      return
-    }
-
-    if(!checkItem.key || checkItem.key === ''){
-      message.warning('name不能为空！')
-      return
-    }
-
     apiCase.saveCaseTag({content:{...checkItem}}).then(()=>{
       message.success('修改成功！')
       getList()
-      setIsAddVisible(false)
+      setIsAdd(false)
       setCheckItem({})
+      setEditVisible(false)
     })
   }
 
   return (
     <div className="case-tag-container">
-      <div className="index-module-wrap">
+      <div className="module-view-wrap">
         <div className="FBH FBJ mar-t20 mar-b20">
-          <div className="main-color mar-l20">简历标签</div>
+          <div className="color-main mar-l20">简历标签</div>
           <Button
-            className="btn-add mar-r20"
-            type="primary"
+            className="btn-success mar-r20"
             onClick={()=>{
-              setIsAddVisible(true)
+              setIsAdd(true)
+              setEditVisible(true)
               setCheckItem({
                 mainKey: 'resume_tag',
                 key: '',
@@ -185,7 +189,7 @@ const IndexModule = () => {
                 return (
                   <>
                     {
-                      status.status === 1 ? <span className="online-text">已上线</span> : <span className="offline-text">已下线</span>
+                      status.status === 1 ? <span className="color-success">已上线</span> : <span className="color-red">已下线</span>
                     }
                   </>
                 )
@@ -200,11 +204,11 @@ const IndexModule = () => {
               render={(state)=> {
                 return (
                   <div>
-                    <Button className="btn-danger mar-r20" onClick={()=>{handleModal(state)}}>编辑</Button>
+                    <Button className="btn-danger mar-10" onClick={()=>{handleModal(state)}}>编辑</Button>
                     {
                       state.status === 1 ? (
                         <Button
-                          className="btn-warning mar-r20"
+                          className="btn-warning mar-10"
                           onClick={
                             ()=>{
                               updateStatus(state._id, 0)
@@ -215,7 +219,7 @@ const IndexModule = () => {
                         </Button>
                       ) : (
                         <Button
-                          className="btn-success mar-r20"
+                          className="btn-success mar-10"
                           onClick={
                             ()=>{
                               updateStatus(state._id, 1)
@@ -227,7 +231,7 @@ const IndexModule = () => {
                       )
                     }
                     <Button
-                      className="btn-tag mar-r20"
+                      className="btn-tag mar-10"
                       onClick={
                         ()=>{
                           setHandleId(state._id)
@@ -239,7 +243,7 @@ const IndexModule = () => {
                       排序
                     </Button>
                     <Button
-                      className="btn-delete"
+                      className="btn-delete mar-10"
                       onClick={
                         ()=>{
                           setCheckItem(state)
@@ -249,67 +253,6 @@ const IndexModule = () => {
                     >
                       删除
                     </Button>
-
-                    <Modal
-                      title="编辑"
-                      centered
-                      className="add-modal-view-wrap"
-                      maskClosable={false}
-                      maskStyle={{
-                        backgroundColor: 'rgba(0,0,0,0.1)',
-                      }}
-                      visible={editVisible}
-                      onOk={confirmPre}
-                      okText="保存"
-                      cancelText="取消"
-                      onCancel={() => {
-                        setEditVisible(false)
-                      }}
-                      width={500}
-                    >
-                      <div>
-                        <div className="FBH modal-cell">
-                          <div className="normal-title">mainKey：</div>
-                          <Input
-                            className="normal-input"
-                            placeholder="请输入名字"
-                            value={checkItem.mainKey}
-                            disabled
-                          />
-                        </div>
-                        <div className="FBH modal-cell">
-                          <div className="normal-title">key：</div>
-                          <Input
-                            className="normal-input"
-                            placeholder="请输入key"
-                            value={checkItem.key}
-                            disabled
-                          />
-                        </div>
-                        <div className="FBH modal-cell">
-                          <div className="normal-title">名字：</div>
-                          <Input
-                            className="normal-input"
-                            placeholder="请输入名字"
-                            value={checkItem.name}
-                            onChange={e=>{
-                              setCheckItem({...checkItem, name: e.target.value})
-                            }}
-                          />
-                        </div>
-                        <div className="FBH modal-cell">
-                          <div className="normal-title">备注：</div>
-                          <Input
-                            className="normal-input"
-                            placeholder="请输入备注"
-                            value={checkItem.remark}
-                            onChange={e=>{
-                              setCheckItem({...checkItem, remark: e.target.value})
-                            }}
-                          />
-                        </div>
-                      </div>
-                    </Modal>
                   </div>
                 ) }}
             />
@@ -319,8 +262,9 @@ const IndexModule = () => {
 
       <Modal
         visible={deleteVisible}
-        className="resource-list-normal-modal"
+        className="sample-view-modal"
         width={400}
+        title="确定要删除吗（不可恢复）？"
         cancelText="取消"
         okText="确定"
         onOk={()=>{
@@ -330,50 +274,48 @@ const IndexModule = () => {
           setDeleteVisible(false)
           setCheckItem({})
         }}
-      >
-        <p className="normal-content">确定要删除吗（不可恢复）？</p>
-      </Modal>
+      />
 
       <Modal
-        visible={isAddVisible}
-        title="新增标签"
-        width={400}
+        title="编辑"
+        centered
+        className="modal-view-wrap"
+        maskClosable={false}
+        maskStyle={{
+          backgroundColor: 'rgba(0,0,0,0.1)',
+        }}
+        visible={editVisible}
+        onOk={confirmPre}
+        okText="保存"
         cancelText="取消"
-        className="add-modal-view-wrap"
-        okText="确定"
-        onOk={()=>{
-          saveInfo()
+        onCancel={() => {
+          setEditVisible(false)
         }}
-        onCancel={()=>{
-          setCheckItem({})
-          setIsAddVisible(false)
-        }}
+        width={500}
       >
         <div>
-          <div className="FBH modal-cell">
-            <div className="normal-title">mainKey：</div>
+          <div className="item-cell FBH FBAC">
+            <div className="item-title">主Key：</div>
             <Input
-              className="normal-input"
-              placeholder="请输入mainKey"
+              placeholder="请输入主key"
               value={checkItem.mainKey}
               disabled
             />
           </div>
-          <div className="FBH modal-cell">
-            <div className="normal-title">key：</div>
+          <div className="item-cell FBH FBAC">
+            <div className="item-title">key：</div>
             <Input
-              className="normal-input"
-              placeholder="请输入名字"
+              placeholder="请输入key"
               value={checkItem.key}
               onChange={e=>{
                 setCheckItem({...checkItem, key: e.target.value})
               }}
+              disabled={!isAdd}
             />
           </div>
-          <div className="FBH modal-cell">
-            <div className="normal-title">名字：</div>
+          <div className="item-cell FBH FBAC">
+            <div className="item-title">名字：</div>
             <Input
-              className="normal-input"
               placeholder="请输入名字"
               value={checkItem.name}
               onChange={e=>{
@@ -381,11 +323,10 @@ const IndexModule = () => {
               }}
             />
           </div>
-          <div className="FBH modal-cell">
-            <div className="normal-title">备注：</div>
+          <div className="item-cell FBH FBAC">
+            <div className="item-title">备注：</div>
             <Input
-              className="normal-input"
-              placeholder="请输入key"
+              placeholder="请输入备注"
               value={checkItem.remark}
               onChange={e=>{
                 setCheckItem({...checkItem, remark: e.target.value})
@@ -395,11 +336,11 @@ const IndexModule = () => {
         </div>
       </Modal>
 
-
       <Modal
         visible={sortVisible}
         centered
         width={300}
+        className="sort-module-view-wrap"
         title="排序（序号越大，越靠前）"
         okText="保存"
         cancelText="取消"
@@ -409,7 +350,7 @@ const IndexModule = () => {
         <div className="FBH FBAC FBJC">
           <Input
             type="number"
-            className="text-center"
+            className="sort-input"
             onChange={e =>{ setSortNumber(e.target.value - 0)}}
             value={sortNumber}
           />

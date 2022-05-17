@@ -312,22 +312,22 @@ const IndexModule = () => {
   }
   return (
     <div className="activity-product-container">
-      <div className="resume-search-wrap">
+      <div className="module-search-view-wrap">
         <Tag color="#4169E1" className="search-title" icon={<SearchOutlined />}>筛选</Tag>
         <div className="search-container">
           <div className="FBH FBAC mar-l20 h-80">
-            <div className="n-title">关键词：</div>
+            <div className="cell-title">关键词：</div>
             <Input
-              className="n-input mar-l10"
+              className="search-input mar-l10"
               allowClear
               ref={searchRef}
               placeholder="请输入标题/描述/key"
             />
           </div>
           <div className="FBH FBAC mar-l20 h-80">
-            <div className="n-title">上线：</div>
+            <div className="cell-title">上线：</div>
             <Select
-              className="n-search"
+              className="search-select"
               value={searchStatus}
               onChange={
                 (e)=>{
@@ -341,7 +341,7 @@ const IndexModule = () => {
             </Select>
           </div>
         </div>
-        <div className="btns-container">
+        <div className="button-view-wrap">
           <Button
             className="btn-info mar-r20"
             onClick={()=>{
@@ -361,12 +361,11 @@ const IndexModule = () => {
           </Button>
         </div>
       </div>
-      <div className="index-module-wrap">
+      <div className="module-view-wrap min-h-200">
         <div className="FBH FBJ mar-t20 mar-b20">
-          <div className="main-color mar-l20">产品活动</div>
+          <div className="module-title mar-l20">产品活动</div>
           <Button
-            className="btn-add mar-r20"
-            type="primary"
+            className="btn-success mar-r20"
             onClick={()=>{
               setIsAdd(true)
               setEditVisible(true)
@@ -423,7 +422,7 @@ const IndexModule = () => {
               width={100}
               align="center"
               render={status=>{
-                return <img className="logo-img" src={utils.getFixUrl(status.cover)} alt="背景图" />
+                return <img className="cover-img" src={utils.getFixUrl(status.cover)} alt="背景图" />
               }}
             />
             <Column
@@ -495,7 +494,7 @@ const IndexModule = () => {
                 return (
                   <>
                     {
-                      itemExpand ? <a href={utils.getFixUrl(status.href)} target="_blank" rel="noreferrer">{utils.getFixUrl(status.href)}</a> : (
+                      itemExpand ? <a href={utils.getFixUrl(status.href)} target="_blank">{utils.getFixUrl(status.href)}</a> : (
                         <span>
                           {`${status.href.slice(0,12)  }...`}
                         </span>
@@ -513,7 +512,7 @@ const IndexModule = () => {
                 return (
                   <>
                     {
-                      status.type === 'main' ? <span className="main-color">是</span> : <span className="grey-color">否</span>
+                      status.type === 'main' ? <span className="color-main">是</span> : <span className="color-light-grey">否</span>
                     }
                   </>
                 )
@@ -527,7 +526,7 @@ const IndexModule = () => {
                 return (
                   <>
                     {
-                      status.status === 1 ? <span className="online-text">已上线</span> : <span className="offline-text">已下线</span>
+                      status.status === 1 ? <span className="color-success">已上线</span> : <span className="color-red">已下线</span>
                     }
                   </>
                 )
@@ -542,11 +541,11 @@ const IndexModule = () => {
               render={(state)=> {
                 return (
                   <div>
-                    <Button className="btn-danger mar-r20 mar-b10" onClick={()=>{handleModal(state)}}>编辑</Button>
+                    <Button className="btn-primary mar-10" onClick={()=>{handleModal(state)}}>编辑</Button>
                     {
                       state.status === 1 ? (
                         <Button
-                          className="btn-warning mar-r20 mar-b10"
+                          className="btn-danger mar-10"
                           onClick={
                             ()=>{
                               updateStatus(state._id, 0)
@@ -557,7 +556,7 @@ const IndexModule = () => {
                         </Button>
                       ) : (
                         <Button
-                          className="btn-success mar-r20 mar-b10"
+                          className="btn-success mar-10"
                           onClick={
                             ()=>{
                               updateStatus(state._id, 1)
@@ -569,7 +568,7 @@ const IndexModule = () => {
                       )
                     }
                     <Button
-                      className="btn-tag mar-r20"
+                      className="btn-tag mar-10"
                       onClick={
                         ()=>{
                           setCheckItem(state)
@@ -583,7 +582,7 @@ const IndexModule = () => {
                     {
                       state.type === 'normal' ? (
                         <Button
-                          className="btn-warm mar-r20 mar-b10"
+                          className="btn-warm mar-10"
                           onClick={
                             ()=>{
                               updateType(state._id)
@@ -595,7 +594,7 @@ const IndexModule = () => {
                       ) : null
                     }
                     <Button
-                      className="btn-delete mar-b10"
+                      className="btn-delete mar-10"
                       onClick={
                         ()=>{
                           setCheckItem(state)
@@ -631,7 +630,8 @@ const IndexModule = () => {
 
       <Modal
         visible={deleteVisible}
-        className="resource-list-normal-modal"
+        className="sample-view-modal"
+        title="确定要删除吗（不可恢复）？"
         width={400}
         cancelText="取消"
         okText="确定"
@@ -642,15 +642,14 @@ const IndexModule = () => {
           setDeleteVisible(false)
           setCheckItem({})
         }}
-      >
-        <p className="normal-content">确定要删除吗（不可恢复）？</p>
-      </Modal>
+      />
 
       <Modal
         visible={sortVisible}
         centered
         width={300}
         title="排序（序号越大，越靠前）"
+        className="sort-module-view-wrap"
         okText="保存"
         cancelText="取消"
         onOk={updateSort}
@@ -659,7 +658,7 @@ const IndexModule = () => {
         <div className="FBH FBAC FBJC">
           <Input
             type="number"
-            className="text-center"
+            className="sort-input"
             onChange={e =>{ setSortNumber(e.target.value - 0)}}
             value={sortNumber}
           />
@@ -669,7 +668,7 @@ const IndexModule = () => {
       <Modal
         title="编辑"
         centered
-        className="add-modal-view-wrap edit-modal-view"
+        className="modal-view-wrap activity-product-modal"
         maskClosable={false}
         maskStyle={{
           backgroundColor: 'rgba(0,0,0,0.1)',
@@ -684,10 +683,9 @@ const IndexModule = () => {
         width={800}
       >
         <div>
-          <div className="FBH modal-cell">
-            <div className="normal-title">名字：</div>
+          <div className="FBH FBAC item-cell">
+            <div className="item-title">名字：</div>
             <Input
-              className="normal-input"
               placeholder="请输入名字"
               value={checkItem.title}
               onChange={e=>{
@@ -695,20 +693,20 @@ const IndexModule = () => {
               }}
             />
           </div>
-          <div className="FBH modal-cell">
-            <div className="normal-title">描述：</div>
+          <div className="item-cell FBH FBAC">
+            <div className="item-title">描述：</div>
             <TextArea
-              className="input-input"
               style={{minHeight: '80px'}}
               value={checkItem.desc}
               key="sys-summary"
+              placeholder="请输入描述"
               onChange={e =>{
                 setCheckItem({...checkItem, desc: e.target.value})
               }}
             />
           </div>
-          <div className="FBH modal-cell">
-            <div className="normal-title">背景图：</div>
+          <div className="item-cell FBH FBAC mar-t10 mar-b10">
+            <div className="item-title">背景图：</div>
             <div className="FBV">
               <div className="FBH">
                 {
@@ -730,8 +728,8 @@ const IndexModule = () => {
               </div>
             </div>
           </div>
-          <div className="FBH modal-cell">
-            <div className="normal-title">标签：</div>
+          <div className="item-cell FBH">
+            <div className="tag-title">标签：</div>
             <div className="FBV">
               {
                 (checkItem.tag || []).map((item, index)=>{
@@ -754,24 +752,23 @@ const IndexModule = () => {
               }
               {
                 addItem === 'tag' ? (
-                  <div className="FBH">
+                  <div className="FBH mar-b20">
                     <Input
-                      className="desc-input"
                       value={editItem}
                       onChange={(e)=>{
                         setEditItem(e.target.value)
                       }}
                       style={{minWidth: '150px'}}
                     />
-                    <div className="FBH" style={{minWidth: '200px'}}>
-                      <span className="mar-l10">标签风格：</span>
+                    <div className="FBH FBAC" style={{minWidth: '220px'}}>
+                      <span className="mar-l10 mar-r10 tag-opt-tit">标签风格：</span>
                       <Radio.Group onChange={e=>{setTagKey(e.target.value)}} value={tagKey}>
                         <Radio value="fill">填充</Radio>
                         <Radio value="outline">描边</Radio>
                       </Radio.Group>
                     </div>
                     <Button
-                      className="btn-warning mar-l20"
+                      className="btn-warning mar-r20"
                       onClick={()=>{
                         addItemConfirm('tag')
                       }}
@@ -779,7 +776,7 @@ const IndexModule = () => {
                       确认
                     </Button>
                     <Button
-                      className="btn-info mar-l20"
+                      className="btn-info mar-r20"
                       onClick={()=>{
                         setAddItem('')
                         setEditItem('')
@@ -790,7 +787,7 @@ const IndexModule = () => {
                   </div>
                 ) : (
                   <Button
-                    className="btn-success"
+                    className="btn-success mar-b20"
                     style={{width: '100px'}}
                     size="middle"
                     onClick={()=>{handleAddItem('tag')}}
@@ -803,9 +800,8 @@ const IndexModule = () => {
             </div>
           </div>
 
-
-          <div className="FBH modal-cell">
-            <div className="normal-title">优势：</div>
+          <div className="item-cell FBH">
+            <div className="tag-title">优势：</div>
             <div className="FBV">
               {
                 (checkItem.advantage || []).map((item, index)=>{
@@ -830,7 +826,7 @@ const IndexModule = () => {
               }
               {
                 addItem === 'advantage' ? (
-                  <div className="FBH">
+                  <div className="FBH mar-b20">
                     <Input
                       className="desc-input"
                       value={editItem}
@@ -859,7 +855,7 @@ const IndexModule = () => {
                   </div>
                 ) : (
                   <Button
-                    className="btn-success"
+                    className="btn-success mar-b20"
                     style={{width: '100px'}}
                     size="middle"
                     onClick={()=>{handleAddItem('advantage')}}
@@ -872,8 +868,8 @@ const IndexModule = () => {
             </div>
           </div>
 
-          <div className="FBH modal-cell">
-            <div className="normal-title">按钮名字：</div>
+          <div className="item-cell FBH FBAC">
+            <div className="item-title" style={{minWidth: '65px'}}>按钮名字：</div>
             <Input
               className="normal-input"
               placeholder="请输入按钮名字"
@@ -883,8 +879,8 @@ const IndexModule = () => {
               }}
             />
           </div>
-          <div className="FBH modal-cell">
-            <div className="normal-title">链接：</div>
+          <div className="item-cell FBH FBAC">
+            <div className="item-title">链接：</div>
             <Input
               className="normal-input"
               placeholder="请输入链接"
@@ -894,8 +890,8 @@ const IndexModule = () => {
               }}
             />
           </div>
-          <div className="FBH modal-cell">
-            <div className="normal-title">是否新窗口打开：</div>
+          <div className="item-cell FBH FBAC">
+            <div className="item-title">是否新窗口打开：</div>
             <Switch
               checked={checkItem.target}
               className="mar-l10"
