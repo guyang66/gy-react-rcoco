@@ -299,6 +299,11 @@ const ResumeModule = (props) => {
           <Button
             className="btn-primary mar-r20"
             onClick={()=>{
+              setPageParams({
+                page: 1,
+                pageSize: 10,
+                done: false,
+              })
               getList(tabKey)
             }}
           >
@@ -590,7 +595,11 @@ const ResumeModule = (props) => {
         okText="保存"
         cancelText="取消"
         onOk={updateSort}
-        onCancel={()=>setSortVisible(false)}
+        onCancel={()=>{
+          setSortVisible(false)
+          setHandleId(null)
+          setSortNumber(null)
+        }}
       >
         <div className="FBH FBAC FBJC">
           <Input

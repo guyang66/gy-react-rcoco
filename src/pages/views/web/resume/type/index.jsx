@@ -376,7 +376,11 @@ const IndexModule = () => {
         okText="保存"
         cancelText="取消"
         onOk={saveOrder}
-        onCancel={()=>setSortVisible(false)}
+        onCancel={()=>{
+          setCheckItem({})
+          setSortNumber(null)
+          setSortVisible(false)
+        }}
       >
         <div className="FBH FBAC FBJC">
           <Input

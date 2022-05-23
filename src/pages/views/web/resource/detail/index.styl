@@ -1,0 +1,111 @@
+@import '~@common/common'
+.resource-detail-container
+  width 100%
+  height 100%
+  .resource-detail-wrap
+    margin 20px
+    min-height calc(100% - 40px)
+    background-color white
+    border-radius 2px
+    overflow hidden
+    box-shadow 0 2px 4px rgba(0,21,41,.08)
+    .resource-title
+      font-weight 500
+      margin-top 20px
+      font-size 14px
+      color text-color-333
+      margin-left 20px
+    .content-wrap
+      margin-left 20px
+      margin-right 20px
+      margin-bottom 60px
+      min-height 200px
+      .auto-cell
+        flex-direction row
+        display flex
+        margin-top 20px
+        margin-bottom 20px
+        .cell-title
+          color text-color-666
+          white-space nowrap
+          min-width 100px
+          padding-right 10px
+        .tags-wrap
+          width 600px
+          flex-wrap wrap
+          .site-tag-input
+            height 40px
+            line-height 40px
+            width 220px
+          .site-tag-plus
+            color #ffffff
+            cursor pointer
+            background-color #67c23a
+            height 30px
+            line-height 30px
+            border none
+          .key-tags
+            min-width 80px
+            padding-left 10px
+            padding-right 10px
+            margin-bottom 10px
+            height 30px
+            text-align center
+            line-height 30px
+        .text-area
+          height 120px
+          width 600px
+        .radio-wrap
+          height 40px
+          flex-direction row
+          display flex
+        .uploader
+          width 600px
+          .upload-progress
+            width auto
+          .ant-upload
+            width 600px
+            height 120px
+        .column-tag
+          height 20px
+          display inline-block
+          padding-left 16px
+          padding-right 16px
+          text-align center
+          background-color #e8effe
+          border-radius 2px
+          color #4169e1
+          line-height 20px
+        .delete-wrap
+          flex-direction row
+          display flex
+          align-items center
+          height 20px
+          justify-content center
+          .delete-btn
+            color #f56c6c
+            cursor pointer
+      .normal-cell
+        margin-top 10px
+        margin-bottom 10px
+        min-height 40px
+        .cell-title
+          color text-color-666
+          white-space nowrap
+          min-width 100px
+          padding-right 10px
+        .normal-date-picker
+          width 200px
+          margin-left 40px
+        .text-area
+          min-height 80px
+        .normal-input
+          width 300px
+        .normal-select
+          width 200px
+        .w-600
+          width 600px
+        .normal-text
+          color #333333
+        .prompt-text
+          color orange

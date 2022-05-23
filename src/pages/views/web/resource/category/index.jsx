@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import "./index.styl";
-import apiCase from '@api/case'
+import apiResource from '@api/resource'
 import {message, Table, Button, Modal, Input} from 'antd';
 
 const {Column} = Table;
@@ -8,12 +8,11 @@ const {Column} = Table;
 const IndexModule = () => {
 
   const [list, setList] = useState([])  // table 数据源
-  const [keyMap, setKeyMap] = useState({})
   const [tableLoading, setTableLoading] = useState(true) // table是否数据加载中
+  const [keyMap, setKeyMap] = useState({})
 
   const [editVisible, setEditVisible] = useState(false) // 编辑弹窗显示
   const [checkItem, setCheckItem] = useState({})        // 当前操作的行数据源
-  const [orderSort, setOrderSort] = useState(null)
 
   const [deleteVisible, setDeleteVisible] = useState(false)
   const [handleId, setHandleId] = useState(null)
@@ -23,12 +22,7 @@ const IndexModule = () => {
   const [isAdd, setIsAdd] = useState(false)
   const getList = () => {
     setTableLoading(true)
-    const p = {}
-    if(orderSort && orderSort !== ''){
-      p.orderSort = orderSort
-    }
-
-    apiCase.getCaseTag(p).then(data=>{
+    apiResource.getResourceCategory().then(data=>{
       if(!data){
         return
       }
@@ -46,12 +40,9 @@ const IndexModule = () => {
     getList()
   },[])
 
-  useEffect(()=>{
-    getList()
-  },[orderSort])
-
   const handleModal = (state) => {
     setCheckItem(state)
+    setIsAdd(false)
     setEditVisible(true)
   }
 
@@ -74,11 +65,9 @@ const IndexModule = () => {
 
     const content = {
       name: checkItem.name,
-      remark: checkItem.remark || '',
+      key: checkItem.key,
     }
     if(isAdd){
-      content.mainKey = checkItem.mainKey
-      content.key = checkItem.key
       content.status = 1
       content.order = 1
       saveInfo(content)
@@ -92,13 +81,14 @@ const IndexModule = () => {
   }
 
   const updateItem = (id, content) => {
-    apiCase.updateCaseTag({id, content}).then(()=>{
+    apiResource.updateCategory({id, content}).then(()=>{
       message.success('修改成功！')
       getList()
       setCheckItem({})
       setEditVisible(false)
       setSortNumber(null)
       setSortVisible(false)
+      setIsAdd(false)
       setHandleId(null)
     })
   }
@@ -112,7 +102,7 @@ const IndexModule = () => {
 
   const deleteItem = () => {
     const id = checkItem._id
-    apiCase.deleteCaseTag({id}).then(()=>{
+    apiResource.deleteCategory({id}).then(()=>{
       message.success('修改成功！')
       getList()
       setDeleteVisible(false)
@@ -121,7 +111,7 @@ const IndexModule = () => {
   }
 
   const saveInfo = () => {
-    apiCase.saveCaseTag({content:{...checkItem}}).then(()=>{
+    apiResource.saveCategory({content:{...checkItem}}).then(()=>{
       message.success('修改成功！')
       getList()
       setIsAdd(false)
@@ -134,7 +124,7 @@ const IndexModule = () => {
     <div className="case-tag-container">
       <div className="module-view-wrap">
         <div className="FBH FBJ mar-t20 mar-b20">
-          <div className="color-main mar-l20">简历标签</div>
+          <div className="color-main mar-l20">资源分类</div>
           <Button
             className="btn-success mar-r20"
             onClick={()=>{
@@ -159,13 +149,6 @@ const IndexModule = () => {
             dataSource={list}
             loading={tableLoading}
             scroll={{x: '100%'}}
-            onChange={(pagination,filters,sorter)=>{
-              if(sorter){
-                if(sorter.columnKey === 'order'){
-                  setOrderSort(sorter.order)
-                }
-              }
-            }}
             pagination={false}
           >
             <Column
@@ -178,25 +161,9 @@ const IndexModule = () => {
                 )
               }}
             />
-            <Column title="mainKey" dataIndex="mainKey" key="mainKey" width={100} align="center" />
             <Column title="名字" dataIndex="name" key="name" width={100} align="center" />
             <Column title="key" dataIndex="key" key="key" width={100} align="center" />
-            <Column title="备注" dataIndex="remark" key="remark" width={100} align="center" />
-            <Column
-              title="状态"
-              width={80}
-              align="center"
-              render={(status)=>{
-                return (
-                  <>
-                    {
-                      status.status === 1 ? <span className="color-success">已上线</span> : <span className="color-red">已下线</span>
-                    }
-                  </>
-                )
-              }}
-            />
-            <Column title="排序" dataIndex="order" sorter sortOrder={orderSort} key="order" width={80} align="center" />
+            <Column title="排序" dataIndex="order" key="order" width={80} align="center" />
             <Column
               title="操作"
               width={200}
@@ -205,11 +172,20 @@ const IndexModule = () => {
               render={(state)=> {
                 return (
                   <div>
-                    <Button className="btn-primary mar-10" onClick={()=>{handleModal(state)}}>编辑</Button>
+                    <Button
+                      className={state.key === 'all' ? 'btn-disabled mar-10' : 'btn-primary mar-10'}
+                      disabled={state.key === 'all'}
+                      onClick={()=>{
+                        handleModal(state)
+                      }}
+                    >
+                      编辑
+                    </Button>
                     {
                       state.status === 1 ? (
                         <Button
-                          className="btn-warning mar-10"
+                          className={state.key === 'all' ? 'btn-disabled mar-10' : 'btn-warning mar-10'}
+                          disabled={state.key === 'all'}
                           onClick={
                             ()=>{
                               updateStatus(state._id, 0)
@@ -220,7 +196,8 @@ const IndexModule = () => {
                         </Button>
                       ) : (
                         <Button
-                          className="btn-success mar-10"
+                          className={state.key === 'all' ? 'btn-disabled mar-10' : 'btn-success mar-10'}
+                          disabled={state.key === 'all'}
                           onClick={
                             ()=>{
                               updateStatus(state._id, 1)
@@ -232,7 +209,8 @@ const IndexModule = () => {
                       )
                     }
                     <Button
-                      className="btn-tag mar-10"
+                      className={state.key === 'all' ? 'btn-disabled mar-10' : 'btn-tag mar-10'}
+                      disabled={state.key === 'all'}
                       onClick={
                         ()=>{
                           setHandleId(state._id)
@@ -244,7 +222,8 @@ const IndexModule = () => {
                       排序
                     </Button>
                     <Button
-                      className="btn-delete mar-10"
+                      className={state.key === 'all' ? 'btn-disabled mar-10' : 'btn-delete mar-10'}
+                      disabled={state.key === 'all'}
                       onClick={
                         ()=>{
                           setCheckItem(state)
@@ -296,14 +275,6 @@ const IndexModule = () => {
       >
         <div>
           <div className="item-cell FBH FBAC">
-            <div className="item-title">主Key：</div>
-            <Input
-              placeholder="请输入主key"
-              value={checkItem.mainKey}
-              disabled
-            />
-          </div>
-          <div className="item-cell FBH FBAC">
             <div className="item-title">key：</div>
             <Input
               placeholder="请输入key"
@@ -324,16 +295,6 @@ const IndexModule = () => {
               }}
             />
           </div>
-          <div className="item-cell FBH FBAC">
-            <div className="item-title">备注：</div>
-            <Input
-              placeholder="请输入备注"
-              value={checkItem.remark}
-              onChange={e=>{
-                setCheckItem({...checkItem, remark: e.target.value})
-              }}
-            />
-          </div>
         </div>
       </Modal>
 
@@ -348,9 +309,8 @@ const IndexModule = () => {
         onOk={updateSort}
         onCancel={()=>{
           setSortVisible(false)
-          setCheckItem({})
-          setHandleId(null)
           setSortNumber(null)
+          setHandleId(null)
         }}
       >
         <div className="FBH FBAC FBJC">

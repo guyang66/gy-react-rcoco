@@ -266,6 +266,11 @@ const IndexModule = () => {
           <Button
             className="btn-primary mar-r20"
             onClick={()=>{
+              setPageParams({
+                page: 1,
+                pageSize: 10,
+                done: false,
+              })
               getList()
             }}
           >
@@ -502,63 +507,6 @@ const IndexModule = () => {
       />
 
       <Modal
-        visible={isAddVisible}
-        title="新增标签"
-        width={400}
-        cancelText="取消"
-        className="modal-view-wrap"
-        okText="确定"
-        onOk={()=>{
-          saveInfo()
-        }}
-        onCancel={()=>{
-          setCheckItem({})
-          setIsAddVisible(false)
-        }}
-      >
-        <div>
-          <div className="item-cell FBH FBAC">
-            <div className="item-title">mainKey：</div>
-            <Input
-              placeholder="请输入名字"
-              value={checkItem.mainKey}
-              disabled
-            />
-          </div>
-          <div className="item-cell FBH FBAC">
-            <div className="item-title">key：</div>
-            <Input
-              placeholder="请输入名字"
-              value={checkItem.key}
-              onChange={e=>{
-                setCheckItem({...checkItem, key: e.target.value})
-              }}
-            />
-          </div>
-          <div className="item-cell FBH FBAC">
-            <div className="item-title">名字：</div>
-            <Input
-              placeholder="请输入名字"
-              value={checkItem.name}
-              onChange={e=>{
-                setCheckItem({...checkItem, name: e.target.value})
-              }}
-            />
-          </div>
-          <div className="item-cell FBH FBAC">
-            <div className="item-title">备注：</div>
-            <Input
-              placeholder="请输入key"
-              value={checkItem.remark}
-              onChange={e=>{
-                setCheckItem({...checkItem, remark: e.target.value})
-              }}
-            />
-          </div>
-        </div>
-      </Modal>
-
-      <Modal
         visible={sortVisible}
         centered
         width={300}
@@ -567,7 +515,11 @@ const IndexModule = () => {
         cancelText="取消"
         className="sort-module-view-wrap"
         onOk={updateSort}
-        onCancel={()=>setSortVisible(false)}
+        onCancel={()=>{
+          setSortVisible(false)
+          setCheckItem({})
+          setSortNumber(null)
+        }}
       >
         <div className="FBH FBAC FBJC">
           <Input
@@ -582,7 +534,7 @@ const IndexModule = () => {
       <Modal
         title={isAdd ? '新增案例' : '编辑案例'}
         centered
-        className="add-modal-view-wrap edit-modal-view"
+        className="modal-view-wrap"
         maskClosable={false}
         maskStyle={{
           backgroundColor: 'rgba(0,0,0,0.1)',
@@ -599,8 +551,8 @@ const IndexModule = () => {
         width={800}
       >
         <div>
-          <div className="FBH modal-cell">
-            <div className="normal-title">标题：</div>
+          <div className="FBH FBAC item-cell">
+            <div className="item-title">标题：</div>
             <Input
               className="normal-input"
               placeholder="请输入标题"
@@ -609,18 +561,18 @@ const IndexModule = () => {
               )}}
             />
           </div>
-          <div className="FBH modal-cell">
-            <div className="normal-title">描述：</div>
+          <div className="FBH item-cell">
+            <div className="item-title-top">描述：</div>
             <TextArea
-              className="textarea-input"
+              style={{minHeight:'80px'}}
               value={checkItem.desc}
               key="sys-summary"
               onChange={e =>{ setCheckItem({...checkItem, desc: e.target.value}
               )}}
             />
           </div>
-          <div className="FBH modal-cell">
-            <div className="normal-title">关键词：</div>
+          <div className="FBH FBAC item-cell">
+            <div className="item-title">关键词：</div>
             <Input
               className="normal-input"
               placeholder="请输入关键词，每个词以英文逗号（,）分开"
@@ -630,8 +582,8 @@ const IndexModule = () => {
               }}
             />
           </div>
-          <div className="FBH modal-cell">
-            <div className="normal-title">logo：</div>
+          <div className="FBH item-cell">
+            <div className="item-title-top">logo：</div>
             <div className="FBV">
               <div className="FBH">
                 {
@@ -654,8 +606,8 @@ const IndexModule = () => {
               <div className="remark-text color-orange mar-t10">注：标准尺寸为正方形（如80px x 80px、100px x 100px都可）</div>
             </div>
           </div>
-          <div className="FBH modal-cell">
-            <div className="normal-title">跳转链接：</div>
+          <div className="FBH FBAC item-cell">
+            <div className="item-title" style={{minWidth: '65px'}}>跳转链接：</div>
             <Input
               className="normal-input"
               placeholder="请输入跳转链接"
@@ -665,8 +617,8 @@ const IndexModule = () => {
               }}
             />
           </div>
-          <div className="FBH modal-cell">
-            <div className="normal-title">是否新窗口打开：</div>
+          <div className="FBH FBAC item-cell">
+            <div className="item-title">是否新窗口打开：</div>
             <Switch
               checked={checkItem.target}
               className="mar-l10"
@@ -675,8 +627,8 @@ const IndexModule = () => {
               )}}
             />
           </div>
-          <div className="FBH modal-cell">
-            <div className="normal-title">添加nofollow：</div>
+          <div className="FBH FBAC item-cell">
+            <div className="item-title">添加nofollow：</div>
             <Switch
               checked={checkItem.nofollow}
               className="mar-l10"

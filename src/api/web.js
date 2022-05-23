@@ -29,23 +29,6 @@ export default {
     })
   },
 
-  getIndexNews(params) {
-    return fetch({
-      url: urlPrefix + 'index/news/auth',
-      method: 'get',
-      params,
-    })
-  },
-
-  updateIndexNews(param) {
-    return fetch({
-      url: urlPrefix + 'index/news/update/auth',
-      method: 'post',
-      data: param,
-    })
-  },
-
-
   getIndexColumn(params) {
     return fetch({
       url: urlPrefix + 'index/Column/auth',

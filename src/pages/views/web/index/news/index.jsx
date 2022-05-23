@@ -55,7 +55,7 @@ const IndexModule = () => {
   const isEditSystem = editType === 'system'
   const getList = () => {
     setTableLoading(true)
-    apiWeb.getIndexNews().then(data=>{
+    apiNews.getIndexNews().then(data=>{
       if(!data){
         return
       }
@@ -203,7 +203,7 @@ const IndexModule = () => {
         tmp.push(JSON.parse(JSON.stringify(item)))
       }
     })
-    apiWeb.updateIndexNews({
+    apiNews.updateIndexNews({
       content: JSON.stringify(tmp),
     }).then(()=>{
       // 把状态清空
@@ -226,7 +226,6 @@ const IndexModule = () => {
         <div className="table-wrap">
           <Table
             bordered
-            rowKey={(record) => record.index}
             dataSource={list}
             loading={tableLoading}
             scroll={{x: 1530}}
@@ -503,7 +502,11 @@ const IndexModule = () => {
         okText="保存"
         cancelText="取消"
         onOk={saveInfo}
-        onCancel={()=>setSortVisible(false)}
+        onCancel={()=>{
+          setSortVisible(false)
+          setSortNumber(null)
+          setCheckItem({})
+        }}
       >
         <div className="FBH FBAC FBJC">
           <Input

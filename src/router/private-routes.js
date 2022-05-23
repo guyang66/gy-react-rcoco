@@ -10,6 +10,10 @@ import CaseTag from "@pages/views/web/case/tag";
 import ActivityProduct from "@pages/views/web/activity/product";
 import ActivityHot from "@pages/views/web/activity/hot";
 import ActivityBrand from "@pages/views/web/activity/brand";
+import resourceList from "@pages/views/web/resource/list";
+import resourceColumn from "@pages/views/web/resource/column";
+import resourceCategory from "@pages/views/web/resource/category";
+import resourceDetail from "@pages/views/web/resource/detail";
 
 // import ResumeAdd from "@pages/views/web/resume/add";
 // import resourceList from "@pages/views/web/resource/list";
@@ -129,33 +133,42 @@ const privateRoutes = [
     backUrl: '',
     component: ActivityBrand,
   },
-  // {
-  //   path: '/admin/web/resource/list',
-  //   name: '资源列表',
-  //   exact: true,
-  //   key: 'web_resource_list',
-  //   role: [],
-  //   backUrl: '',
-  //   component: resourceList,
-  // },
-  // {
-  //   path: '/admin/web/resource/column',
-  //   name: '栏目管理',
-  //   exact: true,
-  //   key: 'web_resource_column',
-  //   role: [],
-  //   backUrl: '',
-  //   component: resourceColumn,
-  // },
-  // {
-  //   path: '/admin/web/resource/detail',
-  //   roles: [],
-  //   name: '资源详情',
-  //   key: 'web_resource_detail',
-  //   exact: true,
-  //   backUrl: '',
-  //   component: resourceDetail,
-  // },
+  {
+    path: '/admin/web/resource/list',
+    name: '资源列表',
+    exact: true,
+    key: 'web_resource_list',
+    role: [],
+    backUrl: '',
+    component: resourceList,
+  },
+  {
+    path: '/admin/web/resource/column',
+    name: '栏目管理',
+    exact: true,
+    key: 'web_resource_column',
+    role: [],
+    backUrl: '',
+    component: resourceColumn,
+  },
+  {
+    path: '/admin/web/resource/category',
+    name: '分类管理管理',
+    exact: true,
+    key: 'web_resource_category',
+    role: [],
+    backUrl: '',
+    component: resourceCategory,
+  },
+  {
+    path: '/admin/web/resource/detail',
+    roles: [],
+    name: '资源详情',
+    key: 'web_resource_detail',
+    exact: true,
+    backUrl: '',
+    component: resourceDetail,
+  },
   // {
   //   path: '/admin/web/news/list',
   //   roles: [],

@@ -5,7 +5,6 @@ import utils from '@utils'
 
 import {message, Table, Button, Modal, Input, Switch} from 'antd';
 import {
-  ExclamationCircleOutlined,
   MenuFoldOutlined,
   MenuUnfoldOutlined,
 } from "@ant-design/icons";
@@ -292,7 +291,11 @@ const IndexModule = () => {
         okText="保存"
         cancelText="取消"
         onOk={saveInfo}
-        onCancel={()=>setSortVisible(false)}
+        onCancel={()=>{
+          setSortVisible(false)
+          setSortNumber(null)
+          setCheckItem({})
+        }}
       >
         <div className="FBH FBAC FBJC">
           <Input

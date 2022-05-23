@@ -10,4 +10,21 @@ export default {
       params,
     })
   },
+
+  getIndexNews(params) {
+    return fetch({
+      url: '/admin/api/index/news/auth',
+      method: 'get',
+      params,
+    })
+  },
+
+  updateIndexNews(param) {
+    return fetch({
+      url: '/admin/api/index/news/update/auth',
+      method: 'post',
+      data: param,
+    })
+  },
+
 }

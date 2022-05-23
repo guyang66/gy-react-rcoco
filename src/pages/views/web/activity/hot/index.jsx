@@ -295,6 +295,11 @@ const IndexModule = () => {
           <Button
             className="btn-primary mar-r20"
             onClick={()=>{
+              setPageParams({
+                page: 1,
+                pageSize: 10,
+                done: false,
+              })
               getList()
             }}
           >
@@ -588,7 +593,11 @@ const IndexModule = () => {
         okText="保存"
         cancelText="取消"
         onOk={updateSort}
-        onCancel={()=>setSortVisible(false)}
+        onCancel={()=>{
+          setSortVisible(false)
+          setCheckItem({})
+          setSortNumber(null)
+        }}
       >
         <div className="FBH FBAC FBJC">
           <Input
@@ -628,8 +637,8 @@ const IndexModule = () => {
               }}
             />
           </div>
-          <div className="FBH FBAC item-cell">
-            <div className="item-title">描述：</div>
+          <div className="FBH item-cell">
+            <div className="item-title-top">描述：</div>
             <TextArea
               className="input-input"
               style={{minHeight: '80px'}}
@@ -640,8 +649,8 @@ const IndexModule = () => {
               }}
             />
           </div>
-          <div className="FBH FBAC item-cell mar-t10 mar-b10">
-            <div className="item-title">封面图：</div>
+          <div className="FBH item-cell mar-t10 mar-b10">
+            <div className="item-title-top">封面图：</div>
             <div className="FBV">
               <div className="FBH">
                 {
