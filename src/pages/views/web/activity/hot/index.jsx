@@ -308,10 +308,9 @@ const IndexModule = () => {
         </div>
       </div>
       <div className="module-view-wrap min-h-200">
-        <div className="FBH FBJ mar-t20 mar-b20">
-          <div className="module-title mar-l20">热门活动</div>
+        <div className="FBH mar-t20 mar-b20">
           <Button
-            className="btn-success mar-r20"
+            className="btn-success mar-l20"
             onClick={()=>{
               setIsAdd(true)
               setEditVisible(true)
@@ -332,7 +331,7 @@ const IndexModule = () => {
               })
             }}
           >
-            新增
+            新增活动
           </Button>
         </div>
         <div className="table-wrap">

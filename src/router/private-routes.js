@@ -14,14 +14,13 @@ import resourceList from "@pages/views/web/resource/list";
 import resourceColumn from "@pages/views/web/resource/column";
 import resourceCategory from "@pages/views/web/resource/category";
 import resourceDetail from "@pages/views/web/resource/detail";
-
+import newsList from "@pages/views/web/news/list";
+import newsDetail from "@pages/views/web/news/detail";
+import newsCategory from "@pages/views/web/news/category";
 // import ResumeAdd from "@pages/views/web/resume/add";
 // import resourceList from "@pages/views/web/resource/list";
 // import resourceDetail from "@pages/views/web/resource/detail";
 // import resourceColumn from "@pages/views/web/resource/column";
-// import newsList from "@pages/views/web/news/list";
-// import newsDetail from "@pages/views/web/news/detail";
-// import newsTag from "@pages/views/web/news/tag";
 // import TdkManage from "@pages/views/web/tdk";
 
 const privateRoutes = [
@@ -169,42 +168,42 @@ const privateRoutes = [
     backUrl: '',
     component: resourceDetail,
   },
-  // {
-  //   path: '/admin/web/news/list',
-  //   roles: [],
-  //   name: '新闻列表',
-  //   key: 'web_news_list',
-  //   exact: true,
-  //   backUrl: '',
-  //   component: newsList,
-  // },
-  // {
-  //   path: '/admin/web/news/tag',
-  //   roles: [],
-  //   name: '标签管理',
-  //   key: 'web_news_tag',
-  //   exact: true,
-  //   backUrl: '',
-  //   component: newsTag,
-  // },
-  // {
-  //   path: '/admin/web/news/detail',
-  //   roles: [],
-  //   name: '新闻列表',
-  //   key: 'web_news_detail',
-  //   exact: true,
-  //   backUrl: '',
-  //   component: newsDetail,
-  // },
-  // {
-  //   path: '/admin/web/tdk',
-  //   roles: [],
-  //   name: 'tdk管理',
-  //   key: 'web_tdk',
-  //   exact: true,
-  //   backUrl: '',
-  //   component: TdkManage,
-  // },
+  {
+    path: '/admin/web/news/list',
+    roles: [],
+    name: '新闻列表',
+    key: 'web_news_list',
+    exact: true,
+    backUrl: '',
+    component: newsList,
+  },
+  {
+    path: '/admin/web/news/category',
+    roles: [],
+    name: '标签管理',
+    key: 'web_news_category',
+    exact: true,
+    backUrl: '',
+    component: newsCategory,
+  },
+  {
+    path: '/admin/web/news/detail',
+    roles: [],
+    name: '新闻详情',
+    key: 'web_news_detail',
+    exact: true,
+    backUrl: '',
+    component: newsDetail,
+  },
+  {
+    path: '/admin/web/tdk',
+    roles: [],
+    name: 'tdk管理',
+    key: 'web_tdk',
+    exact: true,
+    backUrl: '',
+    component: null,
+  },
 ];
 
 export default privateRoutes;

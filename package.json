@@ -65,7 +65,8 @@
     "rimraf": "^3.0.2",
     "stylus": "^0.54.7",
     "stylus-loader": "^3.0.2",
-    "web-vitals": "^1.0.1"
+    "web-vitals": "^1.0.1",
+    "wangeditor": "^4.7.9"
   },
   "devDependencies": {
     "async-mkdirp": "^1.2.7",

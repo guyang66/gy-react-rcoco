@@ -121,12 +121,11 @@ const IndexModule = () => {
   }
 
   return (
-    <div className="case-tag-container">
+    <div className="resource-category-container">
       <div className="module-view-wrap">
-        <div className="FBH FBJ mar-t20 mar-b20">
-          <div className="color-main mar-l20">资源分类</div>
+        <div className="FBH mar-t20 mar-b20">
           <Button
-            className="btn-success mar-r20"
+            className="btn-success mar-l20"
             onClick={()=>{
               setIsAdd(true)
               setEditVisible(true)
@@ -164,6 +163,20 @@ const IndexModule = () => {
             <Column title="名字" dataIndex="name" key="name" width={100} align="center" />
             <Column title="key" dataIndex="key" key="key" width={100} align="center" />
             <Column title="排序" dataIndex="order" key="order" width={80} align="center" />
+            <Column
+              title="状态"
+              width={80}
+              align="center"
+              render={(status)=>{
+                return (
+                  <>
+                    {
+                      status.status === 1 ? <span className="color-success">已上线</span> : <span className="color-red">已下线</span>
+                    }
+                  </>
+                )
+              }}
+            />
             <Column
               title="操作"
               width={200}

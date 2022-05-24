@@ -1,32 +1,38 @@
 import React, {useState, useEffect, useRef} from "react";
 import "./index.styl";
-import apiResource from '@api/resource'
+import apiNews from '@api/news'
 import {message, Table, Button, Modal, Input, Tag, Select, Pagination} from 'antd';
 import {SearchOutlined} from "@ant-design/icons";
+import utils from '@utils'
 
 const {Column} = Table;
 const {Option} = Select
 
 const IndexModule = (props) => {
-
   const {history} = props
 
   const [list, setList] = useState([])  // table 数据源
   const [total, setTotal] = useState(0)
-  const [category, setCategory] = useState([])
-  const [categoryMap, setCategoryMap] = useState({})
   const [tableLoading, setTableLoading] = useState(true) // table是否数据加载中
   const [searchStatus, setSearchStatus] = useState(2)
   const [searchCategory, setSearchCategory] = useState('all')
+  const [searchIsRecommend, setSearchIsRecommend] = useState(2)
+  const [searchIsHot, setSearchIsHot] = useState(2)
+  const [searchIsTop, setSearchIsTop] = useState(2)
+
+  const [checkItem, setCheckItem] = useState({})        // 当前操作的行数据源
   const [orderSort, setOrderSort] = useState(null)
-  const [downloadSort, setDownloadSort] = useState(null)
+  const [viewCountSort, setViewCountSort] = useState(null)
+
+  const [categoryMap, setCategoryMap] = useState({})
+  const [categories, setCategories] = useState([])
+  const [categorySelectLoading, setCategorySelectLoading] = useState(true)
 
   const [deleteVisible, setDeleteVisible] = useState(false)
   const [handleId, setHandleId] = useState(null)
   const [sortNumber, setSortNumber] = useState(null)    //  排序的序号绑定值
   const [sortVisible, setSortVisible] = useState(false) // 排序弹窗显示
 
-  const [categorySelectLoading, setCategorySelectLoading] = useState(true)
   const [pageParams, setPageParams] = useState({
     page: 1,
     pageSize: 10,
@@ -34,12 +40,22 @@ const IndexModule = (props) => {
   })
 
   const searchRef = useRef()
+
   const getList = () => {
     setTableLoading(true)
     const search = searchRef.current.state.value
     const p = {
       page: pageParams.page,
       pageSize: pageParams.pageSize,
+    }
+    if(searchIsTop !== 2 && searchIsTop !== '2') {
+      p.isTop = searchIsTop
+    }
+    if(searchIsRecommend !== 2 && searchIsRecommend !== '2') {
+      p.isRecommend = searchIsRecommend
+    }
+    if(searchIsHot !== 2 && searchIsHot !== '2') {
+      p.isHot = searchIsHot
     }
     if(searchStatus !== 2 && searchStatus !== '2') {
       p.status = searchStatus
@@ -50,14 +66,14 @@ const IndexModule = (props) => {
     if(orderSort && orderSort !== ''){
       p.orderSort = orderSort
     }
-    if(downloadSort && downloadSort !== ''){
-      p.downloadSort = downloadSort
+    if(viewCountSort && viewCountSort !== ''){
+      p.viewCountSort = viewCountSort
     }
     if(search && search !== ''){
       p.searchKey = search
     }
 
-    apiResource.getResourceList(p).then(data=>{
+    apiNews.getNewsList(p).then(data=>{
       if(!data){
         return
       }
@@ -68,7 +84,7 @@ const IndexModule = (props) => {
   }
 
   const getCategory = () => {
-    apiResource.getCategoryOnlineList().then(data=>{
+    apiNews.getNewsCategoryOnline().then(data=>{
       if(!data){
         return
       }
@@ -76,7 +92,7 @@ const IndexModule = (props) => {
       data.forEach(item=>{
         tmp[item.key] = item
       })
-      setCategory(data)
+      setCategories(data)
       setCategoryMap(tmp)
       setCategorySelectLoading(false)
     })
@@ -89,16 +105,31 @@ const IndexModule = (props) => {
 
   useEffect(()=>{
     getList()
-  },[orderSort, pageParams, downloadSort])
+  },[orderSort,pageParams,viewCountSort])
 
-  const updateStatus = (id, status) => {
-    updateItem(id,{status})
+  const updateStatus = (id, value, key) => {
+    if(key === 'status'){
+      updateItem(id,{status: value})
+      return
+    }
+    if(key === 'isTop'){
+      updateItem(id,{isTop: value})
+      return
+    }
+    if(key === 'isRecommend'){
+      updateItem(id,{isRecommend: value})
+      return
+    }
+    if(key === 'isHot'){
+      updateItem(id,{isHot: value})
+    }
   }
 
   const updateItem = (id, content) => {
-    apiResource.updateResource({id, content}).then(()=>{
+    apiNews.updateNews({id, content}).then(()=>{
       message.success('修改成功！')
       getList()
+      setCheckItem({})
       setSortNumber(null)
       setSortVisible(false)
       setHandleId(null)
@@ -113,11 +144,12 @@ const IndexModule = (props) => {
   }
 
   const deleteItem = () => {
-    const id = handleId
-    apiResource.deleteResource({id}).then(()=>{
+    const id = checkItem._id
+    apiNews.deleteNews({id}).then(()=>{
       message.success('修改成功！')
       getList()
       setDeleteVisible(false)
+      setCheckItem({})
     })
   }
 
@@ -129,17 +161,17 @@ const IndexModule = (props) => {
   }
 
   return (
-    <div className="resource-list-container">
+    <div className="news-list-container">
       <div className="module-search-view-wrap">
         <Tag color="#4169E1" className="search-title" icon={<SearchOutlined />}>筛选</Tag>
         <div className="search-container">
           <div className="FBH FBAC mar-l20 h-80">
-            <div className="cell-title">岗位名字：</div>
+            <div className="cell-title">名字：</div>
             <Input
               className="search-input mar-l10"
               allowClear
               ref={searchRef}
-              placeholder="请输入标题/描述/日期/类型"
+              placeholder="请输入标题/概要/日期..."
             />
           </div>
           <div className="FBH FBAC mar-l20 h-80">
@@ -158,21 +190,72 @@ const IndexModule = (props) => {
               <Option value={0}>已下线</Option>
             </Select>
           </div>
+
           <div className="FBH FBAC mar-l20 h-80">
-            <div className="cell-title">岗位分类：</div>
+            <div className="cell-title">是否是置顶：</div>
+            <Select
+              className="search-select"
+              value={searchIsTop}
+              onChange={
+                (e)=>{
+                  setSearchIsTop(e)
+                }
+              }
+            >
+              <Option value={2}>全部</Option>
+              <Option value={1}>是</Option>
+              <Option value={0}>否</Option>
+            </Select>
+          </div>
+
+          <div className="FBH FBAC mar-l20 h-80">
+            <div className="cell-title">是否是推荐：</div>
+            <Select
+              className="search-select"
+              value={searchIsRecommend}
+              onChange={
+                (e)=>{
+                  setSearchIsRecommend(e)
+                }
+              }
+            >
+              <Option value={2}>全部</Option>
+              <Option value={1}>是</Option>
+              <Option value={0}>否</Option>
+            </Select>
+          </div>
+
+          <div className="FBH FBAC mar-l20 h-80">
+            <div className="cell-title">是否是热门：</div>
+            <Select
+              className="search-select"
+              value={searchIsHot}
+              onChange={
+                (e)=>{
+                  setSearchIsHot(e)
+                }
+              }
+            >
+              <Option value={2}>全部</Option>
+              <Option value={1}>是</Option>
+              <Option value={0}>否</Option>
+            </Select>
+          </div>
+
+          <div className="FBH FBAC mar-l20 h-80">
+            <div className="cell-title">分类：</div>
             <Select
               className="search-select"
               value={searchCategory}
               loading={categorySelectLoading}
               onChange={
                 (e)=>{
-                  console.log(e)
                   setSearchCategory(e)
                 }
               }
             >
               {
-                category.map(item=>{
+                categories.map(item=>{
                   return (
                     <Option key={item.key} value={item.key}>{item.name}</Option>
                   )
@@ -214,10 +297,18 @@ const IndexModule = (props) => {
           <Button
             className="btn-success mar-l20"
             onClick={()=>{
-              history.push({pathname: '/admin/web/resource/detail',state: {edit: 'Y', new: 'Y'}, search: '?new=Y'})
+              history.push({pathname: '/admin/web/news/detail',state: {edit: 'Y', new: 'Y'}, search: '?new=Y'})
             }}
           >
-            新增资源
+            新增文章
+          </Button>
+          <Button
+            className="btn-primary mar-l20"
+            onClick={()=>{
+              history.push({pathname: '/admin/web/news/category'})
+            }}
+          >
+            分类
           </Button>
         </div>
         <div className="table-wrap">
@@ -231,8 +322,8 @@ const IndexModule = (props) => {
               if(sorter){
                 if(sorter.columnKey === 'order'){
                   setOrderSort(sorter.order)
-                } else if (sorter.columnKey === 'download'){
-                  setDownloadSort(sorter.order)
+                } else if (sorter.columnKey === 'viewCount'){
+                  setViewCountSort(sorter.order)
                 }
               }
             }}
@@ -248,35 +339,41 @@ const IndexModule = (props) => {
                 )
               }}
             />
-            <Column title="标题" dataIndex="title" key="title" width={120} align="center" />
-            <Column title="描述" dataIndex="desc" key="desc" width={200} align="center" />
+            <Column title="标题" dataIndex="title" key="title" width={150} align="center" />
             <Column
-              title="分类"
-              width={100}
+              title="概要"
+              width={200}
               align="center"
-              render={(status)=>{
+              render={status=>{
                 return (
-                  <span>{getCategoryKey(status.key)}</span>
+                  <span className="summary-text">{status.summary}</span>
+                )
+              }}
+            />
+            <Column
+              title="封面"
+              width={140}
+              align="center"
+              render={status=>{
+                return (
+                  <>
+                    {
+                      status.cover ? <img className="cover-img" src={utils.getFixUrl(status.cover)} alt="封面图" /> : null
+                    }
+                  </>
                 )
               }}
             />
             <Column title="日期" dataIndex="date" key="date" width={100} align="center" />
-            <Column title="大小" dataIndex="size" key="size" width={100} align="center" />
-            <Column title="类型" dataIndex="type" key="type" width={100} align="center" />
             <Column
-              title="标签"
+              title="分类"
               width={100}
               align="center"
-              render={(status)=>{
-                return (
-                  (status.tag || []).map((item,index)=>{
-                    return (
-                      <span>{item}{index < status.tag.length - 1 ? ',' : ''}</span>
-                    )
-                  })
-                )
+              render={status=>{
+                return getCategoryKey(status.type)
               }}
             />
+            <Column title="作者" dataIndex="author" key="author" width={100} align="center" />
             <Column
               title="状态"
               width={80}
@@ -291,11 +388,54 @@ const IndexModule = (props) => {
                 )
               }}
             />
-            <Column title="下载量" dataIndex="download" key="download" sorter sortOrder={downloadSort} width={100} align="center" />
+            <Column
+              title="是否推荐"
+              width={80}
+              align="center"
+              render={(status)=>{
+                return (
+                  <>
+                    {
+                      status.isRecommend ? <span className="color-success">是</span> : <span>否</span>
+                    }
+                  </>
+                )
+              }}
+            />
+            <Column
+              title="是否热门"
+              width={80}
+              align="center"
+              render={(status)=>{
+                return (
+                  <>
+                    {
+                      status.isHot ? <span className="color-success">是</span> : <span>否</span>
+                    }
+                  </>
+                )
+              }}
+            />
+            <Column
+              title="是否置顶"
+              width={80}
+              align="center"
+              render={(status)=>{
+                return (
+                  <>
+                    {
+                      status.isTop ? <span className="color-success">是</span> : <span>否</span>
+                    }
+                  </>
+                )
+              }}
+            />
+
+            <Column title="浏览量" dataIndex="viewCount" sorter sortOrder={viewCountSort} key="viewCount" width={80} align="center" />
             <Column title="排序" dataIndex="order" sorter sortOrder={orderSort} key="order" width={80} align="center" />
             <Column
               title="操作"
-              width={200}
+              width={300}
               fixed="right"
               align="center"
               render={(state)=> {
@@ -304,7 +444,7 @@ const IndexModule = (props) => {
                     <Button
                       className="btn-primary mar-10"
                       onClick={()=>{
-                        history.push({pathname: '/admin/web/resource/detail', state: {id: state._id, edit: 'Y'}, search: '?id=' + state._id + '&edit=Y'})
+                        history.push({pathname: '/admin/web/news/detail', state: {id: state._id, edit: 'Y'}, search: '?id=' + state._id + '&edit=Y'})
                       }}
                     >
                       编辑
@@ -315,7 +455,7 @@ const IndexModule = (props) => {
                           className="btn-warning mar-10"
                           onClick={
                             ()=>{
-                              updateStatus(state._id, 0)
+                              updateStatus(state._id, 0, 'status')
                             }
                           }
                         >
@@ -326,7 +466,7 @@ const IndexModule = (props) => {
                           className="btn-success mar-10"
                           onClick={
                             ()=>{
-                              updateStatus(state._id, 1)
+                              updateStatus(state._id, 1, 'status')
                             }
                           }
                         >
@@ -346,11 +486,90 @@ const IndexModule = (props) => {
                     >
                       排序
                     </Button>
+
+                    {
+                      state.isTop === 1 ? (
+                        <Button
+                          className="btn-warning mar-10"
+                          onClick={
+                            ()=>{
+                              updateStatus(state._id, 0, 'isTop')
+                            }
+                          }
+                        >
+                          取消置顶
+                        </Button>
+                      ) : (
+                        <Button
+                          className="btn-nature mar-10"
+                          onClick={
+                            ()=>{
+                              updateStatus(state._id, 1, 'isTop')
+                            }
+                          }
+                        >
+                          置顶
+                        </Button>
+                      )
+                    }
+
+                    {
+                      state.isHot === 1 ? (
+                        <Button
+                          className="btn-warning mar-10"
+                          onClick={
+                            ()=>{
+                              updateStatus(state._id, 0, 'isHot')
+                            }
+                          }
+                        >
+                          取消热门
+                        </Button>
+                      ) : (
+                        <Button
+                          className="btn-warm mar-10"
+                          onClick={
+                            ()=>{
+                              updateStatus(state._id, 1, 'isHot')
+                            }
+                          }
+                        >
+                          设置热门
+                        </Button>
+                      )
+                    }
+
+                    {
+                      state.isRecommend === 1 ? (
+                        <Button
+                          className="btn-warning mar-10"
+                          onClick={
+                            ()=>{
+                              updateStatus(state._id, 0, 'isRecommend')
+                            }
+                          }
+                        >
+                          取消推荐
+                        </Button>
+                      ) : (
+                        <Button
+                          className="btn-folk mar-10"
+                          onClick={
+                            ()=>{
+                              updateStatus(state._id, 1, 'isRecommend')
+                            }
+                          }
+                        >
+                          设置推荐
+                        </Button>
+                      )
+                    }
+
                     <Button
                       className="btn-delete mar-10"
                       onClick={
                         ()=>{
-                          setHandleId(state._id)
+                          setCheckItem(state)
                           setDeleteVisible(true)
                         }
                       }
@@ -361,6 +580,7 @@ const IndexModule = (props) => {
                 ) }}
             />
           </Table>
+
           {
             list.length > 0 ? (
               <div className="FBH FBAC FBJC mar-t40">
@@ -376,6 +596,7 @@ const IndexModule = (props) => {
               </div>
             ) : null
           }
+
         </div>
       </div>
 
@@ -391,9 +612,10 @@ const IndexModule = (props) => {
         }}
         onCancel={()=>{
           setDeleteVisible(false)
-          setHandleId(null)
+          setCheckItem({})
         }}
       />
+
 
       <Modal
         visible={sortVisible}
@@ -405,9 +627,10 @@ const IndexModule = (props) => {
         cancelText="取消"
         onOk={updateSort}
         onCancel={()=>{
+          setSortVisible(false)
+          setCheckItem({})
           setHandleId(null)
           setSortNumber(null)
-          setSortVisible(false)
         }}
       >
         <div className="FBH FBAC FBJC">

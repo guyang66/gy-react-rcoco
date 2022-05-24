@@ -240,7 +240,7 @@ const IndexBanner = () => {
       <div className="module-view-wrap">
         <div className="FBH">
           <Button
-            className="btn-primary mar-t20 mar-l20"
+            className="btn-success mar-t20 mar-l20"
             onClick={()=>{
               setCheckItem({
                 order: 1,
@@ -645,7 +645,6 @@ const IndexBanner = () => {
                     )}}
                   />
                   {/* eslint-disable-next-line react/no-unescaped-entities */}
-                  {/* todo: what 如果跳转表单页，格式为: /form?from=/index&action=banner_book，表明从"首页"的"中台书banner"跳转过去的*/}
                   <div className="color-orange" style={{height: '30px', lineHeight: '30px'}}>务必给到埋点key，from表示从哪个页面跳转到表单的，action表示点击的哪个按钮触发的。</div>
                 </div>
               </div>

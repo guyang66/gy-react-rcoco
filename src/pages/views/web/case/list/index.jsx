@@ -280,10 +280,9 @@ const IndexModule = () => {
       </div>
 
       <div className="module-view-wrap min-h-200">
-        <div className="FBH FBJ mar-t20 mar-b20">
-          <div className="module-title mar-l20">简历标签</div>
+        <div className="FBH mar-t20 mar-b20">
           <Button
-            className="btn-success mar-r20"
+            className="btn-success mar-l20"
             onClick={()=>{
               setIsAdd(true)
               setEditVisible(true)
