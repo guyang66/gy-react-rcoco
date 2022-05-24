@@ -44,4 +44,36 @@ export default {
       data: param,
     })
   },
+
+  getPageTdkList (param) {
+    return fetch({
+      url: urlPrefix + 'tdk/list/auth',
+      method: 'post',
+      data: param,
+    })
+  },
+
+  updateTdk (params) {
+    return fetch({
+      url: urlPrefix + 'tdk/update/auth',
+      method: 'post',
+      data: params,
+    })
+  },
+
+  deleteTdk (params) {
+    return fetch({
+      url: urlPrefix + 'tdk/delete/auth',
+      method: 'get',
+      params,
+    })
+  },
+
+  saveTdk (params) {
+    return fetch({
+      url: urlPrefix + 'tdk/save/auth',
+      method: 'post',
+      data: params,
+    })
+  },
 }

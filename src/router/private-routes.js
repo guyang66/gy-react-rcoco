@@ -17,11 +17,7 @@ import resourceDetail from "@pages/views/web/resource/detail";
 import newsList from "@pages/views/web/news/list";
 import newsDetail from "@pages/views/web/news/detail";
 import newsCategory from "@pages/views/web/news/category";
-// import ResumeAdd from "@pages/views/web/resume/add";
-// import resourceList from "@pages/views/web/resource/list";
-// import resourceDetail from "@pages/views/web/resource/detail";
-// import resourceColumn from "@pages/views/web/resource/column";
-// import TdkManage from "@pages/views/web/tdk";
+import TdkManage from "@pages/views/web/tdk";
 
 const privateRoutes = [
   {
@@ -202,7 +198,7 @@ const privateRoutes = [
     key: 'web_tdk',
     exact: true,
     backUrl: '',
-    component: null,
+    component: TdkManage,
   },
 ];
 
