@@ -38,7 +38,6 @@ const IndexModule = () => {
 
   const [isAdd, setIsAdd] = useState(false)
   const [deleteVisible, setDeleteVisible] = useState(false)
-  const [isAddVisible, setIsAddVisible] = useState(false)
 
   const [sortVisible, setSortVisible] = useState(false) // 排序弹窗显示
   const [sortNumber, setSortNumber] = useState(null)    //  排序的序号绑定值
@@ -226,17 +225,17 @@ const IndexModule = () => {
 
       <div className="module-search-view-wrap">
         <Tag color="#4169E1" className="search-title" icon={<SearchOutlined />}>筛选</Tag>
-        <div className="search-container">
-          <div className="FBH FBAC mar-l20 h-80">
+        <div className="search-container mar-t20">
+          <div className="FBH FBAC mar-l20 h-40">
             <div className="cell-title">岗位名字：</div>
             <Input
-              className="search-input mar-l10"
+              className="search-input"
               allowClear
               ref={searchRef}
               placeholder="请输入标题/岗位/描述"
             />
           </div>
-          <div className="FBH FBAC mar-l20 h-80">
+          <div className="FBH FBAC mar-l20 h-40">
             <div className="cell-title">上线：</div>
             <Select
               className="search-select"
@@ -384,7 +383,7 @@ const IndexModule = () => {
                 return (
                   <>
                     {
-                      itemExpand ? <a href={utils.getFixUrl(status.href)} target="_blank" >{utils.getFixUrl(status.href)}</a> : (
+                      itemExpand ? <a href={utils.getFixUrl(status.href)} target="_blank" rel="noreferrer">{utils.getFixUrl(status.href)}</a> : (
                         <span>
                           {`${status.href.slice(0,12)  }...`}
                         </span>

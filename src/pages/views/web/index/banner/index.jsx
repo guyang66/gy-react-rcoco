@@ -350,7 +350,7 @@ const IndexBanner = () => {
                 return (
                   <>
                     {
-                      itemExpand ? <a href={utils.getFixUrl(status.href)} target="_blank" >{utils.getFixUrl(status.href)}</a> : (
+                      itemExpand ? <a href={utils.getFixUrl(status.href)} target="_blank" rel="noreferrer">{utils.getFixUrl(status.href)}</a> : (
                         <span>
                           {`${status.href.slice(0,12)  }...`}
                         </span>

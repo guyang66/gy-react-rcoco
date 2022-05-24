@@ -311,7 +311,7 @@ const ResourceDetail = (props) => {
               {
                 category.map(item=>{
                   return (
-                    <Option key={item.key} value={item.key} disabled={ item.key === 'all'}>{item.name}</Option>
+                    <Option key={item.key} value={item.key} disabled={item.key === 'all'}>{item.name}</Option>
                   )
                 })
               }

@@ -136,7 +136,7 @@ const Person = (props) => {
       name: uploadConfig.body.name,
       overwrite: radioCheck,
       dir: uploadConfig.body.dir,
-      enctype: 'multipart/form-data'
+      enctype: 'multipart/form-data',
     }
   }
 

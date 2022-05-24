@@ -6,7 +6,6 @@ import {inject, observer} from "mobx-react";
 const getPath = (menuList, pathname) => {
 
   let target = []
-
   /**
    * 递归搜索当前面包屑路径
    * @param path
@@ -23,11 +22,10 @@ const getPath = (menuList, pathname) => {
     }
   }
   getTargetNode(menuList)
-
-  if(target[0] && target[0].path !== '/index'){
+  if(target[0] && target[0].path !== '/admin/index'){
     target = [{
       key: 'index',
-      path: '/index',
+      path: '/admin/index',
       title: '首页',
     }].concat(target)
   }
@@ -41,10 +39,8 @@ const BreadCrumb = (props) => {
   return (
     <div className="breadcrumb-container">
       <Breadcrumb>
-
-        {path &&
-        path.map((item) =>
-          item.path === "/index" ? (
+        {path && path.map((item) =>
+          item.path === "/admin/index" ? (
             <Breadcrumb.Item key={item.path}>
               <a href={`${item.path}`}>{item.title}</a>
             </Breadcrumb.Item>
@@ -52,7 +48,6 @@ const BreadCrumb = (props) => {
             <Breadcrumb.Item key={item.path}>{item.title}</Breadcrumb.Item>
           )
         )}
-
       </Breadcrumb>
     </div>
   )

@@ -314,17 +314,17 @@ const IndexModule = () => {
     <div className="activity-product-container">
       <div className="module-search-view-wrap">
         <Tag color="#4169E1" className="search-title" icon={<SearchOutlined />}>筛选</Tag>
-        <div className="search-container">
-          <div className="FBH FBAC mar-l20 h-80">
+        <div className="search-container mar-t20">
+          <div className="FBH FBAC mar-l20 h-40">
             <div className="cell-title">关键词：</div>
             <Input
-              className="search-input mar-l10"
+              className="search-input"
               allowClear
               ref={searchRef}
               placeholder="请输入标题/描述/key"
             />
           </div>
-          <div className="FBH FBAC mar-l20 h-80">
+          <div className="FBH FBAC mar-l20 h-40">
             <div className="cell-title">上线：</div>
             <Select
               className="search-select"
@@ -498,7 +498,7 @@ const IndexModule = () => {
                 return (
                   <>
                     {
-                      itemExpand ? <a href={utils.getFixUrl(status.href)} target="_blank">{utils.getFixUrl(status.href)}</a> : (
+                      itemExpand ? <a href={utils.getFixUrl(status.href)} target="_blank" rel="noreferrer">{utils.getFixUrl(status.href)}</a> : (
                         <span>
                           {`${status.href.slice(0,12)  }...`}
                         </span>

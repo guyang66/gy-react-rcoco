@@ -132,17 +132,17 @@ const IndexModule = (props) => {
     <div className="resource-list-container">
       <div className="module-search-view-wrap">
         <Tag color="#4169E1" className="search-title" icon={<SearchOutlined />}>筛选</Tag>
-        <div className="search-container">
-          <div className="FBH FBAC mar-l20 h-80">
+        <div className="search-container mar-t20">
+          <div className="FBH FBAC mar-l20 h-40">
             <div className="cell-title">岗位名字：</div>
             <Input
-              className="search-input mar-l10"
+              className="search-input"
               allowClear
               ref={searchRef}
               placeholder="请输入标题/描述/日期/类型"
             />
           </div>
-          <div className="FBH FBAC mar-l20 h-80">
+          <div className="FBH FBAC mar-l20 h-40">
             <div className="cell-title">上线：</div>
             <Select
               className="search-select"
@@ -158,7 +158,7 @@ const IndexModule = (props) => {
               <Option value={0}>已下线</Option>
             </Select>
           </div>
-          <div className="FBH FBAC mar-l20 h-80">
+          <div className="FBH FBAC mar-l20 h-40">
             <div className="cell-title">岗位分类：</div>
             <Select
               className="search-select"
@@ -271,7 +271,10 @@ const IndexModule = (props) => {
                 return (
                   (status.tag || []).map((item,index)=>{
                     return (
-                      <span>{item}{index < status.tag.length - 1 ? ',' : ''}</span>
+                      <span>
+                        {item}
+                        {index < status.tag.length - 1 ? ',' : ''}
+                      </span>
                     )
                   })
                 )

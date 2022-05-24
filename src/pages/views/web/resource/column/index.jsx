@@ -256,7 +256,7 @@ const IndexModule = () => {
                 return (
                   <>
                     {
-                      itemExpand ? <a href={utils.getFixUrl(status.href)} target="_blank" >{utils.getFixUrl(status.href)}</a> : (
+                      itemExpand ? <a href={utils.getFixUrl(status.href)} target="_blank" rel="noreferrer">{utils.getFixUrl(status.href)}</a> : (
                         <span>
                           {`${status.href.slice(0,12)  }...`}
                         </span>
@@ -274,7 +274,10 @@ const IndexModule = () => {
                 return (
                   (status.tag || []).map((item,index)=>{
                     return (
-                      <span>{item}{index < status.tag.length - 1 ? ',' : ''}</span>
+                      <span>
+                        {item}
+                        {index < status.tag.length - 1 ? ',' : ''}
+                      </span>
                     )
                   })
                 )

@@ -1,6 +1,6 @@
 import fetch from '@common/fetch'
+
 const urlPrefix = '/admin/api/user/'
-import helper from '@helper'
 
 const Api = {
   getUserInfo(params) {

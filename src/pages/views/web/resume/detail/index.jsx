@@ -541,20 +541,24 @@ const ResumeDetail = (props) => {
             <div className="cell-title">标签：</div>
             {
               isEdit ? (
-                <div className="cell-content FBH">{ tagDataList.map(item=>{
-                  return (
-                    <div className="tag-view-choose mar-r20" onClick={()=>{chooseTag(item.key)}} key={item.key}>
-                      {item.name}
-                      {item.choose ? <img className="tag-choose-icon" src={chooseIcon} /> : null}
-                    </div>
-                  )
-                })}</div>
+                <div className="cell-content FBH">
+                  { tagDataList.map(item=>{
+                    return (
+                      <div className="tag-view-choose mar-r20" onClick={()=>{chooseTag(item.key)}} key={item.key}>
+                        {item.name}
+                        {item.choose ? <img className="tag-choose-icon" src={chooseIcon} /> : null}
+                      </div>
+                    )
+                  })}
+                </div>
               ) : (
-                <div className="cell-content">{ resumeDetail.tag.map(item=>{
-                  return (
-                    <span className="tag-view mar-r20" key={item}>{getStringByKey(item, 'tag')}</span>
-                  )
-                })}</div>
+                <div className="cell-content">
+                  { resumeDetail.tag.map(item=>{
+                    return (
+                      <span className="tag-view mar-r20" key={item}>{getStringByKey(item, 'tag')}</span>
+                    )
+                  })}
+                </div>
               )
             }
           </div>

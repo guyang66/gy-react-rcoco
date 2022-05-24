@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from "react";
 import "./index.styl";
-import apiWeb from '@api/web'
 import apiNews from '@api/news'
 import helper from '@helper'
 import utils from '@utils'
@@ -9,7 +8,6 @@ import {message, Table, Button, Modal, Input, Upload, Select, Radio} from 'antd'
 import {
   LoadingOutlined,
   PlusOutlined,
-  ExclamationCircleOutlined,
   MenuFoldOutlined,
   MenuUnfoldOutlined,
 } from "@ant-design/icons";
@@ -281,7 +279,7 @@ const IndexModule = () => {
                 return (
                   <>
                     {
-                      itemExpand ? <a href={utils.getFixUrl(status.href)} target="_blank" >{utils.getFixUrl(status.href)}</a> : (
+                      itemExpand ? <a href={utils.getFixUrl(status.href)} target="_blank" rel="noreferrer">{utils.getFixUrl(status.href)}</a> : (
                         <span>
                           {status.href.slice(0,12)}
                           ...

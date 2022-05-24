@@ -37,7 +37,7 @@ service.interceptors.request.use(config=>{
 })
 
 service.interceptors.response.use(
-  (response,rr) => {
+  (response) => {
     /**
      * response.data.success是false抛错
      */
@@ -83,8 +83,10 @@ service.interceptors.response.use(
       if(!response.config.overHandle){
         message.error(response.data.errorMessage)
       }
+      // eslint-disable-next-line consistent-return
       return Promise.reject(response.data.errorMessage)
     }
+    // eslint-disable-next-line consistent-return
     return response.data.data
   },
   error => {

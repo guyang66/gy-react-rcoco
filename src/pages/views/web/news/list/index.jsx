@@ -40,7 +40,6 @@ const IndexModule = (props) => {
   })
 
   const searchRef = useRef()
-
   const getList = () => {
     setTableLoading(true)
     const search = searchRef.current.state.value
@@ -164,17 +163,17 @@ const IndexModule = (props) => {
     <div className="news-list-container">
       <div className="module-search-view-wrap">
         <Tag color="#4169E1" className="search-title" icon={<SearchOutlined />}>筛选</Tag>
-        <div className="search-container">
-          <div className="FBH FBAC mar-l20 h-80">
+        <div className="search-container mar-t20">
+          <div className="FBH FBAC mar-l20 h-40">
             <div className="cell-title">名字：</div>
             <Input
-              className="search-input mar-l10"
+              className="search-input"
               allowClear
               ref={searchRef}
               placeholder="请输入标题/概要/日期..."
             />
           </div>
-          <div className="FBH FBAC mar-l20 h-80">
+          <div className="FBH FBAC mar-l20 h-40">
             <div className="cell-title">上线：</div>
             <Select
               className="search-select"
@@ -191,7 +190,7 @@ const IndexModule = (props) => {
             </Select>
           </div>
 
-          <div className="FBH FBAC mar-l20 h-80">
+          <div className="FBH FBAC mar-l20 h-40">
             <div className="cell-title">是否是置顶：</div>
             <Select
               className="search-select"
@@ -208,7 +207,7 @@ const IndexModule = (props) => {
             </Select>
           </div>
 
-          <div className="FBH FBAC mar-l20 h-80">
+          <div className="FBH FBAC mar-l20 h-40">
             <div className="cell-title">是否是推荐：</div>
             <Select
               className="search-select"
@@ -225,7 +224,7 @@ const IndexModule = (props) => {
             </Select>
           </div>
 
-          <div className="FBH FBAC mar-l20 h-80">
+          <div className="FBH FBAC mar-l20 h-40">
             <div className="cell-title">是否是热门：</div>
             <Select
               className="search-select"
@@ -242,7 +241,7 @@ const IndexModule = (props) => {
             </Select>
           </div>
 
-          <div className="FBH FBAC mar-l20 h-80">
+          <div className="FBH FBAC mar-l20 h-40">
             <div className="cell-title">分类：</div>
             <Select
               className="search-select"
