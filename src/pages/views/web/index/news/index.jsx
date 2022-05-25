@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import "./index.styl";
 import apiNews from '@api/news'
+import apiConfig from '@api/config'
 import helper from '@helper'
 import utils from '@utils'
 
@@ -217,10 +218,25 @@ const IndexModule = () => {
     })
   }
 
+  const refresh = () => {
+    apiConfig.refreshCache({key: 'page_index_news'}).then(()=>{
+      message.success('刷新成功！')
+    })
+  }
+
   return (
     <div className="index-news-container">
       <div className="module-view-wrap">
-        <div className="color-orange mar-20">to：首页缓存？</div>
+        <div className="FBH">
+          <Button
+            className="btn-danger mar-t20 mar-l20"
+            onClick={()=>{
+              refresh()
+            }}
+          >
+            清除官网首页新闻缓存
+          </Button>
+        </div>
         <div className="table-wrap">
           <Table
             bordered

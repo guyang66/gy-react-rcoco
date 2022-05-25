@@ -134,7 +134,7 @@ const IndexModule = (props) => {
         <Tag color="#4169E1" className="search-title" icon={<SearchOutlined />}>筛选</Tag>
         <div className="search-container mar-t20">
           <div className="FBH FBAC mar-l20 h-40">
-            <div className="cell-title">岗位名字：</div>
+            <div className="cell-title">资源名字：</div>
             <Input
               className="search-input"
               allowClear
@@ -219,11 +219,26 @@ const IndexModule = (props) => {
           >
             新增资源
           </Button>
+          <Button
+            className="btn-primary mar-l20"
+            onClick={()=>{
+              history.push({pathname: '/admin/web/resource/column'})
+            }}
+          >
+            栏目管理
+          </Button>
+          <Button
+            className="btn-primary mar-l20"
+            onClick={()=>{
+              history.push({pathname: '/admin/web/resource/category'})
+            }}
+          >
+            分类管理
+          </Button>
         </div>
         <div className="table-wrap">
           <Table
             bordered
-            rowKey={(record) => record.index}
             dataSource={list}
             loading={tableLoading}
             scroll={{x: '100%'}}

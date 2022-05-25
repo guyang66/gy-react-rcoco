@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import "./index.styl";
 import apiWeb from '@api/web'
+import apiConfig from '@api/config'
 import utils from '@utils'
 
 import {message, Table, Button, Modal, Input, Switch} from 'antd';
@@ -113,14 +114,28 @@ const IndexModule = () => {
     })
   }
 
+  const refresh = () => {
+    apiConfig.refreshCache({key: 'page_index_columns'}).then(()=>{
+      message.success('刷新成功！')
+    })
+  }
+
   return (
     <div className="index-column-container">
       <div className="module-view-wrap">
-        <div className="color-orange mar-20">to：首页缓存？</div>
+        <div className="FBH">
+          <Button
+            className="btn-danger mar-t20 mar-l20"
+            onClick={()=>{
+              refresh()
+            }}
+          >
+            清除官网首页栏目缓存
+          </Button>
+        </div>
         <div className="table-wrap">
           <Table
             bordered
-            rowKey={(record) => record.index}
             dataSource={list}
             loading={tableLoading}
             scroll={{x: '100%'}}

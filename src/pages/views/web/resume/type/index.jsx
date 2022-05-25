@@ -182,7 +182,6 @@ const IndexModule = () => {
           <Table
             bordered
             size="small"
-            rowKey={(record) => record.index}
             dataSource={categoryList}
             loading={categoryTableLoading}
             scroll={{x: '100%'}}
@@ -286,7 +285,6 @@ const IndexModule = () => {
           <Table
             bordered
             size="small"
-            rowKey={(record) => record.index}
             dataSource={placeList}
             loading={placeTableLoading}
             scroll={{x: '100%'}}

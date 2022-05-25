@@ -271,6 +271,9 @@ const IndexModule = (props) => {
               searchRef.current.handleReset()
               setSearchStatus(2)
               setSearchCategory('all')
+              setSearchIsTop(2)
+              setSearchIsRecommend(2)
+              setSearchIsHot(2)
             }}
           >
             清空条件
@@ -307,13 +310,12 @@ const IndexModule = (props) => {
               history.push({pathname: '/admin/web/news/category'})
             }}
           >
-            分类
+            分类管理
           </Button>
         </div>
         <div className="table-wrap">
           <Table
             bordered
-            rowKey={(record) => record.index}
             dataSource={list}
             loading={tableLoading}
             scroll={{x: '100%'}}

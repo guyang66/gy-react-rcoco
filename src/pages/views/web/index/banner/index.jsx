@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import "./index.styl";
 import apiWeb from '@api/web'
+import apiConfig from '@api/config'
 import {message, Table, Button, Modal, Input, Upload, Select, Switch} from 'antd';
 import {LoadingOutlined, MenuFoldOutlined, MenuUnfoldOutlined, PlusOutlined} from "@ant-design/icons";
 import helper from '@helper'
@@ -235,6 +236,12 @@ const IndexBanner = () => {
     saveInfo(content)
   }
 
+  const refresh = () => {
+    apiConfig.refreshCache({key: 'page_index_banners'}).then(()=>{
+      message.success('刷新成功！')
+    })
+  }
+
   return (
     <div className="index-banner-container">
       <div className="module-view-wrap">
@@ -256,6 +263,14 @@ const IndexBanner = () => {
             }}
           >
             新增banner
+          </Button>
+          <Button
+            className="btn-danger mar-t20 mar-l20"
+            onClick={()=>{
+              refresh()
+            }}
+          >
+            清除官网首页banner缓存
           </Button>
         </div>
         <div className="color-orange mar-20">todo: 官网首页如果流量大的话，一般需要缓存数据，不然每一个人来访问都需要查询一次数据库，我们直接把数据缓存起来，修改了之后就刷掉缓存，减少首屏渲染时间和服务器压力</div>

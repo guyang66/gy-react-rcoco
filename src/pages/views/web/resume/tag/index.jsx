@@ -129,7 +129,6 @@ const IndexModule = () => {
         <div className="table-wrap">
           <Table
             bordered
-            rowKey={(record) => record.index}
             dataSource={list}
             loading={tableLoading}
             scroll={{x: '100%'}}

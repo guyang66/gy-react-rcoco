@@ -18,6 +18,13 @@ import newsList from "@pages/views/web/news/list";
 import newsDetail from "@pages/views/web/news/detail";
 import newsCategory from "@pages/views/web/news/category";
 import TdkManage from "@pages/views/web/tdk";
+import AppMenu from "@pages/views/app/menu";
+import AppRoute from "@pages/views/app/route";
+import AppCache from "@pages/views/app/cache";
+import uiPermission from "@pages/views/app/permission/ui";
+import urlPermission from "@pages/views/app/permission/url";
+import roleManage from "@pages/views/app/role";
+import userManage from "@pages/views/userManage";
 
 const privateRoutes = [
   {
@@ -199,6 +206,69 @@ const privateRoutes = [
     exact: true,
     backUrl: '',
     component: TdkManage,
+  },
+  {
+    path: '/admin/app/menu',
+    roles: [],
+    name: '菜单管理',
+    key: 'app_menu',
+    exact: true,
+    backUrl: '',
+    component: AppMenu,
+  },
+  {
+    path: '/admin/app/route',
+    roles: [],
+    name: '路由管理',
+    key: 'app_route',
+    exact: true,
+    backUrl: '',
+    component: AppRoute,
+  },
+  {
+    path: '/admin/app/cache',
+    roles: [],
+    name: '缓存管理',
+    key: 'app_cache',
+    exact: true,
+    backUrl: '',
+    component: AppCache,
+  },
+  {
+    path: '/admin/app/permission/ui',
+    roles: [],
+    name: 'UI权限',
+    key: 'app_permission_ui',
+    exact: true,
+    backUrl: '',
+    component: uiPermission,
+  },
+  {
+    path: '/admin/app/permission/url',
+    roles: [],
+    name: 'url权限',
+    key: 'app_permission_url',
+    exact: true,
+    backUrl: '',
+    component: urlPermission,
+  },
+  {
+    path: '/admin/app/role',
+    roles: [],
+    name: '角色管理',
+    key: 'app_role',
+    exact: true,
+    backUrl: '',
+    component: roleManage,
+  },
+  {
+    path: '/admin/userManage',
+    roles: [],
+    name: '用户管理',
+    key: 'userManage',
+    exact: true,
+    backUrl: '',
+    component: userManage,
   },
 ];
 

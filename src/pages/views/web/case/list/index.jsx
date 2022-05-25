@@ -11,8 +11,9 @@ const {Option} = Select
 const {TextArea} = Input;
 
 // todo: module名字
-const IndexModule = () => {
+const IndexModule = (props) => {
 
+  const {history} = props
   // 图片上传配置
   const uploadConfig = {
     header: {
@@ -227,12 +228,12 @@ const IndexModule = () => {
         <Tag color="#4169E1" className="search-title" icon={<SearchOutlined />}>筛选</Tag>
         <div className="search-container mar-t20">
           <div className="FBH FBAC mar-l20 h-40">
-            <div className="cell-title">岗位名字：</div>
+            <div className="cell-title">名字：</div>
             <Input
               className="search-input"
               allowClear
               ref={searchRef}
-              placeholder="请输入标题/岗位/描述"
+              placeholder="请输入标题/描述"
             />
           </div>
           <div className="FBH FBAC mar-l20 h-40">
@@ -298,11 +299,19 @@ const IndexModule = () => {
           >
             新增案例
           </Button>
+          <Button
+            className="btn-primary mar-l20"
+            onClick={()=>{
+              history.push({pathname: '/admin/web/case/tag'})
+
+            }}
+          >
+            新增案例
+          </Button>
         </div>
         <div className="table-wrap">
           <Table
             bordered
-            rowKey={(record) => record.index}
             dataSource={list}
             loading={tableLoading}
             scroll={{x: '100%'}}

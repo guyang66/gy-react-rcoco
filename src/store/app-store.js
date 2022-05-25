@@ -75,8 +75,7 @@ class AppStore {
     const p1 = apiConfig.getRoute()
     const p2 = apiUser.getUserInfo()
     const p3 = apiConfig.getUserMenu()
-    // const p4 = apiConfig.getComponentPermission()
-
+    const p4 = apiConfig.getUiPermission()
     const initRouteMap = (current) => {
       if(!current || current.length < 1){
         return []
@@ -93,7 +92,7 @@ class AppStore {
       return finalRoute
     }
 
-    Promise.all([p1,p2, p3]).then((r)=>{
+    Promise.all([p1,p2, p3, p4]).then((r)=>{
       // 拥有的权限路由
       this.routeMap = initRouteMap(r[0]) || []
       // 用户配置初始化
@@ -104,6 +103,7 @@ class AppStore {
       // 菜单（服务端生成）
       this.menus = r[2] || []
       // ui权限
+      this.cPermission = r[3] || []
       this.loading = false
     }).catch(()=>{
       this.loading = false

@@ -44,9 +44,17 @@ export default {
     })
   },
 
-  getComponentPermission(params) {
+  updateAdminRoute(param) {
     return fetch({
-      url: urlPrefix + 'permission/component/auth',
+      url: urlPrefix + 'route/update/auth',
+      method: 'post',
+      data: param,
+    })
+  },
+
+  getUiPermission(params) {
+    return fetch({
+      url: urlPrefix + 'permission/ui/online/auth',
       method: 'get',
       params,
     })
@@ -67,4 +75,101 @@ export default {
       params,
     })
   },
+
+  getRoles (params) {
+    return fetch({
+      url: urlPrefix + 'role/online/auth',
+      method: 'get',
+      params,
+    })
+  },
+
+  getRoleList (param) {
+    return fetch({
+      url: urlPrefix + 'role/list/auth',
+      method: 'post',
+      data: param,
+    })
+  },
+
+  deleteRole (params) {
+    return fetch({
+      url: urlPrefix + 'role/delete/auth',
+      method: 'get',
+      params,
+    })
+  },
+
+  saveRole (param) {
+    return fetch({
+      url: urlPrefix + 'role/save/auth',
+      method: 'post',
+      data: param,
+    })
+  },
+
+  getCacheList (param) {
+    return fetch({
+      url: urlPrefix + 'cache/list/auth',
+      method: 'post',
+      data: param,
+    })
+  },
+
+  updateCache (param) {
+    return fetch({
+      url: urlPrefix + 'cache/update/auth',
+      method: 'post',
+      data: param,
+    })
+  },
+
+  deleteCache (params) {
+    return fetch({
+      url: urlPrefix + 'cache/delete/auth',
+      method: 'get',
+      params,
+    })
+  },
+
+  saveCache (param) {
+    return fetch({
+      url: urlPrefix + 'cache/save/auth',
+      method: 'post',
+      data: param,
+    })
+  },
+
+  refreshCache (params) {
+    return fetch({
+      url: urlPrefix + 'cache/refresh/auth',
+      method: 'get',
+      params,
+    })
+  },
+
+  refreshAllCache (params) {
+    return fetch({
+      url: urlPrefix + 'cache/refreshAll/auth',
+      method: 'get',
+      params,
+    })
+  },
+
+  getUiPermissionList (param) {
+    return fetch({
+      url: urlPrefix + 'permission/ui/list/auth',
+      method: 'post',
+      data: param,
+    })
+  },
+
+  getUrlPermissionList (param) {
+    return fetch({
+      url: urlPrefix + 'permission/url/list/auth',
+      method: 'post',
+      data: param,
+    })
+  },
+
 }

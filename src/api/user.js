@@ -26,6 +26,15 @@ const Api = {
       data: params,
     })
   },
+
+  getUserList (params) {
+    return fetch({
+      url: urlPrefix + 'list/auth',
+      method: 'post',
+      data: params,
+    })
+  },
+
 }
 
 export default Api
