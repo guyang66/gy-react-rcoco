@@ -11,9 +11,19 @@ const Api = {
     })
   },
 
+  // 用户自己修改自己的信息，需要校验当前人是不是自己
+  modifyUserInfo (params) {
+    return fetch({
+      url: urlPrefix + 'modify/auth',
+      method: 'post',
+      data: params,
+    })
+  },
+
+  // 管理员修改用户信息，需要校验url 权限
   updateUserInfo (params) {
     return fetch({
-      url: urlPrefix + 'updateUserInfo/auth',
+      url: urlPrefix + 'update/auth',
       method: 'post',
       data: params,
     })
@@ -27,9 +37,33 @@ const Api = {
     })
   },
 
+  resetPassword (params) {
+    return fetch({
+      url: urlPrefix + 'resetPassword/auth',
+      method: 'get',
+      params,
+    })
+  },
+
   getUserList (params) {
     return fetch({
       url: urlPrefix + 'list/auth',
+      method: 'post',
+      data: params,
+    })
+  },
+
+  deleteUser (params) {
+    return fetch({
+      url: urlPrefix + 'delete/auth',
+      method: 'get',
+      params,
+    })
+  },
+
+  createUser (params) {
+    return fetch({
+      url: urlPrefix + 'create/auth',
       method: 'post',
       data: params,
     })

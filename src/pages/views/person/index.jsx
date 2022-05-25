@@ -77,12 +77,10 @@ const Person = (props) => {
     if(imgUrl && imgUrl !== ''){
       p.avatar = imgUrl
     }
-    apiUser.updateUserInfo({id, content: p}).then( () =>{
+    apiUser.modifyUserInfo({id, content: p}).then( () =>{
       message.success('修改成功！');
       getUserInfo()
       setIsEdit(false)
-    }).catch(err=>{
-      message.error(`修改失败！${  err.message}`);
     })
   }
 
@@ -171,10 +169,7 @@ const Person = (props) => {
       message.success('修改成功！')
       setNewPassword({})
       setPassVisible(false)
-    }).catch(error=>{
-      message.error(error)
     })
-
   }
 
   return (
