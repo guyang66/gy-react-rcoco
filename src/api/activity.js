@@ -3,6 +3,15 @@ import fetch from '@common/fetch'
 const urlPrefix = '/admin/api/activity/'
 
 const Api = {
+
+  getActivityCategory(params) {
+    return fetch({
+      url: urlPrefix + 'category/auth',
+      method: 'get',
+      params,
+    })
+  },
+
   getActivityList(params) {
     return fetch({
       url: urlPrefix + 'list/auth',
@@ -42,6 +51,15 @@ const Api = {
       params,
     })
   },
+
+  staticsVisit (params) {
+    return fetch({
+      url: urlPrefix + 'statics/visit/auth',
+      method: 'get',
+      params,
+    })
+  },
+
 }
 
 export default Api

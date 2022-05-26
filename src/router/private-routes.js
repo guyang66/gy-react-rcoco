@@ -28,6 +28,8 @@ import userManage from "@pages/views/userManage";
 import dataClue from "@pages/views/data/web/clue";
 import dataResource from "@pages/views/data/web/resource";
 import dataNews from "@pages/views/data/web/news";
+import dataCase from "@pages/views/data/web/case";
+import dataActivity from "@pages/views/data/web/activity";
 
 const privateRoutes = [
   {
@@ -236,6 +238,24 @@ const privateRoutes = [
     exact: true,
     backUrl: '',
     component: dataNews,
+  },
+  {
+    path: '/admin/data/web/case',
+    roles: [],
+    name: '案例数据',
+    key: 'data_web_case',
+    exact: true,
+    backUrl: '',
+    component: dataCase,
+  },
+  {
+    path: '/admin/data/web/activity',
+    roles: [],
+    name: '活动数据',
+    key: 'data_web_activity',
+    exact: true,
+    backUrl: '',
+    component: dataActivity,
   },
   {
     path: '/admin/app/menu',

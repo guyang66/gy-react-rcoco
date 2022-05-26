@@ -66,6 +66,23 @@ const Api = {
       data: params,
     })
   },
+
+  staticsVisit (params) {
+    return fetch({
+      url: urlPrefix + 'statics/visit/auth',
+      method: 'get',
+      params,
+    })
+  },
+
+  staticsKeywords (params) {
+    return fetch({
+      url: urlPrefix + 'statics/keywords/auth',
+      method: 'get',
+      params,
+    })
+  },
+
 }
 
 export default Api
