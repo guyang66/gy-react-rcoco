@@ -80,7 +80,6 @@ const IndexModule = (props) => {
   }
 
   useEffect(()=>{
-    getList()
     getRoles()
   },[])
 

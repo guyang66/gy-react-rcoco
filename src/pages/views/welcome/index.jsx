@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import "./index.styl";
-import ChartView from "@components/echarts/pie"
+import ChartView from "@components/charts/echarts/pieChart"
 import {Button} from "antd";
 
 const Index = () => {

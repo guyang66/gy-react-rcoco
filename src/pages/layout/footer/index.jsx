@@ -8,6 +8,7 @@ const FooterComponent = () => {
   return (
     <Footer
       className="footer-container"
+      style={{backgroundColor: 'white'}}
     >
       <div className="footer-wrap">
         <div className="copyright">yy科技</div>

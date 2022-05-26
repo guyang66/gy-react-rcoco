@@ -83,7 +83,6 @@ const IndexModule = (props) => {
   }
 
   useEffect(()=>{
-    getList()
     getCategory()
   },[])
 

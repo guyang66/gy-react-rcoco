@@ -25,6 +25,7 @@ import uiPermission from "@pages/views/app/permission/ui";
 import urlPermission from "@pages/views/app/permission/url";
 import roleManage from "@pages/views/app/role";
 import userManage from "@pages/views/userManage";
+import dataClue from "@pages/views/data/web/clue";
 
 const privateRoutes = [
   {
@@ -206,6 +207,15 @@ const privateRoutes = [
     exact: true,
     backUrl: '',
     component: TdkManage,
+  },
+  {
+    path: '/admin/data/web/clue',
+    roles: [],
+    name: '线索管理',
+    key: 'data_web_clue',
+    exact: true,
+    backUrl: '',
+    component: dataClue,
   },
   {
     path: '/admin/app/menu',

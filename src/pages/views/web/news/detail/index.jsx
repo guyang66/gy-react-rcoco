@@ -142,7 +142,6 @@ const IndexModule = (props) => {
     }
   },[tagInputRef])
 
-
   // 监听input被挂载，然后自动焦点
   useEffect(()=>{
     if(searchEdit && searchInputRef){

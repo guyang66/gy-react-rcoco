@@ -1,6 +1,10 @@
 import React, {useState, useEffect, useRef} from "react";
 import "./index.styl";
 import apiConfig from '@api/config'
+import helper from '@helper'
+import {withRouter} from "react-router-dom";
+import {inject, observer} from "mobx-react";
+
 import {message, Table, Button, Modal, Input, Tag, Select, Pagination} from 'antd';
 import {
   SearchOutlined,
@@ -9,7 +13,8 @@ import {
 const {Column} = Table;
 const {Option} = Select
 
-const IndexModule = () => {
+const IndexModule = (props) => {
+  const {appStore} = props
 
   const [list, setList] = useState([])  // table 数据源
   const [total, setTotal] = useState(null)
@@ -173,26 +178,34 @@ const IndexModule = () => {
       </div>
       <div className="module-view-wrap min-h-200">
         <div className="FBH mar-t20 mar-b20">
-          <Button
-            className="btn-success mar-l20"
-            onClick={()=>{
-              setEditVisible(true)
-              setCheckItem({
-                key: '',
-                name: '',
-              })
-            }}
-          >
-            新增配置
-          </Button>
-          <Button
-            className="btn-danger mar-l20"
-            onClick={()=>{
-              refreshAll()
-            }}
-          >
-            刷新全部缓存
-          </Button>
+          {
+            helper.hasCPermission('app.addCache', appStore) ? (
+              <Button
+                className="btn-success mar-l20"
+                onClick={()=>{
+                  setEditVisible(true)
+                  setCheckItem({
+                    key: '',
+                    name: '',
+                  })
+                }}
+              >
+                新增配置
+              </Button>
+            ) : null
+          }
+          {
+            helper.hasCPermission('app.cacheAll', appStore) ? (
+              <Button
+                className="btn-danger mar-l20"
+                onClick={()=>{
+                  refreshAll()
+                }}
+              >
+                刷新全部缓存
+              </Button>
+            ) : null
+          }
         </div>
         <div className="table-wrap">
           <Table
@@ -235,51 +248,87 @@ const IndexModule = () => {
               align="center"
               render={(state)=> {
                 return (
+                  // 这里其实应该让后端来根据权限控制返回的列表...
                   <div>
-                    <Button
-                      className="btn-primary mar-10"
-                      onClick={
-                        ()=>{refresh(state.key)}
-                      }
-                    >
-                      刷新缓存
-                    </Button>
                     {
-                      state.status === 1 ? (
+                      (helper.hasCPermission('app.cacheUrlPermission', appStore) && state.key === 'page_url_permission') ? (
                         <Button
-                          className="btn-warning mar-10"
+                          className="btn-primary mar-10"
                           onClick={
-                            ()=>{
-                              updateStatus(state._id, 0, 'status')
-                            }
+                            ()=>{refresh(state.key)}
                           }
                         >
-                          下线
+                          刷新缓存
                         </Button>
                       ) : (
+                        <>
+                          {
+                            state.key !== 'page_url_permission' ? (
+                              <Button
+                                className="btn-primary mar-10"
+                                onClick={
+                                  ()=>{refresh(state.key)}
+                                }
+                              >
+                                刷新缓存
+                              </Button>
+                            ) : null
+                          }
+                        </>
+                      )
+                    }
+                    {
+                      state.status === 1 ? (
+                        <>
+                          {
+                            helper.hasCPermission('system.adminManage', appStore) ? (
+                              <Button
+                                className="btn-warning mar-10"
+                                onClick={
+                                  ()=>{
+                                    updateStatus(state._id, 0, 'status')
+                                  }
+                                }
+                              >
+                                下线
+                              </Button>
+                            ) : null
+                          }
+                        </>
+                      ) : (
+                        <>
+                          {
+                            helper.hasCPermission('system.adminManage', appStore) ? (
+                              <Button
+                                className="btn-success mar-10"
+                                onClick={
+                                  ()=>{
+                                    updateStatus(state._id, 1, 'status')
+                                  }
+                                }
+                              >
+                                上线
+                              </Button>
+                            ) : null
+                          }
+                        </>
+                      )
+                    }
+                    {
+                      helper.hasCPermission('system.adminManage', appStore) ? (
                         <Button
-                          className="btn-success mar-10"
+                          className="btn-delete mar-10"
                           onClick={
                             ()=>{
-                              updateStatus(state._id, 1, 'status')
+                              setCheckItem(state)
+                              setDeleteVisible(true)
                             }
                           }
                         >
-                          上线
+                          删除
                         </Button>
-                      )
+                      ) : null
                     }
-                    <Button
-                      className="btn-delete mar-10"
-                      onClick={
-                        ()=>{
-                          setCheckItem(state)
-                          setDeleteVisible(true)
-                        }
-                      }
-                    >
-                      删除
-                    </Button>
                   </div>
                 ) }}
             />
@@ -366,4 +415,4 @@ const IndexModule = () => {
   )
 }
 
-export default IndexModule
+export default withRouter(inject('appStore')(observer(IndexModule)))

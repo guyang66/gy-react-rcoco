@@ -77,7 +77,6 @@ const IndexModule = () => {
   }
 
   useEffect(()=>{
-    getList()
     getRoles()
   },[])
 

@@ -44,10 +44,6 @@ const IndexModule = () => {
 
   useEffect(()=>{
     getList()
-  },[])
-
-  useEffect(()=>{
-    getList()
   },[orderSort])
 
   const handleModal = (state) => {

@@ -51,10 +51,6 @@ const IndexModule = () => {
 
   useEffect(()=>{
     getList()
-  },[])
-
-  useEffect(()=>{
-    getList()
   },[pageParams])
 
   const handleModal = (state) => {

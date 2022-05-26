@@ -98,7 +98,6 @@ const IndexModule = (props) => {
   }
 
   useEffect(()=>{
-    getList()
     getCategory()
   },[])
 
@@ -616,7 +615,6 @@ const IndexModule = (props) => {
           setCheckItem({})
         }}
       />
-
 
       <Modal
         visible={sortVisible}
