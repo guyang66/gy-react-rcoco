@@ -1,6 +1,10 @@
 import React, {useState, useEffect, useRef} from "react";
 import "./index.styl";
 import apiClue from '@api/clue'
+import helper from '@helper'
+import {withRouter} from "react-router-dom";
+import {inject, observer} from "mobx-react";
+
 import {Table, Button, Input, Tag, DatePicker, Pagination, Modal, message, Radio, Spin} from 'antd';
 import {
   SearchOutlined,
@@ -16,8 +20,8 @@ const {Column} = Table;
 const {RangePicker} = DatePicker
 moment.locale('zh-cn');
 
-const IndexModule = () => {
-
+const IndexModule = (props) => {
+  const {appStore} = props
   const [list, setList] = useState([])  // table 数据源
   const [total, setTotal] = useState(null)
   const [searchDate, setSearchDate] = useState([])
@@ -199,7 +203,7 @@ const IndexModule = () => {
   }
 
   return (
-    <div className="app-cache-container">
+    <div className="data-clue-container">
       <div className="module-search-view-wrap">
         <Tag color="#4169E1" className="search-title" icon={<SearchOutlined />}>筛选</Tag>
         <div className="search-container mar-t20">
@@ -248,7 +252,9 @@ const IndexModule = () => {
         </div>
       </div>
       <div className="module-view-wrap min-h-200">
-        <Button type="primary mar-t20 mar-l20" onClick={()=>{setDownloadVisible(true)}}>导出线索excel数据</Button>
+        {
+          helper.hasCPermission('data.download', appStore) ? <Button type="primary mar-t20 mar-l20" onClick={()=>{setDownloadVisible(true)}}>导出线索excel数据</Button> : null
+        }
         <div className="table-wrap">
           <Table
             bordered
@@ -384,4 +390,4 @@ const IndexModule = () => {
   )
 }
 
-export default IndexModule
+export default withRouter(inject('appStore')(observer(IndexModule)))

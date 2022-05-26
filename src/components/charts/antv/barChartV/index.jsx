@@ -5,6 +5,9 @@ const ChartView = (props) => {
   const {data, id, length, aliasString} = props
   const [chartLineView, setChartLineView] = useState(null)
   const initChartLine = (chartData) => {
+    if(!data){
+      return;
+    }
     const l = length || 2
     if(chartLineView){
       chartLineView.changeData(chartData)
@@ -13,7 +16,7 @@ const ChartView = (props) => {
     const chart = new Chart(
       {
         container: id,
-        height: Math.max(80 * l, 240),
+        height: Math.max(60 * l, 240),
         width: 1000,
         padding: [40,80,40,80],
       }

@@ -26,6 +26,7 @@ import urlPermission from "@pages/views/app/permission/url";
 import roleManage from "@pages/views/app/role";
 import userManage from "@pages/views/userManage";
 import dataClue from "@pages/views/data/web/clue";
+import dataResource from "@pages/views/data/web/resource";
 
 const privateRoutes = [
   {
@@ -216,6 +217,15 @@ const privateRoutes = [
     exact: true,
     backUrl: '',
     component: dataClue,
+  },
+  {
+    path: '/admin/data/web/resource',
+    roles: [],
+    name: '资源数据',
+    key: 'data_web_resource',
+    exact: true,
+    backUrl: '',
+    component: dataResource,
   },
   {
     path: '/admin/app/menu',

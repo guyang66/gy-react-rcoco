@@ -98,4 +98,36 @@ export default {
       data: params,
     })
   },
+
+  getResourceRecordList (params) {
+    return fetch({
+      url: urlPrefix + 'record/list/auth',
+      method: 'post',
+      data: params,
+    })
+  },
+
+  staticsType (params) {
+    return fetch({
+      url: urlPrefix + 'statics/type/auth',
+      method: 'get',
+      params,
+    })
+  },
+
+  staticsResourceName (params) {
+    return fetch({
+      url: urlPrefix + 'statics/resourceName/auth',
+      method: 'get',
+      params,
+    })
+  },
+
+  staticsKeywords (params) {
+    return fetch({
+      url: urlPrefix + 'statics/keywords/auth',
+      method: 'get',
+      params,
+    })
+  },
 }

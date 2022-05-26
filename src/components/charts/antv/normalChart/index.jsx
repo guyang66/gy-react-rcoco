@@ -28,6 +28,9 @@ const ChartView = (props) => {
 
   // 普通柱状图
   const initChartBar = (chartData) => {
+    if(!data){
+      return;
+    }
     const l = length || 1
     if(chartBarView){
       chartBarView.changeData(chartData)
@@ -37,7 +40,7 @@ const ChartView = (props) => {
       container: id,
       forceFit: true,
       height: 350,
-      width: Math.max(Math.min(1000, l * 60), 470), // 最长 1000px ，最短 470px
+      width: Math.min(Math.max(470, l * 50), 1000), // 最长 1000px ，最短 470px
       padding: [40,20,40,0],
     })
     chart.data(chartData);
@@ -61,6 +64,9 @@ const ChartView = (props) => {
 
   // 普通折线图
   const initChartLine = (chartData) => {
+    if(!data){
+      return;
+    }
     if(chartLineView){
       chartLineView.changeData(chartData)
       return
