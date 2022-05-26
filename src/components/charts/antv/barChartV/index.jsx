@@ -2,10 +2,10 @@ import React, {useState, useEffect}from "react";
 import {Chart} from "@antv/g2";
 
 const ChartView = (props) => {
-  const {data, id, length, aliasString} = props
+  const {data, id, length, aliasString, paddingLeft, viewLength} = props
   const [chartLineView, setChartLineView] = useState(null)
   const initChartLine = (chartData) => {
-    if(!data){
+    if(!data || data.length < 1){
       return;
     }
     const l = length || 2
@@ -17,8 +17,8 @@ const ChartView = (props) => {
       {
         container: id,
         height: Math.max(60 * l, 240),
-        width: 1000,
-        padding: [40,80,40,80],
+        width: viewLength || 800,
+        padding: [40,80,40,(paddingLeft || 80)],
       }
     )
     chart.data(data);

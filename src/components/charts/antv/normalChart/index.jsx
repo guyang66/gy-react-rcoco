@@ -28,7 +28,7 @@ const ChartView = (props) => {
 
   // 普通柱状图
   const initChartBar = (chartData) => {
-    if(!data){
+    if(!data || data.length < 1){
       return;
     }
     const l = length || 1
@@ -64,7 +64,7 @@ const ChartView = (props) => {
 
   // 普通折线图
   const initChartLine = (chartData) => {
-    if(!data){
+    if(!data || data.length < 1){
       return;
     }
     if(chartLineView){

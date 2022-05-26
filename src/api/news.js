@@ -106,4 +106,20 @@ export default {
       params,
     })
   },
+
+  staticsViewCount(params) {
+    return fetch({
+      url: urlPrefix + 'statics/viewCount/auth',
+      method: 'get',
+      params,
+    })
+  },
+
+  staticsKeywords(params) {
+    return fetch({
+      url: urlPrefix + 'statics/keywords/auth',
+      method: 'get',
+      params,
+    })
+  },
 }

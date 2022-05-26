@@ -27,6 +27,7 @@ import roleManage from "@pages/views/app/role";
 import userManage from "@pages/views/userManage";
 import dataClue from "@pages/views/data/web/clue";
 import dataResource from "@pages/views/data/web/resource";
+import dataNews from "@pages/views/data/web/news";
 
 const privateRoutes = [
   {
@@ -226,6 +227,15 @@ const privateRoutes = [
     exact: true,
     backUrl: '',
     component: dataResource,
+  },
+  {
+    path: '/admin/data/web/news',
+    roles: [],
+    name: '新闻数据',
+    key: 'data_web_news',
+    exact: true,
+    backUrl: '',
+    component: dataNews,
   },
   {
     path: '/admin/app/menu',

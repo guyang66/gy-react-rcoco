@@ -31,15 +31,15 @@ const IndexModule = (props) => {
 
   const [staticsTypeChoose, setStaticsTypeChoose] = useState('all')
   const [staticsTypeLoading, setStaticsTypeLoading] = useState(false)
-  const [staticsTypeData, setStaticsTypeData] = useState(false)
+  const [staticsTypeData, setStaticsTypeData] = useState([])
 
   const [staticsNeedChoose, setStaticsNeedChoose] = useState('all')
   const [staticsNeedLoading, setStaticsNeedLoading] = useState(false)
-  const [staticsNeedData, setStaticsNeedData] = useState(false)
+  const [staticsNeedData, setStaticsNeedData] = useState([])
 
   const [staticsOriginHrefChoose, setStaticsOriginHrefChoose] = useState([])
   const [staticsOriginHrefLoading, setStaticsOriginHrefLoading] = useState(false)
-  const [staticsOriginHrefData, setStaticsOriginHrefData] = useState(false)
+  const [staticsOriginHrefData, setStaticsOriginHrefData] = useState([])
 
   const dateSelectOptions = [
     {label: '全部', value: 'all'},
@@ -365,6 +365,7 @@ const IndexModule = (props) => {
               data={staticsOriginHrefData}
               id="clueStaticsOriginHref"
               aliasString="线索来源入口统计（个）"
+              paddingLeft={120}
               length={staticsOriginHrefData.length}
             />
           </div>

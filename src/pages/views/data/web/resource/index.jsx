@@ -15,16 +15,16 @@ const IndexModule = () => {
 
   const [staticsTypeChoose, setStaticsTypeChoose] = useState('all')
   const [staticsTypeLoading, setStaticsTypeLoading] = useState(false)
-  const [staticsTypeData, setStaticsTypeData] = useState(false)
+  const [staticsTypeData, setStaticsTypeData] = useState([])
 
   const [staticsNameActionChoose, setStaticsNameActionChoose] = useState('all')
   const [staticsNameDateChoose, setStaticsNameDateChoose] = useState('all')
   const [staticsNameLoading, setStaticsNameLoading] = useState(false)
-  const [staticsNameData, setStaticsNameData] = useState(false)
+  const [staticsNameData, setStaticsNameData] = useState([])
 
   const [staticsKeywordsChoose, setStaticsKeywordsChoose] = useState('all')
   const [staticsKeywordsLoading, setStaticsKeywordsLoading] = useState(false)
-  const [staticsKeywordsData, setStaticsKeywordsData] = useState(false)
+  const [staticsKeywordsData, setStaticsKeywordsData] = useState([])
 
   const [pageParams, setPageParams] = useState({
     page: 1,
@@ -232,7 +232,7 @@ const IndexModule = () => {
       </div>
 
       <div className="module-view-wrap min-h-200">
-        <div className="module-title mar-l20 mar-t20 mar-b10">搜索关键词统计</div>
+        <div className="module-title mar-l20 mar-t20 mar-b10">搜索关键词统计（排名前20）</div>
         <Spin tip="加载中..." spinning={staticsKeywordsLoading}>
           <div className="chart-view-wrap mar-l20">
             <Radio.Group
