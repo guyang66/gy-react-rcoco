@@ -162,7 +162,7 @@ const ViewModule = (props) => {
     <div className="news-list-container">
       <div className="module-search-view-wrap">
         <Tag color="#4169E1" className="search-title" icon={<SearchOutlined />}>筛选</Tag>
-        <div className="search-container mar-t20">
+        <div className="search-container mar-t10">
           <div className="FBH FBAC mar-l20 h-40">
             <div className="cell-title">名字：</div>
             <Input
@@ -317,6 +317,7 @@ const ViewModule = (props) => {
             bordered
             dataSource={list}
             loading={tableLoading}
+            size="small"
             scroll={{x: '100%'}}
             onChange={(pagination,filters,sorter)=>{
               if(sorter){
@@ -339,10 +340,10 @@ const ViewModule = (props) => {
                 )
               }}
             />
-            <Column title="标题" dataIndex="title" key="title" width={150} align="center" />
+            <Column title="标题" dataIndex="title" key="title" width={180} align="center" />
             <Column
-              title="概要"
-              width={200}
+              title="摘要"
+              width={240}
               align="center"
               render={status=>{
                 return (
@@ -435,14 +436,14 @@ const ViewModule = (props) => {
             <Column title="排序" dataIndex="order" sorter sortOrder={orderSort} key="order" width={80} align="center" />
             <Column
               title="操作"
-              width={300}
+              width={330}
               fixed="right"
               align="center"
               render={(state)=> {
                 return (
                   <div>
                     <Button
-                      className="btn-primary mar-10"
+                      className="btn-primary mar-5"
                       onClick={()=>{
                         history.push({pathname: '/admin/web/news/detail', state: {id: state._id, edit: 'Y'}, search: '?id=' + state._id + '&edit=Y'})
                       }}
@@ -452,7 +453,7 @@ const ViewModule = (props) => {
                     {
                       state.status === 1 ? (
                         <Button
-                          className="btn-warning mar-10"
+                          className="btn-warning mar-5"
                           onClick={
                             ()=>{
                               updateStatus(state._id, 0, 'status')
@@ -463,7 +464,7 @@ const ViewModule = (props) => {
                         </Button>
                       ) : (
                         <Button
-                          className="btn-success mar-10"
+                          className="btn-success mar-5"
                           onClick={
                             ()=>{
                               updateStatus(state._id, 1, 'status')
@@ -475,7 +476,7 @@ const ViewModule = (props) => {
                       )
                     }
                     <Button
-                      className="btn-tag mar-10"
+                      className="btn-tag mar-5"
                       onClick={
                         ()=>{
                           setHandleId(state._id)
@@ -490,7 +491,7 @@ const ViewModule = (props) => {
                     {
                       state.isTop === 1 ? (
                         <Button
-                          className="btn-warning mar-10"
+                          className="btn-warning mar-5"
                           onClick={
                             ()=>{
                               updateStatus(state._id, 0, 'isTop')
@@ -501,7 +502,7 @@ const ViewModule = (props) => {
                         </Button>
                       ) : (
                         <Button
-                          className="btn-nature mar-10"
+                          className="btn-nature mar-5"
                           onClick={
                             ()=>{
                               updateStatus(state._id, 1, 'isTop')
@@ -516,7 +517,7 @@ const ViewModule = (props) => {
                     {
                       state.isHot === 1 ? (
                         <Button
-                          className="btn-warning mar-10"
+                          className="btn-warning mar-5"
                           onClick={
                             ()=>{
                               updateStatus(state._id, 0, 'isHot')
@@ -527,7 +528,7 @@ const ViewModule = (props) => {
                         </Button>
                       ) : (
                         <Button
-                          className="btn-warm mar-10"
+                          className="btn-warm mar-5"
                           onClick={
                             ()=>{
                               updateStatus(state._id, 1, 'isHot')
@@ -542,7 +543,7 @@ const ViewModule = (props) => {
                     {
                       state.isRecommend === 1 ? (
                         <Button
-                          className="btn-warning mar-10"
+                          className="btn-warning mar-5"
                           onClick={
                             ()=>{
                               updateStatus(state._id, 0, 'isRecommend')
@@ -553,7 +554,7 @@ const ViewModule = (props) => {
                         </Button>
                       ) : (
                         <Button
-                          className="btn-folk mar-10"
+                          className="btn-folk mar-5"
                           onClick={
                             ()=>{
                               updateStatus(state._id, 1, 'isRecommend')
@@ -566,7 +567,7 @@ const ViewModule = (props) => {
                     }
 
                     <Button
-                      className="btn-delete mar-10"
+                      className="btn-delete mar-5"
                       onClick={
                         ()=>{
                           setCheckItem(state)
@@ -591,7 +592,6 @@ const ViewModule = (props) => {
                   }}
                   Pagination
                   total={total}
-                  className="mar-t20"
                 />
               </div>
             ) : null

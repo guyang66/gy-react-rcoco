@@ -131,7 +131,7 @@ const ViewModule = (props) => {
     <div className="resource-list-container">
       <div className="module-search-view-wrap">
         <Tag color="#4169E1" className="search-title" icon={<SearchOutlined />}>筛选</Tag>
-        <div className="search-container mar-t20">
+        <div className="search-container mar-t10">
           <div className="FBH FBAC mar-l20 h-40">
             <div className="cell-title">资源名字：</div>
             <Input
@@ -239,6 +239,7 @@ const ViewModule = (props) => {
             bordered
             dataSource={list}
             loading={tableLoading}
+            size="small"
             scroll={{x: '100%'}}
             onChange={(pagination,filters,sorter)=>{
               if(sorter){
@@ -262,8 +263,16 @@ const ViewModule = (props) => {
               }}
             />
             <Column title="标题" dataIndex="title" key="title" width={120} align="center" />
-            <Column title="描述" dataIndex="desc" key="desc" width={200} align="center" />
             <Column
+              title="描述"
+              width={240}
+              align="center"
+              render={(status)=>{
+                return (
+                  <span className="text-overflow-3">{status.desc}</span>
+                )
+              }}
+            />            <Column
               title="分类"
               width={100}
               align="center"
@@ -318,7 +327,7 @@ const ViewModule = (props) => {
                 return (
                   <div>
                     <Button
-                      className="btn-primary mar-10"
+                      className="btn-primary mar-5"
                       onClick={()=>{
                         history.push({pathname: '/admin/web/resource/detail', state: {id: state._id, edit: 'Y'}, search: '?id=' + state._id + '&edit=Y'})
                       }}
@@ -328,7 +337,7 @@ const ViewModule = (props) => {
                     {
                       state.status === 1 ? (
                         <Button
-                          className="btn-warning mar-10"
+                          className="btn-warning mar-5"
                           onClick={
                             ()=>{
                               updateStatus(state._id, 0)
@@ -339,7 +348,7 @@ const ViewModule = (props) => {
                         </Button>
                       ) : (
                         <Button
-                          className="btn-success mar-10"
+                          className="btn-success mar-5"
                           onClick={
                             ()=>{
                               updateStatus(state._id, 1)
@@ -351,7 +360,7 @@ const ViewModule = (props) => {
                       )
                     }
                     <Button
-                      className="btn-tag mar-10"
+                      className="btn-tag mar-5"
                       onClick={
                         ()=>{
                           setHandleId(state._id)
@@ -363,7 +372,7 @@ const ViewModule = (props) => {
                       排序
                     </Button>
                     <Button
-                      className="btn-delete mar-10"
+                      className="btn-delete mar-5"
                       onClick={
                         ()=>{
                           setHandleId(state._id)
@@ -387,7 +396,6 @@ const ViewModule = (props) => {
                   }}
                   Pagination
                   total={total}
-                  className="mar-t20"
                 />
               </div>
             ) : null

@@ -225,7 +225,7 @@ const ViewModule = (props) => {
 
       <div className="module-search-view-wrap">
         <Tag color="#4169E1" className="search-title" icon={<SearchOutlined />}>筛选</Tag>
-        <div className="search-container mar-t20">
+        <div className="search-container mar-t10">
           <div className="FBH FBAC mar-l20 h-40">
             <div className="cell-title">名字：</div>
             <Input
@@ -312,6 +312,7 @@ const ViewModule = (props) => {
           <Table
             bordered
             dataSource={list}
+            size="small"
             loading={tableLoading}
             scroll={{x: '100%'}}
             onChange={(pagination,filters,sorter)=>{
@@ -334,7 +335,16 @@ const ViewModule = (props) => {
               }}
             />
             <Column title="标题" dataIndex="title" key="title" width={100} align="center" />
-            <Column title="描述" dataIndex="desc" key="desc" width={160} align="center" />
+            <Column
+              title="描述"
+              width={200}
+              align="center"
+              render={(status)=>{
+                return (
+                  <span className="text-overflow-3">{status.desc}</span>
+                )
+              }}
+            />
             <Column
               title="关键词"
               width={100}
@@ -418,17 +428,17 @@ const ViewModule = (props) => {
             />
             <Column
               title="操作"
-              width={200}
+              width={300}
               fixed="right"
               align="center"
               render={(state)=> {
                 return (
                   <div>
-                    <Button className="btn-primary mar-10" onClick={()=>{handleModal(state)}}>编辑</Button>
+                    <Button className="btn-primary mar-5" onClick={()=>{handleModal(state)}}>编辑</Button>
                     {
                       state.status === 1 ? (
                         <Button
-                          className="btn-danger mar-10"
+                          className="btn-danger mar-5"
                           onClick={
                             ()=>{
                               updateStatus(state._id, 0)
@@ -439,7 +449,7 @@ const ViewModule = (props) => {
                         </Button>
                       ) : (
                         <Button
-                          className="btn-success mar-10"
+                          className="btn-success mar-5"
                           onClick={
                             ()=>{
                               updateStatus(state._id, 1)
@@ -451,7 +461,7 @@ const ViewModule = (props) => {
                       )
                     }
                     <Button
-                      className="btn-tag mar-10"
+                      className="btn-tag mar-5"
                       onClick={
                         ()=>{
                           setCheckItem(state)
@@ -463,7 +473,7 @@ const ViewModule = (props) => {
                       排序
                     </Button>
                     <Button
-                      className="btn-delete mar-10"
+                      className="btn-delete mar-5"
                       onClick={
                         ()=>{
                           setCheckItem(state)
@@ -487,7 +497,6 @@ const ViewModule = (props) => {
                   }}
                   Pagination
                   total={total}
-                  className="mar-t20"
                 />
               </div>
             ) : null

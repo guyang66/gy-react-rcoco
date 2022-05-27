@@ -211,7 +211,7 @@ const ResumeModule = (props) => {
     <div className="resume-list-container">
       <div className="module-search-view-wrap">
         <Tag color="#4169E1" className="search-title" icon={<SearchOutlined />}>筛选</Tag>
-        <div className="search-container mar-t20">
+        <div className="search-container mar-t10">
           <div className="FBH FBAC mar-l20 h-40">
             <div className="cell-title">岗位名字：</div>
             <Input
@@ -322,6 +322,7 @@ const ResumeModule = (props) => {
                     <Table
                       key={item.key}
                       bordered
+                      size="small"
                       rowKey={(record) => record._id}
                       dataSource={item.list}
                       loading={item.loading}
@@ -337,7 +338,7 @@ const ResumeModule = (props) => {
                     >
                       <Column
                         title="序号"
-                        width={40}
+                        width={60}
                         align="center"
                         render={(status, value,index)=>{
                           return (
@@ -423,7 +424,7 @@ const ResumeModule = (props) => {
                       <Column title="排序" dataIndex="order" sorter sortOrder={orderSort} key="order" width={80} align="center" />
                       <Column
                         title="是否置顶"
-                        width={60}
+                        width={80}
                         align="center"
                         render={(status)=>{
                           return (
@@ -444,7 +445,7 @@ const ResumeModule = (props) => {
                           return (
                             <div className="FBH FBJC FLW">
                               <Button
-                                className="btn-nature mar-10"
+                                className="btn-nature mar-5"
                                 onClick={()=>{
                                   history.push({pathname: '/admin/web/resume/detail', state: {id: status._id}, search: '?id=' + status._id})
                                 }}
@@ -452,7 +453,7 @@ const ResumeModule = (props) => {
                                 详情
                               </Button>
                               <Button
-                                className="btn-primary mar-10"
+                                className="btn-primary mar-5"
                                 onClick={()=>{
                                   history.push({pathname: '/admin/web/resume/detail', state: {id: status._id, edit: 'Y'}, search: '?id=' + status._id + '&edit=Y'})
                                 }}
@@ -462,7 +463,7 @@ const ResumeModule = (props) => {
                               {
                                 status.status === 1 ? (
                                   <Button
-                                    className="btn-danger mar-10"
+                                    className="btn-danger mar-5"
                                     onClick={
                                       ()=>{
                                         updateStatus(status._id,0)
@@ -473,7 +474,7 @@ const ResumeModule = (props) => {
                                   </Button>
                                 ) : (
                                   <Button
-                                    className="btn-success mar-10"
+                                    className="btn-success mar-5"
                                     onClick={
                                       ()=>{
                                         updateStatus(status._id,1)
@@ -487,7 +488,7 @@ const ResumeModule = (props) => {
                               {
                                 status.isTop === 1 ? (
                                   <Button
-                                    className="btn-folk mar-10"
+                                    className="btn-folk mar-5"
                                     onClick={
                                       ()=>{
                                         updateIsTop(status._id, 0)
@@ -498,7 +499,7 @@ const ResumeModule = (props) => {
                                   </Button>
                                 ) : (
                                   <Button
-                                    className="btn-warm mar-10"
+                                    className="btn-warm mar-5"
                                     onClick={
                                       ()=>{
                                         updateIsTop(status._id, 1)
@@ -510,7 +511,7 @@ const ResumeModule = (props) => {
                                 )
                               }
                               <Button
-                                className="btn-tag mar-10"
+                                className="btn-tag mar-5"
                                 onClick={
                                   ()=>{
                                     setHandleId(status._id)
@@ -522,7 +523,7 @@ const ResumeModule = (props) => {
                                 排序
                               </Button>
                               <Button
-                                className="btn-delete mar-10"
+                                className="btn-delete mar-5"
                                 onClick={
                                   ()=>{
                                     setHandleId(status._id)

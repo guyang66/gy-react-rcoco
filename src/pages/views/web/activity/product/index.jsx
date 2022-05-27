@@ -314,7 +314,7 @@ const ViewModule = () => {
     <div className="activity-product-container">
       <div className="module-search-view-wrap">
         <Tag color="#4169E1" className="search-title" icon={<SearchOutlined />}>筛选</Tag>
-        <div className="search-container mar-t20">
+        <div className="search-container mar-t10">
           <div className="FBH FBAC mar-l20 h-40">
             <div className="cell-title">关键词：</div>
             <Input
@@ -398,6 +398,7 @@ const ViewModule = () => {
             bordered
             dataSource={list}
             loading={tableLoading}
+            size="small"
             scroll={{x: '100%'}}
             onChange={(pagination,filters,sorter)=>{
               if(sorter){
@@ -430,7 +431,7 @@ const ViewModule = () => {
             />
             <Column
               title="优势"
-              width={150}
+              width={200}
               align="center"
               render={(status)=>{
                 return (
@@ -538,17 +539,17 @@ const ViewModule = () => {
             <Column title="排序" dataIndex="order" sorter sortOrder={orderSort} key="order" width={80} align="center" />
             <Column
               title="操作"
-              width={200}
+              width={250}
               fixed="right"
               align="center"
               render={(state)=> {
                 return (
                   <div>
-                    <Button className="btn-primary mar-10" onClick={()=>{handleModal(state)}}>编辑</Button>
+                    <Button className="btn-primary mar-5" onClick={()=>{handleModal(state)}}>编辑</Button>
                     {
                       state.status === 1 ? (
                         <Button
-                          className="btn-danger mar-10"
+                          className="btn-danger mar-5"
                           onClick={
                             ()=>{
                               updateStatus(state._id, 0)
@@ -559,7 +560,7 @@ const ViewModule = () => {
                         </Button>
                       ) : (
                         <Button
-                          className="btn-success mar-10"
+                          className="btn-success mar-5"
                           onClick={
                             ()=>{
                               updateStatus(state._id, 1)
@@ -571,7 +572,7 @@ const ViewModule = () => {
                       )
                     }
                     <Button
-                      className="btn-tag mar-10"
+                      className="btn-tag mar-5"
                       onClick={
                         ()=>{
                           setCheckItem(state)
@@ -585,7 +586,7 @@ const ViewModule = () => {
                     {
                       state.type === 'normal' ? (
                         <Button
-                          className="btn-warm mar-10"
+                          className="btn-warm mar-5"
                           onClick={
                             ()=>{
                               updateType(state._id)
@@ -597,7 +598,7 @@ const ViewModule = () => {
                       ) : null
                     }
                     <Button
-                      className="btn-delete mar-10"
+                      className="btn-delete mar-5"
                       onClick={
                         ()=>{
                           setCheckItem(state)
@@ -622,7 +623,6 @@ const ViewModule = () => {
                   }}
                   Pagination
                   total={total}
-                  className="mar-t20"
                 />
               </div>
             ) : null

@@ -372,7 +372,7 @@ const ViewModule = (props) => {
   return (
     <div className="news-detail-container">
       <div className="module-view-wrap news-detail-wrap">
-        <div className="module-title mar-20">{isNew ? '新建文章' : '编辑文章'}</div>
+        <div className="module-title mar-20">{isNew ? '新建新闻' : '编辑新闻'}</div>
         <div className="content-wrap">
           <div className="normal-cell">
             <div className="cell-title">标题：</div>
@@ -399,7 +399,7 @@ const ViewModule = (props) => {
           <div className="normal-cell">
             <div className="cell-title">发布时间：</div>
             <Input
-              className="normal-input"
+              className="normal-input mar-r20"
               value={newsDetail.date}
             />
             <DatePicker

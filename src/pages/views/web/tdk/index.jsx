@@ -137,7 +137,7 @@ const ViewModule = () => {
     <div className="tdk-manage-container">
       <div className="module-search-view-wrap">
         <Tag color="#4169E1" className="search-title" icon={<SearchOutlined />}>筛选</Tag>
-        <div className="search-container mar-t20">
+        <div className="search-container mar-t10">
           <div className="FBH FBAC mar-l20 h-40">
             <div className="cell-title">名字：</div>
             <Input
@@ -212,6 +212,7 @@ const ViewModule = () => {
           <Table
             bordered
             dataSource={list}
+            size="small"
             loading={tableLoading}
             scroll={{x: '100%'}}
             pagination={false}
@@ -229,7 +230,16 @@ const ViewModule = () => {
             <Column title="name" dataIndex="name" key="name" width={100} align="center" />
             <Column title="path" dataIndex="path" key="path" width={100} align="center" />
             <Column title="title" dataIndex="title" key="title" width={120} align="center" />
-            <Column title="description" dataIndex="description" key="description" width={250} align="center" />
+            <Column
+              title="description"
+              width={240}
+              align="center"
+              render={(status)=>{
+                return (
+                  <span className="text-overflow-3">{status.description}</span>
+                )
+              }}
+            />
             <Column title="keywords" dataIndex="keywords" key="keywords" width={100} align="center" />
             <Column
               title="状态"
@@ -254,7 +264,7 @@ const ViewModule = () => {
                 return (
                   <div>
                     <Button
-                      className='btn-primary mar-10'
+                      className='btn-primary mar-5'
                       onClick={()=>{handleModal(state)}}
                     >
                       编辑
@@ -263,7 +273,7 @@ const ViewModule = () => {
                       state.status === 1 ? (
                         <Button
                           disabled={state.name === 'default'}
-                          className={state.name === 'default' ? 'btn-disabled mar-10' : 'btn-warning mar-10'}
+                          className={state.name === 'default' ? 'btn-disabled mar-5' : 'btn-warning mar-5'}
                           onClick={
                             ()=>{
                               updateStatus(state._id, 0)
@@ -275,7 +285,7 @@ const ViewModule = () => {
                       ) : (
                         <Button
                           disabled={state.name === 'default'}
-                          className={state.name === 'default' ? 'btn-disabled mar-10' : 'btn-success mar-10'}
+                          className={state.name === 'default' ? 'btn-disabled mar-5' : 'btn-success mar-5'}
                           onClick={
                             ()=>{
                               updateStatus(state._id, 1)
@@ -288,7 +298,7 @@ const ViewModule = () => {
                     }
                     <Button
                       disabled={state.name === 'default'}
-                      className={state.name === 'default' ? 'btn-disabled mar-10' : 'btn-delete mar-10'}
+                      className={state.name === 'default' ? 'btn-disabled mar-5' : 'btn-delete mar-5'}
                       onClick={
                         ()=>{
                           setCheckItem(state)
@@ -312,7 +322,6 @@ const ViewModule = () => {
                   }}
                   Pagination
                   total={total}
-                  className="mar-t20"
                 />
               </div>
             ) : null

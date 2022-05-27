@@ -119,7 +119,7 @@ const ViewModule = () => {
     <div className="app-route-container">
       <div className="module-search-view-wrap">
         <Tag color="#4169E1" className="search-title" icon={<SearchOutlined />}>筛选</Tag>
-        <div className="search-container mar-t20">
+        <div className="search-container mar-t10">
           <div className="FBH FBAC mar-l20 h-40">
             <div className="cell-title">名字：</div>
             <Input
@@ -179,6 +179,7 @@ const ViewModule = () => {
             dataSource={list}
             loading={tableLoading}
             scroll={{x: '100%'}}
+            size="small"
             onChange={(pagination,filters,sorter)=>{
               if(sorter){
                 if(sorter.columnKey === 'order'){
@@ -242,7 +243,7 @@ const ViewModule = () => {
                 return (
                   <div>
                     <Button
-                      className="btn-primary mar-10"
+                      className="btn-primary mar-5"
                       onClick={()=>{
                         setAuthVisible(true)
                         setHandleAuth(state.roles)
@@ -254,7 +255,7 @@ const ViewModule = () => {
                     {
                       state.status === 1 ? (
                         <Button
-                          className="btn-warning mar-10"
+                          className="btn-warning mar-5"
                           onClick={
                             ()=>{
                               updateStatus(state._id, 0, 'status')
@@ -265,7 +266,7 @@ const ViewModule = () => {
                         </Button>
                       ) : (
                         <Button
-                          className="btn-success mar-10"
+                          className="btn-success mar-5"
                           onClick={
                             ()=>{
                               updateStatus(state._id, 1, 'status')
@@ -291,7 +292,6 @@ const ViewModule = () => {
                   }}
                   Pagination
                   total={total}
-                  className="mar-t20"
                 />
               </div>
             ) : null

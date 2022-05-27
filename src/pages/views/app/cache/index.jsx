@@ -124,7 +124,7 @@ const ViewModule = (props) => {
     <div className="app-cache-container">
       <div className="module-search-view-wrap">
         <Tag color="#4169E1" className="search-title" icon={<SearchOutlined />}>筛选</Tag>
-        <div className="search-container mar-t20">
+        <div className="search-container mar-t10">
           <div className="FBH FBAC mar-l20 h-40">
             <div className="cell-title">关键词：</div>
             <Input
@@ -213,6 +213,7 @@ const ViewModule = (props) => {
             dataSource={list}
             loading={tableLoading}
             scroll={{x: '100%'}}
+            size="small"
             pagination={false}
           >
             <Column
@@ -253,7 +254,7 @@ const ViewModule = (props) => {
                     {
                       (helper.hasCPermission('app.cacheUrlPermission', appStore) && state.key === 'page_url_permission') ? (
                         <Button
-                          className="btn-primary mar-10"
+                          className="btn-primary mar-5"
                           onClick={
                             ()=>{refresh(state.key)}
                           }
@@ -265,7 +266,7 @@ const ViewModule = (props) => {
                           {
                             state.key !== 'page_url_permission' ? (
                               <Button
-                                className="btn-primary mar-10"
+                                className="btn-primary mar-5"
                                 onClick={
                                   ()=>{refresh(state.key)}
                                 }
@@ -283,7 +284,7 @@ const ViewModule = (props) => {
                           {
                             helper.hasCPermission('system.adminManage', appStore) ? (
                               <Button
-                                className="btn-warning mar-10"
+                                className="btn-warning mar-5"
                                 onClick={
                                   ()=>{
                                     updateStatus(state._id, 0, 'status')
@@ -300,7 +301,7 @@ const ViewModule = (props) => {
                           {
                             helper.hasCPermission('system.adminManage', appStore) ? (
                               <Button
-                                className="btn-success mar-10"
+                                className="btn-success mar-5"
                                 onClick={
                                   ()=>{
                                     updateStatus(state._id, 1, 'status')
@@ -317,7 +318,7 @@ const ViewModule = (props) => {
                     {
                       helper.hasCPermission('system.adminManage', appStore) ? (
                         <Button
-                          className="btn-delete mar-10"
+                          className="btn-delete mar-5"
                           onClick={
                             ()=>{
                               setCheckItem(state)
@@ -344,7 +345,6 @@ const ViewModule = (props) => {
                   }}
                   Pagination
                   total={total}
-                  className="mar-t20"
                 />
               </div>
             ) : null

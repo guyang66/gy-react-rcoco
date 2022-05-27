@@ -147,6 +147,7 @@ const ViewModule = () => {
             dataSource={list}
             loading={tableLoading}
             scroll={{x: '100%'}}
+            size="small"
             pagination={false}
           >
             <Column
@@ -185,7 +186,7 @@ const ViewModule = () => {
                 return (
                   <div>
                     <Button
-                      className={state.key === 'all' ? 'btn-disabled mar-10' : 'btn-primary mar-10'}
+                      className={state.key === 'all' ? 'btn-disabled mar-5' : 'btn-primary mar-5'}
                       disabled={state.key === 'all'}
                       onClick={()=>{
                         handleModal(state)
@@ -196,7 +197,7 @@ const ViewModule = () => {
                     {
                       state.status === 1 ? (
                         <Button
-                          className={state.key === 'all' ? 'btn-disabled mar-10' : 'btn-warning mar-10'}
+                          className={state.key === 'all' ? 'btn-disabled mar-5' : 'btn-warning mar-5'}
                           disabled={state.key === 'all'}
                           onClick={
                             ()=>{
@@ -208,7 +209,7 @@ const ViewModule = () => {
                         </Button>
                       ) : (
                         <Button
-                          className={state.key === 'all' ? 'btn-disabled mar-10' : 'btn-success mar-10'}
+                          className={state.key === 'all' ? 'btn-disabled mar-5' : 'btn-success mar-5'}
                           disabled={state.key === 'all'}
                           onClick={
                             ()=>{
@@ -221,7 +222,7 @@ const ViewModule = () => {
                       )
                     }
                     <Button
-                      className={state.key === 'all' ? 'btn-disabled mar-10' : 'btn-tag mar-10'}
+                      className={state.key === 'all' ? 'btn-disabled mar-5' : 'btn-tag mar-5'}
                       disabled={state.key === 'all'}
                       onClick={
                         ()=>{
@@ -234,7 +235,7 @@ const ViewModule = () => {
                       排序
                     </Button>
                     <Button
-                      className={state.key === 'all' ? 'btn-disabled mar-10' : 'btn-delete mar-10'}
+                      className={state.key === 'all' ? 'btn-disabled mar-5' : 'btn-delete mar-5'}
                       disabled={state.key === 'all'}
                       onClick={
                         ()=>{

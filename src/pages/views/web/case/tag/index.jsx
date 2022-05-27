@@ -151,6 +151,7 @@ const ViewModule = () => {
           <Table
             bordered
             dataSource={list}
+            size="small"
             loading={tableLoading}
             scroll={{x: '100%'}}
             onChange={(pagination,filters,sorter)=>{
@@ -175,7 +176,7 @@ const ViewModule = () => {
             <Column title="mainKey" dataIndex="mainKey" key="mainKey" width={100} align="center" />
             <Column title="名字" dataIndex="name" key="name" width={100} align="center" />
             <Column title="key" dataIndex="key" key="key" width={100} align="center" />
-            <Column title="备注" dataIndex="remark" key="remark" width={100} align="center" />
+            <Column title="备注" dataIndex="remark" key="remark" width={200} align="center" />
             <Column
               title="状态"
               width={80}
@@ -193,17 +194,17 @@ const ViewModule = () => {
             <Column title="排序" dataIndex="order" sorter sortOrder={orderSort} key="order" width={80} align="center" />
             <Column
               title="操作"
-              width={200}
+              width={300}
               fixed="right"
               align="center"
               render={(state)=> {
                 return (
                   <div>
-                    <Button className="btn-primary mar-10" onClick={()=>{handleModal(state)}}>编辑</Button>
+                    <Button className="btn-primary mar-5" onClick={()=>{handleModal(state)}}>编辑</Button>
                     {
                       state.status === 1 ? (
                         <Button
-                          className="btn-warning mar-10"
+                          className="btn-warning mar-5"
                           onClick={
                             ()=>{
                               updateStatus(state._id, 0)
@@ -214,7 +215,7 @@ const ViewModule = () => {
                         </Button>
                       ) : (
                         <Button
-                          className="btn-success mar-10"
+                          className="btn-success mar-5"
                           onClick={
                             ()=>{
                               updateStatus(state._id, 1)
@@ -226,7 +227,7 @@ const ViewModule = () => {
                       )
                     }
                     <Button
-                      className="btn-tag mar-10"
+                      className="btn-tag mar-5"
                       onClick={
                         ()=>{
                           setHandleId(state._id)
@@ -238,7 +239,7 @@ const ViewModule = () => {
                       排序
                     </Button>
                     <Button
-                      className="btn-delete mar-10"
+                      className="btn-delete mar-5"
                       onClick={
                         ()=>{
                           setCheckItem(state)

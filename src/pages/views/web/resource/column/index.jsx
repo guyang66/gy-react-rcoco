@@ -204,6 +204,7 @@ const ViewModule = () => {
             dataSource={list}
             loading={tableLoading}
             scroll={{x: '100%'}}
+            size="small"
             pagination={false}
           >
             <Column
@@ -216,8 +217,17 @@ const ViewModule = () => {
                 )
               }}
             />
-            <Column title="标题" dataIndex="title" key="title" width={120} align="center" />
-            <Column title="描述" dataIndex="desc" key="desc" width={280} align="center" />
+            <Column title="标题" dataIndex="title" key="title" width={150} align="center" />
+            <Column
+              title="描述"
+              width={250}
+              align="center"
+              render={(status)=>{
+                return (
+                  <span className="text-overflow-3">{status.desc}</span>
+                )
+              }}
+            />
             <Column
               title="封面图"
               width={200}
@@ -291,9 +301,9 @@ const ViewModule = () => {
               render={(state)=> {
                 return (
                   <div>
-                    <Button className="btn-primary mar-10" onClick={()=>{handleModal(state)}}>编辑</Button>
+                    <Button className="btn-primary mar-5" onClick={()=>{handleModal(state)}}>编辑</Button>
                     <Button
-                      className="btn-tag mar-10"
+                      className="btn-tag mar-5"
                       onClick={
                         ()=>{
                           setHandleId(state._id)

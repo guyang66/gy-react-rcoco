@@ -281,6 +281,7 @@ const IndexBanner = () => {
             dataSource={list}
             loading={tableLoading}
             scroll={{x: '100%'}}
+            size="small"
             pagination={false}
           >
             <Column
@@ -293,10 +294,10 @@ const IndexBanner = () => {
                 )
               }}
             />
-            <Column title="标题" dataIndex="title" key="title" width={200} align="center" />
+            <Column title="标题" dataIndex="title" key="title" width={100} align="center" />
             <Column
               title="文案"
-              width={200}
+              width={320}
               align="center"
               render={(status)=>{
                 return (
@@ -399,7 +400,7 @@ const IndexBanner = () => {
                 return (
                   <div>
                     <Button
-                      className="btn-primary mar-10"
+                      className="btn-primary mar-5"
                       onClick={()=>{
                         setCheckItem(status)
                         setEditVisible(true)
@@ -410,7 +411,7 @@ const IndexBanner = () => {
                     {
                       status.status === 1 ? (
                         <Button
-                          className="btn-danger mar-10"
+                          className="btn-danger mar-5"
                           onClick={()=>{
                             // 这里setCheckItem 不生效，异步执行，不能立刻拿到改变的值
                             updateBanner(index, 0)
@@ -420,7 +421,7 @@ const IndexBanner = () => {
                         </Button>
                       ) : (
                         <Button
-                          className="btn-success mar-10"
+                          className="btn-success mar-5"
                           onClick={()=>{
                             updateBanner(index, 1)
                           }}
@@ -430,7 +431,7 @@ const IndexBanner = () => {
                       )
                     }
                     <Button
-                      className="btn-warning mar-10"
+                      className="btn-warning mar-5"
                       onClick={()=>{
                         setCheckItem(status)
                         setSortNumber(status.order)
@@ -441,7 +442,7 @@ const IndexBanner = () => {
                     </Button>
 
                     <Button
-                      className="btn-delete mar-10"
+                      className="btn-delete mar-5"
                       onClick={()=>{
                         setCheckItem(status)
                         setDeleteVisible(true)
@@ -532,7 +533,7 @@ const IndexBanner = () => {
                         }}
                       /> : (
                         <Button
-                          className="btn-success mar-b10 mar-t10"
+                          className="btn-success"
                           size="small"
                           onClick={()=>{
                             setEditNewDesc(true)
@@ -548,7 +549,7 @@ const IndexBanner = () => {
             }
           </div>
 
-          <div className="item-cell FBH mar-b20 mar-t10">
+          <div className="item-cell FBH mar-t10">
             <div className="item-title haha">主图：</div>
             <div>
               <div className="FBH">
@@ -569,8 +570,7 @@ const IndexBanner = () => {
                   { uploadButton }
                 </Upload>
               </div>
-              <div className="remark-text color-orange">注：banner标准尺寸为PC端1920 X 535px</div>
-              <div className="remark-text color-orange">图片命名规范：务必不含中文，且命名请务必和其他文件名字重合</div>
+              <div className="remark-text color-orange">注：banner标准尺寸为PC端1920 X 535px（图片命名规范：务必不含中文）</div>
             </div>
           </div>
 

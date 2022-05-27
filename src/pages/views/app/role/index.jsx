@@ -95,7 +95,7 @@ const ViewModule = () => {
     <div className="app-cache-container">
       <div className="module-search-view-wrap">
         <Tag color="#4169E1" className="search-title" icon={<SearchOutlined />}>筛选</Tag>
-        <div className="search-container mar-t20">
+        <div className="search-container mar-t10">
           <div className="FBH FBAC mar-l20 h-40">
             <div className="cell-title">关键词：</div>
             <Input
@@ -169,6 +169,7 @@ const ViewModule = () => {
             loading={tableLoading}
             scroll={{x: '100%'}}
             pagination={false}
+            size="small"
           >
             <Column
               title="序号"
@@ -205,7 +206,7 @@ const ViewModule = () => {
                 return (
                   <div>
                     <Button
-                      className="btn-delete mar-10"
+                      className="btn-delete mar-5"
                       onClick={
                         ()=>{
                           setCheckItem(state)
@@ -229,7 +230,6 @@ const ViewModule = () => {
                   }}
                   Pagination
                   total={total}
-                  className="mar-t20"
                 />
               </div>
             ) : null

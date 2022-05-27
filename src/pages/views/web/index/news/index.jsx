@@ -240,9 +240,10 @@ const ViewModule = () => {
         <div className="table-wrap">
           <Table
             bordered
+            size="small"
             dataSource={list}
             loading={tableLoading}
-            scroll={{x: 1530}}
+            scroll={{x: '100%'}}
             pagination={false}
           >
             <Column
@@ -258,7 +259,7 @@ const ViewModule = () => {
             <Column title="标题" dataIndex="title" key="title" width={200} align="center" />
             <Column
               title="主图"
-              width={200}
+              width={150}
               align="center"
               render={status=>{
                 return (
@@ -266,7 +267,7 @@ const ViewModule = () => {
                 )
               }}
             />
-            <Column title="摘要" dataIndex="summary" key="summary" width={400} align="center" />
+            <Column title="摘要" dataIndex="summary" key="summary" width={300} align="center" />
             <Column title="时间" dataIndex="date" key="date" width={150} align="center" />
             <Column
               width={200}
@@ -315,8 +316,8 @@ const ViewModule = () => {
               render={(state, data, index)=> {
                 return (
                   <div>
-                    <Button className="btn-primary mar-10" onClick={()=>{handleModal(state, 'edit', index)}}>编辑</Button>
-                    <Button className="btn-warning mar-10" onClick={()=>{handleModal(state, 'sort', index)}}>排序</Button>
+                    <Button className="btn-primary mar-5" onClick={()=>{handleModal(state, 'edit', index)}}>编辑</Button>
+                    <Button className="btn-warning mar-5" onClick={()=>{handleModal(state, 'sort', index)}}>排序</Button>
                   </div>
                 ) }}
             />
@@ -375,7 +376,7 @@ const ViewModule = () => {
           }
         </div>
 
-        <div className="item-cell h-184 FBH mar-b20">
+        <div className="item-cell FBH">
           <div className="item-title">主图：</div>
           <div>
             <div className="FBH">
@@ -400,8 +401,7 @@ const ViewModule = () => {
                 { uploadButton }
               </Upload>
             </div>
-            <div className="remark-text">注：图片标准尺寸为450 x 450px，请上传尽量符合标准的图片，避免图片被拉伸</div>
-            <div className="remark-text">   图片命名规范：务必不含有中文，且请勿和其它已上传图片名字重复</div>
+            <div className="remark-text">注：图片标准尺寸为450 x 450px，请上传尽量符合标准的图片，避免图片被拉伸（图片命名规范：务必不含有中文）</div>
           </div>
         </div>
 

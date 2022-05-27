@@ -139,6 +139,7 @@ const ViewModule = () => {
             dataSource={list}
             loading={tableLoading}
             scroll={{x: '100%'}}
+            size="small"
             pagination={false}
           >
             <Column
@@ -200,8 +201,8 @@ const ViewModule = () => {
               render={(state, data, index)=> {
                 return (
                   <div>
-                    <Button className="btn-primary mar-10" onClick={()=>{handleModal(state, 'edit', index)}}>编辑</Button>
-                    <Button className="btn-warning mar-10" onClick={()=>{handleModal(state, 'sort', index)}}>排序</Button>
+                    <Button className="btn-primary mar-5" onClick={()=>{handleModal(state, 'edit', index)}}>编辑</Button>
+                    <Button className="btn-warning mar-5" onClick={()=>{handleModal(state, 'sort', index)}}>排序</Button>
                   </div>
                 ) }}
             />

@@ -237,6 +237,7 @@ const ViewModule = () => {
             dataSource={list}
             loading={tableLoading}
             scroll={{x: '100%'}}
+            size="small"
             pagination={false}
           >
             <Column
@@ -249,12 +250,11 @@ const ViewModule = () => {
                 )
               }}
             />
-            <Column title="名字" dataIndex="name" key="name" width={100} align="center" />
-            <Column title="电话" dataIndex="phone" key="phone" width={100} align="center" />
             <Column title="页面" dataIndex="pageName" key="pageName" width={100} align="center" />
+            <Column title="访问者名字" dataIndex="name" key="name" width={100} align="center" />
+            <Column title="访问者电话" dataIndex="phone" key="phone" width={100} align="center" />
             <Column title="path" dataIndex="path" key="path" width={140} align="center" />
             <Column title="停留时间" dataIndex="time" key="time" width={120} align="center" />
-            <Column title="ip" dataIndex="ip" key="ip" width={120} align="center" />
             <Column
               title="日期"
               width={150}
@@ -265,6 +265,7 @@ const ViewModule = () => {
                 )
               }}
             />
+            <Column title="ip" dataIndex="ip" key="ip" width={120} align="center" />
           </Table>
           {
             list.length > 0 ? (
@@ -276,7 +277,6 @@ const ViewModule = () => {
                   }}
                   Pagination
                   total={total}
-                  className="mar-t20"
                 />
               </div>
             ) : null

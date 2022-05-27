@@ -130,6 +130,7 @@ const ViewModule = () => {
           <Table
             bordered
             dataSource={list}
+            size="small"
             loading={tableLoading}
             scroll={{x: '100%'}}
             pagination={false}
@@ -170,11 +171,11 @@ const ViewModule = () => {
               render={(state)=> {
                 return (
                   <div>
-                    <Button className="btn-primary mar-10" onClick={()=>{handleModal(state)}}>编辑</Button>
+                    <Button className="btn-primary mar-5" onClick={()=>{handleModal(state)}}>编辑</Button>
                     {
                       state.status === 1 ? (
                         <Button
-                          className="btn-danger mar-10"
+                          className="btn-danger mar-5"
                           onClick={
                             ()=>{
                               updateStatus(state._id, 0)
@@ -185,7 +186,7 @@ const ViewModule = () => {
                         </Button>
                       ) : (
                         <Button
-                          className="btn-success mar-10"
+                          className="btn-success mar-5"
                           onClick={
                             ()=>{
                               updateStatus(state._id, 1)
@@ -197,7 +198,7 @@ const ViewModule = () => {
                       )
                     }
                     <Button
-                      className="btn-delete mar-10"
+                      className="btn-delete mar-5"
                       onClick={
                         ()=>{
                           setCheckItem(state)

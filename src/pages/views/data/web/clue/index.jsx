@@ -211,7 +211,7 @@ const ViewModule = (props) => {
     <div className="data-clue-container">
       <div className="module-search-view-wrap">
         <Tag color="#4169E1" className="search-title" icon={<SearchOutlined />}>筛选</Tag>
-        <div className="search-container mar-t20">
+        <div className="search-container mar-t10">
           <div className="FBH FBAC mar-l20 h-40">
             <div className="cell-title">关键词：</div>
             <Input
@@ -265,6 +265,7 @@ const ViewModule = (props) => {
         <div className="table-wrap">
           <Table
             bordered
+            size="small"
             dataSource={list}
             loading={tableLoading}
             scroll={{x: '100%'}}
@@ -301,7 +302,6 @@ const ViewModule = (props) => {
                   }}
                   Pagination
                   total={total}
-                  className="mar-t20"
                 />
               </div>
             ) : null
@@ -361,7 +361,7 @@ const ViewModule = (props) => {
               <Button
                 className="btn-info mar-l20"
                 onClick={()=>{
-                  setStaticsOriginHrefChoose([])
+                  setStpagiaticsOriginHrefChoose([])
                   setStaticsPickerValue(null)
                 }}
               >

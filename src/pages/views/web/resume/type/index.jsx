@@ -225,7 +225,7 @@ const ViewModule = () => {
                     {
                       status.status === 1 ? (
                         <Button
-                          className="btn-danger mar-10"
+                          className="btn-danger mar-5"
                           onClick={()=>{
                             updateStatus(status._id, 0, 'category')
                           }}
@@ -234,7 +234,7 @@ const ViewModule = () => {
                         </Button>
                       ) : (
                         <Button
-                          className="btn-success mar-10"
+                          className="btn-success mar-5"
                           onClick={()=>{
                             updateStatus(status._id, 1, 'category')
                           }}
@@ -244,7 +244,7 @@ const ViewModule = () => {
                       )
                     }
                     <Button
-                      className="btn-tag mar-10"
+                      className="btn-tag mar-5"
                       onClick={()=>{
                         setCurrentType('category')
                         setCheckItem(status)
@@ -254,7 +254,7 @@ const ViewModule = () => {
                     >
                       排序
                     </Button>
-                    <Button className="btn-delete mar-10" onClick={()=>{deleteItem(status._id, 'category')}}>删除</Button>
+                    <Button className="btn-delete mar-5" onClick={()=>{deleteItem(status._id, 'category')}}>删除</Button>
                   </div>
                 ) }}
             />
@@ -328,7 +328,7 @@ const ViewModule = () => {
                     {
                       status.status === 1 ? (
                         <Button
-                          className="btn-danger mar-10"
+                          className="btn-danger mar-5"
                           onClick={()=>{
                             updateStatus(status._id, 0, 'place')
                           }}
@@ -337,7 +337,7 @@ const ViewModule = () => {
                         </Button>
                       ) : (
                         <Button
-                          className="btn-success mar-10"
+                          className="btn-success mar-5"
                           onClick={()=>{
                             updateStatus(status._id, 1, 'place')
                           }}
@@ -347,7 +347,7 @@ const ViewModule = () => {
                       )
                     }
                     <Button
-                      className="btn-tag mar-10"
+                      className="btn-tag mar-5"
                       onClick={()=>{
                         setCurrentType('place')
                         setCheckItem(status)
@@ -357,7 +357,7 @@ const ViewModule = () => {
                     >
                       排序
                     </Button>
-                    <Button className="btn-delete mar-10" onClick={()=>{deleteItem(status._id, 'place')}}>删除</Button>
+                    <Button className="btn-delete mar-5" onClick={()=>{deleteItem(status._id, 'place')}}>删除</Button>
                   </div>
                 ) }}
             />
