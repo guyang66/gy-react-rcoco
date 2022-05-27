@@ -76,4 +76,13 @@ export default {
       data: params,
     })
   },
+
+  getAllPageNameByTdk (params) {
+    return fetch({
+      url: urlPrefix + 'tdk/pageName/auth',
+      method: 'get',
+      params,
+    })
+  },
+
 }

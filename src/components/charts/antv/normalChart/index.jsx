@@ -33,6 +33,7 @@ const ChartView = (props) => {
     }
     const l = length || 1
     if(chartBarView){
+      chartLineView.changeSize(Math.min(Math.max(470, l * 50), 1000), 350)
       chartBarView.changeData(chartData)
       return
     }
@@ -77,7 +78,7 @@ const ChartView = (props) => {
         autoFit: true,
         height: 350,
         width: 800,
-        padding: [40,20,40,0],
+        padding: [40,20,40,40],
       }
     )
     chart.data(chartData)

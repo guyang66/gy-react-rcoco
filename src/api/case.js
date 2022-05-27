@@ -83,6 +83,13 @@ const Api = {
     })
   },
 
+  getStaticRecordList (params) {
+    return fetch({
+      url: urlPrefix + 'record/list/auth',
+      method: 'post',
+      data: params,
+    })
+  },
 }
 
 export default Api

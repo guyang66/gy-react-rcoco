@@ -10,13 +10,15 @@ const ChartView = (props) => {
     }
     const l = length || 2
     if(chartLineView){
+      chartLineView.changeSize(viewLength || 800, Math.max(40 * l, 300))
       chartLineView.changeData(chartData)
       return
     }
+    console.log(l)
     const chart = new Chart(
       {
         container: id,
-        height: Math.max(60 * l, 240),
+        height: Math.max(40 * l, 240),
         width: viewLength || 800,
         padding: [40,80,40,(paddingLeft || 80)],
       }

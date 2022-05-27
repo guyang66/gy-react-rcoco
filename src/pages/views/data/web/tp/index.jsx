@@ -44,7 +44,8 @@ const IndexModule = () => {
       if(!data){
         return
       }
-      setStaticsViewCountData(data.reverse())
+
+      setStaticsViewCountData(data)
       setStaticsViewCountLoading(false)
     })
   }

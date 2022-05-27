@@ -172,4 +172,36 @@ export default {
     })
   },
 
+  getStaticPvList (params) {
+    return fetch({
+      url: urlPrefix + 'statics/pv/list/auth',
+      method: 'post',
+      data: params,
+    })
+  },
+
+  staticsPvVisit (params) {
+    return fetch({
+      url: urlPrefix + 'statics/pv/visit/auth',
+      method: 'get',
+      params,
+    })
+  },
+
+  staticsPvLine (params) {
+    return fetch({
+      url: urlPrefix + 'statics/pv/line/auth',
+      method: 'get',
+      params,
+    })
+  },
+
+  staticsUvLine (params) {
+    return fetch({
+      url: urlPrefix + 'statics/uv/line/auth',
+      method: 'get',
+      params,
+    })
+  },
+
 }

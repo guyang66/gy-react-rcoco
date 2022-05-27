@@ -30,6 +30,8 @@ import dataResource from "@pages/views/data/web/resource";
 import dataNews from "@pages/views/data/web/news";
 import dataCase from "@pages/views/data/web/case";
 import dataActivity from "@pages/views/data/web/activity";
+import dataPv from "@pages/views/data/web/pv";
+import dataTp from "@pages/views/data/web/tp";
 
 const privateRoutes = [
   {
@@ -256,6 +258,24 @@ const privateRoutes = [
     exact: true,
     backUrl: '',
     component: dataActivity,
+  },
+  {
+    path: '/admin/data/web/pvuv',
+    roles: [],
+    name: 'pv/uv',
+    key: 'data_web_pvuv',
+    exact: true,
+    backUrl: '',
+    component: dataPv,
+  },
+  {
+    path: '/admin/data/web/tp',
+    roles: [],
+    name: 'tp',
+    key: 'data_web_tp',
+    exact: true,
+    backUrl: '',
+    component: dataTp,
   },
   {
     path: '/admin/app/menu',

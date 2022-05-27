@@ -165,7 +165,6 @@ const IndexModule = (props) => {
               loading={categorySelectLoading}
               onChange={
                 (e)=>{
-                  console.log(e)
                   setSearchCategory(e)
                 }
               }
