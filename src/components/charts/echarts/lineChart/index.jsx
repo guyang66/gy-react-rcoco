@@ -15,18 +15,14 @@ const ChartView = (props) => {
     setChartView(chart)
   }
 
-  const getData = () => {
+  const getData = (key) => {
 
     if(!data || data.length < 1){
       return []
     }
-
     const tmp = []
     data.forEach(item=>{
-      tmp.push({
-        value: item.count,
-        name: item.name,
-      })
+      tmp.push(key === 'name' ? item.name : item.count)
     })
     return tmp
   }
@@ -37,26 +33,17 @@ const ChartView = (props) => {
         text: title,
         left: 'center',
       },
-      tooltip: {
-        trigger: 'item',
+      xAxis: {
+        type: 'category',
+        data: getData('name'),
       },
-      legend: {
-        orient: 'vertical',
-        left: 'right',
+      yAxis: {
+        type: 'value',
       },
       series: [
         {
-          name: seriesName,
-          type: 'pie',
-          radius: '50%',
-          data: getData(),
-          emphasis: {
-            itemStyle: {
-              shadowBlur: 10,
-              shadowOffsetX: 0,
-              shadowColor: 'rgba(0, 0, 0, 0.5)',
-            },
-          },
+          data: getData('count'),
+          type: 'line',
         },
       ],
     }

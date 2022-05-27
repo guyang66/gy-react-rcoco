@@ -8,7 +8,7 @@ import cls from "classnames";
 const {Column} = Table;
 const {Option} = Select
 
-const IndexModule = () => {
+const ViewModule = () => {
   const [list, setList] = useState([])  // table 数据源
   const [total, setTotal] = useState(0)
   const [tableLoading, setTableLoading] = useState(true) // table是否数据加载中
@@ -373,4 +373,4 @@ const IndexModule = () => {
   )
 }
 
-export default IndexModule
+export default ViewModule

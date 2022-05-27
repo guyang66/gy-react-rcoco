@@ -2,7 +2,6 @@ import NotFount from "@pages/404";
 import AccessDeny from "@pages/403"
 import Login from '@pages/login'
 
-// 公共路由不需要走服务端。
 const publicPageRoutes = [
   {
     path: '/admin/login',

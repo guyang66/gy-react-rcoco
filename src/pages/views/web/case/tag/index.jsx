@@ -5,7 +5,7 @@ import {message, Table, Button, Modal, Input} from 'antd';
 
 const {Column} = Table;
 
-const IndexModule = () => {
+const ViewModule = () => {
 
   const [list, setList] = useState([])  // table 数据源
   const [keyMap, setKeyMap] = useState({})
@@ -361,4 +361,4 @@ const IndexModule = () => {
   )
 }
 
-export default IndexModule
+export default ViewModule

@@ -13,7 +13,7 @@ import {
 const {Column} = Table;
 const {Option} = Select
 
-const IndexModule = (props) => {
+const ViewModule = (props) => {
   const {appStore} = props
 
   const [list, setList] = useState([])  // table 数据源
@@ -415,4 +415,4 @@ const IndexModule = (props) => {
   )
 }
 
-export default withRouter(inject('appStore')(observer(IndexModule)))
+export default withRouter(inject('appStore')(observer(ViewModule)))

@@ -11,7 +11,7 @@ const {Column} = Table;
 const {RangePicker} = DatePicker
 const {Option} = Select
 
-const IndexModule = () => {
+const ViewModule = () => {
   const [list, setList] = useState([])  // table 数据源
   const [total, setTotal] = useState(null)
   const [tableLoading, setTableLoading] = useState(true) // table是否数据加载中
@@ -185,8 +185,7 @@ const IndexModule = () => {
     setPickerValue(e)
   }
   return (
-    <div className="data-resource-container">
-
+    <div className="data-tp-container">
       <div className="module-view-wrap min-h-200">
         <div className="module-title mar-t20 mar-l20 mar-b10">埋点数据源</div>
         <div className="FBH FBAC">
@@ -282,7 +281,6 @@ const IndexModule = () => {
               </div>
             ) : null
           }
-
         </div>
       </div>
 
@@ -482,4 +480,4 @@ const IndexModule = () => {
   )
 }
 
-export default IndexModule
+export default ViewModule

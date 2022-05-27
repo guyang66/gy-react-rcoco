@@ -273,7 +273,7 @@ const IndexBanner = () => {
             清除官网首页banner缓存
           </Button>
         </div>
-        <div className="color-orange mar-20">todo: 官网首页如果流量大的话，一般需要缓存数据，不然每一个人来访问都需要查询一次数据库，我们直接把数据缓存起来，修改了之后就刷掉缓存，减少首屏渲染时间和服务器压力</div>
+        <div className="color-orange mar-20">注：官网首页如果流量大的话，一般需要缓存数据，不然每一个人来访问都需要查询一次数据库，我们直接把数据缓存起来，修改了之后就刷掉缓存，减少首屏渲染时间和服务器压力</div>
         <div className="table-wrap">
           <Table
             bordered

@@ -47,11 +47,11 @@
     "echarts": "^5.3.2",
     "inquirer": "^8.1.1",
     "js-cookie": "^3.0.1",
+    "js-export-excel": "^1.1.4",
     "less": "^3.11.1",
     "less-loader": "^5.0.0",
     "lodash": "^4.17.15",
     "mobx": "^5.15.4",
-    "js-export-excel": "^1.1.4",
     "mobx-react": "^6.1.8",
     "moment": "^2.27.0",
     "rc-tween-one": "^3.0.3",
@@ -67,8 +67,9 @@
     "rimraf": "^3.0.2",
     "stylus": "^0.54.7",
     "stylus-loader": "^3.0.2",
-    "web-vitals": "^1.0.1",
-    "wangeditor": "^4.7.9"
+    "wangeditor": "^4.7.9",
+    "react-countup": "^6.2.0",
+    "web-vitals": "^1.0.1"
   },
   "devDependencies": {
     "async-mkdirp": "^1.2.7",

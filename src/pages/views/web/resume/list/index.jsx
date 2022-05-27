@@ -560,6 +560,14 @@ const ResumeModule = (props) => {
         </Tabs>
         <div className="FBH operate-view-wrap">
           <Button
+            className="btn-success mar-r20"
+            onClick={()=>{
+              history.push({pathname: '/admin/web/resume/detail',state: {edit: 'Y', new: 'Y'}, search: '?new=Y'})
+            }}
+          >
+            新增岗位
+          </Button>
+          <Button
             className="btn-primary mar-r20"
             onClick={()=>{
               history.push({pathname: '/admin/web/resume/type'})
@@ -568,20 +576,12 @@ const ResumeModule = (props) => {
             类型管理
           </Button>
           <Button
-            className="btn-primary mar-r20"
+            className="btn-primary"
             onClick={()=>{
               history.push({pathname: '/admin/web/resume/tag'})
             }}
           >
             标签管理
-          </Button>
-          <Button
-            className="btn-success"
-            onClick={()=>{
-              history.push({pathname: '/admin/web/resume/detail',state: {edit: 'Y', new: 'Y'}, search: '?new=Y'})
-            }}
-          >
-            新增岗位
           </Button>
         </div>
       </div>

@@ -10,8 +10,7 @@ const {Column} = Table;
 const {Option} = Select
 const {TextArea} = Input;
 
-// todo: module名字
-const IndexModule = (props) => {
+const ViewModule = (props) => {
 
   const {history} = props
   // 图片上传配置
@@ -306,7 +305,7 @@ const IndexModule = (props) => {
 
             }}
           >
-            新增案例
+            标签管理
           </Button>
         </div>
         <div className="table-wrap">
@@ -651,4 +650,4 @@ const IndexModule = (props) => {
   )
 }
 
-export default IndexModule
+export default ViewModule

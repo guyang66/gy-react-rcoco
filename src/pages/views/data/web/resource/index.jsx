@@ -7,7 +7,7 @@ import ChartView from '@components/charts/antv/normalChart'
 
 const {Column} = Table;
 
-const IndexModule = () => {
+const ViewModule = () => {
 
   const [list, setList] = useState([])  // table 数据源
   const [total, setTotal] = useState(null)
@@ -254,4 +254,4 @@ const IndexModule = () => {
   )
 }
 
-export default IndexModule
+export default ViewModule

@@ -1,7 +1,7 @@
 import Welcome from "@pages/views/welcome";
 import Person from "@pages/views/person"
 
-// 公共路由要和菜单匹配上
+// 公共路由不需要走服务端。
 const publicRoutes = [
   {
     path: '/admin/index',

@@ -8,7 +8,7 @@ import utils from '@utils'
 const {Column} = Table;
 const {Option} = Select
 
-const IndexModule = (props) => {
+const ViewModule = (props) => {
   const {history} = props
 
   const [list, setList] = useState([])  // table 数据源
@@ -646,4 +646,4 @@ const IndexModule = (props) => {
   )
 }
 
-export default IndexModule
+export default ViewModule

@@ -5,7 +5,7 @@ import {message, Table, Button, Modal, Input} from 'antd';
 
 const {Column} = Table;
 
-const IndexModule = () => {
+const ViewModule = () => {
 
   const [list, setList] = useState([])  // table 数据源
   const [tableLoading, setTableLoading] = useState(true) // table是否数据加载中
@@ -339,4 +339,4 @@ const IndexModule = () => {
   )
 }
 
-export default IndexModule
+export default ViewModule

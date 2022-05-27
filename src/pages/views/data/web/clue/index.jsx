@@ -20,7 +20,7 @@ const {Column} = Table;
 const {RangePicker} = DatePicker
 moment.locale('zh-cn');
 
-const IndexModule = (props) => {
+const ViewModule = (props) => {
   const {appStore} = props
   const [list, setList] = useState([])  // table 数据源
   const [total, setTotal] = useState(null)
@@ -408,4 +408,4 @@ const IndexModule = (props) => {
   )
 }
 
-export default withRouter(inject('appStore')(observer(IndexModule)))
+export default withRouter(inject('appStore')(observer(ViewModule)))

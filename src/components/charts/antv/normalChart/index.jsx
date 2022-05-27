@@ -2,7 +2,7 @@ import React, {useState, useEffect}from "react";
 import {Chart} from "@antv/g2";
 
 const ChartView = (props) => {
-  const {type, data, id, x, y, length } = props
+  const {type, data, id, x, y, length} = props
   const [chartBarView, setChartBarView] = useState(null)
   const [chartLineView, setChartLineView] = useState(null)
 

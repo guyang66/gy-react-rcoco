@@ -17,7 +17,7 @@ const {Column} = Table;
 const {Option} = Select
 const {TextArea} = Input;
 
-const IndexModule = () => {
+const ViewModule = () => {
 
   // 图片上传配置
   const uploadConfig = {
@@ -922,4 +922,4 @@ const IndexModule = () => {
   )
 }
 
-export default IndexModule
+export default ViewModule

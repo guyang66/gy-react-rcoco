@@ -9,7 +9,7 @@ import {
 const {Column} = Table;
 const {Option} = Select
 
-const IndexModule = () => {
+const ViewModule = () => {
 
   const [list, setList] = useState([])  // table 数据源
   const [total, setTotal] = useState(null)
@@ -183,4 +183,4 @@ const IndexModule = () => {
   )
 }
 
-export default IndexModule
+export default ViewModule

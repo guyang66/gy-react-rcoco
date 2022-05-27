@@ -5,7 +5,7 @@ import {Spin, Radio} from 'antd';
 import ChartView from '@components/charts/antv/normalChart'
 import ChartViewBar from '@components/charts/antv/barChartV'
 
-const IndexModule = () => {
+const ViewModule = () => {
 
   const [staticsRankChoose, setStaticsRankChoose] = useState(10)
   const [staticsViewCountLoading, setStaticsViewCountLoading] = useState(false)
@@ -66,8 +66,7 @@ const IndexModule = () => {
   }
 
   return (
-    <div className="data-resource-container">
-
+    <div className="data-news-container">
       <div className="module-view-wrap min-h-200">
         <div className="module-title mar-l20 mar-t20 mar-b10">文章浏览量排名</div>
         <Spin tip="加载中..." spinning={staticsViewCountLoading}>
@@ -116,4 +115,4 @@ const IndexModule = () => {
   )
 }
 
-export default IndexModule
+export default ViewModule

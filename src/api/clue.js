@@ -34,4 +34,12 @@ export default {
       params,
     })
   },
+
+  staticsCount (params) {
+    return fetch({
+      url: urlPrefix + 'statics/count/auth',
+      method: 'get',
+      params,
+    })
+  },
 }

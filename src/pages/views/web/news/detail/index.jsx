@@ -14,7 +14,7 @@ import {TweenOneGroup} from "rc-tween-one";
 const {TextArea} = Input
 const {Option} = Select
 
-const IndexModule = (props) => {
+const ViewModule = (props) => {
   const {location, history} = props
   // 是否是编辑状态
   const newsId =  location.state && location.state.id
@@ -651,4 +651,4 @@ const IndexModule = (props) => {
   )
 }
 
-export default withRouter(IndexModule)
+export default withRouter(ViewModule)

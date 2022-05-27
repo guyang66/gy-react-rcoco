@@ -19,7 +19,7 @@ const ChartView = (props) => {
         container: id,
         height: Math.max(40 * l, 240),
         width: viewLength || 800,
-        padding: [1,80,40,(paddingLeft || 80)],
+        padding: [10,80,40,(paddingLeft || 80)],
       }
     )
     chart.data(data);
