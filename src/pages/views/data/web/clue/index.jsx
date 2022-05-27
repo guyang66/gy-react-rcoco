@@ -25,6 +25,8 @@ const IndexModule = (props) => {
   const [list, setList] = useState([])  // table 数据源
   const [total, setTotal] = useState(null)
   const [searchDate, setSearchDate] = useState([])
+  const [pickerValue, setPickerValue] = useState(null)
+
   const [tableLoading, setTableLoading] = useState(true) // table是否数据加载中
 
   const [downloadVisible, setDownloadVisible] = useState(false)
@@ -38,6 +40,7 @@ const IndexModule = (props) => {
   const [staticsNeedData, setStaticsNeedData] = useState([])
 
   const [staticsOriginHrefChoose, setStaticsOriginHrefChoose] = useState([])
+  const [staticsPickerValue, setStaticsPickerValue] = useState(null)
   const [staticsOriginHrefLoading, setStaticsOriginHrefLoading] = useState(false)
   const [staticsOriginHrefData, setStaticsOriginHrefData] = useState([])
 
@@ -136,10 +139,12 @@ const IndexModule = (props) => {
 
   const chooseSearchDate = (e,d)=>{
     setSearchDate(d)
+    setPickerValue(e)
   }
 
   const chooseStaticDate = (e,d)=>{
     setStaticsOriginHrefChoose(d)
+    setStaticsPickerValue(e)
   }
 
   const downloadDataAll = () => {
@@ -223,6 +228,7 @@ const IndexModule = (props) => {
               placeholder={['开始时间','结束时间']}
               onChange={chooseSearchDate}
               className="normal-date-picker"
+              value={pickerValue}
             />
           </div>
         </div>
@@ -232,6 +238,7 @@ const IndexModule = (props) => {
             onClick={()=>{
               searchRef.current.handleReset()
               setSearchDate([])
+              setPickerValue(null)
             }}
           >
             清空条件
@@ -348,8 +355,18 @@ const IndexModule = (props) => {
               <RangePicker
                 placeholder={['开始时间','结束时间']}
                 onChange={chooseStaticDate}
+                value={staticsPickerValue}
                 className="normal-date-picker"
               />
+              <Button
+                className="btn-info mar-l20"
+                onClick={()=>{
+                  setStaticsOriginHrefChoose([])
+                  setStaticsPickerValue(null)
+                }}
+              >
+                清空日期
+              </Button>
               <Button
                 className="btn-primary mar-l20"
                 onClick={()=>{

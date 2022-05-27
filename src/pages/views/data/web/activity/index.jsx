@@ -16,6 +16,7 @@ const IndexModule = () => {
   const [tableLoading, setTableLoading] = useState(true) // table是否数据加载中
 
   const [searchDate, setSearchDate] = useState([])
+  const [pickerValue, setPickerValue] = useState(null)
   const [searchCategory, setSearchCategory] = useState('all')
 
   const [staticsRankChoose, setStaticsRankChoose] = useState(10)
@@ -23,10 +24,10 @@ const IndexModule = () => {
   const [staticsCategoryChoose, setStaticsCategoryChoose] = useState(null)
 
   const [staticsViewCountLoading, setStaticsViewCountLoading] = useState(false)
-  const [staticsViewCountData, setStaticsViewCountData] = useState([])
   const [categoryOption, setCategoryOption] = useState([])
   const [categorySelectLoading, setCategorySelectLoading] = useState(true)
   const [categoryMap, setCategoryMap] = useState({})
+  const [staticsViewCountData, setStaticsViewCountData] = useState(null)
 
   const dateSelectOptions = [
     {label: '全部', value: 'all'},
@@ -124,6 +125,7 @@ const IndexModule = () => {
 
   const chooseSearchDate = (e,d)=>{
     setSearchDate(d)
+    setPickerValue(e)
   }
 
   const getCategoryString = (key) => {
@@ -153,6 +155,7 @@ const IndexModule = () => {
             <RangePicker
               placeholder={['开始时间','结束时间']}
               onChange={chooseSearchDate}
+              value={pickerValue}
               className="search-data-picker"
             />
           </div>
@@ -184,6 +187,7 @@ const IndexModule = () => {
             onClick={()=>{
               searchRef.current.handleReset()
               setSearchDate([])
+              setPickerValue(null)
             }}
           >
             清空条件
@@ -310,10 +314,10 @@ const IndexModule = () => {
             </div>
             <ChartViewBar
               data={staticsViewCountData}
-              id="clueStaticsViewCount"
+              id="activityStaticsViewCount"
               viewLength={1000}
               paddingLeft={350}
-              length={staticsViewCountData.length}
+              length={staticsViewCountData ? staticsViewCountData.length : 0}
             />
           </div>
         </Spin>

@@ -204,4 +204,36 @@ export default {
     })
   },
 
+  getStaticsTpList (params) {
+    return fetch({
+      url: urlPrefix + 'statics/tp/list/auth',
+      method: 'post',
+      data: params,
+    })
+  },
+
+  staticsTpVisit (params){
+    return fetch({
+      url: urlPrefix + 'statics/tp/visit/auth',
+      method: 'get',
+      params,
+    })
+  },
+
+  staticsTpTotal (params){
+    return fetch({
+      url: urlPrefix + 'statics/tp/total/auth',
+      method: 'get',
+      params,
+    })
+  },
+
+  staticsTpTrend (params){
+    return fetch({
+      url: urlPrefix + 'statics/tp/trend/auth',
+      method: 'get',
+      params,
+    })
+  },
+
 }

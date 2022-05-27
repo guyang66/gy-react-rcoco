@@ -15,15 +15,16 @@ const IndexModule = () => {
   const [tableLoading, setTableLoading] = useState(true) // table是否数据加载中
 
   const [searchDate, setSearchDate] = useState([])
+  const [pickerValue, setPickerValue] = useState(null)
 
   const [staticsRankChoose, setStaticsRankChoose] = useState(10)
   const [staticsDateChoose, setStaticsDateChoose] = useState('all')
   const [staticsViewCountLoading, setStaticsViewCountLoading] = useState(false)
-  const [staticsViewCountData, setStaticsViewCountData] = useState([])
+  const [staticsViewCountData, setStaticsViewCountData] = useState(null)
 
   const [staticsKeywordsChoose, setStaticsKeywordsChoose] = useState('all')
   const [staticsKeywordsLoading, setStaticsKeywordsLoading] = useState(false)
-  const [staticsKeywordsData, setStaticsKeywordsData] = useState([])
+  const [staticsKeywordsData, setStaticsKeywordsData] = useState(null)
 
   const dateSelectOptions = [
     {label: '全部', value: 'all'},
@@ -110,6 +111,7 @@ const IndexModule = () => {
 
   const chooseSearchDate = (e,d)=>{
     setSearchDate(d)
+    setPickerValue(e)
   }
   return (
     <div className="data-resource-container">
@@ -130,6 +132,7 @@ const IndexModule = () => {
             <div className="search-title color-orange">指定日期：</div>
             <RangePicker
               placeholder={['开始时间','结束时间']}
+              value={pickerValue}
               onChange={chooseSearchDate}
               className="search-data-picker"
             />
@@ -139,6 +142,7 @@ const IndexModule = () => {
             onClick={()=>{
               searchRef.current.handleReset()
               setSearchDate([])
+              setPickerValue(null)
             }}
           >
             清空条件
@@ -241,10 +245,10 @@ const IndexModule = () => {
             </div>
             <ChartViewBar
               data={staticsViewCountData}
-              id="clueStaticsViewCount"
+              id="caseStaticsViewCount"
               viewLength={800}
               paddingLeft={150}
-              length={staticsViewCountData.length}
+              length={staticsViewCountData ? staticsViewCountData.length : 0}
             />
           </div>
         </Spin>
@@ -264,7 +268,7 @@ const IndexModule = () => {
               }}
               value={staticsKeywordsChoose}
             />
-            <ChartView data={staticsKeywordsData} id="clueStaticsKeywords" type="bar" length={staticsKeywordsData.length} />
+            <ChartView data={staticsKeywordsData} id="caseStaticsKeywords" type="bar" length={staticsKeywordsData ? staticsKeywordsData.length : 0} />
           </div>
         </Spin>
       </div>

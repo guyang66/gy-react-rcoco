@@ -28,12 +28,12 @@ const ChartView = (props) => {
 
   // 普通柱状图
   const initChartBar = (chartData) => {
-    if(!data || data.length < 1){
+    if(!data){
       return;
     }
     const l = length || 1
     if(chartBarView){
-      chartLineView.changeSize(Math.min(Math.max(470, l * 50), 1000), 350)
+      chartBarView.changeSize(Math.min(Math.max(470, l * 50), 1000), 350)
       chartBarView.changeData(chartData)
       return
     }
@@ -65,7 +65,7 @@ const ChartView = (props) => {
 
   // 普通折线图
   const initChartLine = (chartData) => {
-    if(!data || data.length < 1){
+    if(!data){
       return;
     }
     if(chartLineView){

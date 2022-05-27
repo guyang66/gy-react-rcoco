@@ -15,16 +15,16 @@ const IndexModule = () => {
 
   const [staticsTypeChoose, setStaticsTypeChoose] = useState('all')
   const [staticsTypeLoading, setStaticsTypeLoading] = useState(false)
-  const [staticsTypeData, setStaticsTypeData] = useState([])
+  const [staticsTypeData, setStaticsTypeData] = useState(null)
 
   const [staticsNameActionChoose, setStaticsNameActionChoose] = useState('all')
   const [staticsNameDateChoose, setStaticsNameDateChoose] = useState('all')
   const [staticsNameLoading, setStaticsNameLoading] = useState(false)
-  const [staticsNameData, setStaticsNameData] = useState([])
+  const [staticsNameData, setStaticsNameData] = useState(null)
 
   const [staticsKeywordsChoose, setStaticsKeywordsChoose] = useState('all')
   const [staticsKeywordsLoading, setStaticsKeywordsLoading] = useState(false)
-  const [staticsKeywordsData, setStaticsKeywordsData] = useState([])
+  const [staticsKeywordsData, setStaticsKeywordsData] = useState(null)
 
   const [pageParams, setPageParams] = useState({
     page: 1,
@@ -191,7 +191,7 @@ const IndexModule = () => {
               }}
               value={staticsTypeChoose}
             />
-            <ChartView data={staticsTypeData} id="clueStaticsType" type="bar" length={staticsTypeData.length} />
+            <ChartView data={staticsTypeData} id="clueStaticsType" type="bar" length={staticsTypeData ? staticsTypeData.length : 0} />
           </div>
         </Spin>
       </div>
@@ -226,7 +226,7 @@ const IndexModule = () => {
                 value={staticsNameDateChoose}
               />
             </div>
-            <ChartView data={staticsNameData} id="clueStaticsName" type="bar" length={staticsNameData.length} />
+            <ChartView data={staticsNameData} id="resourceStaticsName" type="bar" length={staticsNameData ? staticsNameData.length : 0} />
           </div>
         </Spin>
       </div>
@@ -245,7 +245,7 @@ const IndexModule = () => {
               }}
               value={staticsKeywordsChoose}
             />
-            <ChartView data={staticsKeywordsData} id="clueStaticsKeywords" type="bar" length={staticsKeywordsData.length} />
+            <ChartView data={staticsKeywordsData} id="resourceStaticsKeywords" type="bar" length={staticsKeywordsData ? staticsKeywordsData.length : 0} />
           </div>
         </Spin>
       </div>

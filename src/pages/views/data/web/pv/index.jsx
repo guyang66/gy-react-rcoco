@@ -17,31 +17,32 @@ const IndexModule = () => {
   const [tableLoading, setTableLoading] = useState(true) // table是否数据加载中
 
   const [searchDate, setSearchDate] = useState([])
+  const [pickerValue, setPickerValue] = useState(null)
 
   const [staticsRankChoose, setStaticsRankChoose] = useState(10)
   const [staticsDateChoose, setStaticsDateChoose] = useState('all')
   const [staticsViewCountLoading, setStaticsViewCountLoading] = useState(false)
-  const [staticsViewCountData, setStaticsViewCountData] = useState([])
+  const [staticsViewCountData, setStaticsViewCountData] = useState(null)
 
   const [staticsPvLineAllChoose, setStaticsPvLineAllChoose] = useState('last_one_week')
   const [staticsPvLineAllLoading, setStaticsPvLineAllLoading] = useState(false)
-  const [staticsPvLineAllData, setStaticsPvLineAllData] = useState([])
+  const [staticsPvLineAllData, setStaticsPvLineAllData] = useState(null)
 
   const [staticsUvLineAllChoose, setStaticsUvLineAllChoose] = useState('last_one_week')
   const [staticsUvLineAllLoading, setStaticsUvLineAllLoading] = useState(false)
-  const [staticsUvLineAllData, setStaticsUvLineAllData] = useState([])
+  const [staticsUvLineAllData, setStaticsUvLineAllData] = useState(null)
 
   const [pageNameList, setPageNameList] = useState([])
 
   const [staticsPvLineSinglePathChoose, setStaticsPvLineSinglePathChoose] = useState(null)
   const [staticsPvLineSingleChoose, setStaticsPvLineSingleChoose] = useState('last_one_week')
   const [staticsPvLineSingleLoading, setStaticsPvLineSingleLoading] = useState(false)
-  const [staticsPvLineSingleData, setStaticsPvLineSingleData] = useState([])
+  const [staticsPvLineSingleData, setStaticsPvLineSingleData] = useState(null)
 
   const [staticsUvLineSinglePathChoose, setStaticsUvLineSinglePathChoose] = useState(null)
   const [staticsUvLineSingleChoose, setStaticsUvLineSingleChoose] = useState('last_one_week')
   const [staticsUvLineSingleLoading, setStaticsUvLineSingleLoading] = useState(false)
-  const [staticsUvLineSingleData, setStaticsUvLineSingleData] = useState([])
+  const [staticsUvLineSingleData, setStaticsUvLineSingleData] = useState(null)
 
   const dateSelectOptions = [
     {label: '全部', value: 'all'},
@@ -197,6 +198,7 @@ const IndexModule = () => {
 
   const chooseSearchDate = (e,d)=>{
     setSearchDate(d)
+    setPickerValue(e)
   }
   return (
     <div className="data-resource-container">
@@ -218,6 +220,7 @@ const IndexModule = () => {
             <RangePicker
               placeholder={['开始时间','结束时间']}
               onChange={chooseSearchDate}
+              value={pickerValue}
               className="search-data-picker"
             />
           </div>
@@ -226,6 +229,7 @@ const IndexModule = () => {
             onClick={()=>{
               searchRef.current.handleReset()
               setSearchDate([])
+              setPickerValue(null)
             }}
           >
             清空条件
@@ -329,10 +333,10 @@ const IndexModule = () => {
             </div>
             <ChartViewBar
               data={staticsViewCountData}
-              id="clueStaticsViewCount"
+              id="pvStaticsViewCount"
               viewLength={1000}
               paddingLeft={100}
-              length={staticsViewCountData.length}
+              length={staticsViewCountData ? staticsViewCountData.length : 0}
             />
           </div>
         </Spin>
@@ -352,7 +356,7 @@ const IndexModule = () => {
               }}
               value={staticsPvLineAllChoose}
             />
-            <ChartView data={staticsPvLineAllData} id="clueStaticsPvLineAll" type="line" length={staticsPvLineAllData.length} />
+            <ChartView data={staticsPvLineAllData} id="pvStaticsPvLineAll" type="line" length={staticsPvLineAllData ? staticsPvLineAllData.length : 0} />
           </div>
         </Spin>
       </div>
@@ -371,7 +375,7 @@ const IndexModule = () => {
               }}
               value={staticsUvLineAllChoose}
             />
-            <ChartView data={staticsUvLineAllData} id="clueStaticsUvLineAll" type="line" length={staticsUvLineAllData.length} />
+            <ChartView data={staticsUvLineAllData} id="pvStaticsUvLineAll" type="line" length={(staticsUvLineAllData ? staticsUvLineAllData.length : 0)} />
           </div>
         </Spin>
       </div>
@@ -414,7 +418,7 @@ const IndexModule = () => {
                 value={staticsPvLineSingleChoose}
               />
             </div>
-            <ChartView data={staticsPvLineSingleData} id="clueStaticsPvLineSingle" type="line" length={staticsPvLineSingleData.length} />
+            <ChartView data={staticsPvLineSingleData} id="pvStaticsPvLineSingle" type="line" length={staticsPvLineSingleData ? staticsPvLineSingleData.length : 0} />
           </div>
         </Spin>
       </div>
@@ -457,7 +461,7 @@ const IndexModule = () => {
                 value={staticsUvLineSingleChoose}
               />
             </div>
-            <ChartView data={staticsUvLineSingleData} id="clueStaticsUvLineSingle" type="line" length={staticsUvLineSingleData.length} />
+            <ChartView data={staticsUvLineSingleData} id="pvStaticsUvLineSingle" type="line" length={(staticsUvLineSingleData ? staticsUvLineSingleData.length : 0)} />
           </div>
         </Spin>
       </div>

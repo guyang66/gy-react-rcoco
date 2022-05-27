@@ -9,11 +9,11 @@ const IndexModule = () => {
 
   const [staticsRankChoose, setStaticsRankChoose] = useState(10)
   const [staticsViewCountLoading, setStaticsViewCountLoading] = useState(false)
-  const [staticsViewCountData, setStaticsViewCountData] = useState([])
+  const [staticsViewCountData, setStaticsViewCountData] = useState(null)
 
   const [staticsKeywordsChoose, setStaticsKeywordsChoose] = useState('all')
   const [staticsKeywordsLoading, setStaticsKeywordsLoading] = useState(false)
-  const [staticsKeywordsData, setStaticsKeywordsData] = useState([])
+  const [staticsKeywordsData, setStaticsKeywordsData] = useState(null)
 
   const dateSelectOptions = [
     {label: '全部', value: 'all'},
@@ -84,10 +84,10 @@ const IndexModule = () => {
             />
             <ChartViewBar
               data={staticsViewCountData}
-              id="clueStaticsViewCount"
+              id="newsStaticsViewCount"
               viewLength={1000}
               paddingLeft={450}
-              length={staticsViewCountData.length}
+              length={staticsViewCountData ? staticsViewCountData.length : 0}
             />
           </div>
         </Spin>
@@ -107,7 +107,7 @@ const IndexModule = () => {
               }}
               value={staticsKeywordsChoose}
             />
-            <ChartView data={staticsKeywordsData} id="clueStaticsKeywords" type="bar" length={staticsKeywordsData.length} />
+            <ChartView data={staticsKeywordsData} id="newsStaticsKeywords" type="bar" length={staticsKeywordsData ? staticsKeywordsData.length : 0} />
           </div>
         </Spin>
       </div>
