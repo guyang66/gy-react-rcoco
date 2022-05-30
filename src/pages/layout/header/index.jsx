@@ -79,24 +79,22 @@ const HeaderLayout = (props) => {
         <div className="right-menu FBH">
           {
             user.name ? (
-              <>
-                <div className="username">
-                  {user.name}
-                  （
-                  {user.defaultRoleName || currentRole}
-                  ）
-                </div>
-                <div className="dropdown-wrap">
-                  <Dropdown overlay={menuView}>
-                    <div>
-                      <Avatar shape="square" size="medium" src={user.avatar ? user.avatar : defaultIcon} />
-                      <CaretDownOutlined className="icon-down" style={{color: "rgba(0, 0, 0, .3)"}} />
-                    </div>
-                  </Dropdown>
-                </div>
-              </>
+              <div className="username">
+                {user.name}
+                （
+                {user.defaultRoleName || currentRole}
+                ）
+              </div>
             ) : null
           }
+          <div className="dropdown-wrap">
+            <Dropdown overlay={menuView}>
+              <div>
+                <Avatar shape="square" size="medium" src={user.avatar ? user.avatar : defaultIcon} />
+                <CaretDownOutlined className="icon-down" style={{color: "rgba(0, 0, 0, .3)"}} />
+              </div>
+            </Dropdown>
+          </div>
         </div>
       </Header>
     </>

@@ -31,7 +31,7 @@ export default {
 
   getIndexColumn(params) {
     return fetch({
-      url: urlPrefix + 'index/Column/auth',
+      url: urlPrefix + 'index/column/auth',
       method: 'get',
       params,
     })

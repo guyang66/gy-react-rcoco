@@ -1,0 +1,824 @@
+{
+  "api_resume_column_auth": {
+    "success": true,
+    "data": [
+      {
+        "createTime": "2022-05-14T08:18:40.356Z",
+        "modifyTime": "2022-05-14T08:18:40.356Z",
+        "createId": 1,
+        "modifyId": 1,
+        "isDelete": false,
+        "status": 1,
+        "desc": "",
+        "remark": "",
+        "_id": "627f65e0423956260e32fd93",
+        "key": "society",
+        "name": "社会招聘1"
+      },
+      {
+        "createTime": "2022-05-14T08:18:40.356Z",
+        "modifyTime": "2022-05-14T08:18:40.356Z",
+        "createId": 1,
+        "modifyId": 1,
+        "isDelete": false,
+        "status": 1,
+        "desc": "",
+        "remark": "",
+        "_id": "627f65e0423956260e32fd92",
+        "key": "school",
+        "name": "校园招聘2"
+      },
+      {
+        "createTime": "2022-05-14T08:18:40.356Z",
+        "modifyTime": "2022-05-14T08:18:40.356Z",
+        "createId": 1,
+        "modifyId": 1,
+        "isDelete": false,
+        "status": 1,
+        "desc": "",
+        "remark": "",
+        "_id": "627f65e0423956260e32fd91",
+        "key": "practice",
+        "name": "岗前实习"
+      }
+    ],
+    "errorCode": null,
+    "errorMessage": null
+  },
+  "api_resume_category_auth": {
+    "success": true,
+    "data": [
+      {
+        "createTime": "2022-05-14T15:31:17.144Z",
+        "modifyTime": "2022-05-14T15:31:17.144Z",
+        "createId": 1,
+        "modifyId": 1,
+        "isDelete": false,
+        "order": 1,
+        "status": 1,
+        "desc": "",
+        "remark": "",
+        "_id": "627fcc4fbd9a274d7eeda285",
+        "key": "hh",
+        "name": "hh",
+        "__v": 0
+      },
+      {
+        "createTime": "2022-05-14T15:04:49.258Z",
+        "modifyTime": "2022-05-14T15:04:49.258Z",
+        "createId": 1,
+        "modifyId": 1,
+        "isDelete": false,
+        "order": 1,
+        "status": 1,
+        "desc": "",
+        "remark": "",
+        "_id": "627fc516bf875b4baae9ddc4",
+        "key": "2",
+        "name": "2",
+        "__v": 0
+      },
+      {
+        "createTime": "2022-05-14T14:28:47.128Z",
+        "modifyTime": "2022-05-27T10:41:57.980Z",
+        "createId": 1,
+        "modifyId": 1,
+        "isDelete": false,
+        "order": 60,
+        "status": 1,
+        "desc": "",
+        "remark": "",
+        "_id": "627fbc9f6f39bd3936cae58a",
+        "key": "operating",
+        "name": "运营"
+      },
+      {
+        "createTime": "2022-05-14T14:28:47.128Z",
+        "modifyTime": "2022-05-14T14:28:47.128Z",
+        "createId": 1,
+        "modifyId": 1,
+        "isDelete": false,
+        "order": 50,
+        "status": 1,
+        "desc": "",
+        "remark": "",
+        "_id": "627fbc9f6f39bd3936cae589",
+        "key": "product",
+        "name": "产品"
+      },
+      {
+        "createTime": "2022-05-14T14:28:47.128Z",
+        "modifyTime": "2022-05-14T14:28:47.128Z",
+        "createId": 1,
+        "modifyId": 1,
+        "isDelete": false,
+        "order": 40,
+        "status": 1,
+        "desc": "",
+        "remark": "",
+        "_id": "627fbc9f6f39bd3936cae588",
+        "key": "sells",
+        "name": "销售"
+      },
+      {
+        "createTime": "2022-05-14T14:28:47.128Z",
+        "modifyTime": "2022-05-14T14:28:47.128Z",
+        "createId": 1,
+        "modifyId": 1,
+        "isDelete": false,
+        "order": 30,
+        "status": 1,
+        "desc": "",
+        "remark": "",
+        "_id": "627fbc9f6f39bd3936cae587",
+        "key": "data",
+        "name": "数据"
+      },
+      {
+        "createTime": "2022-05-14T14:28:47.128Z",
+        "modifyTime": "2022-05-14T14:28:47.128Z",
+        "createId": 1,
+        "modifyId": 1,
+        "isDelete": false,
+        "order": 20,
+        "status": 1,
+        "desc": "",
+        "remark": "",
+        "_id": "627fbc9f6f39bd3936cae586",
+        "key": "function",
+        "name": "职能"
+      },
+      {
+        "createTime": "2022-05-14T14:28:47.128Z",
+        "modifyTime": "2022-05-14T14:28:47.128Z",
+        "createId": 1,
+        "modifyId": 1,
+        "isDelete": false,
+        "order": 10,
+        "status": 1,
+        "desc": "",
+        "remark": "",
+        "_id": "627fbc9f6f39bd3936cae585",
+        "key": "brand",
+        "name": "品牌"
+      }
+    ],
+    "errorCode": null,
+    "errorMessage": null
+  },
+  "api_resume_place_auth": {
+    "success": true,
+    "data": [
+      {
+        "createTime": "2022-05-16T12:30:17.535Z",
+        "modifyTime": "2022-05-16T12:30:17.535Z",
+        "createId": 1,
+        "modifyId": 1,
+        "isDelete": false,
+        "order": 1,
+        "status": 1,
+        "desc": "",
+        "remark": "",
+        "_id": "628337b2bfd377cabc8131d2",
+        "key": "chengdu",
+        "name": "成都",
+        "__v": 0
+      },
+      {
+        "createTime": "2022-05-14T15:22:29.896Z",
+        "modifyTime": "2022-05-14T15:22:29.896Z",
+        "createId": 1,
+        "modifyId": 1,
+        "isDelete": false,
+        "order": 1,
+        "status": 1,
+        "desc": "",
+        "remark": "",
+        "_id": "627fcb1c5b34264d00204f11",
+        "key": "hh",
+        "name": "哈哈",
+        "__v": 0
+      },
+      {
+        "createTime": "2022-05-01T13:57:36.731Z",
+        "modifyTime": "2022-05-27T10:42:00.008Z",
+        "createId": 1,
+        "modifyId": 1,
+        "isDelete": false,
+        "order": 10,
+        "status": 1,
+        "desc": "",
+        "remark": "",
+        "_id": "626e91d01093e204f9ab4c47",
+        "key": "beijing",
+        "name": "北京"
+      },
+      {
+        "createTime": "2022-05-01T13:57:36.731Z",
+        "modifyTime": "2022-05-14T15:30:13.733Z",
+        "createId": 1,
+        "modifyId": 1,
+        "isDelete": false,
+        "order": 2,
+        "status": 1,
+        "desc": "",
+        "remark": "",
+        "_id": "626e91d01093e204f9ab4c46",
+        "key": "shanghai",
+        "name": "上海"
+      }
+    ],
+    "errorCode": null,
+    "errorMessage": null
+  },
+  "api_resume_list_auth": {
+    "success": true,
+    "data": {
+      "list": [
+        {
+          "createTime": "2022-05-15T08:03:49.897Z",
+          "modifyTime": "2022-05-27T10:41:20.270Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "desc": "再来一个再来一个再来一个",
+          "key": "society",
+          "department": "再来一个再来一个",
+          "date": "2022年05月15日",
+          "experience": "5年",
+          "education": "高中",
+          "href": "https://www.zhipin.com",
+          "nofollow": false,
+          "target": null,
+          "tag": [
+            "many",
+            "quick"
+          ],
+          "duty": [
+            "口袋神兽快点开始",
+            "1231231"
+          ],
+          "require": [
+            "顺联动力塑料袋"
+          ],
+          "pluses": [],
+          "contact": "xxx@hr.com",
+          "remark": "",
+          "isTop": 1,
+          "order": 100,
+          "status": 1,
+          "_id": "6280b42679c4b973bdd0a8ba",
+          "id": 9,
+          "title": "再来一个",
+          "category": "sells",
+          "place": "beijing",
+          "__v": 0
+        },
+        {
+          "createTime": "2022-05-15T08:01:16.306Z",
+          "modifyTime": "2022-05-15T13:48:57.777Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "desc": "这是测试这是测试这是测试这是测试这是测试",
+          "key": "society",
+          "department": "技术部",
+          "date": "2022年05月15",
+          "experience": "不限",
+          "education": "不限",
+          "href": "https://www.zhipin.com",
+          "nofollow": false,
+          "target": null,
+          "tag": [
+            "many",
+            "quick"
+          ],
+          "duty": [
+            "啊啊啊啊啊啊啊啊"
+          ],
+          "require": [
+            "哒哒哒哒哒",
+            "哒滴滴滴i大大大大大大的"
+          ],
+          "pluses": [
+            "123"
+          ],
+          "contact": "xxx@hr.com",
+          "remark": "",
+          "isTop": 1,
+          "order": 110,
+          "status": 1,
+          "_id": "6280b38d3c98c5738e4beb70",
+          "id": 8,
+          "title": "这是测试",
+          "category": "technology",
+          "place": "beijing",
+          "__v": 0
+        },
+        {
+          "createTime": "2022-05-15T08:01:54.501Z",
+          "modifyTime": "2022-05-15T08:01:54.501Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "desc": "基于HADOOP和MPP大数据平台，负责数据接入、数据清洗、数据加工",
+          "key": "society",
+          "department": "数据中心",
+          "date": "2022年01月01日",
+          "experience": "1~3年",
+          "education": "不限",
+          "href": "https://www.zhipin.com",
+          "nofollow": false,
+          "target": null,
+          "tag": [
+            "quick"
+          ],
+          "duty": [
+            "熟悉和理解运营商业务需求，基于HADOOP和MPP大数据平台，负责数据接入、数据清洗、数据加工等",
+            "基于需求进行模型构建、程序设计及代码开发；为业务问题分析及营销推荐提供高效数据支撑",
+            "能对数据进行分析与探索"
+          ],
+          "require": [
+            "统招全日制本科及以上学历，统计学、数学、计算机信息类、数据挖掘等相关专业，数据开发和分析1~3年工作经验",
+            "熟练掌握数据库基础、了解数据库开发基本技术；1年及以上的PG、Hive、vertica、Mysql等数据库开发经验，至少熟悉一种主流数据库",
+            "精通SQL/HQL，精通存储过程和函数，有良好的SQL编程习惯",
+            "熟悉linux环境和命令；shell编程经验，了解python的优先",
+            "具备良好的客户需求理解能力、良好的沟通和表达能力、责任心强、细致认真，热爱数据开发与分析工作"
+          ],
+          "pluses": [
+            "有电信运营商工作经验，特别是熟悉标签和画像数据者优先；有建模经验者优先",
+            "熟悉M域业务和数据 待遇从优"
+          ],
+          "contact": "xxx@hr.com",
+          "remark": "",
+          "isTop": 0,
+          "order": 1,
+          "status": 1,
+          "_id": "6280b3726f39bd3936cae5ca",
+          "id": 7,
+          "title": "数据开发工程师（上海）",
+          "category": "data",
+          "place": "hangzhou"
+        },
+        {
+          "createTime": "2022-05-15T08:01:54.501Z",
+          "modifyTime": "2022-05-15T08:01:54.501Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "desc": "基于HADOOP和MPP大数据平台，负责数据接入、数据清洗、数据加工",
+          "key": "society",
+          "department": "数据中心",
+          "date": "2022年01月01日",
+          "experience": "1~3年",
+          "education": "不限",
+          "href": "https://www.zhipin.com",
+          "nofollow": false,
+          "target": null,
+          "tag": [
+            "quick"
+          ],
+          "duty": [
+            "熟悉和理解运营商业务需求，基于HADOOP和MPP大数据平台，负责数据接入、数据清洗、数据加工等",
+            "基于需求进行模型构建、程序设计及代码开发；为业务问题分析及营销推荐提供高效数据支撑",
+            "能对数据进行分析与探索"
+          ],
+          "require": [
+            "统招全日制本科及以上学历，统计学、数学、计算机信息类、数据挖掘等相关专业，数据开发和分析1~3年工作经验",
+            "熟练掌握数据库基础、了解数据库开发基本技术；1年及以上的PG、Hive、vertica、Mysql等数据库开发经验，至少熟悉一种主流数据库",
+            "精通SQL/HQL，精通存储过程和函数，有良好的SQL编程习惯",
+            "熟悉linux环境和命令；shell编程经验，了解python的优先",
+            "具备良好的客户需求理解能力、良好的沟通和表达能力、责任心强、细致认真，热爱数据开发与分析工作"
+          ],
+          "pluses": [
+            "有电信运营商工作经验，特别是熟悉标签和画像数据者优先；有建模经验者优先",
+            "熟悉M域业务和数据 待遇从优"
+          ],
+          "contact": "xxx@hr.com",
+          "remark": "",
+          "isTop": 0,
+          "order": 1,
+          "status": 1,
+          "_id": "6280b3726f39bd3936cae5c9",
+          "id": 6,
+          "title": "数据开发工程师（上海）",
+          "category": "data",
+          "place": "shanghai"
+        },
+        {
+          "createTime": "2022-05-15T08:01:54.501Z",
+          "modifyTime": "2022-05-15T08:01:54.501Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "desc": "",
+          "key": "society",
+          "department": "运营中心",
+          "date": "2022年04月01日",
+          "experience": "不限",
+          "education": "不限",
+          "href": "https://www.zhipin.com",
+          "nofollow": false,
+          "target": null,
+          "tag": [],
+          "duty": [
+            "通过电话寻找商机，并进行初步筛选，充分挖掘客户的详细信息，包括需求及痛点特征、决策和购买力等，寻找并确认产品的销售机会",
+            "通过企业微信、邮件等在线工具孵化目标客户，并通过客户反馈的行为和频次判断下一步运营思路",
+            "面向目标市场积极主动地寻找新的潜在客户和转化机会"
+          ],
+          "require": [
+            "有B2B企业工作经验，对互联网和SaaS领域有了解，尤其 SaaS 营销转化漏斗流程，有1年以上电话销售经验优先",
+            "具备良好的沟通、协作和组织能力",
+            "知识面广，思维活跃，有创新意识和挑战精神",
+            "自我学习能力强，性格乐观开朗，有强烈的责任心和进取心"
+          ],
+          "pluses": [],
+          "contact": "xxx@hr.com",
+          "remark": "",
+          "isTop": 0,
+          "order": 1,
+          "status": 1,
+          "_id": "6280b3726f39bd3936cae5c8",
+          "id": 5,
+          "title": "SDR专员",
+          "category": "operating",
+          "place": "beijing"
+        },
+        {
+          "createTime": "2022-05-15T08:01:54.501Z",
+          "modifyTime": "2022-05-15T13:53:10.766Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "desc": "负责公司产品的视频后期处理，对视频制作数量负责",
+          "key": "society",
+          "department": "广告部",
+          "date": "2022年01月01日",
+          "experience": "不限",
+          "education": "大专及以上",
+          "href": "https://www.zhipin.com",
+          "nofollow": false,
+          "target": null,
+          "tag": [],
+          "duty": [
+            "负责公司产品的视频后期处理，对视频制作数量负责",
+            "确保视频呈现的效果，对视频时长、完播率、播放量等指标负责",
+            "能保质、保量、按时效完成视频需求"
+          ],
+          "require": [
+            "大专以及上学历，性别不限，美术设计、视觉传达等相关专业优先考虑",
+            "精通PS、PR、AE等后期制作软件",
+            "良好的团队合作能力、沟通表达能力"
+          ],
+          "pluses": [
+            "有过大型项目合作经验，尤其跨国合作，了解欧美风格"
+          ],
+          "contact": "xxx@hr.com",
+          "remark": "",
+          "isTop": 1,
+          "order": 120,
+          "status": 1,
+          "_id": "6280b3726f39bd3936cae5c7",
+          "id": 4,
+          "title": "视频剪辑",
+          "category": "function",
+          "place": "hangzhou"
+        },
+        {
+          "createTime": "2022-05-15T08:01:54.501Z",
+          "modifyTime": "2022-05-15T08:01:54.501Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "desc": "",
+          "key": "society",
+          "department": "营销中心",
+          "date": "2022年02月01日",
+          "experience": "5年以上",
+          "education": "不限",
+          "href": "https://www.zhipin.com",
+          "nofollow": false,
+          "target": null,
+          "tag": [],
+          "duty": [
+            "B2B部门业务开发，涉及到B端小B，小ka，夫妻水果店，餐饮，美食，茶饮，水果榨汁店，以及所有B端只要可能用到水果的客户，进行客户开发、维护",
+            "把握行业快速发展趋势，协调公司供应链优势，完成客户生意的深化发展",
+            "根据商户需求并结合消费者消费动向，制定个性化营销方案，与商户谈判并达成合作",
+            "执行公司的销售策略和政策，达成业绩目标",
+            "与公司各部门有效配合，并快速有效的解决产品上线前后所遇到的问题及突发事件，及时处理来自商家及消费者的投诉、反馈、建议等"
+          ],
+          "require": [
+            "一年以上销售经验，有成功经验，善于总结",
+            "有快消尤其餐饮和特渠成功经验者优先，有app地推经验优先",
+            "抗压能力强， 有耐心，热爱水果和生鲜行业，有一定的规划商品能力的优先考虑",
+            "热爱销售工作，性格乐观开朗，有强烈的责任心和进取心",
+            "具有较强的人际沟通能力和亲和力"
+          ],
+          "pluses": [],
+          "contact": "xxx@hr.com",
+          "remark": "",
+          "isTop": 0,
+          "order": 1,
+          "status": 1,
+          "_id": "6280b3726f39bd3936cae5c6",
+          "id": 3,
+          "title": "销售顾问",
+          "category": "sells",
+          "place": "shanghai"
+        }
+      ],
+      "total": 7
+    },
+    "errorCode": null,
+    "errorMessage": null
+  },
+  "api_resume_category_list_auth": {
+    "success": true,
+    "data": {
+      "list": [
+        {
+          "createTime": "2022-05-14T14:28:47.128Z",
+          "modifyTime": "2022-05-27T10:41:57.980Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "order": 60,
+          "status": 1,
+          "desc": "",
+          "remark": "",
+          "_id": "627fbc9f6f39bd3936cae58a",
+          "key": "operating",
+          "name": "运营"
+        },
+        {
+          "createTime": "2022-05-14T14:28:47.128Z",
+          "modifyTime": "2022-05-14T14:28:47.128Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "order": 50,
+          "status": 1,
+          "desc": "",
+          "remark": "",
+          "_id": "627fbc9f6f39bd3936cae589",
+          "key": "product",
+          "name": "产品"
+        },
+        {
+          "createTime": "2022-05-14T14:28:47.128Z",
+          "modifyTime": "2022-05-14T14:28:47.128Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "order": 40,
+          "status": 1,
+          "desc": "",
+          "remark": "",
+          "_id": "627fbc9f6f39bd3936cae588",
+          "key": "sells",
+          "name": "销售"
+        },
+        {
+          "createTime": "2022-05-14T14:28:47.128Z",
+          "modifyTime": "2022-05-14T14:28:47.128Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "order": 30,
+          "status": 1,
+          "desc": "",
+          "remark": "",
+          "_id": "627fbc9f6f39bd3936cae587",
+          "key": "data",
+          "name": "数据"
+        },
+        {
+          "createTime": "2022-05-14T14:28:47.128Z",
+          "modifyTime": "2022-05-14T14:28:47.128Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "order": 20,
+          "status": 1,
+          "desc": "",
+          "remark": "",
+          "_id": "627fbc9f6f39bd3936cae586",
+          "key": "function",
+          "name": "职能"
+        },
+        {
+          "createTime": "2022-05-14T14:28:47.128Z",
+          "modifyTime": "2022-05-14T14:28:47.128Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "order": 10,
+          "status": 1,
+          "desc": "",
+          "remark": "",
+          "_id": "627fbc9f6f39bd3936cae585",
+          "key": "brand",
+          "name": "品牌"
+        },
+        {
+          "createTime": "2022-05-14T15:04:49.258Z",
+          "modifyTime": "2022-05-14T15:04:49.258Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "order": 1,
+          "status": 1,
+          "desc": "",
+          "remark": "",
+          "_id": "627fc516bf875b4baae9ddc4",
+          "key": "2",
+          "name": "2",
+          "__v": 0
+        },
+        {
+          "createTime": "2022-05-14T15:31:17.144Z",
+          "modifyTime": "2022-05-14T15:31:17.144Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "order": 1,
+          "status": 1,
+          "desc": "",
+          "remark": "",
+          "_id": "627fcc4fbd9a274d7eeda285",
+          "key": "hh",
+          "name": "hh",
+          "__v": 0
+        }
+      ],
+      "total": 8
+    },
+    "errorCode": null,
+    "errorMessage": null
+  },
+  "api_resume_place_list_auth": {
+    "success": true,
+    "data": {
+      "list": [
+        {
+          "createTime": "2022-05-01T13:57:36.731Z",
+          "modifyTime": "2022-05-27T10:42:00.008Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "order": 10,
+          "status": 1,
+          "desc": "",
+          "remark": "",
+          "_id": "626e91d01093e204f9ab4c47",
+          "key": "beijing",
+          "name": "北京"
+        },
+        {
+          "createTime": "2022-05-01T13:57:36.731Z",
+          "modifyTime": "2022-05-14T15:30:13.733Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "order": 2,
+          "status": 1,
+          "desc": "",
+          "remark": "",
+          "_id": "626e91d01093e204f9ab4c46",
+          "key": "shanghai",
+          "name": "上海"
+        },
+        {
+          "createTime": "2022-05-14T15:22:29.896Z",
+          "modifyTime": "2022-05-14T15:22:29.896Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "order": 1,
+          "status": 1,
+          "desc": "",
+          "remark": "",
+          "_id": "627fcb1c5b34264d00204f11",
+          "key": "hh",
+          "name": "哈哈",
+          "__v": 0
+        },
+        {
+          "createTime": "2022-05-16T12:30:17.535Z",
+          "modifyTime": "2022-05-16T12:30:17.535Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "order": 1,
+          "status": 1,
+          "desc": "",
+          "remark": "",
+          "_id": "628337b2bfd377cabc8131d2",
+          "key": "chengdu",
+          "name": "成都",
+          "__v": 0
+        }
+      ],
+      "total": 4
+    },
+    "errorCode": null,
+    "errorMessage": null
+  },
+  "api_resume_tag_list_auth": {
+    "success": true,
+    "data": [
+      {
+        "status": 1,
+        "remark": "2",
+        "_id": "628e449a65ef546339f5d26c",
+        "mainKey": "resume_tag",
+        "name": "2",
+        "key": "2"
+      },
+      {
+        "status": 1,
+        "remark": "1",
+        "_id": "628e447765ef546339f5d268",
+        "mainKey": "resume_tag",
+        "name": "1",
+        "key": "1"
+      },
+      {
+        "status": 1,
+        "remark": "牛逼1",
+        "_id": "62833b8bbfd377cabc81324e",
+        "mainKey": "resume_tag",
+        "name": "1牛逼",
+        "key": "wocao"
+      },
+      {
+        "status": 1,
+        "remark": "加注",
+        "_id": "6280e53b9d1f74837d7677b3",
+        "mainKey": "resume_tag",
+        "name": "加",
+        "key": "jia"
+      },
+      {
+        "status": 1,
+        "remark": "简历标签",
+        "_id": "626e95681093e204f9ab4c49",
+        "mainKey": "resume_tag",
+        "name": "急",
+        "key": "quick"
+      }
+    ],
+    "errorCode": null,
+    "errorMessage": null
+  },
+  "api_resume_detail_auth": {
+    "success": true,
+    "data": {
+      "createTime": "2022-05-15T08:01:54.501Z",
+      "modifyTime": "2022-05-15T08:01:54.501Z",
+      "createId": 1,
+      "modifyId": 1,
+      "isDelete": false,
+      "desc": "基于HADOOP和MPP大数据平台，负责数据接入、数据清洗、数据加工",
+      "key": "society",
+      "department": "数据中心",
+      "date": "2022年01月01日",
+      "experience": "1~3年",
+      "education": "不限",
+      "href": "https://www.zhipin.com",
+      "nofollow": false,
+      "target": null,
+      "tag": [
+        "quick"
+      ],
+      "duty": [
+        "熟悉和理解运营商业务需求，基于HADOOP和MPP大数据平台，负责数据接入、数据清洗、数据加工等",
+        "基于需求进行模型构建、程序设计及代码开发；为业务问题分析及营销推荐提供高效数据支撑",
+        "能对数据进行分析与探索"
+      ],
+      "require": [
+        "统招全日制本科及以上学历，统计学、数学、计算机信息类、数据挖掘等相关专业，数据开发和分析1~3年工作经验",
+        "熟练掌握数据库基础、了解数据库开发基本技术；1年及以上的PG、Hive、vertica、Mysql等数据库开发经验，至少熟悉一种主流数据库",
+        "精通SQL/HQL，精通存储过程和函数，有良好的SQL编程习惯",
+        "熟悉linux环境和命令；shell编程经验，了解python的优先",
+        "具备良好的客户需求理解能力、良好的沟通和表达能力、责任心强、细致认真，热爱数据开发与分析工作"
+      ],
+      "pluses": [
+        "有电信运营商工作经验，特别是熟悉标签和画像数据者优先；有建模经验者优先",
+        "熟悉M域业务和数据 待遇从优"
+      ],
+      "contact": "xxx@hr.com",
+      "remark": "",
+      "isTop": 0,
+      "order": 1,
+      "status": 1,
+      "_id": "6280b3726f39bd3936cae5ca",
+      "id": 7,
+      "title": "数据开发工程师（上海）",
+      "category": "data",
+      "place": "hangzhou"
+    },
+    "errorCode": null,
+    "errorMessage": null
+  }
+}

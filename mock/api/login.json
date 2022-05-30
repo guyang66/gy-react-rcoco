@@ -1,0 +1,34 @@
+{
+  "api_login": {
+    "success": true,
+    "data": {
+      "accessToken": "mock token",
+      "user": {
+        "createTime": "2022-05-30T07:21:31.748Z",
+        "modifyTime": "2022-05-25T09:00:47.044Z",
+        "createId": 1,
+        "modifyId": 1,
+        "isDelete": false,
+        "name": "super",
+        "email": "",
+        "phone": "",
+        "avatar": "",
+        "roles": [
+          "superAdmin"
+        ],
+        "action": [],
+        "noModify": 1,
+        "status": 1,
+        "_id": "628defe4afcd10dba6d5c5e8",
+        "username": "super",
+        "position": "",
+        "department": "",
+        "defaultRole": "superAdmin",
+        "defaultRoleName": "超级系统管理员",
+        "remark": "系统默认（不可删除）"
+      }
+    },
+    "errorCode": null,
+    "errorMessage": null
+  }
+}

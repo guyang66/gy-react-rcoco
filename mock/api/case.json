@@ -1,0 +1,759 @@
+{
+  "api_case_list_auth": {
+    "success": true,
+    "data": {
+      "list": [
+        {
+          "createTime": "2022-05-15T15:05:50.527Z",
+          "modifyTime": "2022-05-23T05:47:33.780Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "desc": "12322",
+          "key": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6"
+          ],
+          "icon": "http://localhost:8090/upload/case/logo/20220515230516/404error.png",
+          "href": "/form",
+          "nofollow": false,
+          "target": "",
+          "remark": "hot",
+          "status": 1,
+          "order": 1,
+          "_id": "628116d465d28491ec8269ec",
+          "id": 20,
+          "title": "测试案例",
+          "__v": 0
+        },
+        {
+          "createTime": "2022-05-02T03:51:40.237Z",
+          "modifyTime": "2022-05-15T15:10:16.183Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "desc": "同素异形体之间的性质差异主要表现在物理性质上，化学性质上也有着活性的差异",
+          "key": [
+            "案例",
+            "地狱火俱乐部",
+            "2"
+          ],
+          "icon": "/images/product/fruits/apple/case/c2.svg",
+          "href": "/case/detail",
+          "nofollow": true,
+          "target": "_blank",
+          "remark": "hot",
+          "status": 1,
+          "order": 11,
+          "_id": "626f554c1093e204f9ab4c78",
+          "id": 19,
+          "title": "地狱火俱乐部2"
+        },
+        {
+          "createTime": "2022-05-02T03:51:40.237Z",
+          "modifyTime": "2022-05-02T03:51:40.237Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "desc": "X战警这类超级英雄团体截然不同，是为了解决威胁地球乃至宇宙的危机而存在，主张以小的牺牲避免牲",
+          "key": [
+            "案例",
+            "光照会",
+            "3"
+          ],
+          "icon": "/images/product/fruits/apple/case/c3.svg",
+          "href": "/case/detail",
+          "nofollow": false,
+          "target": null,
+          "remark": "hot",
+          "status": 1,
+          "order": 1,
+          "_id": "626f554c1093e204f9ab4c77",
+          "id": 18,
+          "title": "光照会3"
+        },
+        {
+          "createTime": "2022-05-02T03:51:40.237Z",
+          "modifyTime": "2022-05-15T14:12:33.163Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "desc": "称为“天神”的宇宙生物创造出拥有超能力的永恒族和异常族，两个族群一直互相争斗的故事",
+          "key": [
+            "案例",
+            "永恒族",
+            "4"
+          ],
+          "icon": "/images/product/fruits/apple/case/c4.svg",
+          "href": "/case/detail",
+          "nofollow": false,
+          "target": null,
+          "remark": "hot",
+          "status": 1,
+          "order": 10,
+          "_id": "626f554c1093e204f9ab4c76",
+          "id": 17,
+          "title": "永恒族4"
+        },
+        {
+          "createTime": "2022-05-02T03:51:40.237Z",
+          "modifyTime": "2022-05-02T03:51:40.237Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "desc": "Home lander是全国打最大德间书店俩是的呢收到，通过全量审计公共功能，帮助希望之家打造全作",
+          "key": [
+            "案例",
+            "home",
+            "lander",
+            "5"
+          ],
+          "icon": "/images/product/fruits/apple/case/c5.svg",
+          "href": "/case/detail",
+          "nofollow": false,
+          "target": null,
+          "remark": "hot",
+          "status": 1,
+          "order": 1,
+          "_id": "626f554c1093e204f9ab4c75",
+          "id": 16,
+          "title": "Home lander5"
+        },
+        {
+          "createTime": "2022-05-02T03:51:40.237Z",
+          "modifyTime": "2022-05-02T03:51:40.237Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "desc": "奈萨里奥是黑龙之王，曾为守护巨龙之一，大地的守护曾在外域幻化成人类",
+          "key": [
+            "案例",
+            "死亡之翼",
+            "6"
+          ],
+          "icon": "/images/product/fruits/apple/case/c6.svg",
+          "href": "/case/detail",
+          "nofollow": false,
+          "target": null,
+          "remark": "hot",
+          "status": 1,
+          "order": 1,
+          "_id": "626f554c1093e204f9ab4c74",
+          "id": 15,
+          "title": "死亡之翼6"
+        },
+        {
+          "createTime": "2022-05-02T03:51:40.237Z",
+          "modifyTime": "2022-05-02T03:51:40.237Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "desc": "他还成功让自己最大的敌人阿莱克丝塔萨成为了部落的奴隶，自己随后与部落结盟。在遭遇一系列挫折之后",
+          "key": [
+            "案例",
+            "五线科技",
+            "7"
+          ],
+          "icon": "/images/product/fruits/apple/case/c1.svg",
+          "href": "/case/detail",
+          "nofollow": false,
+          "target": null,
+          "remark": "hot",
+          "status": 1,
+          "order": 1,
+          "_id": "626f554c1093e204f9ab4c73",
+          "id": 14,
+          "title": "五线科技7"
+        },
+        {
+          "createTime": "2022-05-02T03:51:40.237Z",
+          "modifyTime": "2022-05-15T15:10:22.153Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "desc": "希将目标身上一切不洁之物净化，对其造成大量魔法伤害，并使其在接下来的一段时间内逐渐鉴权的工作",
+          "key": [
+            "案例",
+            "鱼米之乡",
+            "8"
+          ],
+          "icon": "/images/product/fruits/grape/case/c1.svg",
+          "href": "/case/detail",
+          "nofollow": false,
+          "target": null,
+          "remark": "hot",
+          "status": 1,
+          "order": 1111,
+          "_id": "626f554c1093e204f9ab4c72",
+          "id": 13,
+          "title": "鱼米之乡8"
+        },
+        {
+          "createTime": "2022-05-02T03:51:40.237Z",
+          "modifyTime": "2022-05-02T03:51:40.237Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "desc": "希望之家是全国打最大德间书店俩凡世与巨龙之中，他的名字已经成为了恐惧与蔑视的代名词",
+          "key": [
+            "案例",
+            "好粥道道",
+            "9"
+          ],
+          "icon": "/images/product/fruits/grape/case/c2.svg",
+          "href": "/case/detail",
+          "nofollow": false,
+          "target": null,
+          "remark": "hot",
+          "status": 1,
+          "order": 1,
+          "_id": "626f554c1093e204f9ab4c71",
+          "id": 12,
+          "title": "好粥道道9"
+        },
+        {
+          "createTime": "2022-05-02T03:51:40.237Z",
+          "modifyTime": "2022-05-02T03:51:40.237Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "desc": "希望之家是全国打最大德间书店俩是的呢收到，通过全量审计公共功能，帮助希望之家鉴权的工作",
+          "key": [
+            "案例",
+            "本地兔子窝",
+            "10"
+          ],
+          "icon": "/images/product/fruits/grape/case/c3.svg",
+          "href": "/case/detail",
+          "nofollow": false,
+          "target": null,
+          "remark": "hot",
+          "status": 1,
+          "order": 1,
+          "_id": "626f554c1093e204f9ab4c70",
+          "id": 11,
+          "title": "本地兔子窝10"
+        }
+      ],
+      "total": 20
+    },
+    "errorCode": null,
+    "errorMessage": null
+  },
+  "api_case_tag_list_auth": {
+    "success": true,
+    "data": [
+      {
+        "status": 1,
+        "order": 1,
+        "remark": "牛批",
+        "_id": "62834b89bfd377cabc813404",
+        "mainKey": "case_search_tag",
+        "name": "我擦",
+        "key": "sss"
+      },
+      {
+        "status": 1,
+        "order": 1,
+        "remark": "收到2",
+        "_id": "6281a86387f37098be33e6c2",
+        "mainKey": "case_search_tag",
+        "name": "相关2",
+        "key": "hongkong"
+      },
+      {
+        "status": 1,
+        "order": 1,
+        "remark": "客户案例热门搜索关键词2",
+        "_id": "6280d7f56f39bd3936cae5cd",
+        "mainKey": "case_search_tag",
+        "name": "首尔古德曼",
+        "key": "segdm"
+      },
+      {
+        "status": 1,
+        "order": 21,
+        "remark": "客户案例热门搜索关键词",
+        "_id": "6280d7f56f39bd3936cae5cc",
+        "mainKey": "case_search_tag",
+        "name": "复仇者联盟",
+        "key": "fczlm"
+      },
+      {
+        "status": 1,
+        "order": 1,
+        "remark": "客户案例热门搜索关键词",
+        "_id": "6280d7f56f39bd3936cae5cb",
+        "mainKey": "case_search_tag",
+        "name": "菲克尼尼",
+        "key": "fnkk"
+      }
+    ],
+    "errorCode": null,
+    "errorMessage": null
+  },
+  "api_case_statics_visit_auth": {
+    "success": true,
+    "data": [
+      {
+        "name": "地狱火俱乐部2",
+        "count": 8
+      },
+      {
+        "name": "鱼米之乡8",
+        "count": 7
+      },
+      {
+        "name": "五线科技7",
+        "count": 6
+      },
+      {
+        "name": "Home lander5",
+        "count": 4
+      },
+      {
+        "name": "永恒族4",
+        "count": 2
+      },
+      {
+        "name": "死亡之翼6",
+        "count": 2
+      },
+      {
+        "name": "龙骑士12",
+        "count": 1
+      },
+      {
+        "name": "首尔古德曼11",
+        "count": 1
+      },
+      {
+        "name": "好粥道道9",
+        "count": 1
+      },
+      {
+        "name": "本地兔子窝10",
+        "count": 1
+      }
+    ],
+    "errorCode": null,
+    "errorMessage": null
+  },
+  "api_case_statics_keywords_auth": {
+    "success": true,
+    "data": [
+      {
+        "name": "333",
+        "count": 1
+      },
+      {
+        "name": "33",
+        "count": 1
+      },
+      {
+        "name": "红红",
+        "count": 1
+      },
+      {
+        "name": "3",
+        "count": 1
+      }
+    ],
+    "errorCode": null,
+    "errorMessage": null
+  },
+  "api_case_record_list_auth": {
+    "success": true,
+    "data": {
+      "list": [
+        {
+          "createTime": "2022-05-28T04:57:15.593Z",
+          "modifyTime": "2022-05-28T04:57:15.593Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "type": "visit",
+          "typeString": "访问",
+          "name": "3",
+          "ip": "1",
+          "phone": "13822112211",
+          "remark": "",
+          "_id": "6291abab8723bb40c4493e8d",
+          "objectId": {
+            "createTime": "2022-05-02T03:51:40.237Z",
+            "modifyTime": "2022-05-15T15:10:16.183Z",
+            "createId": 1,
+            "modifyId": 1,
+            "isDelete": false,
+            "desc": "同素异形体之间的性质差异主要表现在物理性质上，化学性质上也有着活性的差异",
+            "key": [
+              "案例",
+              "地狱火俱乐部",
+              "2"
+            ],
+            "icon": "/images/product/fruits/apple/case/c2.svg",
+            "href": "/case/detail",
+            "nofollow": true,
+            "target": "_blank",
+            "remark": "hot",
+            "status": 1,
+            "order": 11,
+            "_id": "626f554c1093e204f9ab4c78",
+            "id": 19,
+            "title": "地狱火俱乐部2"
+          },
+          "__v": 0
+        },
+        {
+          "createTime": "2022-05-26T17:43:11.198Z",
+          "modifyTime": "2022-05-27T01:43:11.198Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "type": "visit",
+          "typeString": "访问",
+          "name": "gg",
+          "ip": "1",
+          "phone": "13811223322",
+          "remark": "",
+          "_id": "62902cafaa54f27f8f466120",
+          "objectId": {
+            "createTime": "2022-05-02T03:51:40.237Z",
+            "modifyTime": "2022-05-15T15:10:22.153Z",
+            "createId": 1,
+            "modifyId": 1,
+            "isDelete": false,
+            "desc": "希将目标身上一切不洁之物净化，对其造成大量魔法伤害，并使其在接下来的一段时间内逐渐鉴权的工作",
+            "key": [
+              "案例",
+              "鱼米之乡",
+              "8"
+            ],
+            "icon": "/images/product/fruits/grape/case/c1.svg",
+            "href": "/case/detail",
+            "nofollow": false,
+            "target": null,
+            "remark": "hot",
+            "status": 1,
+            "order": 1111,
+            "_id": "626f554c1093e204f9ab4c72",
+            "id": 13,
+            "title": "鱼米之乡8"
+          },
+          "__v": 0
+        },
+        {
+          "createTime": "2022-05-24T15:02:25.590Z",
+          "modifyTime": "2022-05-26T15:02:25.590Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "type": "visit",
+          "typeString": "访问",
+          "name": "gg",
+          "ip": "1",
+          "phone": "13811223322",
+          "remark": "",
+          "_id": "628f968138be70637bd4530b",
+          "objectId": {
+            "createTime": "2022-05-02T03:51:40.237Z",
+            "modifyTime": "2022-05-02T03:51:40.237Z",
+            "createId": 1,
+            "modifyId": 1,
+            "isDelete": false,
+            "desc": "希望之家是全国打强大的元素领主奥拉基尔与拉格纳罗斯以及奥丹姆的尼斐塞特托维尔权的工作",
+            "key": [
+              "案例",
+              "龙骑士",
+              "12"
+            ],
+            "icon": "/images/product/fruits/grape/case/c5.svg",
+            "href": "/case/detail",
+            "nofollow": false,
+            "target": null,
+            "remark": "hot",
+            "status": 1,
+            "order": 1,
+            "_id": "626f554c1093e204f9ab4c6e",
+            "id": 9,
+            "title": "龙骑士12"
+          },
+          "__v": 0
+        },
+        {
+          "createTime": "2022-05-23T15:02:22.899Z",
+          "modifyTime": "2022-05-26T15:02:22.899Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "type": "visit",
+          "typeString": "访问",
+          "name": "gg",
+          "ip": "1",
+          "phone": "13811223322",
+          "remark": "",
+          "_id": "628f967e38be70637bd45309",
+          "objectId": {
+            "createTime": "2022-05-02T03:51:40.237Z",
+            "modifyTime": "2022-05-15T13:33:36.650Z",
+            "createId": 1,
+            "modifyId": 1,
+            "isDelete": false,
+            "desc": "首尔古德曼全最终他败于其他守护巨龙之手，并退至深岩之洲的元素位面休养生息。他在那里观",
+            "key": [
+              "案例",
+              "首尔古德曼",
+              "11"
+            ],
+            "icon": "/images/product/fruits/grape/case/c4.svg",
+            "href": "/case/detail",
+            "nofollow": false,
+            "target": null,
+            "remark": "hot",
+            "status": 1,
+            "order": 1,
+            "_id": "626f554c1093e204f9ab4c6f",
+            "id": 10,
+            "title": "首尔古德曼11"
+          },
+          "__v": 0
+        },
+        {
+          "createTime": "2022-05-26T15:02:20.773Z",
+          "modifyTime": "2022-05-26T15:02:20.773Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "type": "visit",
+          "typeString": "访问",
+          "name": "gg",
+          "ip": "1",
+          "phone": "13811223322",
+          "remark": "",
+          "_id": "628f967c38be70637bd45307",
+          "objectId": {
+            "createTime": "2022-05-02T03:51:40.237Z",
+            "modifyTime": "2022-05-02T03:51:40.237Z",
+            "createId": 1,
+            "modifyId": 1,
+            "isDelete": false,
+            "desc": "希望之家是全国打最大德间书店俩是的呢收到，通过全量审计公共功能，帮助希望之家鉴权的工作",
+            "key": [
+              "案例",
+              "本地兔子窝",
+              "10"
+            ],
+            "icon": "/images/product/fruits/grape/case/c3.svg",
+            "href": "/case/detail",
+            "nofollow": false,
+            "target": null,
+            "remark": "hot",
+            "status": 1,
+            "order": 1,
+            "_id": "626f554c1093e204f9ab4c70",
+            "id": 11,
+            "title": "本地兔子窝10"
+          },
+          "__v": 0
+        },
+        {
+          "createTime": "2022-05-26T14:59:50.192Z",
+          "modifyTime": "2022-05-26T14:59:50.192Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "type": "visit",
+          "typeString": "访问",
+          "name": "gg",
+          "ip": "1",
+          "phone": "13811223322",
+          "remark": "",
+          "_id": "628f95e638be70637bd45301",
+          "objectId": {
+            "createTime": "2022-05-02T03:51:40.237Z",
+            "modifyTime": "2022-05-15T15:10:22.153Z",
+            "createId": 1,
+            "modifyId": 1,
+            "isDelete": false,
+            "desc": "希将目标身上一切不洁之物净化，对其造成大量魔法伤害，并使其在接下来的一段时间内逐渐鉴权的工作",
+            "key": [
+              "案例",
+              "鱼米之乡",
+              "8"
+            ],
+            "icon": "/images/product/fruits/grape/case/c1.svg",
+            "href": "/case/detail",
+            "nofollow": false,
+            "target": null,
+            "remark": "hot",
+            "status": 1,
+            "order": 1111,
+            "_id": "626f554c1093e204f9ab4c72",
+            "id": 13,
+            "title": "鱼米之乡8"
+          },
+          "__v": 0
+        },
+        {
+          "createTime": "2022-05-26T14:59:45.734Z",
+          "modifyTime": "2022-05-26T14:59:45.734Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "type": "visit",
+          "typeString": "访问",
+          "name": "gg",
+          "ip": "1",
+          "phone": "13811223322",
+          "remark": "",
+          "_id": "628f95e138be70637bd452ff",
+          "objectId": {
+            "createTime": "2022-05-02T03:51:40.237Z",
+            "modifyTime": "2022-05-15T15:10:22.153Z",
+            "createId": 1,
+            "modifyId": 1,
+            "isDelete": false,
+            "desc": "希将目标身上一切不洁之物净化，对其造成大量魔法伤害，并使其在接下来的一段时间内逐渐鉴权的工作",
+            "key": [
+              "案例",
+              "鱼米之乡",
+              "8"
+            ],
+            "icon": "/images/product/fruits/grape/case/c1.svg",
+            "href": "/case/detail",
+            "nofollow": false,
+            "target": null,
+            "remark": "hot",
+            "status": 1,
+            "order": 1111,
+            "_id": "626f554c1093e204f9ab4c72",
+            "id": 13,
+            "title": "鱼米之乡8"
+          },
+          "__v": 0
+        },
+        {
+          "createTime": "2022-05-26T14:59:42.355Z",
+          "modifyTime": "2022-05-26T14:59:42.355Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "type": "visit",
+          "typeString": "访问",
+          "name": "gg",
+          "ip": "1",
+          "phone": "13811223322",
+          "remark": "",
+          "_id": "628f95de38be70637bd452fd",
+          "objectId": {
+            "createTime": "2022-05-02T03:51:40.237Z",
+            "modifyTime": "2022-05-15T15:10:22.153Z",
+            "createId": 1,
+            "modifyId": 1,
+            "isDelete": false,
+            "desc": "希将目标身上一切不洁之物净化，对其造成大量魔法伤害，并使其在接下来的一段时间内逐渐鉴权的工作",
+            "key": [
+              "案例",
+              "鱼米之乡",
+              "8"
+            ],
+            "icon": "/images/product/fruits/grape/case/c1.svg",
+            "href": "/case/detail",
+            "nofollow": false,
+            "target": null,
+            "remark": "hot",
+            "status": 1,
+            "order": 1111,
+            "_id": "626f554c1093e204f9ab4c72",
+            "id": 13,
+            "title": "鱼米之乡8"
+          },
+          "__v": 0
+        },
+        {
+          "createTime": "2022-05-26T14:58:53.831Z",
+          "modifyTime": "2022-05-26T14:58:53.831Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "type": "visit",
+          "typeString": "访问",
+          "name": "gg",
+          "ip": "1",
+          "phone": "13811223322",
+          "remark": "",
+          "_id": "628f95ad38be70637bd452fb",
+          "objectId": {
+            "createTime": "2022-05-02T03:51:40.237Z",
+            "modifyTime": "2022-05-15T15:10:16.183Z",
+            "createId": 1,
+            "modifyId": 1,
+            "isDelete": false,
+            "desc": "同素异形体之间的性质差异主要表现在物理性质上，化学性质上也有着活性的差异",
+            "key": [
+              "案例",
+              "地狱火俱乐部",
+              "2"
+            ],
+            "icon": "/images/product/fruits/apple/case/c2.svg",
+            "href": "/case/detail",
+            "nofollow": true,
+            "target": "_blank",
+            "remark": "hot",
+            "status": 1,
+            "order": 11,
+            "_id": "626f554c1093e204f9ab4c78",
+            "id": 19,
+            "title": "地狱火俱乐部2"
+          },
+          "__v": 0
+        },
+        {
+          "createTime": "2022-05-26T14:57:13.255Z",
+          "modifyTime": "2022-05-26T14:57:13.255Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "type": "visit",
+          "typeString": "访问",
+          "name": "gg",
+          "ip": "1",
+          "phone": "13811223322",
+          "remark": "",
+          "_id": "628f9549b5a1ed62aa7003ca",
+          "objectId": {
+            "createTime": "2022-05-02T03:51:40.237Z",
+            "modifyTime": "2022-05-15T15:10:22.153Z",
+            "createId": 1,
+            "modifyId": 1,
+            "isDelete": false,
+            "desc": "希将目标身上一切不洁之物净化，对其造成大量魔法伤害，并使其在接下来的一段时间内逐渐鉴权的工作",
+            "key": [
+              "案例",
+              "鱼米之乡",
+              "8"
+            ],
+            "icon": "/images/product/fruits/grape/case/c1.svg",
+            "href": "/case/detail",
+            "nofollow": false,
+            "target": null,
+            "remark": "hot",
+            "status": 1,
+            "order": 1111,
+            "_id": "626f554c1093e204f9ab4c72",
+            "id": 13,
+            "title": "鱼米之乡8"
+          },
+          "__v": 0
+        }
+      ],
+      "total": 34
+    },
+    "errorCode": null,
+    "errorMessage": null
+  }
+}

@@ -1,0 +1,189 @@
+{
+  "api_user_getUserInfo_auth": {
+    "success": true,
+    "data": {
+      "createTime": "2022-05-30T06:40:05.003Z",
+      "modifyTime": "2022-05-25T09:00:47.044Z",
+      "createId": 1,
+      "modifyId": 1,
+      "isDelete": false,
+      "name": "超级无敌飞天猪",
+      "email": "",
+      "phone": "",
+      "avatar": "",
+      "roles": [
+        "superAdmin"
+      ],
+      "action": [],
+      "noModify": 1,
+      "status": 1,
+      "_id": "628defe4afcd10dba6d5c5e8",
+      "username": "super",
+      "position": "",
+      "department": "",
+      "defaultRole": "superAdmin",
+      "defaultRoleName": "超级系统管理员",
+      "remark": "系统默认（不可删除）"
+    },
+    "errorCode": null,
+    "errorMessage": null
+  },
+  "api_user_list_auth": {
+    "success": true,
+    "data": {
+      "list": [
+        {
+          "createTime": "2022-05-25T09:01:54.372Z",
+          "modifyTime": "2022-05-28T04:52:12.666Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "name": "默认姓名",
+          "email": "",
+          "phone": "",
+          "avatar": "",
+          "roles": [
+            "guest",
+            "data"
+          ],
+          "action": [],
+          "noModify": 0,
+          "status": 1,
+          "_id": "628df983e936922b87dac342",
+          "username": "dd",
+          "defaultRole": "data",
+          "defaultRoleName": "数据管理员",
+          "__v": 0,
+          "department": "",
+          "position": "",
+          "remark": ""
+        },
+        {
+          "createTime": "2022-05-30T08:25:51.860Z",
+          "modifyTime": "2022-05-30T08:25:51.860Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "name": "招聘信息发布员",
+          "email": "",
+          "phone": "",
+          "avatar": "",
+          "roles": [
+            "guest",
+            "hr"
+          ],
+          "action": [],
+          "noModify": 0,
+          "status": 1,
+          "_id": "628defe4afcd10dba6d5c5ec",
+          "username": "hr",
+          "position": "无",
+          "department": "无",
+          "defaultRole": "hr",
+          "defaultRoleName": "招聘管理员",
+          "remark": "系统导入"
+        },
+        {
+          "createTime": "2022-05-30T08:25:51.860Z",
+          "modifyTime": "2022-05-30T08:25:51.860Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "name": "官网内容管理员",
+          "email": "",
+          "phone": "",
+          "avatar": "",
+          "roles": [
+            "guest",
+            "web"
+          ],
+          "action": [],
+          "noModify": 0,
+          "status": 1,
+          "_id": "628defe4afcd10dba6d5c5eb",
+          "username": "web",
+          "position": "无",
+          "department": "无",
+          "defaultRole": "web",
+          "defaultRoleName": "官网内容管理员",
+          "remark": "系统导入"
+        },
+        {
+          "createTime": "2022-05-30T08:25:51.860Z",
+          "modifyTime": "2022-05-30T08:25:51.860Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "name": "guest",
+          "email": "",
+          "phone": "",
+          "avatar": "",
+          "roles": [
+            "guest"
+          ],
+          "action": [],
+          "noModify": 0,
+          "status": 1,
+          "_id": "628defe4afcd10dba6d5c5ea",
+          "username": "guest",
+          "position": "无",
+          "department": "无",
+          "defaultRole": "guest",
+          "defaultRoleName": "游客",
+          "remark": "系统导入"
+        },
+        {
+          "createTime": "2022-05-30T08:25:51.860Z",
+          "modifyTime": "2022-05-30T08:25:51.860Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "name": "admin",
+          "email": "",
+          "phone": "13588295865",
+          "avatar": "",
+          "roles": [
+            "admin"
+          ],
+          "action": [],
+          "noModify": 0,
+          "status": 1,
+          "_id": "628defe4afcd10dba6d5c5e9",
+          "username": "admin",
+          "position": "前端工程师",
+          "department": "技术部",
+          "defaultRole": "admin",
+          "defaultRoleName": "系统管理员",
+          "remark": "系统导入"
+        },
+        {
+          "createTime": "2022-05-30T08:25:51.860Z",
+          "modifyTime": "2022-05-25T09:00:47.044Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "name": "super",
+          "email": "",
+          "phone": "",
+          "avatar": "",
+          "roles": [
+            "superAdmin"
+          ],
+          "action": [],
+          "noModify": 1,
+          "status": 1,
+          "_id": "628defe4afcd10dba6d5c5e8",
+          "username": "super",
+          "position": "",
+          "department": "",
+          "defaultRole": "superAdmin",
+          "defaultRoleName": "超级系统管理员",
+          "remark": "系统默认（不可删除）"
+        }
+      ],
+      "total": 6
+    },
+    "errorCode": null,
+    "errorMessage": null
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "api_tag_online_auth": {
+    "success": true,
+    "data": [
+      {
+        "desc": "",
+        "remark": "2",
+        "_id": "628e449a65ef546339f5d26c",
+        "mainKey": "resume_tag",
+        "name": "2",
+        "key": "2"
+      },
+      {
+        "desc": "",
+        "remark": "1",
+        "_id": "628e447765ef546339f5d268",
+        "mainKey": "resume_tag",
+        "name": "1",
+        "key": "1"
+      },
+      {
+        "desc": "",
+        "remark": "牛逼1",
+        "_id": "62833b8bbfd377cabc81324e",
+        "mainKey": "resume_tag",
+        "name": "1牛逼",
+        "key": "wocao"
+      },
+      {
+        "desc": "",
+        "remark": "加注",
+        "_id": "6280e53b9d1f74837d7677b3",
+        "mainKey": "resume_tag",
+        "name": "加",
+        "key": "jia"
+      },
+      {
+        "desc": "",
+        "remark": "简历标签",
+        "_id": "626e95681093e204f9ab4c49",
+        "mainKey": "resume_tag",
+        "name": "急",
+        "key": "quick"
+      }
+    ],
+    "errorCode": null,
+    "errorMessage": null
+  }
+}

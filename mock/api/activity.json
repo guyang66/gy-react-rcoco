@@ -1,0 +1,467 @@
+{
+  "api_activity_list_auth": {
+    "success": true,
+    "data": {
+      "list": [
+        {
+          "createTime": "2022-05-16T09:47:06.680Z",
+          "modifyTime": "2022-05-27T15:16:11.041Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "desc": "节日特价，8.8折再加会员折扣，折扣多多，惊喜连连，欢迎新老用户购买",
+          "type": "main",
+          "cover": "/images/activity/favorite/main.svg",
+          "btnText": "点击查看",
+          "advantage": [
+            "90%出水率，甜美可口",
+            "新鲜不隔夜，无中间差价",
+            "放心购买，最低7.6折起"
+          ],
+          "tag": [
+            {
+              "key": "fill",
+              "text": "精选特价"
+            },
+            {
+              "key": "outline",
+              "text": "新品上市"
+            },
+            {
+              "key": "outline",
+              "text": "满1000减100"
+            }
+          ],
+          "remark": "hot",
+          "href": "/activity/detail",
+          "nofollow": false,
+          "target": null,
+          "status": 1,
+          "order": 1000,
+          "_id": "62821d9a4d09a7bfcdbd2285",
+          "title": "水果零售价"
+        },
+        {
+          "createTime": "2022-05-16T09:47:06.681Z",
+          "modifyTime": "2022-05-27T15:16:28.033Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "desc": "超高续航，耐力十足，现在购买即送收纳盒",
+          "type": "normal",
+          "cover": "/images/activity/favorite/b1.svg",
+          "btnText": "查看详情",
+          "advantage": [],
+          "tag": [
+            {
+              "key": "fill",
+              "text": "新用户特享"
+            },
+            {
+              "key": "outline",
+              "text": "最低0.92折"
+            }
+          ],
+          "remark": "hot",
+          "href": "/activity/detail",
+          "nofollow": false,
+          "target": null,
+          "status": 1,
+          "order": 11111,
+          "_id": "62821d9a4d09a7bfcdbd228c",
+          "title": "看守无人机"
+        },
+        {
+          "createTime": "2022-05-16T09:47:06.681Z",
+          "modifyTime": "2022-05-16T09:47:06.681Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "desc": "智能马桶，现免费试用1个月，先到先得",
+          "type": "normal",
+          "cover": "/images/activity/favorite/b2.svg",
+          "btnText": "申请试用",
+          "advantage": [],
+          "tag": [
+            {
+              "key": "fill",
+              "text": "新人特惠"
+            },
+            {
+              "key": "outline",
+              "text": "免息支付"
+            }
+          ],
+          "remark": "hot",
+          "href": "/form",
+          "nofollow": false,
+          "target": null,
+          "status": 1,
+          "order": 1,
+          "_id": "62821d9a4d09a7bfcdbd228b",
+          "title": "智能马桶"
+        },
+        {
+          "createTime": "2022-05-16T09:47:06.681Z",
+          "modifyTime": "2022-05-16T09:47:06.681Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "desc": "智能研判系统，在线直播，直播购买",
+          "type": "normal",
+          "cover": "/images/activity/favorite/b3.svg",
+          "btnText": "点击查看",
+          "advantage": [],
+          "tag": [
+            {
+              "key": "fill",
+              "text": "直播疯抢"
+            },
+            {
+              "key": "outline",
+              "text": "整点送优惠券"
+            }
+          ],
+          "remark": "hot",
+          "href": "/activity/detail",
+          "nofollow": false,
+          "target": null,
+          "status": 1,
+          "order": 1,
+          "_id": "62821d9a4d09a7bfcdbd228a",
+          "title": "智能研判系统-清水"
+        },
+        {
+          "createTime": "2022-05-16T09:47:06.680Z",
+          "modifyTime": "2022-05-16T09:47:06.680Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "desc": "巴西瓜子，毛利互相可拉到烧烤店啊啊",
+          "type": "normal",
+          "cover": "/images/activity/favorite/b4.svg",
+          "btnText": "申请试用",
+          "advantage": [],
+          "tag": [
+            {
+              "key": "fill",
+              "text": "新人特惠"
+            },
+            {
+              "key": "fill",
+              "text": "按需付款"
+            },
+            {
+              "key": "outline",
+              "text": "活动期间免费"
+            }
+          ],
+          "remark": "hot",
+          "href": "/form",
+          "nofollow": false,
+          "target": null,
+          "status": 1,
+          "order": 1,
+          "_id": "62821d9a4d09a7bfcdbd2289",
+          "title": "巴西瓜子"
+        },
+        {
+          "createTime": "2022-05-16T09:47:06.680Z",
+          "modifyTime": "2022-05-16T09:47:06.680Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "desc": "智能语音，现免费试用1个月，先到先得",
+          "type": "normal",
+          "cover": "/images/activity/favorite/b5.svg",
+          "btnText": "申请试用",
+          "advantage": [],
+          "tag": [
+            {
+              "key": "fill",
+              "text": "新人特享"
+            },
+            {
+              "key": "outline",
+              "text": "老用户免费续费"
+            }
+          ],
+          "remark": "hot",
+          "href": "/form",
+          "nofollow": false,
+          "target": null,
+          "status": 1,
+          "order": 1,
+          "_id": "62821d9a4d09a7bfcdbd2288",
+          "title": "智能语音"
+        },
+        {
+          "createTime": "2022-05-16T09:47:06.680Z",
+          "modifyTime": "2022-05-16T09:47:06.680Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "desc": "智能在线客户，上千套模板训练，效率100%",
+          "type": "normal",
+          "cover": "/images/activity/favorite/b6.svg",
+          "btnText": "查看详情",
+          "advantage": [],
+          "tag": [
+            {
+              "key": "fill",
+              "text": "0元购买"
+            },
+            {
+              "key": "outline",
+              "text": "免息支付"
+            },
+            {
+              "key": "outline",
+              "text": "购物车好礼"
+            }
+          ],
+          "remark": "hot",
+          "href": "/activity/detail",
+          "nofollow": false,
+          "target": null,
+          "status": 1,
+          "order": 1,
+          "_id": "62821d9a4d09a7bfcdbd2287",
+          "title": "智能在线客户"
+        },
+        {
+          "createTime": "2022-05-16T09:47:06.680Z",
+          "modifyTime": "2022-05-16T09:47:06.680Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "desc": "多种果蔬多重营养，呵护你的全家健康",
+          "type": "normal",
+          "cover": "/images/activity/favorite/b7.svg",
+          "btnText": "立即购买",
+          "advantage": [],
+          "tag": [
+            {
+              "key": "fill",
+              "text": "超级批发日"
+            },
+            {
+              "key": "outline",
+              "text": "免费无线续杯"
+            }
+          ],
+          "remark": "hot",
+          "href": "/activity/detail",
+          "nofollow": false,
+          "target": null,
+          "status": 1,
+          "order": 1,
+          "_id": "62821d9a4d09a7bfcdbd2286",
+          "title": "蔬菜沙拉"
+        }
+      ],
+      "total": 8
+    },
+    "errorCode": null,
+    "errorMessage": null
+  },
+  "api_activity_category_auth": {
+    "success": true,
+    "data": [
+      {
+        "createTime": "2022-05-16T12:27:24.543Z",
+        "modifyTime": "2022-05-16T12:27:24.543Z",
+        "createId": 1,
+        "modifyId": 1,
+        "isDelete": false,
+        "status": 1,
+        "desc": "品牌宣传，带你打卡各个城市，边走边学",
+        "remark": "hot",
+        "_id": "6282432c6ec8e5c828f16165",
+        "key": "brand",
+        "title": "品牌活动"
+      },
+      {
+        "createTime": "2022-05-16T12:27:24.543Z",
+        "modifyTime": "2022-05-16T12:27:24.543Z",
+        "createId": 1,
+        "modifyId": 1,
+        "isDelete": false,
+        "status": 1,
+        "desc": "大牌特价，猜你喜欢，各种优惠尽请期待",
+        "remark": "hot",
+        "_id": "6282432c6ec8e5c828f16164",
+        "key": "product",
+        "title": "产品活动"
+      },
+      {
+        "createTime": "2022-05-16T12:27:24.543Z",
+        "modifyTime": "2022-05-16T12:27:24.543Z",
+        "createId": 1,
+        "modifyId": 1,
+        "isDelete": false,
+        "status": 1,
+        "desc": "课程教学，直播带货，跟着老师学习走向成功",
+        "remark": "hot",
+        "_id": "6282432c6ec8e5c828f16163",
+        "key": "hot",
+        "title": "热门活动"
+      }
+    ],
+    "errorCode": null,
+    "errorMessage": null
+  },
+  "api_activity_record_list_auth": {
+    "success": true,
+    "data": {
+      "list": [
+        {
+          "createTime": "2022-05-27T00:09:01.000Z",
+          "modifyTime": "2022-05-27T00:09:01.000Z",
+          "type": "visit",
+          "typeString": "访问",
+          "name": "gg",
+          "ip": "1",
+          "category": "product",
+          "phone": "13811223322",
+          "_id": "629040704e54008e3ed0d1c0",
+          "title": "看守无人机"
+        },
+        {
+          "createTime": "2022-05-26T16:09:01.000Z",
+          "modifyTime": "2022-05-26T16:09:01.000Z",
+          "type": "visit",
+          "typeString": "访问",
+          "name": "gg",
+          "ip": "1",
+          "category": "product",
+          "phone": "13811223322",
+          "_id": "62903f841a911d8dcef4172c",
+          "title": "看守无人机"
+        },
+        {
+          "createTime": "2022-05-27T02:48:18.478Z",
+          "modifyTime": "2022-05-27T02:48:18.478Z",
+          "type": "visit",
+          "typeString": "访问",
+          "name": "gg",
+          "ip": "1",
+          "category": "product",
+          "phone": "13811223322",
+          "_id": "62903bf2ca508b8b0fe6c512",
+          "title": "看守无人机"
+        },
+        {
+          "createTime": "2022-05-26T16:09:31.352Z",
+          "modifyTime": "2022-05-26T16:09:31.352Z",
+          "type": "visit",
+          "typeString": "访问",
+          "name": "gg",
+          "ip": "1",
+          "category": "brand",
+          "phone": "13811223322",
+          "_id": "628fa63b52e9516c2821f539",
+          "title": "出路？谁才是餐饮行业大赢家？"
+        },
+        {
+          "createTime": "2022-05-26T16:09:12.032Z",
+          "modifyTime": "2022-05-26T16:09:12.032Z",
+          "type": "visit",
+          "typeString": "访问",
+          "name": "gg",
+          "ip": "1",
+          "category": "brand",
+          "phone": "13811223322",
+          "_id": "628fa62852e9516c2821f523",
+          "title": "企业问道——客户才是第一生产力"
+        },
+        {
+          "createTime": "2022-05-26T16:08:57.755Z",
+          "modifyTime": "2022-05-26T16:08:57.755Z",
+          "type": "visit",
+          "typeString": "访问",
+          "name": "gg",
+          "ip": "1",
+          "category": "brand",
+          "phone": "13811223322",
+          "_id": "628fa61952e9516c2821f515",
+          "title": "yy科技10周年，邀你一起线上参加"
+        },
+        {
+          "createTime": "2022-05-26T16:08:41.760Z",
+          "modifyTime": "2022-05-26T16:08:41.760Z",
+          "type": "visit",
+          "typeString": "访问",
+          "name": "gg",
+          "ip": "1",
+          "category": "brand",
+          "phone": "13811223322",
+          "_id": "628fa60952e9516c2821f503",
+          "title": "城市大数据服务，带你走向胜利，无情宣发，剑指出路"
+        },
+        {
+          "createTime": "2022-05-26T16:08:19.136Z",
+          "modifyTime": "2022-05-26T16:08:19.136Z",
+          "type": "visit",
+          "typeString": "访问",
+          "name": "gg",
+          "ip": "1",
+          "category": "product",
+          "phone": "13811223322",
+          "_id": "628fa5f352e9516c2821f4de",
+          "title": "蔬菜沙拉"
+        },
+        {
+          "createTime": "2022-05-26T16:08:17.143Z",
+          "modifyTime": "2022-05-26T16:08:17.143Z",
+          "type": "visit",
+          "typeString": "访问",
+          "name": "gg",
+          "ip": "1",
+          "category": "product",
+          "phone": "13811223322",
+          "_id": "628fa5f152e9516c2821f4dc",
+          "title": "蔬菜沙拉"
+        },
+        {
+          "createTime": "2022-05-26T16:08:07.697Z",
+          "modifyTime": "2022-05-26T16:08:07.697Z",
+          "type": "visit",
+          "typeString": "访问",
+          "name": "gg",
+          "ip": "1",
+          "category": "product",
+          "phone": "13811223322",
+          "_id": "628fa5e752e9516c2821f4cc",
+          "title": "智能研判系统-清水"
+        }
+      ],
+      "total": 43
+    },
+    "errorCode": null,
+    "errorMessage": null
+  },
+  "api_activity_statics_visit_auth": {
+    "success": true,
+    "data": [
+      {
+        "name": "企业问道——客户才是第一生产力",
+        "count": 2
+      },
+      {
+        "name": "出路？谁才是餐饮行业大赢家？",
+        "count": 1
+      },
+      {
+        "name": "yy科技10周年，邀你一起线上参加",
+        "count": 1
+      },
+      {
+        "name": "城市大数据服务，带你走向胜利，无情宣发，剑指出路",
+        "count": 1
+      }
+    ],
+    "errorCode": null,
+    "errorMessage": null
+  }
+}

@@ -19,6 +19,15 @@ module.exports = {
         '^/admin/api': '',
       },
     },
+    // mock服务（如果需要）
+    // {
+    //   context: ['/admin/mock'],
+    //   target: 'http://localhost:8092/api',
+    //   changeOrigin: true,
+    //   pathRewrite: {
+    //     '^/admin/api': '',
+    //   },
+    // },
   ],
   // antd 主题配置
   antdThemeConfig: {

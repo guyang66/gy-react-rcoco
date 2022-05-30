@@ -1,0 +1,3645 @@
+{
+  "api_route_auth": {
+    "success": true,
+    "data": [
+      {
+        "name": "banner配置",
+        "roles": [
+          "web"
+        ],
+        "exact": true,
+        "backUrl": "/admin/403",
+        "path": "/admin/web/index/banner",
+        "key": "web_index_banner"
+      },
+      {
+        "name": "岗位管理",
+        "roles": [
+          "web",
+          "hr"
+        ],
+        "exact": true,
+        "backUrl": "/admin/403",
+        "path": "/admin/web/resume/list",
+        "key": "web_resume_list"
+      },
+      {
+        "name": "岗位管理",
+        "roles": [
+          "web",
+          "hr"
+        ],
+        "exact": true,
+        "backUrl": "/admin/403",
+        "path": "/admin/web/resume/type",
+        "key": "web_resume_type"
+      },
+      {
+        "name": "标签管理",
+        "roles": [
+          "web",
+          "hr"
+        ],
+        "exact": true,
+        "backUrl": "/admin/403",
+        "path": "/admin/web/resume/tag",
+        "key": "web_resume_tag"
+      },
+      {
+        "name": "岗位详情",
+        "roles": [
+          "web",
+          "hr"
+        ],
+        "exact": true,
+        "backUrl": "/admin/403",
+        "path": "/admin/web/resume/detail",
+        "key": "web_resume_detail"
+      },
+      {
+        "name": "客户案例",
+        "roles": [
+          "web"
+        ],
+        "exact": true,
+        "backUrl": "/admin/403",
+        "path": "/admin/web/case/list",
+        "key": "web_case_list"
+      },
+      {
+        "name": "热门标签",
+        "roles": [
+          "web"
+        ],
+        "exact": true,
+        "backUrl": "/admin/403",
+        "path": "/admin/web/case/tag",
+        "key": "web_case_tag"
+      },
+      {
+        "name": "产品活动",
+        "roles": [
+          "web"
+        ],
+        "exact": true,
+        "backUrl": "/admin/403",
+        "path": "/admin/web/activity/product",
+        "key": "web_activity_product"
+      },
+      {
+        "name": "热门活动",
+        "roles": [
+          "web"
+        ],
+        "exact": true,
+        "backUrl": "/admin/403",
+        "path": "/admin/web/activity/hot",
+        "key": "web_activity_hot"
+      },
+      {
+        "name": "品牌活动",
+        "roles": [
+          "web"
+        ],
+        "exact": true,
+        "backUrl": "/admin/403",
+        "path": "/admin/web/activity/brand",
+        "key": "web_activity_brand"
+      },
+      {
+        "name": "新闻配置",
+        "roles": [
+          "web"
+        ],
+        "exact": true,
+        "backUrl": "/admin/403",
+        "path": "/admin/web/index/news",
+        "key": "web_index_news"
+      },
+      {
+        "name": "栏目配置",
+        "roles": [
+          "web"
+        ],
+        "exact": true,
+        "backUrl": "/admin/403",
+        "path": "/admin/web/index/column",
+        "key": "web_index_column"
+      },
+      {
+        "name": "资源列表",
+        "roles": [
+          "web"
+        ],
+        "exact": true,
+        "backUrl": "/admin/403",
+        "path": "/admin/web/resource/list",
+        "key": "web_resource_list"
+      },
+      {
+        "name": "资源栏目",
+        "roles": [
+          "web"
+        ],
+        "exact": true,
+        "backUrl": "/admin/403",
+        "path": "/admin/web/resource/column",
+        "key": "web_resource_column"
+      },
+      {
+        "name": "资源分类",
+        "roles": [
+          "web"
+        ],
+        "exact": true,
+        "backUrl": "/admin/403",
+        "path": "/admin/web/resource/category",
+        "key": "web_resource_category"
+      },
+      {
+        "name": "资源详情",
+        "roles": [
+          "web"
+        ],
+        "exact": true,
+        "backUrl": "/admin/403",
+        "path": "/admin/web/resource/detail",
+        "key": "web_resource_detail"
+      },
+      {
+        "name": "新闻列表",
+        "roles": [
+          "web"
+        ],
+        "exact": true,
+        "backUrl": "/admin/403",
+        "path": "/admin/web/news/list",
+        "key": "web_news_list"
+      },
+      {
+        "name": "分类管理",
+        "roles": [
+          "web"
+        ],
+        "exact": true,
+        "backUrl": "/admin/403",
+        "path": "/admin/web/news/category",
+        "key": "web_news_category"
+      },
+      {
+        "name": "新闻详情",
+        "roles": [
+          "web"
+        ],
+        "exact": true,
+        "backUrl": "/admin/403",
+        "path": "/admin/web/news/detail",
+        "key": "web_news_detail"
+      },
+      {
+        "name": "tdk管理",
+        "roles": [
+          "web"
+        ],
+        "exact": true,
+        "backUrl": "/admin/403",
+        "path": "/admin/web/tdk",
+        "key": "web_tdk"
+      },
+      {
+        "name": "线索管理",
+        "roles": [
+          "admin",
+          "superAdmin",
+          "data"
+        ],
+        "exact": true,
+        "backUrl": "/admin/403",
+        "path": "/admin/data/web/clue",
+        "key": "data_web_clue"
+      },
+      {
+        "name": "新闻数据",
+        "roles": [
+          "admin",
+          "superAdmin",
+          "data"
+        ],
+        "exact": true,
+        "backUrl": "/admin/403",
+        "path": "/admin/data/web/news",
+        "key": "data_web_news"
+      },
+      {
+        "name": "资源数据",
+        "roles": [
+          "admin",
+          "superAdmin",
+          "data"
+        ],
+        "exact": true,
+        "backUrl": "/admin/403",
+        "path": "/admin/data/web/resource",
+        "key": "data_web_resource"
+      },
+      {
+        "name": "案例数据",
+        "roles": [
+          "admin",
+          "superAdmin",
+          "data"
+        ],
+        "exact": true,
+        "backUrl": "/admin/403",
+        "path": "/admin/data/web/case",
+        "key": "data_web_case"
+      },
+      {
+        "name": "活动数据",
+        "roles": [
+          "admin",
+          "superAdmin",
+          "data"
+        ],
+        "exact": true,
+        "backUrl": "/admin/403",
+        "path": "/admin/data/web/activity",
+        "key": "data_web_activity"
+      },
+      {
+        "name": "PV/UV",
+        "roles": [
+          "admin",
+          "superAdmin",
+          "data"
+        ],
+        "exact": true,
+        "backUrl": "/admin/403",
+        "path": "/admin/data/web/pvuv",
+        "key": "data_web_pvuv"
+      },
+      {
+        "name": "TP",
+        "roles": [
+          "admin",
+          "superAdmin",
+          "data"
+        ],
+        "exact": true,
+        "backUrl": "/admin/403",
+        "path": "/admin/data/web/tp",
+        "key": "data_web_tp"
+      },
+      {
+        "name": "菜单管理",
+        "roles": [
+          "admin",
+          "superAdmin"
+        ],
+        "exact": true,
+        "backUrl": "/admin/403",
+        "path": "/admin/app/menu",
+        "key": "app_menu"
+      },
+      {
+        "name": "路由管理",
+        "roles": [
+          "admin",
+          "superAdmin"
+        ],
+        "exact": true,
+        "backUrl": "/admin/403",
+        "path": "/admin/app/route",
+        "key": "app_route"
+      },
+      {
+        "name": "缓存管理",
+        "roles": [
+          "admin",
+          "superAdmin",
+          "web"
+        ],
+        "exact": true,
+        "backUrl": "/admin/403",
+        "path": "/admin/app/cache",
+        "key": "app_cache"
+      },
+      {
+        "name": "UI权限",
+        "roles": [
+          "admin",
+          "superAdmin"
+        ],
+        "exact": true,
+        "backUrl": "/admin/403",
+        "path": "/admin/app/permission/ui",
+        "key": "app_permission_ui"
+      },
+      {
+        "name": "url权限",
+        "roles": [
+          "admin",
+          "superAdmin"
+        ],
+        "exact": true,
+        "backUrl": "/admin/403",
+        "path": "/admin/app/permission/url",
+        "key": "app_permission_url"
+      },
+      {
+        "name": "角色管理",
+        "roles": [
+          "admin",
+          "superAdmin"
+        ],
+        "exact": true,
+        "backUrl": "/admin/403",
+        "path": "/admin/app/role",
+        "key": "app_role"
+      },
+      {
+        "name": "用户管理",
+        "roles": [
+          "admin",
+          "superAdmin"
+        ],
+        "exact": true,
+        "backUrl": "/admin/403",
+        "path": "/admin/userManage",
+        "key": "userManage"
+      }
+    ],
+    "errorCode": null,
+    "errorMessage": null
+  },
+  "api_menu_auth": {
+    "success": true,
+    "data": [
+      {
+        "createTime": "2022-05-30T06:40:05.003Z",
+        "modifyTime": "2022-05-30T06:40:05.003Z",
+        "createId": 1,
+        "modifyId": 1,
+        "isDelete": false,
+        "roles": [],
+        "level": 1,
+        "hasLink": 1,
+        "hasIcon": 1,
+        "iconKey": "homeOutlined",
+        "hasChild": 0,
+        "isCommon": 1,
+        "order": 9999,
+        "status": 1,
+        "_id": "628f6905e535b3422ad868a1",
+        "title": "首页",
+        "key": "index",
+        "path": "/admin/index"
+      },
+      {
+        "createTime": "2022-05-30T06:40:05.003Z",
+        "modifyTime": "2022-05-30T06:40:05.003Z",
+        "createId": 1,
+        "modifyId": 1,
+        "isDelete": false,
+        "roles": [
+          "hr",
+          "web"
+        ],
+        "level": 1,
+        "hasLink": 0,
+        "hasIcon": 1,
+        "iconKey": "desktopOutlined",
+        "hasChild": 1,
+        "isCommon": 0,
+        "order": 100,
+        "status": 1,
+        "_id": "628f6905e535b3422ad868a2",
+        "title": "官网配置",
+        "key": "web",
+        "path": "/admin/web",
+        "children": [
+          {
+            "createTime": "2022-05-30T06:40:05.003Z",
+            "modifyTime": "2022-05-30T06:40:05.003Z",
+            "createId": 1,
+            "modifyId": 1,
+            "isDelete": false,
+            "roles": [
+              "web"
+            ],
+            "level": 2,
+            "hasLink": 0,
+            "hasIcon": 1,
+            "iconKey": "appstoreOutlined",
+            "hasChild": 1,
+            "isCommon": 0,
+            "order": 100,
+            "status": 1,
+            "_id": "628f6905e535b3422ad868a3",
+            "title": "首页配置",
+            "key": "web_index",
+            "path": "/admin/web/index",
+            "parentMenu": "web",
+            "children": [
+              {
+                "createTime": "2022-05-30T06:40:05.003Z",
+                "modifyTime": "2022-05-30T06:40:05.003Z",
+                "createId": 1,
+                "modifyId": 1,
+                "isDelete": false,
+                "roles": [
+                  "web"
+                ],
+                "level": 3,
+                "hasLink": 1,
+                "hasIcon": 0,
+                "iconKey": "",
+                "hasChild": 0,
+                "isCommon": 0,
+                "order": 100,
+                "status": 1,
+                "_id": "628f6905e535b3422ad868a4",
+                "title": "banner配置",
+                "key": "web_index_banner",
+                "path": "/admin/web/index/banner",
+                "parentMenu": "web_index"
+              },
+              {
+                "createTime": "2022-05-30T06:40:05.003Z",
+                "modifyTime": "2022-05-30T06:40:05.003Z",
+                "createId": 1,
+                "modifyId": 1,
+                "isDelete": false,
+                "roles": [
+                  "web"
+                ],
+                "level": 3,
+                "hasLink": 1,
+                "hasIcon": 0,
+                "iconKey": "",
+                "hasChild": 0,
+                "isCommon": 0,
+                "order": 100,
+                "status": 1,
+                "_id": "628f6905e535b3422ad868a5",
+                "title": "新闻配置",
+                "key": "web_index_news",
+                "path": "/admin/web/index/news",
+                "parentMenu": "web_index"
+              },
+              {
+                "createTime": "2022-05-30T06:40:05.003Z",
+                "modifyTime": "2022-05-30T06:40:05.003Z",
+                "createId": 1,
+                "modifyId": 1,
+                "isDelete": false,
+                "roles": [
+                  "web"
+                ],
+                "level": 3,
+                "hasLink": 1,
+                "hasIcon": 0,
+                "iconKey": "",
+                "hasChild": 0,
+                "isCommon": 0,
+                "order": 100,
+                "status": 1,
+                "_id": "628f6905e535b3422ad868a6",
+                "title": "栏目配置",
+                "key": "web_index_column",
+                "path": "/admin/web/index/column",
+                "parentMenu": "web_index"
+              }
+            ]
+          },
+          {
+            "createTime": "2022-05-30T06:40:05.003Z",
+            "modifyTime": "2022-05-30T06:40:05.003Z",
+            "createId": 1,
+            "modifyId": 1,
+            "isDelete": false,
+            "roles": [
+              "web",
+              "hr"
+            ],
+            "level": 2,
+            "hasLink": 0,
+            "hasIcon": 1,
+            "iconKey": "userSwitchOutlined",
+            "hasChild": 1,
+            "isCommon": 0,
+            "order": 100,
+            "status": 1,
+            "_id": "628f6905e535b3422ad868a7",
+            "title": "招聘管理",
+            "key": "web_resume",
+            "path": "/admin/web/resume",
+            "parentMenu": "web",
+            "children": [
+              {
+                "createTime": "2022-05-30T06:40:05.003Z",
+                "modifyTime": "2022-05-30T06:40:05.003Z",
+                "createId": 1,
+                "modifyId": 1,
+                "isDelete": false,
+                "roles": [
+                  "web",
+                  "hr"
+                ],
+                "level": 3,
+                "hasLink": 1,
+                "hasIcon": 0,
+                "iconKey": "",
+                "hasChild": 0,
+                "isCommon": 0,
+                "order": 100,
+                "status": 1,
+                "_id": "628f6905e535b3422ad868a8",
+                "title": "岗位管理",
+                "key": "web_resume_list",
+                "path": "/admin/web/resume/list",
+                "parentMenu": "web_resume"
+              },
+              {
+                "createTime": "2022-05-30T06:40:05.003Z",
+                "modifyTime": "2022-05-30T06:40:05.003Z",
+                "createId": 1,
+                "modifyId": 1,
+                "isDelete": false,
+                "roles": [
+                  "web",
+                  "hr"
+                ],
+                "level": 3,
+                "hasLink": 1,
+                "hasIcon": 0,
+                "iconKey": "",
+                "hasChild": 0,
+                "isCommon": 0,
+                "order": 100,
+                "status": 1,
+                "_id": "628f6905e535b3422ad868a9",
+                "title": "类型管理",
+                "key": "web_resume_type",
+                "path": "/admin/web/resume/type",
+                "parentMenu": "web_resume"
+              },
+              {
+                "createTime": "2022-05-30T06:40:05.003Z",
+                "modifyTime": "2022-05-30T06:40:05.003Z",
+                "createId": 1,
+                "modifyId": 1,
+                "isDelete": false,
+                "roles": [
+                  "web",
+                  "hr"
+                ],
+                "level": 3,
+                "hasLink": 1,
+                "hasIcon": 0,
+                "iconKey": "",
+                "hasChild": 0,
+                "isCommon": 0,
+                "order": 100,
+                "status": 1,
+                "_id": "628f6905e535b3422ad868aa",
+                "title": "标签管理",
+                "key": "web_resume_tag",
+                "path": "/admin/web/resume/tag",
+                "parentMenu": "web_resume"
+              }
+            ]
+          },
+          {
+            "createTime": "2022-05-30T06:40:05.003Z",
+            "modifyTime": "2022-05-30T06:40:05.003Z",
+            "createId": 1,
+            "modifyId": 1,
+            "isDelete": false,
+            "roles": [
+              "web"
+            ],
+            "level": 2,
+            "hasLink": 0,
+            "hasIcon": 1,
+            "iconKey": "contactsOutlined",
+            "hasChild": 1,
+            "isCommon": 0,
+            "order": 100,
+            "status": 1,
+            "_id": "628f6905e535b3422ad868ab",
+            "title": "案例管理",
+            "key": "web_case",
+            "path": "/admin/web/case",
+            "parentMenu": "web",
+            "children": [
+              {
+                "createTime": "2022-05-30T06:40:05.003Z",
+                "modifyTime": "2022-05-30T06:40:05.003Z",
+                "createId": 1,
+                "modifyId": 1,
+                "isDelete": false,
+                "roles": [
+                  "web"
+                ],
+                "level": 3,
+                "hasLink": 1,
+                "hasIcon": 0,
+                "iconKey": "",
+                "hasChild": 0,
+                "isCommon": 0,
+                "order": 100,
+                "status": 1,
+                "_id": "628f6905e535b3422ad868ac",
+                "title": "案例列表",
+                "key": "web_case_list",
+                "path": "/admin/web/case/list",
+                "parentMenu": "web_case"
+              },
+              {
+                "createTime": "2022-05-30T06:40:05.003Z",
+                "modifyTime": "2022-05-30T06:40:05.003Z",
+                "createId": 1,
+                "modifyId": 1,
+                "isDelete": false,
+                "roles": [
+                  "web"
+                ],
+                "level": 3,
+                "hasLink": 1,
+                "hasIcon": 0,
+                "iconKey": "",
+                "hasChild": 0,
+                "isCommon": 0,
+                "order": 100,
+                "status": 1,
+                "_id": "628f6905e535b3422ad868ad",
+                "title": "热门标签",
+                "key": "web_case_tag",
+                "path": "/admin/web/case/tag",
+                "parentMenu": "web_case"
+              }
+            ]
+          },
+          {
+            "createTime": "2022-05-30T06:40:05.003Z",
+            "modifyTime": "2022-05-30T06:40:05.003Z",
+            "createId": 1,
+            "modifyId": 1,
+            "isDelete": false,
+            "roles": [
+              "web"
+            ],
+            "level": 2,
+            "hasLink": 0,
+            "hasIcon": 1,
+            "iconKey": "accountBookOutlined",
+            "hasChild": 1,
+            "isCommon": 0,
+            "order": 100,
+            "status": 1,
+            "_id": "628f6905e535b3422ad868ae",
+            "title": "活动管理",
+            "key": "web_activity",
+            "path": "/admin/web/activity",
+            "parentMenu": "web",
+            "children": [
+              {
+                "createTime": "2022-05-30T06:40:05.003Z",
+                "modifyTime": "2022-05-30T06:40:05.003Z",
+                "createId": 1,
+                "modifyId": 1,
+                "isDelete": false,
+                "roles": [
+                  "web"
+                ],
+                "level": 3,
+                "hasLink": 1,
+                "hasIcon": 0,
+                "iconKey": "",
+                "hasChild": 0,
+                "isCommon": 0,
+                "order": 100,
+                "status": 1,
+                "_id": "628f6905e535b3422ad868af",
+                "title": "产品活动",
+                "key": "web_activity_product",
+                "path": "/admin/web/activity/product",
+                "parentMenu": "web_activity"
+              },
+              {
+                "createTime": "2022-05-30T06:40:05.003Z",
+                "modifyTime": "2022-05-30T06:40:05.003Z",
+                "createId": 1,
+                "modifyId": 1,
+                "isDelete": false,
+                "roles": [
+                  "web"
+                ],
+                "level": 3,
+                "hasLink": 1,
+                "hasIcon": 0,
+                "iconKey": "",
+                "hasChild": 0,
+                "isCommon": 0,
+                "order": 100,
+                "status": 1,
+                "_id": "628f6905e535b3422ad868b0",
+                "title": "热门活动",
+                "key": "web_activity_hot",
+                "path": "/admin/web/activity/hot",
+                "parentMenu": "web_activity"
+              },
+              {
+                "createTime": "2022-05-30T06:40:05.003Z",
+                "modifyTime": "2022-05-30T06:40:05.003Z",
+                "createId": 1,
+                "modifyId": 1,
+                "isDelete": false,
+                "roles": [
+                  "web"
+                ],
+                "level": 3,
+                "hasLink": 1,
+                "hasIcon": 0,
+                "iconKey": "",
+                "hasChild": 0,
+                "isCommon": 0,
+                "order": 100,
+                "status": 1,
+                "_id": "628f6905e535b3422ad868b1",
+                "title": "品牌活动",
+                "key": "web_activity_brand",
+                "path": "/admin/web/activity/brand",
+                "parentMenu": "web_activity"
+              }
+            ]
+          },
+          {
+            "createTime": "2022-05-30T06:40:05.003Z",
+            "modifyTime": "2022-05-30T06:40:05.003Z",
+            "createId": 1,
+            "modifyId": 1,
+            "isDelete": false,
+            "roles": [
+              "web"
+            ],
+            "level": 2,
+            "hasLink": 0,
+            "hasIcon": 1,
+            "iconKey": "fileDoneOutlined",
+            "hasChild": 1,
+            "isCommon": 0,
+            "order": 100,
+            "status": 1,
+            "_id": "628f6905e535b3422ad868b2",
+            "title": "资源管理",
+            "key": "web_resource",
+            "path": "/admin/web/resource",
+            "parentMenu": "web",
+            "children": [
+              {
+                "createTime": "2022-05-30T06:40:05.003Z",
+                "modifyTime": "2022-05-30T06:40:05.003Z",
+                "createId": 1,
+                "modifyId": 1,
+                "isDelete": false,
+                "roles": [
+                  "web"
+                ],
+                "level": 3,
+                "hasLink": 1,
+                "hasIcon": 0,
+                "iconKey": "",
+                "hasChild": 0,
+                "isCommon": 0,
+                "order": 100,
+                "status": 1,
+                "_id": "628f6905e535b3422ad868b3",
+                "title": "资源列表",
+                "key": "web_resource_list",
+                "path": "/admin/web/resource/list",
+                "parentMenu": "web_resource"
+              },
+              {
+                "createTime": "2022-05-30T06:40:05.003Z",
+                "modifyTime": "2022-05-30T06:40:05.003Z",
+                "createId": 1,
+                "modifyId": 1,
+                "isDelete": false,
+                "roles": [
+                  "web"
+                ],
+                "level": 3,
+                "hasLink": 1,
+                "hasIcon": 0,
+                "iconKey": "",
+                "hasChild": 0,
+                "isCommon": 0,
+                "order": 100,
+                "status": 1,
+                "_id": "628f6905e535b3422ad868b4",
+                "title": "栏目管理",
+                "key": "web_resource_column",
+                "path": "/admin/web/resource/column",
+                "parentMenu": "web_resource"
+              },
+              {
+                "createTime": "2022-05-30T06:40:05.003Z",
+                "modifyTime": "2022-05-30T06:40:05.003Z",
+                "createId": 1,
+                "modifyId": 1,
+                "isDelete": false,
+                "roles": [
+                  "web"
+                ],
+                "level": 3,
+                "hasLink": 1,
+                "hasIcon": 0,
+                "iconKey": "",
+                "hasChild": 0,
+                "isCommon": 0,
+                "order": 100,
+                "status": 1,
+                "_id": "628f6905e535b3422ad868b5",
+                "title": "分类管理",
+                "key": "web_resource_category",
+                "path": "/admin/web/resource/category",
+                "parentMenu": "web_resource"
+              }
+            ]
+          },
+          {
+            "createTime": "2022-05-30T06:40:05.003Z",
+            "modifyTime": "2022-05-30T06:40:05.003Z",
+            "createId": 1,
+            "modifyId": 1,
+            "isDelete": false,
+            "roles": [
+              "web"
+            ],
+            "level": 2,
+            "hasLink": 0,
+            "hasIcon": 1,
+            "iconKey": "profileOutlined",
+            "hasChild": 1,
+            "isCommon": 0,
+            "order": 100,
+            "status": 1,
+            "_id": "628f6905e535b3422ad868b6",
+            "title": "新闻管理",
+            "key": "web_news",
+            "path": "/admin/web/news",
+            "parentMenu": "web",
+            "children": [
+              {
+                "createTime": "2022-05-30T06:40:05.003Z",
+                "modifyTime": "2022-05-30T06:40:05.003Z",
+                "createId": 1,
+                "modifyId": 1,
+                "isDelete": false,
+                "roles": [
+                  "web"
+                ],
+                "level": 3,
+                "hasLink": 1,
+                "hasIcon": 0,
+                "iconKey": "",
+                "hasChild": 0,
+                "isCommon": 0,
+                "order": 100,
+                "status": 1,
+                "_id": "628f6905e535b3422ad868b7",
+                "title": "新闻列表",
+                "key": "web_news_list",
+                "path": "/admin/web/news/list",
+                "parentMenu": "web_news"
+              },
+              {
+                "createTime": "2022-05-30T06:40:05.003Z",
+                "modifyTime": "2022-05-30T06:40:05.003Z",
+                "createId": 1,
+                "modifyId": 1,
+                "isDelete": false,
+                "roles": [
+                  "web"
+                ],
+                "level": 3,
+                "hasLink": 1,
+                "hasIcon": 0,
+                "iconKey": "",
+                "hasChild": 0,
+                "isCommon": 0,
+                "order": 100,
+                "status": 1,
+                "_id": "628f6905e535b3422ad868b8",
+                "title": "分类管理",
+                "key": "web_news_category",
+                "path": "/admin/web/news/category",
+                "parentMenu": "web_news"
+              }
+            ]
+          },
+          {
+            "createTime": "2022-05-30T06:40:05.003Z",
+            "modifyTime": "2022-05-30T06:40:05.003Z",
+            "createId": 1,
+            "modifyId": 1,
+            "isDelete": false,
+            "roles": [
+              "web"
+            ],
+            "level": 2,
+            "hasLink": 1,
+            "hasIcon": 1,
+            "iconKey": "reconciliationOutlined",
+            "hasChild": 0,
+            "isCommon": 0,
+            "order": 100,
+            "status": 1,
+            "_id": "628f6905e535b3422ad868b9",
+            "title": "tdk管理",
+            "key": "web_tdk",
+            "path": "/admin/web/tdk",
+            "parentMenu": "web"
+          }
+        ]
+      },
+      {
+        "createTime": "2022-05-30T06:40:05.003Z",
+        "modifyTime": "2022-05-30T06:40:05.003Z",
+        "createId": 1,
+        "modifyId": 1,
+        "isDelete": false,
+        "roles": [
+          "admin",
+          "superAdmin",
+          "data"
+        ],
+        "level": 1,
+        "hasLink": 0,
+        "hasIcon": 1,
+        "iconKey": "databaseOutlined",
+        "hasChild": 1,
+        "isCommon": 0,
+        "order": 100,
+        "status": 1,
+        "_id": "628f6905e535b3422ad868ba",
+        "title": "数据管理",
+        "key": "data",
+        "path": "/admin/data",
+        "children": [
+          {
+            "createTime": "2022-05-30T06:40:05.003Z",
+            "modifyTime": "2022-05-30T06:40:05.003Z",
+            "createId": 1,
+            "modifyId": 1,
+            "isDelete": false,
+            "roles": [
+              "admin",
+              "superAdmin",
+              "data"
+            ],
+            "level": 2,
+            "hasLink": 0,
+            "hasIcon": 1,
+            "iconKey": "consoleSqlOutlined",
+            "hasChild": 1,
+            "isCommon": 0,
+            "order": 100,
+            "status": 1,
+            "_id": "628f6905e535b3422ad868bb",
+            "title": "官网数据",
+            "key": "data_web",
+            "path": "/admin/data/web",
+            "parentMenu": "data",
+            "children": [
+              {
+                "createTime": "2022-05-30T06:40:05.003Z",
+                "modifyTime": "2022-05-30T06:40:05.003Z",
+                "createId": 1,
+                "modifyId": 1,
+                "isDelete": false,
+                "roles": [
+                  "admin",
+                  "superAdmin",
+                  "data"
+                ],
+                "level": 3,
+                "hasLink": 1,
+                "hasIcon": 0,
+                "iconKey": "",
+                "hasChild": 0,
+                "isCommon": 0,
+                "order": 100,
+                "status": 1,
+                "_id": "628f6905e535b3422ad868bc",
+                "title": "线索管理",
+                "key": "data_web_clue",
+                "path": "/admin/data/web/clue",
+                "parentMenu": "data_web"
+              },
+              {
+                "createTime": "2022-05-30T06:40:05.003Z",
+                "modifyTime": "2022-05-30T06:40:05.003Z",
+                "createId": 1,
+                "modifyId": 1,
+                "isDelete": false,
+                "roles": [
+                  "admin",
+                  "superAdmin",
+                  "data"
+                ],
+                "level": 3,
+                "hasLink": 1,
+                "hasIcon": 0,
+                "iconKey": "",
+                "hasChild": 0,
+                "isCommon": 0,
+                "order": 100,
+                "status": 1,
+                "_id": "628f6905e535b3422ad868bd",
+                "title": "资源数据",
+                "key": "data_web_resource",
+                "path": "/admin/data/web/resource",
+                "parentMenu": "data_web"
+              },
+              {
+                "createTime": "2022-05-30T06:40:05.003Z",
+                "modifyTime": "2022-05-30T06:40:05.003Z",
+                "createId": 1,
+                "modifyId": 1,
+                "isDelete": false,
+                "roles": [
+                  "admin",
+                  "superAdmin",
+                  "data"
+                ],
+                "level": 3,
+                "hasLink": 1,
+                "hasIcon": 0,
+                "iconKey": "",
+                "hasChild": 0,
+                "isCommon": 0,
+                "order": 100,
+                "status": 1,
+                "_id": "628f6905e535b3422ad868be",
+                "title": "新闻数据",
+                "key": "data_web_news",
+                "path": "/admin/data/web/news",
+                "parentMenu": "data_web"
+              },
+              {
+                "createTime": "2022-05-30T06:40:05.003Z",
+                "modifyTime": "2022-05-30T06:40:05.003Z",
+                "createId": 1,
+                "modifyId": 1,
+                "isDelete": false,
+                "roles": [
+                  "admin",
+                  "superAdmin",
+                  "data"
+                ],
+                "level": 3,
+                "hasLink": 1,
+                "hasIcon": 0,
+                "iconKey": "",
+                "hasChild": 0,
+                "isCommon": 0,
+                "order": 100,
+                "status": 1,
+                "_id": "628f6905e535b3422ad868bf",
+                "title": "案例数据",
+                "key": "data_web_case",
+                "path": "/admin/data/web/case",
+                "parentMenu": "data_web"
+              },
+              {
+                "createTime": "2022-05-30T06:40:05.003Z",
+                "modifyTime": "2022-05-30T06:40:05.003Z",
+                "createId": 1,
+                "modifyId": 1,
+                "isDelete": false,
+                "roles": [
+                  "admin",
+                  "superAdmin",
+                  "data"
+                ],
+                "level": 3,
+                "hasLink": 1,
+                "hasIcon": 0,
+                "iconKey": "",
+                "hasChild": 0,
+                "isCommon": 0,
+                "order": 100,
+                "status": 1,
+                "_id": "628f6905e535b3422ad868c0",
+                "title": "活动数据",
+                "key": "data_web_activity",
+                "path": "/admin/data/web/activity",
+                "parentMenu": "data_web"
+              },
+              {
+                "createTime": "2022-05-30T06:40:05.003Z",
+                "modifyTime": "2022-05-30T06:40:05.003Z",
+                "createId": 1,
+                "modifyId": 1,
+                "isDelete": false,
+                "roles": [
+                  "admin",
+                  "superAdmin",
+                  "data"
+                ],
+                "level": 3,
+                "hasLink": 1,
+                "hasIcon": 0,
+                "iconKey": "",
+                "hasChild": 0,
+                "isCommon": 0,
+                "order": 100,
+                "status": 1,
+                "_id": "628f6905e535b3422ad868c1",
+                "title": "PV/UV",
+                "key": "data_web_pvuv",
+                "path": "/admin/data/web/pvuv",
+                "parentMenu": "data_web"
+              },
+              {
+                "createTime": "2022-05-30T06:40:05.003Z",
+                "modifyTime": "2022-05-30T06:40:05.003Z",
+                "createId": 1,
+                "modifyId": 1,
+                "isDelete": false,
+                "roles": [
+                  "admin",
+                  "superAdmin",
+                  "data"
+                ],
+                "level": 3,
+                "hasLink": 1,
+                "hasIcon": 0,
+                "iconKey": "",
+                "hasChild": 0,
+                "isCommon": 0,
+                "order": 100,
+                "status": 1,
+                "_id": "628f6905e535b3422ad868c2",
+                "title": "TP",
+                "key": "data_web_tp",
+                "path": "/admin/data/web/tp",
+                "parentMenu": "data_web"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "createTime": "2022-05-30T06:40:05.003Z",
+        "modifyTime": "2022-05-30T06:40:05.003Z",
+        "createId": 1,
+        "modifyId": 1,
+        "isDelete": false,
+        "roles": [
+          "admin",
+          "superAdmin",
+          "web"
+        ],
+        "level": 1,
+        "hasLink": 0,
+        "hasIcon": 1,
+        "iconKey": "macCommandOutlined",
+        "hasChild": 1,
+        "isCommon": 0,
+        "order": 80,
+        "status": 1,
+        "_id": "628f6905e535b3422ad868c3",
+        "title": "应用管理",
+        "key": "app",
+        "path": "/admin/app",
+        "children": [
+          {
+            "createTime": "2022-05-30T06:40:05.003Z",
+            "modifyTime": "2022-05-30T06:40:05.003Z",
+            "createId": 1,
+            "modifyId": 1,
+            "isDelete": false,
+            "roles": [
+              "admin",
+              "superAdmin"
+            ],
+            "level": 2,
+            "hasLink": 1,
+            "hasIcon": 1,
+            "iconKey": "menuOutlined",
+            "hasChild": 0,
+            "isCommon": 0,
+            "order": 72,
+            "status": 1,
+            "_id": "628f6905e535b3422ad868c4",
+            "title": "菜单管理",
+            "key": "app_menu",
+            "path": "/admin/app/menu",
+            "parentMenu": "app"
+          },
+          {
+            "createTime": "2022-05-30T06:40:05.003Z",
+            "modifyTime": "2022-05-30T06:40:05.003Z",
+            "createId": 1,
+            "modifyId": 1,
+            "isDelete": false,
+            "roles": [
+              "admin",
+              "superAdmin"
+            ],
+            "level": 2,
+            "hasLink": 1,
+            "hasIcon": 1,
+            "iconKey": "linkOutlined",
+            "hasChild": 0,
+            "isCommon": 0,
+            "order": 72,
+            "status": 1,
+            "_id": "628f6905e535b3422ad868c5",
+            "title": "路由管理",
+            "key": "app_route",
+            "path": "/admin/app/route",
+            "parentMenu": "app"
+          },
+          {
+            "createTime": "2022-05-30T06:40:05.003Z",
+            "modifyTime": "2022-05-30T06:40:05.003Z",
+            "createId": 1,
+            "modifyId": 1,
+            "isDelete": false,
+            "roles": [
+              "admin",
+              "superAdmin",
+              "web"
+            ],
+            "level": 2,
+            "hasLink": 1,
+            "hasIcon": 1,
+            "iconKey": "hourglassOutlined",
+            "hasChild": 0,
+            "isCommon": 0,
+            "order": 71,
+            "status": 1,
+            "_id": "628f6905e535b3422ad868c6",
+            "title": "缓存管理",
+            "key": "app_cache",
+            "path": "/admin/app/cache",
+            "parentMenu": "app"
+          },
+          {
+            "createTime": "2022-05-30T06:40:05.003Z",
+            "modifyTime": "2022-05-30T06:40:05.003Z",
+            "createId": 1,
+            "modifyId": 1,
+            "isDelete": false,
+            "roles": [
+              "admin",
+              "superAdmin"
+            ],
+            "level": 2,
+            "hasLink": 0,
+            "hasIcon": 1,
+            "iconKey": "frownOutlined",
+            "hasChild": 1,
+            "isCommon": 0,
+            "order": 71,
+            "status": 1,
+            "_id": "628f6905e535b3422ad868c7",
+            "title": "权限管理",
+            "key": "app_permission",
+            "path": "/admin/app/permission",
+            "parentMenu": "app",
+            "children": [
+              {
+                "createTime": "2022-05-30T06:40:05.003Z",
+                "modifyTime": "2022-05-30T06:40:05.003Z",
+                "createId": 1,
+                "modifyId": 1,
+                "isDelete": false,
+                "roles": [
+                  "admin",
+                  "superAdmin"
+                ],
+                "level": 3,
+                "hasLink": 1,
+                "hasIcon": 0,
+                "iconKey": "",
+                "hasChild": 0,
+                "isCommon": 0,
+                "order": 71,
+                "status": 1,
+                "_id": "628f6905e535b3422ad868c8",
+                "title": "UI权限",
+                "key": "app_permission_ui",
+                "path": "/admin/app/permission/ui",
+                "parentMenu": "app_permission"
+              },
+              {
+                "createTime": "2022-05-30T06:40:05.003Z",
+                "modifyTime": "2022-05-30T06:40:05.003Z",
+                "createId": 1,
+                "modifyId": 1,
+                "isDelete": false,
+                "roles": [
+                  "admin",
+                  "superAdmin"
+                ],
+                "level": 3,
+                "hasLink": 1,
+                "hasIcon": 0,
+                "iconKey": "",
+                "hasChild": 0,
+                "isCommon": 0,
+                "order": 71,
+                "status": 1,
+                "_id": "628f6905e535b3422ad868c9",
+                "title": "url权限",
+                "key": "app_permission_url",
+                "path": "/admin/app/permission/url",
+                "parentMenu": "app_permission"
+              }
+            ]
+          },
+          {
+            "createTime": "2022-05-30T06:40:05.003Z",
+            "modifyTime": "2022-05-30T06:40:05.003Z",
+            "createId": 1,
+            "modifyId": 1,
+            "isDelete": false,
+            "roles": [
+              "admin",
+              "superAdmin"
+            ],
+            "level": 2,
+            "hasLink": 1,
+            "hasIcon": 1,
+            "iconKey": "trademarkOutlined",
+            "hasChild": 0,
+            "isCommon": 0,
+            "order": 71,
+            "status": 1,
+            "_id": "628f6905e535b3422ad868ca",
+            "title": "角色管理",
+            "key": "app_role",
+            "path": "/admin/app/role",
+            "parentMenu": "app"
+          }
+        ]
+      },
+      {
+        "createTime": "2022-05-30T06:40:05.003Z",
+        "modifyTime": "2022-05-30T06:40:05.003Z",
+        "createId": 1,
+        "modifyId": 1,
+        "isDelete": false,
+        "roles": [
+          "admin",
+          "superAdmin"
+        ],
+        "level": 1,
+        "hasLink": 1,
+        "hasIcon": 1,
+        "iconKey": "teamOutlined",
+        "hasChild": 0,
+        "isCommon": 0,
+        "order": 2,
+        "status": 1,
+        "_id": "628f6905e535b3422ad868cb",
+        "title": "用户管理",
+        "key": "userManage",
+        "path": "/admin/userManage"
+      },
+      {
+        "createTime": "2022-05-30T06:40:05.003Z",
+        "modifyTime": "2022-05-30T06:40:05.003Z",
+        "createId": 1,
+        "modifyId": 1,
+        "isDelete": false,
+        "roles": [],
+        "level": 1,
+        "hasLink": 1,
+        "hasIcon": 1,
+        "iconKey": "userOutlined",
+        "hasChild": 0,
+        "isCommon": 1,
+        "order": 1,
+        "status": 1,
+        "_id": "628f6905e535b3422ad868a0",
+        "title": "个人信息",
+        "key": "person",
+        "path": "/admin/person"
+      }
+    ],
+    "errorCode": null,
+    "errorMessage": null
+  },
+  "api_permission_ui_online_auth": {
+    "success": true,
+    "data": [
+      {
+        "createTime": "2022-05-26T06:19:25.724Z",
+        "modifyTime": "2022-05-26T06:19:25.724Z",
+        "createId": 1,
+        "modifyId": 1,
+        "isDelete": false,
+        "name": "数据源下载",
+        "roles": [
+          "superAdmin",
+          "admin",
+          "data"
+        ],
+        "type": "button",
+        "status": 1,
+        "_id": "628f1bed2b784c43c52bfa21",
+        "key": "data.download",
+        "remark": ""
+      },
+      {
+        "createTime": "2022-05-26T06:19:25.724Z",
+        "modifyTime": "2022-05-26T06:19:25.724Z",
+        "createId": 1,
+        "modifyId": 1,
+        "isDelete": false,
+        "name": "刷新应用url权限缓存",
+        "roles": [
+          "superAdmin",
+          "admin"
+        ],
+        "type": "button",
+        "status": 1,
+        "_id": "628f1bed2b784c43c52bfa20",
+        "key": "app.cacheUrlPermission",
+        "remark": ""
+      },
+      {
+        "createTime": "2022-05-26T06:19:25.724Z",
+        "modifyTime": "2022-05-26T06:19:25.724Z",
+        "createId": 1,
+        "modifyId": 1,
+        "isDelete": false,
+        "name": "刷新应用全部缓存",
+        "roles": [
+          "superAdmin",
+          "admin"
+        ],
+        "type": "button",
+        "status": 1,
+        "_id": "628f1bed2b784c43c52bfa1f",
+        "key": "app.cacheAll",
+        "remark": ""
+      },
+      {
+        "createTime": "2022-05-26T06:19:25.724Z",
+        "modifyTime": "2022-05-26T06:19:25.724Z",
+        "createId": 1,
+        "modifyId": 1,
+        "isDelete": false,
+        "name": "新增缓存配置",
+        "roles": [
+          "superAdmin",
+          "admin"
+        ],
+        "type": "button",
+        "status": 1,
+        "_id": "628f1bed2b784c43c52bfa1e",
+        "key": "app.addCache",
+        "remark": ""
+      },
+      {
+        "createTime": "2022-05-26T06:19:25.724Z",
+        "modifyTime": "2022-05-26T06:19:25.724Z",
+        "createId": 1,
+        "modifyId": 1,
+        "isDelete": false,
+        "name": "用户权限分配",
+        "roles": [
+          "superAdmin"
+        ],
+        "type": "button",
+        "status": 1,
+        "_id": "628f1bed2b784c43c52bfa1d",
+        "key": "system.usePermission",
+        "remark": ""
+      },
+      {
+        "createTime": "2022-05-26T06:19:25.724Z",
+        "modifyTime": "2022-05-26T06:19:25.724Z",
+        "createId": 1,
+        "modifyId": 1,
+        "isDelete": false,
+        "name": "启用/禁用用户",
+        "roles": [
+          "superAdmin"
+        ],
+        "type": "button",
+        "status": 1,
+        "_id": "628f1bed2b784c43c52bfa1c",
+        "key": "system.updateUser",
+        "remark": ""
+      },
+      {
+        "createTime": "2022-05-26T06:19:25.724Z",
+        "modifyTime": "2022-05-26T06:19:25.724Z",
+        "createId": 1,
+        "modifyId": 1,
+        "isDelete": false,
+        "name": "重置用户密码",
+        "roles": [
+          "superAdmin"
+        ],
+        "type": "button",
+        "status": 1,
+        "_id": "628f1bed2b784c43c52bfa1b",
+        "key": "system.resetPassword",
+        "remark": ""
+      },
+      {
+        "createTime": "2022-05-26T06:19:25.724Z",
+        "modifyTime": "2022-05-26T06:19:25.724Z",
+        "createId": 1,
+        "modifyId": 1,
+        "isDelete": false,
+        "name": "删除系统用户",
+        "roles": [
+          "superAdmin"
+        ],
+        "type": "button",
+        "status": 1,
+        "_id": "628f1bed2b784c43c52bfa1a",
+        "key": "system.deleteUser",
+        "remark": ""
+      },
+      {
+        "createTime": "2022-05-26T06:19:25.724Z",
+        "modifyTime": "2022-05-26T06:19:25.724Z",
+        "createId": 1,
+        "modifyId": 1,
+        "isDelete": false,
+        "name": "新增系统用户",
+        "roles": [
+          "superAdmin"
+        ],
+        "type": "button",
+        "status": 1,
+        "_id": "628f1bed2b784c43c52bfa19",
+        "key": "system.addUser",
+        "remark": ""
+      },
+      {
+        "createTime": "2022-05-26T06:19:25.724Z",
+        "modifyTime": "2022-05-26T06:19:25.724Z",
+        "createId": 1,
+        "modifyId": 1,
+        "isDelete": false,
+        "name": "管理员特有权限",
+        "roles": [
+          "superAdmin",
+          "admin"
+        ],
+        "type": "app",
+        "status": 1,
+        "_id": "628f1bed2b784c43c52bfa18",
+        "key": "system.adminManage",
+        "remark": ""
+      }
+    ],
+    "errorCode": null,
+    "errorMessage": null
+  },
+  "api_statics_pv_visit_auth": {
+    "success": true,
+    "data": [
+      {
+        "name": "新闻列表",
+        "count": 17
+      },
+      {
+        "name": "首页",
+        "count": 12
+      },
+      {
+        "name": "解决方案-教育",
+        "count": 6
+      },
+      {
+        "name": "客户案例主页",
+        "count": 5
+      },
+      {
+        "name": "帮助中心",
+        "count": 3
+      },
+      {
+        "name": "活动主页",
+        "count": 2
+      },
+      {
+        "name": "客户案例详情",
+        "count": 2
+      },
+      {
+        "name": "产品-离线算法",
+        "count": 2
+      },
+      {
+        "name": "表单",
+        "count": 2
+      },
+      {
+        "name": "产品-樱桃",
+        "count": 1
+      }
+    ],
+    "errorCode": null,
+    "errorMessage": null
+  },
+  "api_statics_pv_list_auth": {
+    "success": true,
+    "data": {
+      "list": [
+        {
+          "createTime": "2022-05-28T08:03:52.119Z",
+          "modifyTime": "2022-05-28T08:03:52.119Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "pageName": "首页",
+          "ip": "1",
+          "name": "3",
+          "phone": "13822112211",
+          "_id": "6291d76845a2dd451a6f494d",
+          "path": "/index",
+          "__v": 0
+        },
+        {
+          "createTime": "2022-05-28T08:03:47.235Z",
+          "modifyTime": "2022-05-28T08:03:47.235Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "pageName": "首页",
+          "ip": "1",
+          "name": "3",
+          "phone": "13822112211",
+          "_id": "6291d76345a2dd451a6f4947",
+          "path": "/index",
+          "__v": 0
+        },
+        {
+          "createTime": "2022-05-28T08:03:41.532Z",
+          "modifyTime": "2022-05-28T08:03:41.532Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "pageName": "首页",
+          "ip": "1",
+          "name": "3",
+          "phone": "13822112211",
+          "_id": "6291d75d45a2dd451a6f4941",
+          "path": "/index",
+          "__v": 0
+        },
+        {
+          "createTime": "2022-05-28T08:03:33.291Z",
+          "modifyTime": "2022-05-28T08:03:33.291Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "pageName": "首页",
+          "ip": "1",
+          "name": "3",
+          "phone": "13822112211",
+          "_id": "6291d75545a2dd451a6f493c",
+          "path": "/index",
+          "__v": 0
+        },
+        {
+          "createTime": "2022-05-28T08:03:28.133Z",
+          "modifyTime": "2022-05-28T08:03:28.133Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "pageName": "首页",
+          "ip": "1",
+          "name": "3",
+          "phone": "13822112211",
+          "_id": "6291d75045a2dd451a6f493a",
+          "path": "/index",
+          "__v": 0
+        },
+        {
+          "createTime": "2022-05-28T08:03:16.072Z",
+          "modifyTime": "2022-05-28T08:03:16.072Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "pageName": "新闻列表",
+          "ip": "1",
+          "name": "3",
+          "phone": "13822112211",
+          "_id": "6291d74445a2dd451a6f4925",
+          "path": "/about/news",
+          "__v": 0
+        },
+        {
+          "createTime": "2022-05-28T08:03:06.537Z",
+          "modifyTime": "2022-05-28T08:03:06.537Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "pageName": "活动主页",
+          "ip": "1",
+          "name": "3",
+          "phone": "13822112211",
+          "_id": "6291d73a45a2dd451a6f4919",
+          "path": "/activity",
+          "__v": 0
+        },
+        {
+          "createTime": "2022-05-28T08:02:57.720Z",
+          "modifyTime": "2022-05-28T08:02:57.720Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "pageName": "客户案例主页",
+          "ip": "1",
+          "name": "3",
+          "phone": "13822112211",
+          "_id": "6291d73145a2dd451a6f4911",
+          "path": "/case",
+          "__v": 0
+        },
+        {
+          "createTime": "2022-05-28T08:02:53.085Z",
+          "modifyTime": "2022-05-28T08:02:53.085Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "pageName": "帮助中心",
+          "ip": "1",
+          "name": "3",
+          "phone": "13822112211",
+          "_id": "6291d72d45a2dd451a6f490b",
+          "path": "/service/help",
+          "__v": 0
+        },
+        {
+          "createTime": "2022-05-28T08:02:48.744Z",
+          "modifyTime": "2022-05-28T08:02:48.744Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "pageName": "公司介绍",
+          "ip": "1",
+          "name": "3",
+          "phone": "13822112211",
+          "_id": "6291d72845a2dd451a6f4909",
+          "path": "/about/company",
+          "__v": 0
+        }
+      ],
+      "total": 60
+    },
+    "errorCode": null,
+    "errorMessage": null
+  },
+  "api_statics_pv_line_auth": {
+    "date": "last_one_month",
+    "success": true,
+    "data": [
+      {
+        "key": "pv",
+        "name": "2022-05-01",
+        "count": 0
+      },
+      {
+        "key": "pv",
+        "name": "2022-05-02",
+        "count": 0
+      },
+      {
+        "key": "pv",
+        "name": "2022-05-03",
+        "count": 0
+      },
+      {
+        "key": "pv",
+        "name": "2022-05-04",
+        "count": 0
+      },
+      {
+        "key": "pv",
+        "name": "2022-05-05",
+        "count": 0
+      },
+      {
+        "key": "pv",
+        "name": "2022-05-06",
+        "count": 0
+      },
+      {
+        "key": "pv",
+        "name": "2022-05-07",
+        "count": 0
+      },
+      {
+        "key": "pv",
+        "name": "2022-05-08",
+        "count": 0
+      },
+      {
+        "key": "pv",
+        "name": "2022-05-09",
+        "count": 0
+      },
+      {
+        "key": "pv",
+        "name": "2022-05-10",
+        "count": 0
+      },
+      {
+        "key": "pv",
+        "name": "2022-05-11",
+        "count": 0
+      },
+      {
+        "key": "pv",
+        "name": "2022-05-12",
+        "count": 0
+      },
+      {
+        "key": "pv",
+        "name": "2022-05-13",
+        "count": 0
+      },
+      {
+        "key": "pv",
+        "name": "2022-05-14",
+        "count": 0
+      },
+      {
+        "key": "pv",
+        "name": "2022-05-15",
+        "count": 0
+      },
+      {
+        "key": "pv",
+        "name": "2022-05-16",
+        "count": 0
+      },
+      {
+        "key": "pv",
+        "name": "2022-05-17",
+        "count": 0
+      },
+      {
+        "key": "pv",
+        "name": "2022-05-18",
+        "count": 0
+      },
+      {
+        "key": "pv",
+        "name": "2022-05-19",
+        "count": 0
+      },
+      {
+        "key": "pv",
+        "name": "2022-05-20",
+        "count": 0
+      },
+      {
+        "key": "pv",
+        "name": "2022-05-21",
+        "count": 0
+      },
+      {
+        "key": "pv",
+        "name": "2022-05-22",
+        "count": 0
+      },
+      {
+        "key": "pv",
+        "name": "2022-05-23",
+        "count": 0
+      },
+      {
+        "key": "pv",
+        "name": "2022-05-24",
+        "count": 0
+      },
+      {
+        "key": "pv",
+        "name": "2022-05-25",
+        "count": 0
+      },
+      {
+        "key": "pv",
+        "name": "2022-05-26",
+        "count": 2
+      },
+      {
+        "key": "pv",
+        "name": "2022-05-27",
+        "count": 20
+      },
+      {
+        "key": "pv",
+        "name": "2022-05-28",
+        "count": 38
+      },
+      {
+        "key": "pv",
+        "name": "2022-05-29",
+        "count": 0
+      },
+      {
+        "key": "pv",
+        "name": "2022-05-30",
+        "count": 0
+      }
+    ],
+    "errorCode": null,
+    "errorMessage": null
+  },
+  "api_statics_uv_line_auth": {
+    "date": "last_one_week",
+    "success": true,
+    "data": [
+      {
+        "key": "uv",
+        "name": "2022-05-24",
+        "count": 0
+      },
+      {
+        "key": "uv",
+        "name": "2022-05-25",
+        "count": 0
+      },
+      {
+        "key": "uv",
+        "name": "2022-05-26",
+        "count": 1
+      },
+      {
+        "key": "uv",
+        "name": "2022-05-27",
+        "count": 1
+      },
+      {
+        "key": "uv",
+        "name": "2022-05-28",
+        "count": 1
+      },
+      {
+        "key": "uv",
+        "name": "2022-05-29",
+        "count": 0
+      },
+      {
+        "key": "uv",
+        "name": "2022-05-30",
+        "count": 0
+      }
+    ],
+    "errorCode": null,
+    "errorMessage": null
+  },
+  "api_tdk_pageName_auth": {
+    "success": true,
+    "data": [
+      {
+        "_id": "628f41f12b784c43c52bfa70",
+        "name": "表单",
+        "path": "/form"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa6f",
+        "name": "内容标签体系",
+        "path": "/about/tag"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa6e",
+        "name": "加入我们",
+        "path": "/about/joinus"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa6d",
+        "name": "公司介绍",
+        "path": "/about/company"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa6c",
+        "name": "新闻详情",
+        "path": "/about/news/detail"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa6b",
+        "name": "新闻主页",
+        "path": "/about/news"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa6a",
+        "name": "隐私声明",
+        "path": "/service/declare"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa69",
+        "name": "资源中心",
+        "path": "/service/resource"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa68",
+        "name": "帮助中心",
+        "path": "/service/help"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa67",
+        "name": "联系我们",
+        "path": "/service/contact"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa66",
+        "name": "活动详情",
+        "path": "/activity/detail"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa65",
+        "name": "活动主页",
+        "path": "/activity"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa64",
+        "name": "客户案例详情",
+        "path": "/case/detail"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa63",
+        "name": "客户案例主页",
+        "path": "/case"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa62",
+        "name": "解决方案-交通",
+        "path": "/solution/traffic"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa61",
+        "name": "解决方案-私有化",
+        "path": "/solution/personal"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa60",
+        "name": "解决方案-电商",
+        "path": "/solution/online"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa5f",
+        "name": "解决方案-传统制造",
+        "path": "/solution/manufacture"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa5e",
+        "name": "解决方案-游戏",
+        "path": "/solution/game"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa5d",
+        "name": "解决方案-餐饮",
+        "path": "/solution/food"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa5c",
+        "name": "解决方案-金融",
+        "path": "/solution/finance"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa5b",
+        "name": "解决方案-大数据",
+        "path": "/solution/bigdata"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa5a",
+        "name": "解决方案-教育",
+        "path": "/solution/education"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa59",
+        "name": "产品-神经网络",
+        "path": "/product/dataserver/neuralnetwork"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa58",
+        "name": "产品-推荐系统",
+        "path": "/product/dataserver/recommend"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa57",
+        "name": "产品-离线开发",
+        "path": "/product/dataserver/offlinedevelop"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa56",
+        "name": "产品-实时开发",
+        "path": "/product/dataserver/onlinedevelop"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa55",
+        "name": "产品-离线算法",
+        "path": "/product/dataserver/offlinealgorithm"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa54",
+        "name": "产品-聚类算法",
+        "path": "/product/dataserver/neuralcluster"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa53",
+        "name": "产品-无人机",
+        "path": "/product/ai/uav"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa52",
+        "name": "产品-细雨",
+        "path": "/product/ai/xiyu"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa51",
+        "name": "产品-colgi",
+        "path": "/product/ai/colgi"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa50",
+        "name": "产品-蹄蹄",
+        "path": "/product/ai/titi"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa4f",
+        "name": "产品-天眼杀",
+        "path": "/product/ai/tianyan"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa4e",
+        "name": "产品-数影",
+        "path": "/product/ai/shuying"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa4d",
+        "name": "产品-清水",
+        "path": "/product/ai/qingshui"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa4c",
+        "name": "产品-数字云",
+        "path": "/product/ai/digital"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa4b",
+        "name": "产品-企业云",
+        "path": "/product/ai/enterprise"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa4a",
+        "name": "产品-AI算法",
+        "path": "/product/ai/algorithm"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa49",
+        "name": "产品-AI识别",
+        "path": "/product/ai/discriminate"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa48",
+        "name": "产品-AI语音",
+        "path": "/product/ai/speech"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa47",
+        "name": "产品-南瓜",
+        "path": "/product/vegetables/pumpkin"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa46",
+        "name": "产品-辣椒",
+        "path": "/product/vegetables/echili"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa45",
+        "name": "产品-茄子",
+        "path": "/product/vegetables/eggplant"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa44",
+        "name": "产品-生姜",
+        "path": "/product/vegetables/ginger"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa43",
+        "name": "产品-芹菜",
+        "path": "/product/vegetables/celery"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa42",
+        "name": "产品-苦瓜",
+        "path": "/product/vegetables/bilter"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa41",
+        "name": "产品-豌豆",
+        "path": "/product/vegetables/peas"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa40",
+        "name": "产品-白菜",
+        "path": "/product/vegetables/cabbage"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa3f",
+        "name": "产品-香菇",
+        "path": "/product/vegetables/mushroom"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa3e",
+        "name": "产品-藕",
+        "path": "/product/vegetables/lotus"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa3d",
+        "name": "产品-苋菜",
+        "path": "/product/vegetables/amaranthus"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa3c",
+        "name": "产品-菜苔",
+        "path": "/product/vegetables/bolt"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa3b",
+        "name": "产品-黄瓜",
+        "path": "/product/vegetables/cucumber"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa3a",
+        "name": "产品-大葱",
+        "path": "/product/vegetables/onion"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa39",
+        "name": "产品-红萝卜",
+        "path": "/product/vegetables/radish"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa38",
+        "name": "产品-柿子",
+        "path": "/product/fruits/persimmon"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa37",
+        "name": "产品-樱桃",
+        "path": "/product/fruits/cherry"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa36",
+        "name": "产品-橘子",
+        "path": "/product/fruits/orange"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa35",
+        "name": "产品-李子",
+        "path": "/product/fruits/plum"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa34",
+        "name": "产品-枇杷",
+        "path": "/product/fruits/loquat"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa33",
+        "name": "产品-柚子",
+        "path": "/product/fruits/shaddock"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa32",
+        "name": "产品-苹果",
+        "path": "/product/fruits/apple"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa31",
+        "name": "产品-青枣",
+        "path": "/product/fruits/jujube"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa30",
+        "name": "产品-无花果",
+        "path": "/product/fruits/fig"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa2f",
+        "name": "产品-哈密瓜",
+        "path": "/product/fruits/hami"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa2e",
+        "name": "产品-羊角蜜",
+        "path": "/product/fruits/croissant"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa2d",
+        "name": "产品-火龙果",
+        "path": "/product/fruits/piyata"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa2c",
+        "name": "产品-荔枝",
+        "path": "/product/fruits/litchi"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa2b",
+        "name": "产品-柠檬",
+        "path": "/product/fruits/lemon"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa2a",
+        "name": "产品-葡萄",
+        "path": "/product/fruits/grape"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa29",
+        "name": "产品-山竹",
+        "path": "/product/fruits/mangosteen"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa28",
+        "name": "产品-芒果",
+        "path": "/product/fruits/mongo"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa27",
+        "name": "产品-牛油果",
+        "path": "/product/fruits/avocado"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa26",
+        "name": "产品-猕猴桃",
+        "path": "/product/fruits/kiwi"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa25",
+        "name": "产品-石榴",
+        "path": "/product/fruits/pomegranate"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa24",
+        "name": "产品-水蜜桃",
+        "path": "/product/fruits/peach"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa23",
+        "name": "产品-香蕉",
+        "path": "/product/fruits/banana"
+      },
+      {
+        "_id": "628f41f12b784c43c52bfa22",
+        "name": "首页",
+        "path": "/index"
+      }
+    ],
+    "errorCode": null,
+    "errorMessage": null
+  },
+  "api_statics_tp_visit_auth": {
+    "success": true,
+    "data": [
+      {
+        "name": "新闻列表",
+        "key": "total",
+        "count": 129.4
+      },
+      {
+        "name": "首页",
+        "key": "total",
+        "count": 120.8
+      },
+      {
+        "name": "产品-离线算法",
+        "key": "total",
+        "count": 91.3
+      },
+      {
+        "name": "解决方案-电商",
+        "key": "total",
+        "count": 43.3
+      },
+      {
+        "name": "隐私声明",
+        "key": "total",
+        "count": 41.7
+      },
+      {
+        "name": "客户案例主页",
+        "key": "total",
+        "count": 27.3
+      },
+      {
+        "name": "解决方案-金融",
+        "key": "total",
+        "count": 19.4
+      },
+      {
+        "name": "活动主页",
+        "key": "total",
+        "count": 18
+      },
+      {
+        "name": "表单",
+        "key": "total",
+        "count": 15.8
+      },
+      {
+        "name": "产品-AI语音",
+        "key": "total",
+        "count": 14.5
+      },
+      {
+        "name": "帮助中心",
+        "key": "total",
+        "count": 12
+      },
+      {
+        "name": "公司介绍",
+        "key": "total",
+        "count": 9.1
+      },
+      {
+        "name": "产品-猕猴桃",
+        "key": "total",
+        "count": 3.3
+      },
+      {
+        "name": "产品-牛油果",
+        "key": "total",
+        "count": 3.1
+      },
+      {
+        "name": "产品-神经网络",
+        "key": "total",
+        "count": 2.9
+      },
+      {
+        "name": "解决方案-交通",
+        "key": "total",
+        "count": 2.8
+      },
+      {
+        "name": "产品-樱桃",
+        "key": "total",
+        "count": 2.3
+      },
+      {
+        "name": "解决方案-教育",
+        "key": "total",
+        "count": 2.2
+      }
+    ],
+    "errorCode": null,
+    "errorMessage": null
+  },
+  "api_statics_tp_list_auth": {
+    "success": true,
+    "data": {
+      "list": [
+        {
+          "createTime": "2022-05-28T08:03:52.167Z",
+          "modifyTime": "2022-05-28T08:03:52.167Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "pageName": "首页",
+          "ip": "1",
+          "name": "3",
+          "phone": "13822112211",
+          "time": 5.1,
+          "_id": "6291d76845a2dd451a6f494f",
+          "path": "/index",
+          "__v": 0
+        },
+        {
+          "createTime": "2022-05-28T08:03:47.281Z",
+          "modifyTime": "2022-05-28T08:03:47.281Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "pageName": "首页",
+          "ip": "1",
+          "name": "3",
+          "phone": "13822112211",
+          "time": 5.6,
+          "_id": "6291d76345a2dd451a6f4949",
+          "path": "/index",
+          "__v": 0
+        },
+        {
+          "createTime": "2022-05-28T08:03:41.579Z",
+          "modifyTime": "2022-05-28T08:03:41.579Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "pageName": "首页",
+          "ip": "1",
+          "name": "3",
+          "phone": "13822112211",
+          "time": 8.3,
+          "_id": "6291d75d45a2dd451a6f4943",
+          "path": "/index",
+          "__v": 0
+        },
+        {
+          "createTime": "2022-05-28T08:03:33.337Z",
+          "modifyTime": "2022-05-28T08:03:33.337Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "pageName": "首页",
+          "ip": "1",
+          "name": "3",
+          "phone": "13822112211",
+          "time": 5.1,
+          "_id": "6291d75545a2dd451a6f493e",
+          "path": "/index",
+          "__v": 0
+        },
+        {
+          "createTime": "2022-05-28T08:03:28.087Z",
+          "modifyTime": "2022-05-28T08:03:28.087Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "pageName": "新闻列表",
+          "ip": "1",
+          "name": "3",
+          "phone": "13822112211",
+          "time": 12,
+          "_id": "6291d75045a2dd451a6f4938",
+          "path": "/about/news/1",
+          "__v": 0
+        },
+        {
+          "createTime": "2022-05-28T08:03:16.123Z",
+          "modifyTime": "2022-05-28T08:03:16.123Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "pageName": "活动主页",
+          "ip": "1",
+          "name": "3",
+          "phone": "13822112211",
+          "time": 9.5,
+          "_id": "6291d74445a2dd451a6f4927",
+          "path": "/activity",
+          "__v": 0
+        },
+        {
+          "createTime": "2022-05-28T08:03:06.689Z",
+          "modifyTime": "2022-05-28T08:03:06.689Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "pageName": "客户案例主页",
+          "ip": "1",
+          "name": "3",
+          "phone": "13822112211",
+          "time": 8.8,
+          "_id": "6291d73a45a2dd451a6f491b",
+          "path": "/case",
+          "__v": 0
+        },
+        {
+          "createTime": "2022-05-28T08:02:57.772Z",
+          "modifyTime": "2022-05-28T08:02:57.772Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "pageName": "帮助中心",
+          "ip": "1",
+          "name": "3",
+          "phone": "13822112211",
+          "time": 4.7,
+          "_id": "6291d73145a2dd451a6f4913",
+          "path": "/service/help",
+          "__v": 0
+        },
+        {
+          "createTime": "2022-05-28T08:02:53.143Z",
+          "modifyTime": "2022-05-28T08:02:53.143Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "pageName": "公司介绍",
+          "ip": "1",
+          "name": "3",
+          "phone": "13822112211",
+          "time": 4.4,
+          "_id": "6291d72d45a2dd451a6f490d",
+          "path": "/about/company",
+          "__v": 0
+        },
+        {
+          "createTime": "2022-05-28T08:02:48.700Z",
+          "modifyTime": "2022-05-28T08:02:48.700Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "pageName": "解决方案-教育",
+          "ip": "1",
+          "name": "3",
+          "phone": "13822112211",
+          "time": 2.2,
+          "_id": "6291d72845a2dd451a6f4907",
+          "path": "/solution/education",
+          "__v": 0
+        }
+      ],
+      "total": 57
+    },
+    "errorCode": null,
+    "errorMessage": null
+  },
+  "api_statics_tp_total_auth": {
+    "success": true,
+    "data": [
+      {
+        "name": "总停留时间",
+        "count": 112.2
+      },
+      {
+        "name": "平均停留时间",
+        "count": 14.03
+      }
+    ],
+    "errorCode": null,
+    "errorMessage": null
+  },
+  "api_statics_tp_trend_auth": {
+    "success": true,
+    "data": [
+      {
+        "name": "2022-05-24",
+        "count": 0
+      },
+      {
+        "name": "2022-05-25",
+        "count": 0
+      },
+      {
+        "name": "2022-05-26",
+        "count": 4.4
+      },
+      {
+        "name": "2022-05-27",
+        "count": 23
+      },
+      {
+        "name": "2022-05-28",
+        "count": 84.8
+      },
+      {
+        "name": "2022-05-29",
+        "count": 0
+      },
+      {
+        "name": "2022-05-30",
+        "count": 0
+      }
+    ],
+    "errorCode": null,
+    "errorMessage": null
+  },
+  "api_role_online_auth": {
+    "success": true,
+    "data": [
+      {
+        "createTime": "2022-05-25T01:32:06.085Z",
+        "modifyTime": "2022-05-25T01:32:06.085Z",
+        "createId": 1,
+        "modifyId": 1,
+        "isDelete": false,
+        "name": "数据管理员",
+        "status": 1,
+        "_id": "628d8716afcd10dba6d5c5c3",
+        "key": "data"
+      },
+      {
+        "createTime": "2022-05-25T01:32:06.085Z",
+        "modifyTime": "2022-05-25T01:32:06.085Z",
+        "createId": 1,
+        "modifyId": 1,
+        "isDelete": false,
+        "name": "招聘管理员",
+        "status": 1,
+        "_id": "628d8716afcd10dba6d5c5c2",
+        "key": "hr"
+      },
+      {
+        "createTime": "2022-05-25T01:32:06.085Z",
+        "modifyTime": "2022-05-25T01:32:06.085Z",
+        "createId": 1,
+        "modifyId": 1,
+        "isDelete": false,
+        "name": "官网内容管理员",
+        "status": 1,
+        "_id": "628d8716afcd10dba6d5c5c1",
+        "key": "web"
+      },
+      {
+        "createTime": "2022-05-25T01:32:06.085Z",
+        "modifyTime": "2022-05-25T01:32:06.085Z",
+        "createId": 1,
+        "modifyId": 1,
+        "isDelete": false,
+        "name": "访客",
+        "status": 1,
+        "_id": "628d8716afcd10dba6d5c5c0",
+        "key": "guest"
+      },
+      {
+        "createTime": "2022-05-25T01:32:06.085Z",
+        "modifyTime": "2022-05-25T01:32:06.085Z",
+        "createId": 1,
+        "modifyId": 1,
+        "isDelete": false,
+        "name": "系统管理员",
+        "status": 1,
+        "_id": "628d8716afcd10dba6d5c5bf",
+        "key": "admin"
+      },
+      {
+        "createTime": "2022-05-25T01:32:06.085Z",
+        "modifyTime": "2022-05-25T01:32:06.085Z",
+        "createId": 1,
+        "modifyId": 1,
+        "isDelete": false,
+        "name": "超级系统管理员",
+        "status": 1,
+        "_id": "628d8716afcd10dba6d5c5be",
+        "key": "superAdmin"
+      }
+    ],
+    "errorCode": null,
+    "errorMessage": null
+  },
+  "api_menu_list_auth": {
+    "success": true,
+    "data": {
+      "list": [
+        {
+          "createTime": "2022-05-30T08:25:51.860Z",
+          "modifyTime": "2022-05-30T08:25:51.860Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "roles": [],
+          "level": 1,
+          "hasLink": 1,
+          "hasIcon": 1,
+          "iconKey": "userOutlined",
+          "hasChild": 0,
+          "isCommon": 1,
+          "order": 1,
+          "status": 1,
+          "_id": "628f6905e535b3422ad868a0",
+          "title": "个人信息",
+          "key": "person",
+          "path": "/admin/person"
+        },
+        {
+          "createTime": "2022-05-30T08:25:51.860Z",
+          "modifyTime": "2022-05-30T08:25:51.860Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "roles": [],
+          "level": 1,
+          "hasLink": 1,
+          "hasIcon": 1,
+          "iconKey": "homeOutlined",
+          "hasChild": 0,
+          "isCommon": 1,
+          "order": 9999,
+          "status": 1,
+          "_id": "628f6905e535b3422ad868a1",
+          "title": "首页",
+          "key": "index",
+          "path": "/admin/index"
+        },
+        {
+          "createTime": "2022-05-30T08:25:51.860Z",
+          "modifyTime": "2022-05-30T08:25:51.860Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "roles": [
+            "hr",
+            "web"
+          ],
+          "level": 1,
+          "hasLink": 0,
+          "hasIcon": 1,
+          "iconKey": "desktopOutlined",
+          "hasChild": 1,
+          "isCommon": 0,
+          "order": 100,
+          "status": 1,
+          "_id": "628f6905e535b3422ad868a2",
+          "title": "官网配置",
+          "key": "web",
+          "path": "/admin/web"
+        },
+        {
+          "createTime": "2022-05-30T08:25:51.860Z",
+          "modifyTime": "2022-05-30T08:25:51.860Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "roles": [
+            "web"
+          ],
+          "level": 2,
+          "hasLink": 0,
+          "hasIcon": 1,
+          "iconKey": "appstoreOutlined",
+          "hasChild": 1,
+          "isCommon": 0,
+          "order": 100,
+          "status": 1,
+          "_id": "628f6905e535b3422ad868a3",
+          "title": "首页配置",
+          "key": "web_index",
+          "path": "/admin/web/index",
+          "parentMenu": "web"
+        },
+        {
+          "createTime": "2022-05-30T08:25:51.860Z",
+          "modifyTime": "2022-05-30T08:25:51.860Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "roles": [
+            "web"
+          ],
+          "level": 3,
+          "hasLink": 1,
+          "hasIcon": 0,
+          "iconKey": "",
+          "hasChild": 0,
+          "isCommon": 0,
+          "order": 100,
+          "status": 1,
+          "_id": "628f6905e535b3422ad868a4",
+          "title": "banner配置",
+          "key": "web_index_banner",
+          "path": "/admin/web/index/banner",
+          "parentMenu": "web_index"
+        },
+        {
+          "createTime": "2022-05-30T08:25:51.860Z",
+          "modifyTime": "2022-05-30T08:25:51.860Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "roles": [
+            "web"
+          ],
+          "level": 3,
+          "hasLink": 1,
+          "hasIcon": 0,
+          "iconKey": "",
+          "hasChild": 0,
+          "isCommon": 0,
+          "order": 100,
+          "status": 1,
+          "_id": "628f6905e535b3422ad868a5",
+          "title": "新闻配置",
+          "key": "web_index_news",
+          "path": "/admin/web/index/news",
+          "parentMenu": "web_index"
+        },
+        {
+          "createTime": "2022-05-30T08:25:51.860Z",
+          "modifyTime": "2022-05-30T08:25:51.860Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "roles": [
+            "web"
+          ],
+          "level": 3,
+          "hasLink": 1,
+          "hasIcon": 0,
+          "iconKey": "",
+          "hasChild": 0,
+          "isCommon": 0,
+          "order": 100,
+          "status": 1,
+          "_id": "628f6905e535b3422ad868a6",
+          "title": "栏目配置",
+          "key": "web_index_column",
+          "path": "/admin/web/index/column",
+          "parentMenu": "web_index"
+        },
+        {
+          "createTime": "2022-05-30T08:25:51.860Z",
+          "modifyTime": "2022-05-30T08:25:51.860Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "roles": [
+            "web",
+            "hr"
+          ],
+          "level": 2,
+          "hasLink": 0,
+          "hasIcon": 1,
+          "iconKey": "userSwitchOutlined",
+          "hasChild": 1,
+          "isCommon": 0,
+          "order": 100,
+          "status": 1,
+          "_id": "628f6905e535b3422ad868a7",
+          "title": "招聘管理",
+          "key": "web_resume",
+          "path": "/admin/web/resume",
+          "parentMenu": "web"
+        },
+        {
+          "createTime": "2022-05-30T08:25:51.860Z",
+          "modifyTime": "2022-05-30T08:25:51.860Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "roles": [
+            "web",
+            "hr"
+          ],
+          "level": 3,
+          "hasLink": 1,
+          "hasIcon": 0,
+          "iconKey": "",
+          "hasChild": 0,
+          "isCommon": 0,
+          "order": 100,
+          "status": 1,
+          "_id": "628f6905e535b3422ad868a8",
+          "title": "岗位管理",
+          "key": "web_resume_list",
+          "path": "/admin/web/resume/list",
+          "parentMenu": "web_resume"
+        },
+        {
+          "createTime": "2022-05-30T08:25:51.860Z",
+          "modifyTime": "2022-05-30T08:25:51.860Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "roles": [
+            "web",
+            "hr"
+          ],
+          "level": 3,
+          "hasLink": 1,
+          "hasIcon": 0,
+          "iconKey": "",
+          "hasChild": 0,
+          "isCommon": 0,
+          "order": 100,
+          "status": 1,
+          "_id": "628f6905e535b3422ad868a9",
+          "title": "类型管理",
+          "key": "web_resume_type",
+          "path": "/admin/web/resume/type",
+          "parentMenu": "web_resume"
+        }
+      ],
+      "total": 44
+    },
+    "errorCode": null,
+    "errorMessage": null
+  },
+  "api_route_list_auth": {
+    "success": true,
+    "data": {
+      "list": [
+        {
+          "createTime": "2022-05-30T08:25:51.860Z",
+          "modifyTime": "2022-05-30T08:25:51.860Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "name": "banner配置",
+          "roles": [
+            "web"
+          ],
+          "exact": true,
+          "backUrl": "/admin/403",
+          "status": 1,
+          "_id": "628f695de535b3422ad868cc",
+          "path": "/admin/web/index/banner",
+          "key": "web_index_banner"
+        },
+        {
+          "createTime": "2022-05-30T08:25:51.860Z",
+          "modifyTime": "2022-05-30T08:25:51.860Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "name": "岗位管理",
+          "roles": [
+            "web",
+            "hr"
+          ],
+          "exact": true,
+          "backUrl": "/admin/403",
+          "status": 1,
+          "_id": "628f695de535b3422ad868cd",
+          "path": "/admin/web/resume/list",
+          "key": "web_resume_list"
+        },
+        {
+          "createTime": "2022-05-30T08:25:51.860Z",
+          "modifyTime": "2022-05-30T08:25:51.860Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "name": "岗位管理",
+          "roles": [
+            "web",
+            "hr"
+          ],
+          "exact": true,
+          "backUrl": "/admin/403",
+          "status": 1,
+          "_id": "628f695de535b3422ad868ce",
+          "path": "/admin/web/resume/type",
+          "key": "web_resume_type"
+        },
+        {
+          "createTime": "2022-05-30T08:25:51.860Z",
+          "modifyTime": "2022-05-30T08:25:51.860Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "name": "标签管理",
+          "roles": [
+            "web",
+            "hr"
+          ],
+          "exact": true,
+          "backUrl": "/admin/403",
+          "status": 1,
+          "_id": "628f695de535b3422ad868cf",
+          "path": "/admin/web/resume/tag",
+          "key": "web_resume_tag"
+        },
+        {
+          "createTime": "2022-05-30T08:25:51.860Z",
+          "modifyTime": "2022-05-30T08:25:51.860Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "name": "岗位详情",
+          "roles": [
+            "web",
+            "hr"
+          ],
+          "exact": true,
+          "backUrl": "/admin/403",
+          "status": 1,
+          "_id": "628f695de535b3422ad868d0",
+          "path": "/admin/web/resume/detail",
+          "key": "web_resume_detail"
+        },
+        {
+          "createTime": "2022-05-30T08:25:51.860Z",
+          "modifyTime": "2022-05-30T08:25:51.860Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "name": "客户案例",
+          "roles": [
+            "web"
+          ],
+          "exact": true,
+          "backUrl": "/admin/403",
+          "status": 1,
+          "_id": "628f695de535b3422ad868d1",
+          "path": "/admin/web/case/list",
+          "key": "web_case_list"
+        },
+        {
+          "createTime": "2022-05-30T08:25:51.860Z",
+          "modifyTime": "2022-05-30T08:25:51.860Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "name": "热门标签",
+          "roles": [
+            "web"
+          ],
+          "exact": true,
+          "backUrl": "/admin/403",
+          "status": 1,
+          "_id": "628f695de535b3422ad868d2",
+          "path": "/admin/web/case/tag",
+          "key": "web_case_tag"
+        },
+        {
+          "createTime": "2022-05-30T08:25:51.860Z",
+          "modifyTime": "2022-05-30T08:25:51.860Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "name": "产品活动",
+          "roles": [
+            "web"
+          ],
+          "exact": true,
+          "backUrl": "/admin/403",
+          "status": 1,
+          "_id": "628f695de535b3422ad868d3",
+          "path": "/admin/web/activity/product",
+          "key": "web_activity_product"
+        },
+        {
+          "createTime": "2022-05-30T08:25:51.860Z",
+          "modifyTime": "2022-05-30T08:25:51.860Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "name": "热门活动",
+          "roles": [
+            "web"
+          ],
+          "exact": true,
+          "backUrl": "/admin/403",
+          "status": 1,
+          "_id": "628f695de535b3422ad868d4",
+          "path": "/admin/web/activity/hot",
+          "key": "web_activity_hot"
+        },
+        {
+          "createTime": "2022-05-30T08:25:51.860Z",
+          "modifyTime": "2022-05-30T08:25:51.860Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "name": "品牌活动",
+          "roles": [
+            "web"
+          ],
+          "exact": true,
+          "backUrl": "/admin/403",
+          "status": 1,
+          "_id": "628f695de535b3422ad868d5",
+          "path": "/admin/web/activity/brand",
+          "key": "web_activity_brand"
+        }
+      ],
+      "total": 34
+    },
+    "errorCode": null,
+    "errorMessage": null
+  },
+  "api_cache_list_auth": {
+    "success": true,
+    "data": {
+      "list": [
+        {
+          "createTime": "2022-05-25T02:56:22.033Z",
+          "modifyTime": "2022-05-25T03:57:28.873Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "status": 1,
+          "remark": "",
+          "_id": "628d9ad6afcd10dba6d5c5d0",
+          "key": "page_index_columns",
+          "name": "首页column缓存"
+        },
+        {
+          "createTime": "2022-05-25T02:56:22.033Z",
+          "modifyTime": "2022-05-25T02:56:22.033Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "status": 1,
+          "remark": "",
+          "_id": "628d9ad6afcd10dba6d5c5cf",
+          "key": "page_index_banners",
+          "name": "首页banner缓存"
+        },
+        {
+          "createTime": "2022-05-25T02:56:22.033Z",
+          "modifyTime": "2022-05-25T02:56:22.033Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "status": 1,
+          "remark": "",
+          "_id": "628d9ad6afcd10dba6d5c5ce",
+          "key": "page_index_news",
+          "name": "首页新闻缓存"
+        },
+        {
+          "createTime": "2022-05-25T02:56:22.033Z",
+          "modifyTime": "2022-05-25T02:56:22.033Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "status": 1,
+          "remark": "",
+          "_id": "628d9ad6afcd10dba6d5c5cd",
+          "key": "page_url_permission",
+          "name": "url权限缓存"
+        },
+        {
+          "createTime": "2022-05-25T02:56:22.033Z",
+          "modifyTime": "2022-05-25T03:54:02.982Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "status": 1,
+          "remark": "",
+          "_id": "628d9ad6afcd10dba6d5c5cc",
+          "key": "page_tdk_config",
+          "name": "官网tdk缓存"
+        }
+      ],
+      "total": 5
+    },
+    "errorCode": null,
+    "errorMessage": null
+  },
+  "api_permission_ui_list_auth": {
+    "success": true,
+    "data": {
+      "list": [
+        {
+          "createTime": "2022-05-26T06:19:25.724Z",
+          "modifyTime": "2022-05-26T06:19:25.724Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "name": "数据源下载",
+          "roles": [
+            "superAdmin",
+            "admin",
+            "data"
+          ],
+          "type": "button",
+          "status": 1,
+          "_id": "628f1bed2b784c43c52bfa21",
+          "key": "data.download",
+          "remark": ""
+        },
+        {
+          "createTime": "2022-05-26T06:19:25.724Z",
+          "modifyTime": "2022-05-26T06:19:25.724Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "name": "刷新应用url权限缓存",
+          "roles": [
+            "superAdmin",
+            "admin"
+          ],
+          "type": "button",
+          "status": 1,
+          "_id": "628f1bed2b784c43c52bfa20",
+          "key": "app.cacheUrlPermission",
+          "remark": ""
+        },
+        {
+          "createTime": "2022-05-26T06:19:25.724Z",
+          "modifyTime": "2022-05-26T06:19:25.724Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "name": "刷新应用全部缓存",
+          "roles": [
+            "superAdmin",
+            "admin"
+          ],
+          "type": "button",
+          "status": 1,
+          "_id": "628f1bed2b784c43c52bfa1f",
+          "key": "app.cacheAll",
+          "remark": ""
+        },
+        {
+          "createTime": "2022-05-26T06:19:25.724Z",
+          "modifyTime": "2022-05-26T06:19:25.724Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "name": "新增缓存配置",
+          "roles": [
+            "superAdmin",
+            "admin"
+          ],
+          "type": "button",
+          "status": 1,
+          "_id": "628f1bed2b784c43c52bfa1e",
+          "key": "app.addCache",
+          "remark": ""
+        },
+        {
+          "createTime": "2022-05-26T06:19:25.724Z",
+          "modifyTime": "2022-05-26T06:19:25.724Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "name": "用户权限分配",
+          "roles": [
+            "superAdmin"
+          ],
+          "type": "button",
+          "status": 1,
+          "_id": "628f1bed2b784c43c52bfa1d",
+          "key": "system.usePermission",
+          "remark": ""
+        },
+        {
+          "createTime": "2022-05-26T06:19:25.724Z",
+          "modifyTime": "2022-05-26T06:19:25.724Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "name": "启用/禁用用户",
+          "roles": [
+            "superAdmin"
+          ],
+          "type": "button",
+          "status": 1,
+          "_id": "628f1bed2b784c43c52bfa1c",
+          "key": "system.updateUser",
+          "remark": ""
+        },
+        {
+          "createTime": "2022-05-26T06:19:25.724Z",
+          "modifyTime": "2022-05-26T06:19:25.724Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "name": "重置用户密码",
+          "roles": [
+            "superAdmin"
+          ],
+          "type": "button",
+          "status": 1,
+          "_id": "628f1bed2b784c43c52bfa1b",
+          "key": "system.resetPassword",
+          "remark": ""
+        },
+        {
+          "createTime": "2022-05-26T06:19:25.724Z",
+          "modifyTime": "2022-05-26T06:19:25.724Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "name": "删除系统用户",
+          "roles": [
+            "superAdmin"
+          ],
+          "type": "button",
+          "status": 1,
+          "_id": "628f1bed2b784c43c52bfa1a",
+          "key": "system.deleteUser",
+          "remark": ""
+        },
+        {
+          "createTime": "2022-05-26T06:19:25.724Z",
+          "modifyTime": "2022-05-26T06:19:25.724Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "name": "新增系统用户",
+          "roles": [
+            "superAdmin"
+          ],
+          "type": "button",
+          "status": 1,
+          "_id": "628f1bed2b784c43c52bfa19",
+          "key": "system.addUser",
+          "remark": ""
+        },
+        {
+          "createTime": "2022-05-26T06:19:25.724Z",
+          "modifyTime": "2022-05-26T06:19:25.724Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "name": "管理员特有权限",
+          "roles": [
+            "superAdmin",
+            "admin"
+          ],
+          "type": "app",
+          "status": 1,
+          "_id": "628f1bed2b784c43c52bfa18",
+          "key": "system.adminManage",
+          "remark": ""
+        }
+      ],
+      "total": 10
+    },
+    "errorCode": null,
+    "errorMessage": null
+  },
+  "api_permission_url_list_auth": {
+    "success": true,
+    "data": {
+      "list": [
+        {
+          "createTime": "2022-05-25T09:53:26.583Z",
+          "modifyTime": "2022-05-25T09:53:26.583Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "name": "获取用户列表",
+          "roles": [
+            "superAdmin",
+            "admin"
+          ],
+          "status": 1,
+          "_id": "628dfc9601d35430a61faa97",
+          "key": "/api/user/test/auth",
+          "remark": ""
+        },
+        {
+          "createTime": "2022-05-25T09:53:26.583Z",
+          "modifyTime": "2022-05-25T09:53:26.583Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "name": "获取用户列表",
+          "roles": [
+            "superAdmin",
+            "admin"
+          ],
+          "status": 1,
+          "_id": "628dfc9601d35430a61faa96",
+          "key": "/api/user/list/auth",
+          "remark": ""
+        },
+        {
+          "createTime": "2022-05-25T09:53:26.583Z",
+          "modifyTime": "2022-05-25T09:53:26.583Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "name": "修改用户信息",
+          "roles": [
+            "superAdmin",
+            "admin"
+          ],
+          "status": 1,
+          "_id": "628dfc9601d35430a61faa95",
+          "key": "/api/user/update/auth",
+          "remark": ""
+        },
+        {
+          "createTime": "2022-05-25T09:53:26.583Z",
+          "modifyTime": "2022-05-25T09:53:26.583Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "name": "重置用户密码",
+          "roles": [
+            "superAdmin"
+          ],
+          "status": 1,
+          "_id": "628dfc9601d35430a61faa94",
+          "key": "/api/user/resetPassword/auth",
+          "remark": ""
+        },
+        {
+          "createTime": "2022-05-25T09:53:26.583Z",
+          "modifyTime": "2022-05-25T09:53:26.583Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "name": "删除系统用户",
+          "roles": [
+            "superAdmin"
+          ],
+          "status": 1,
+          "_id": "628dfc9601d35430a61faa93",
+          "key": "/api/user/delete/auth",
+          "remark": ""
+        },
+        {
+          "createTime": "2022-05-25T09:53:26.583Z",
+          "modifyTime": "2022-05-25T09:53:26.583Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "name": "创建系统用户",
+          "roles": [
+            "superAdmin"
+          ],
+          "status": 1,
+          "_id": "628dfc9601d35430a61faa92",
+          "key": "/api/user/create/auth",
+          "remark": ""
+        }
+      ],
+      "total": 6
+    },
+    "errorCode": null,
+    "errorMessage": null
+  },
+  "api_role_list_auth": {
+    "success": true,
+    "data": {
+      "list": [
+        {
+          "createTime": "2022-05-25T01:32:06.085Z",
+          "modifyTime": "2022-05-25T01:32:06.085Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "name": "数据管理员",
+          "status": 1,
+          "_id": "628d8716afcd10dba6d5c5c3",
+          "key": "data"
+        },
+        {
+          "createTime": "2022-05-25T01:32:06.085Z",
+          "modifyTime": "2022-05-25T01:32:06.085Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "name": "招聘管理员",
+          "status": 1,
+          "_id": "628d8716afcd10dba6d5c5c2",
+          "key": "hr"
+        },
+        {
+          "createTime": "2022-05-25T01:32:06.085Z",
+          "modifyTime": "2022-05-25T01:32:06.085Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "name": "官网内容管理员",
+          "status": 1,
+          "_id": "628d8716afcd10dba6d5c5c1",
+          "key": "web"
+        },
+        {
+          "createTime": "2022-05-25T01:32:06.085Z",
+          "modifyTime": "2022-05-25T01:32:06.085Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "name": "访客",
+          "status": 1,
+          "_id": "628d8716afcd10dba6d5c5c0",
+          "key": "guest"
+        },
+        {
+          "createTime": "2022-05-25T01:32:06.085Z",
+          "modifyTime": "2022-05-25T01:32:06.085Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "name": "系统管理员",
+          "status": 1,
+          "_id": "628d8716afcd10dba6d5c5bf",
+          "key": "admin"
+        },
+        {
+          "createTime": "2022-05-25T01:32:06.085Z",
+          "modifyTime": "2022-05-25T01:32:06.085Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "name": "超级系统管理员",
+          "status": 1,
+          "_id": "628d8716afcd10dba6d5c5be",
+          "key": "superAdmin"
+        }
+      ],
+      "total": 6
+    },
+    "errorCode": null,
+    "errorMessage": null
+  },
+  "api_getCaptcha": {
+    "success": true,
+    "data": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"160\" height=\"60\" viewBox=\"0,0,160,60\"><rect width=\"100%\" height=\"100%\" fill=\"#eee\"/><path d=\"M7 8 C95 31,82 19,140 31\" stroke=\"#e67474\" fill=\"none\"/><path d=\"M2 33 C70 26,65 55,150 32\" stroke=\"#e25e7f\" fill=\"none\"/><path fill=\"#4267d5\" d=\"M28.80 34.26L28.74 34.19L28.71 34.17Q25.04 34.06 24.53 36.78L24.44 36.69L24.42 36.67Q24.31 37.68 24.48 38.46L24.57 38.55L24.58 38.57Q24.42 39.08 24.83 40.34L24.89 40.40L25.00 40.52Q26.00 43.39 28.96 43.25L28.92 43.21L28.76 43.06Q30.67 43.23 31.86 41.84L31.81 41.79L31.90 41.87Q32.92 40.48 32.92 38.65L32.98 38.70L32.86 38.58Q33.04 38.12 32.90 37.16L33.00 37.26L33.00 37.26Q32.79 36.31 32.42 35.70L32.44 35.72L32.48 35.76Q31.14 34.39 28.83 34.28ZM33.06 50.68L33.18 50.80L33.07 50.69Q31.54 51.31 24.34 51.65L24.18 51.49L24.25 51.55Q22.78 51.66 21.32 50.91L21.34 50.93L21.33 50.91Q22.06 50.05 23.69 48.45L23.70 48.46L23.76 48.52Q25.79 49.33 27.66 49.16L27.63 49.13L27.59 49.08Q30.26 48.93 31.01 48.70L31.05 48.74L31.02 48.70Q33.01 48.08 33.01 46.49L32.96 46.43L32.98 46.45Q32.97 46.24 32.90 46.03L32.94 46.07L32.79 44.60L32.92 44.73Q32.91 44.04 32.91 43.33L32.87 43.29L32.85 43.27Q31.61 45.25 28.58 45.25L28.61 45.28L28.61 45.28Q25.21 45.35 23.75 43.38L23.68 43.31L23.64 43.27Q22.74 41.99 22.03 38.05L22.03 38.05L22.00 38.02Q21.60 36.53 21.60 35.28L21.71 35.39L21.74 35.42Q21.64 33.72 22.46 32.84L22.42 32.80L22.60 32.98Q24.04 31.67 28.19 31.67L28.11 31.59L29.73 31.82L29.79 31.87Q32.58 32.12 33.77 33.85L33.66 33.74L33.71 33.79Q33.83 32.99 34.20 31.53L34.33 31.66L34.31 31.64Q35.85 31.21 37.41 30.56L37.56 30.70L37.50 30.65Q35.03 35.99 35.03 42.45L35.10 42.53L35.09 42.51Q35.12 44.92 35.46 47.27L35.39 47.19L35.49 47.30Q35.57 47.82 35.50 48.43L35.60 48.54L35.60 48.53Q35.38 49.70 34.29 50.38L34.35 50.44L34.25 50.34Q33.89 50.66 33.14 50.76ZM35.79 53.38L35.75 53.34L35.67 53.26Q37.04 53.37 37.72 52.52L37.68 52.48L37.86 52.66Q38.00 51.64 37.90 51.00L38.02 51.12L37.92 51.02Q37.92 50.55 37.75 49.87L37.76 49.88L37.78 49.89Q36.56 45.11 36.87 40.42L37.00 40.55L36.96 40.51Q37.14 35.52 39.04 31.21L39.06 31.22L37.34 32.22L37.24 32.12Q37.40 31.53 37.60 31.02L37.64 31.07L38.12 30.08L38.07 30.03Q35.94 30.85 33.97 31.23L33.99 31.25L34.04 31.30Q33.75 32.06 33.61 32.98L33.68 33.05L33.71 33.08Q31.64 31.18 28.04 31.18L28.07 31.21L26.59 31.29L26.52 31.22Q23.62 31.22 22.13 32.47L22.25 32.59L22.26 32.61Q21.27 33.32 21.31 35.02L21.33 35.04L21.32 35.03Q21.48 37.37 22.40 41.17L22.34 41.12L22.37 41.15Q22.80 42.87 23.89 44.13L23.89 44.13L24.12 44.36L24.12 44.36L24.16 44.40Q25.28 46.58 27.59 47.05L27.54 47.00L27.43 46.88Q28.84 47.31 30.13 47.34L29.96 47.18L29.98 47.20Q31.70 47.39 32.66 47.05L32.65 47.04L32.65 47.04Q32.09 48.42 29.71 48.72L29.64 48.66L29.63 48.65Q28.77 48.88 28.16 48.88L27.99 48.70L27.69 48.74L27.67 48.72Q25.25 48.82 23.75 47.97L23.65 47.87L22.28 49.56L22.21 49.49Q21.36 50.13 20.61 50.98L20.61 50.98L20.77 51.14Q21.62 51.58 22.51 51.75L22.46 51.70L21.60 52.41L21.61 52.42Q24.16 53.51 29.19 53.51L29.11 53.43L29.32 53.44L29.40 53.51Q32.57 53.45 35.76 53.35ZM30.45 36.28L30.50 36.33L30.40 36.23Q31.60 36.20 32.42 36.58L32.39 36.55L32.45 36.61Q32.63 37.07 32.70 37.68L32.73 37.70L32.75 37.73Q32.78 37.99 32.74 38.81L32.73 38.80L32.62 38.69Q32.51 40.35 31.53 41.50L31.68 41.66L31.65 41.62Q30.59 42.88 28.90 42.85L28.89 42.84L28.78 42.73Q27.63 42.81 26.88 42.43L26.74 42.29L26.92 42.47Q26.50 41.37 26.47 40.45L26.41 40.39L26.36 40.35Q26.43 36.64 30.54 36.37Z\"/><path fill=\"#89e032\" d=\"M58.21 34.05L58.25 34.09L58.26 34.10Q58.28 37.92 57.63 41.63L57.60 41.60L57.60 41.60Q59.64 41.12 62.39 41.02L62.38 41.00L62.47 41.10Q63.59 41.20 64.54 40.30L64.48 40.24L64.65 40.41Q65.46 39.36 65.46 38.17L65.53 38.24L65.60 38.31Q65.55 37.99 65.51 37.75L65.39 37.63L65.52 37.75Q65.38 35.14 63.38 34.39L63.26 34.28L63.42 34.44Q62.58 34.00 61.97 34.07L62.06 34.17L62.00 34.10Q60.99 33.98 60.08 34.01L60.24 34.18L60.12 34.06Q59.29 34.22 58.37 34.22ZM57.12 24.74L57.24 24.86L57.26 24.88Q57.91 27.70 58.15 31.61L58.16 31.63L58.14 31.60Q59.62 31.89 62.00 31.93L62.00 31.92L61.89 31.82Q64.51 31.85 64.81 28.69L64.81 28.69L64.74 28.62Q64.95 26.92 63.69 26.18L63.67 26.16L63.76 26.24Q63.00 25.83 59.06 25.25L58.95 25.14L59.02 25.21Q58.01 25.01 57.19 24.81ZM53.98 45.28L53.97 45.28L54.00 45.31Q56.19 39.34 55.95 32.75L55.87 32.66L56.01 32.80Q55.64 26.17 53.02 20.40L53.04 20.42L53.05 20.43Q56.45 22.71 62.01 22.93L62.04 22.96L62.06 22.98Q67.58 23.17 67.89 25.75L67.80 25.66L67.92 25.78Q68.10 28.13 66.84 30.51L66.83 30.51L66.91 30.58Q66.28 31.96 64.85 32.57L64.80 32.52L64.87 32.59Q68.00 33.07 68.20 37.86L68.34 38.00L68.34 38.00Q68.27 38.84 68.20 40.10L68.22 40.12L68.26 40.16Q68.29 41.41 67.46 42.24L67.36 42.14L67.40 42.19Q66.51 42.96 65.32 43.10L65.32 43.10L65.42 43.20Q64.16 43.33 63.20 43.33L63.20 43.32L63.10 43.22Q57.97 43.19 53.92 45.23ZM65.45 45.60L65.39 45.55L65.43 45.59Q66.23 45.61 67.90 45.71L67.79 45.60L67.81 45.62Q69.24 45.83 70.23 45.05L70.19 45.01L70.22 45.04Q70.90 44.19 70.79 42.80L70.66 42.66L70.82 42.82Q70.61 41.83 69.97 38.74L70.09 38.86L70.00 38.78Q69.43 35.92 67.76 34.59L67.76 34.60L67.42 33.88L67.35 33.81Q68.87 32.58 69.38 29.21L69.31 29.14L69.47 29.30Q69.51 28.18 69.44 26.93L69.38 26.87L69.52 27.00Q69.38 25.75 68.40 25.00L68.42 25.02L68.51 25.11Q68.18 24.88 68.07 24.85L68.10 24.87L68.11 24.88Q67.81 24.35 67.06 23.63L67.15 23.72L67.09 23.66Q65.63 22.61 61.86 22.44L61.94 22.52L61.94 22.52Q55.95 22.21 52.38 19.63L52.39 19.63L52.38 19.62Q55.44 26.01 55.71 32.74L55.66 32.69L55.56 32.59Q55.98 39.71 53.46 45.89L53.46 45.89L55.36 45.11L55.32 45.06Q54.90 46.01 54.46 47.03L54.44 47.01L54.46 47.03Q58.30 45.36 62.79 45.36L62.75 45.32L62.90 45.48Q64.09 45.41 65.38 45.54ZM63.48 36.13L63.45 36.10L63.49 36.13Q64.17 36.11 64.99 36.52L65.02 36.55L64.93 36.45Q65.12 36.85 65.26 37.80L65.27 37.81L65.25 37.80Q65.31 38.91 64.48 39.84L64.43 39.80L64.60 39.96Q63.73 40.87 62.48 40.77L62.51 40.80L61.00 40.71L61.14 40.85Q60.37 40.80 59.72 40.90L59.84 41.02L59.78 40.96Q60.00 39.28 60.07 36.18L60.07 36.18L60.07 36.19Q60.76 36.23 61.88 36.19L61.79 36.10L61.85 36.16Q62.92 36.08 63.47 36.11ZM62.46 27.46L62.49 27.49L62.86 27.52L62.82 27.48Q63.09 27.55 63.26 27.58L63.34 27.66L63.56 27.54L63.94 27.75L64.39 27.72L64.36 27.69Q64.50 27.97 64.50 28.24L64.58 28.32L64.45 28.67L64.49 28.71Q64.54 29.88 63.76 30.71L63.69 30.64L63.70 30.66Q63.06 31.63 61.97 31.63L61.89 31.54L61.83 31.48Q61.02 31.59 61.02 31.59L60.91 31.48L60.86 31.43Q59.81 31.53 60.11 31.53L60.01 31.43L60.13 31.55Q60.00 30.10 59.73 27.38L59.79 27.44L59.74 27.39Q61.28 27.63 62.64 27.63Z\"/><path fill=\"#6d9c5d\" d=\"M91.56 33.32L91.37 33.13L91.42 33.18Q88.86 33.14 88.18 35.14L88.31 35.27L88.20 35.16Q88.11 35.92 88.01 36.50L88.04 36.53L87.96 36.45Q90.29 36.64 91.75 36.64L91.70 36.59L91.83 36.72Q93.29 36.72 95.61 36.62L95.54 36.55L95.61 36.62Q95.54 35.13 94.28 34.17L94.19 34.08L94.23 34.12Q93.14 33.30 91.54 33.30ZM91.62 44.53L91.61 44.52L91.44 44.35Q87.80 44.48 86.65 43.23L86.68 43.26L86.53 43.11Q85.77 41.91 85.63 38.98L85.61 38.96L85.62 38.97Q85.69 38.84 85.62 37.61L85.64 37.64L85.59 37.59Q85.50 35.56 85.50 34.91L85.33 34.74L85.36 34.77Q85.47 33.21 86.12 32.23L86.02 32.13L86.13 32.24Q87.24 30.84 89.90 30.84L90.03 30.97L91.30 30.85L91.45 31.00Q93.12 30.84 94.48 31.11L94.64 31.27L94.49 31.11Q96.42 31.62 97.30 32.71L97.25 32.66L97.33 32.73Q97.78 33.59 97.85 35.46L98.01 35.62L97.97 35.58Q97.98 36.61 98.01 38.55L98.02 38.55L97.87 38.41Q95.32 38.44 92.83 38.44L92.89 38.49L87.95 38.55L87.88 38.48Q87.99 42.39 91.63 42.19L91.60 42.16L91.62 42.18Q94.96 41.99 96.05 40.36L96.19 40.50L96.19 40.50Q96.91 40.92 98.34 41.97L98.30 41.93L98.38 42.01Q97.09 44.08 93.39 44.32L93.35 44.28L93.38 44.32Q92.81 44.43 91.59 44.49ZM93.64 46.59L93.55 46.49L93.66 46.60Q94.49 46.41 95.58 46.48L95.62 46.52L95.66 46.57Q100.03 46.66 100.85 44.17L100.98 44.30L100.85 44.18Q99.46 43.12 98.47 42.44L98.56 42.53L98.44 42.41Q98.64 42.09 98.81 41.89L98.72 41.80L98.77 41.86Q98.18 41.50 96.95 40.65L96.98 40.68L96.88 40.57Q97.85 40.63 99.69 40.91L99.66 40.88L99.78 40.99Q99.56 39.72 99.49 39.11L99.50 39.12L99.44 37.46L99.48 37.50Q99.32 35.37 98.74 34.04L98.70 34.01L98.59 33.90Q98.46 33.69 97.95 33.15L97.95 33.15L97.87 33.07Q97.74 32.80 97.53 32.29L97.54 32.29L97.54 32.30Q95.85 30.47 91.33 30.47L91.30 30.44L89.90 30.54L89.83 30.47Q86.90 30.43 85.61 31.75L85.78 31.93L85.61 31.75Q85.08 32.82 85.11 34.66L85.18 34.73L85.17 34.72Q85.22 35.58 85.32 37.59L85.27 37.53L85.19 37.45Q85.43 39.05 85.53 40.89L85.53 40.88L85.46 40.82Q85.71 42.84 86.50 43.79L86.48 43.78L86.51 43.80Q86.51 43.80 86.68 43.91L86.72 43.94L87.07 44.60L87.05 44.58Q87.70 46.18 93.58 46.52ZM91.61 41.80L91.64 41.83L91.72 41.91Q90.74 42.05 89.92 41.64L89.82 41.54L89.84 41.56Q89.71 41.13 89.54 40.51L89.62 40.59L89.61 40.59Q91.04 40.41 92.46 40.41L92.57 40.51L92.63 40.57Q94.00 40.45 95.49 40.55L95.54 40.59L95.47 40.53Q94.32 41.72 91.64 41.83ZM93.22 35.39L93.18 35.35L93.25 35.41Q93.72 35.34 94.91 35.68L94.93 35.70L95.09 36.04L95.18 36.30L95.19 36.30Q93.79 36.23 92.98 36.20L93.04 36.26L93.16 36.38Q90.99 36.22 90.96 36.22L90.90 36.16L91.08 36.35Q91.60 35.37 93.10 35.27Z\"/><path fill=\"#4389d0\" d=\"M133.35 28.31L133.40 28.36L133.35 28.32Q131.62 30.63 129.24 35.67L129.38 35.80L127.53 39.53L127.57 39.57Q126.67 41.15 125.48 43.16L125.62 43.29L125.57 43.25Q125.92 43.18 124.42 43.21L124.52 43.32L124.40 43.19Q124.53 43.33 123.41 43.33L123.39 43.30L123.25 43.16Q122.78 42.01 120.16 35.62L120.11 35.57L120.07 35.53Q118.21 30.82 116.34 28.14L116.32 28.12L116.37 28.16Q116.87 30.74 116.87 33.56L116.99 33.68L116.89 33.58Q116.97 39.47 114.32 44.44L114.22 44.34L114.33 44.44Q113.14 44.75 111.04 45.40L110.97 45.33L111.09 45.46Q114.27 40.27 114.27 33.81L114.37 33.91L114.33 33.88Q114.30 25.86 109.48 19.64L109.50 19.66L109.50 19.66Q111.01 20.36 113.12 20.97L113.01 20.86L112.95 20.80Q119.41 26.99 124.85 38.88L124.84 38.88L124.77 38.80Q127.87 32.52 129.84 29.40L129.88 29.43L129.91 29.46Q133.04 24.23 136.57 21.14L136.63 21.20L136.63 21.20Q137.75 20.99 139.86 20.31L139.84 20.29L139.84 20.30Q135.32 26.14 135.32 33.82L135.41 33.91L135.43 33.93Q135.34 39.79 138.40 44.72L138.47 44.79L138.48 44.80Q137.30 44.54 134.85 43.99L134.89 44.03L134.79 43.93Q132.61 39.58 132.61 34.24L132.76 34.39L132.69 34.32Q132.72 31.29 133.33 28.29ZM134.64 44.29L134.60 44.25L134.65 44.30Q135.14 44.28 136.43 44.52L136.48 44.56L136.53 44.61Q137.03 45.38 137.87 46.71L137.81 46.65L137.75 46.59Q139.79 47.09 142.88 48.18L142.69 47.99L142.69 47.99Q137.11 42.34 137.11 33.57L137.16 33.62L137.15 33.62Q137.18 26.74 141.09 21.27L141.01 21.19L139.14 21.91L139.13 21.89Q140.06 20.55 140.64 19.76L140.64 19.77L140.69 19.81Q138.93 20.30 136.58 20.77L136.57 20.76L136.64 20.83Q130.60 26.28 125.20 37.53L125.21 37.55L125.05 37.39Q120.61 27.78 116.19 23.09L116.13 23.02L116.18 23.08Q115.85 23.02 115.34 22.92L115.34 22.91L114.23 21.74L114.08 21.59Q113.71 21.15 113.10 20.61L113.07 20.58L113.05 20.55Q110.30 19.65 108.71 19.00L108.65 18.95L108.74 19.03Q114.10 25.48 114.10 33.88L114.09 33.87L114.16 33.94Q114.01 40.59 110.30 45.82L110.43 45.94L110.27 45.78Q110.96 45.66 112.11 45.28L112.12 45.30L112.20 45.37Q111.94 45.45 110.68 47.32L110.68 47.31L110.68 47.32Q112.37 46.97 115.50 46.29L115.48 46.28L115.52 46.31Q118.72 39.90 118.55 32.96L118.58 32.99L118.70 33.11Q119.98 36.60 123.08 43.64L123.13 43.69L123.07 43.63Q123.25 43.53 123.45 43.53L123.54 43.62L123.94 43.55L123.93 43.54Q124.34 44.15 125.05 45.31L125.03 45.29L125.04 45.30Q126.56 45.35 126.56 45.35L126.67 45.46L126.51 45.30Q127.41 45.29 127.99 45.36L127.96 45.33L127.97 45.33Q129.37 41.74 132.36 34.60L132.44 34.69L132.38 34.62Q132.26 39.46 134.57 44.22Z\"/></svg>",
+    "errorCode": null,
+    "errorMessage": null
+  }
+}

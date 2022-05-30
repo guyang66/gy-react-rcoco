@@ -1,0 +1,697 @@
+{
+  "api_resource_category_online_auth": {
+    "success": true,
+    "data": [
+      {
+        "createTime": "2022-05-23T06:36:16.808Z",
+        "modifyTime": "2022-05-23T06:36:16.808Z",
+        "createId": 1,
+        "modifyId": 1,
+        "isDelete": false,
+        "status": 1,
+        "desc": "",
+        "order": 10000,
+        "remark": "",
+        "_id": "628b2b601e31867be742566e",
+        "key": "all",
+        "name": "全部"
+      },
+      {
+        "createTime": "2022-05-23T06:36:16.808Z",
+        "modifyTime": "2022-05-24T03:09:57.874Z",
+        "createId": 1,
+        "modifyId": 1,
+        "isDelete": false,
+        "status": 1,
+        "desc": "",
+        "order": 1,
+        "remark": "",
+        "_id": "628b2b601e31867be742566d",
+        "key": "whitePage",
+        "name": "白皮书"
+      },
+      {
+        "createTime": "2022-05-23T06:36:16.808Z",
+        "modifyTime": "2022-05-23T06:38:45.444Z",
+        "createId": 1,
+        "modifyId": 1,
+        "isDelete": false,
+        "status": 1,
+        "desc": "",
+        "order": 999,
+        "remark": "",
+        "_id": "628b2b601e31867be742566c",
+        "key": "course",
+        "name": "课程课件"
+      },
+      {
+        "createTime": "2022-05-23T06:36:16.808Z",
+        "modifyTime": "2022-05-23T06:36:16.808Z",
+        "createId": 1,
+        "modifyId": 1,
+        "isDelete": false,
+        "status": 1,
+        "desc": "",
+        "order": 1,
+        "remark": "",
+        "_id": "628b2b601e31867be742566b",
+        "key": "product",
+        "name": "产品文档"
+      },
+      {
+        "createTime": "2022-05-23T06:36:16.808Z",
+        "modifyTime": "2022-05-23T06:36:16.808Z",
+        "createId": 1,
+        "modifyId": 1,
+        "isDelete": false,
+        "status": 1,
+        "desc": "",
+        "order": 1,
+        "remark": "",
+        "_id": "628b2b601e31867be742566a",
+        "key": "report",
+        "name": "行业报告"
+      },
+      {
+        "createTime": "2022-05-23T06:36:16.808Z",
+        "modifyTime": "2022-05-23T06:36:16.808Z",
+        "createId": 1,
+        "modifyId": 1,
+        "isDelete": false,
+        "status": 1,
+        "desc": "",
+        "order": 1,
+        "remark": "",
+        "_id": "628b2b601e31867be7425669",
+        "key": "share",
+        "name": "内容分享"
+      }
+    ],
+    "errorCode": null,
+    "errorMessage": null
+  },
+  "api_resource_list_auth": {
+    "success": true,
+    "data": {
+      "list": [
+        {
+          "createTime": "2022-05-26T03:28:40.098Z",
+          "modifyTime": "2022-05-26T07:28:14.715Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "desc": "记得双击第四季度四等奖四等奖死就爱是妒忌爱是妒忌随机打劫啊打家劫舍大九十多斤啊多久啊",
+          "search": [],
+          "tag": [
+            "产品解读",
+            "产品更新"
+          ],
+          "date": "2022-04-04",
+          "download": 89,
+          "downloadType": "normal",
+          "size": "334.2MB",
+          "type": "mp4",
+          "href": "pdf/1.pdf",
+          "nofollow": false,
+          "target": null,
+          "remark": "",
+          "status": 1,
+          "order": 1,
+          "_id": "628ef3e82b784c43c52bfa17",
+          "id": 5,
+          "key": "product",
+          "title": "清水系统5.0版本正式发布"
+        },
+        {
+          "createTime": "2022-05-26T03:28:40.098Z",
+          "modifyTime": "2022-05-26T03:28:40.098Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "desc": "经营者提出了理性要求，市场格局发生的变化，使竞争更激烈，经营者们也须不断调整思路，突出特色，以迎合顾客的需求，使其产品和服务更加适应市场的需要。在这种情况下，管理者能够把握这种变化的趋势，以适宜的产品、合理的价位、舒适的环境、优质的服务赢得了广大消费者的青睐，取得了市场上的成功",
+          "search": [
+            "盛会",
+            "吸引",
+            "留资",
+            "把控",
+            "流量",
+            "知识分享",
+            "趋势"
+          ],
+          "tag": [
+            "大会解读"
+          ],
+          "date": "2022-03-18",
+          "download": 12,
+          "downloadType": "normal",
+          "size": "12.2MB",
+          "type": "pdf",
+          "href": "pdf/1.pdf",
+          "nofollow": false,
+          "target": null,
+          "remark": "",
+          "status": 1,
+          "order": 1,
+          "_id": "628ef3e82b784c43c52bfa16",
+          "id": 4,
+          "key": "share",
+          "title": "《数机大会》餐饮行业时代，如何把控质量大关"
+        },
+        {
+          "createTime": "2022-05-26T03:28:40.098Z",
+          "modifyTime": "2022-05-26T03:28:40.098Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "desc": "",
+          "search": [
+            "月光",
+            "企业",
+            "客户",
+            "行业指南",
+            "流量",
+            "分享",
+            "趋势"
+          ],
+          "tag": [],
+          "date": "2022-02-17",
+          "download": 221,
+          "downloadType": "normal",
+          "size": "16MB",
+          "type": "pdf",
+          "href": "pdf/1.pdf",
+          "nofollow": false,
+          "target": null,
+          "remark": "",
+          "status": 1,
+          "order": 1,
+          "_id": "628ef3e82b784c43c52bfa15",
+          "id": 3,
+          "key": "report",
+          "title": "行业报告——数字化转型探索之路"
+        },
+        {
+          "createTime": "2022-05-26T03:28:40.098Z",
+          "modifyTime": "2022-05-26T03:28:40.098Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "desc": "",
+          "search": [
+            "白皮书",
+            "餐饮",
+            "食物",
+            "pdf",
+            "流量",
+            "巨头",
+            "趋势"
+          ],
+          "tag": [
+            "白皮书"
+          ],
+          "date": "2022-02-08",
+          "download": 112,
+          "downloadType": "normal",
+          "size": "21MB",
+          "type": "pdf",
+          "href": "pdf/1.pdf",
+          "nofollow": false,
+          "target": null,
+          "remark": "",
+          "status": 1,
+          "order": 1,
+          "_id": "628ef3e82b784c43c52bfa14",
+          "id": 2,
+          "key": "whitePage",
+          "title": "《餐饮企业解构层级规划白皮书》—— 揭秘解读"
+        },
+        {
+          "createTime": "2022-05-26T03:28:40.098Z",
+          "modifyTime": "2022-05-26T06:14:32.934Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "desc": "全国餐饮收入27860亿元，同比增长9.7%，较上年加快了0.7个百分点，终止了2011年以来连续三年增速下滑的颓势",
+          "search": [
+            "爆炸",
+            "餐饮",
+            "食物",
+            "天马",
+            "天马科技"
+          ],
+          "tag": [
+            "客户案例"
+          ],
+          "date": "2022-01-15",
+          "download": 25,
+          "downloadType": "link",
+          "size": "1.2MB",
+          "type": "txt",
+          "href": "http://localhost:8090/pdf/1.pdf",
+          "nofollow": false,
+          "target": null,
+          "remark": "",
+          "status": 1,
+          "order": 1,
+          "_id": "628ef3e82b784c43c52bfa13",
+          "id": 1,
+          "key": "share",
+          "title": "深度解读行业标杆案例——走进天马科技"
+        },
+        {
+          "createTime": "2022-05-23T08:37:30.432Z",
+          "modifyTime": "2022-05-23T08:37:30.432Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "desc": "测试测试测试测试测试测试测试",
+          "search": [
+            "1"
+          ],
+          "tag": [
+            "222"
+          ],
+          "date": "2022-06-01",
+          "download": 123,
+          "downloadType": "normal",
+          "size": "1.2MB",
+          "type": "pf",
+          "href": "http://localhost:8090/upload/resource/detail/20220523164218/配送登记表_20220414183059.xlsx",
+          "nofollow": false,
+          "target": null,
+          "remark": "123",
+          "status": 1,
+          "order": 1,
+          "_id": "628b48f866ec4906b252c45a",
+          "id": 6,
+          "title": "测试",
+          "key": "whitePage",
+          "__v": 0
+        }
+      ],
+      "total": 6
+    },
+    "errorCode": null,
+    "errorMessage": null
+  },
+  "api_resource_column_list_auth": {
+    "success": true,
+    "data": [
+      {
+        "createTime": "2022-05-02T03:50:46.597Z",
+        "modifyTime": "2022-05-23T06:03:09.522Z",
+        "createId": 1,
+        "modifyId": 1,
+        "isDelete": false,
+        "desc": "2222222",
+        "remark": "",
+        "tag": [
+          "数据中台",
+          "企业转型",
+          "sssdda"
+        ],
+        "cover": "/images/service/resource/news/a1.png",
+        "href": "/about/news/3",
+        "nofollow": false,
+        "target": null,
+        "status": 1,
+        "order": 1,
+        "_id": "626f55161093e204f9ab4c65",
+        "id": 3,
+        "key": "qyksdjsjzt",
+        "title": "《企业快速搭建数据中台》白皮书全球发布1"
+      },
+      {
+        "createTime": "2022-05-02T03:50:46.597Z",
+        "modifyTime": "2022-05-23T03:32:50.786Z",
+        "createId": 1,
+        "modifyId": 1,
+        "isDelete": false,
+        "desc": "响应于海量数据表的统计需求，通过海量数据表相应的查询专用语言建立海量数据计算模型；海量数据计算模型将查询专用语言映射为海量数据表的字段，并对海量数据表的字段进行离线统计和实时统计，分别得到离线统计数据和实时统计数据；将离线统计数据和实时统计数据进行汇总，得到海量数据全量统计结果。",
+        "remark": "",
+        "tag": [
+          "增量统计",
+          "视频课程",
+          "SQL优化"
+        ],
+        "cover": "/images/service/resource/news/a2.png",
+        "href": "/about/news/3",
+        "nofollow": false,
+        "target": null,
+        "status": 1,
+        "order": 3,
+        "_id": "626f55161093e204f9ab4c64",
+        "id": 2,
+        "key": "qltj",
+        "title": "全量统计——实战训练第一讲（视频）"
+      },
+      {
+        "createTime": "2022-05-02T03:50:46.597Z",
+        "modifyTime": "2022-05-02T03:50:46.597Z",
+        "createId": 1,
+        "modifyId": 1,
+        "isDelete": false,
+        "desc": "2022年10月11日，第20届数机大会成功在北京召开，大会邀请了国内的大部分服务厂商，其中yy科技受邀参加第一日主会场栏目分享，来自yy科技的王小锤女士，给我们带来了一场豪华的数据盛宴，分享了行业级的解决方案，助力各大行业的随机打劫圣诞节案例啊收到了受到了巨大的成功。",
+        "remark": "",
+        "tag": [
+          "数机大会",
+          "科技创新",
+          "技术分享",
+          "行业经验"
+        ],
+        "cover": "/images/service/resource/news/a3.png",
+        "href": "/about/news/3",
+        "nofollow": false,
+        "target": null,
+        "status": 1,
+        "order": 1,
+        "_id": "626f55161093e204f9ab4c63",
+        "id": 1,
+        "key": "sjdh",
+        "title": "数机大会——yy科技，共享时代的科技盛宴"
+      }
+    ],
+    "errorCode": null,
+    "errorMessage": null
+  },
+  "api_resource_category_list_auth": {
+    "success": true,
+    "data": [
+      {
+        "createTime": "2022-05-23T06:36:16.808Z",
+        "modifyTime": "2022-05-23T06:36:16.808Z",
+        "createId": 1,
+        "modifyId": 1,
+        "isDelete": false,
+        "status": 1,
+        "desc": "",
+        "order": 10000,
+        "remark": "",
+        "_id": "628b2b601e31867be742566e",
+        "key": "all",
+        "name": "全部"
+      },
+      {
+        "createTime": "2022-05-23T06:36:16.808Z",
+        "modifyTime": "2022-05-24T03:09:57.874Z",
+        "createId": 1,
+        "modifyId": 1,
+        "isDelete": false,
+        "status": 1,
+        "desc": "",
+        "order": 1,
+        "remark": "",
+        "_id": "628b2b601e31867be742566d",
+        "key": "whitePage",
+        "name": "白皮书"
+      },
+      {
+        "createTime": "2022-05-23T06:36:16.808Z",
+        "modifyTime": "2022-05-23T06:38:45.444Z",
+        "createId": 1,
+        "modifyId": 1,
+        "isDelete": false,
+        "status": 1,
+        "desc": "",
+        "order": 999,
+        "remark": "",
+        "_id": "628b2b601e31867be742566c",
+        "key": "course",
+        "name": "课程课件"
+      },
+      {
+        "createTime": "2022-05-23T06:36:16.808Z",
+        "modifyTime": "2022-05-23T06:36:16.808Z",
+        "createId": 1,
+        "modifyId": 1,
+        "isDelete": false,
+        "status": 1,
+        "desc": "",
+        "order": 1,
+        "remark": "",
+        "_id": "628b2b601e31867be742566b",
+        "key": "product",
+        "name": "产品文档"
+      },
+      {
+        "createTime": "2022-05-23T06:36:16.808Z",
+        "modifyTime": "2022-05-23T06:36:16.808Z",
+        "createId": 1,
+        "modifyId": 1,
+        "isDelete": false,
+        "status": 1,
+        "desc": "",
+        "order": 1,
+        "remark": "",
+        "_id": "628b2b601e31867be742566a",
+        "key": "report",
+        "name": "行业报告"
+      },
+      {
+        "createTime": "2022-05-23T06:36:16.808Z",
+        "modifyTime": "2022-05-23T06:36:16.808Z",
+        "createId": 1,
+        "modifyId": 1,
+        "isDelete": false,
+        "status": 1,
+        "desc": "",
+        "order": 1,
+        "remark": "",
+        "_id": "628b2b601e31867be7425669",
+        "key": "share",
+        "name": "内容分享"
+      }
+    ],
+    "errorCode": null,
+    "errorMessage": null
+  },
+  "api_resource_detail_auth": {
+    "success": true,
+    "data": {
+      "createTime": "2022-05-26T03:28:40.098Z",
+      "modifyTime": "2022-05-26T07:28:14.715Z",
+      "createId": 1,
+      "modifyId": 1,
+      "isDelete": false,
+      "desc": "记得双击第四季度四等奖四等奖死就爱是妒忌爱是妒忌随机打劫啊打家劫舍大九十多斤啊多久啊",
+      "search": [],
+      "tag": [
+        "产品解读",
+        "产品更新"
+      ],
+      "date": "2022-04-04",
+      "download": 89,
+      "downloadType": "normal",
+      "size": "334.2MB",
+      "type": "mp4",
+      "href": "pdf/1.pdf",
+      "nofollow": false,
+      "target": null,
+      "remark": "",
+      "status": 1,
+      "order": 1,
+      "_id": "628ef3e82b784c43c52bfa17",
+      "id": 5,
+      "key": "product",
+      "title": "清水系统5.0版本正式发布"
+    },
+    "errorCode": null,
+    "errorMessage": null
+  },
+  "api_resource_statics_type_auth": {
+    "success": true,
+    "data": [
+      {
+        "name": "总点击量",
+        "count": 2,
+        "type": "click"
+      },
+      {
+        "name": "总下载量",
+        "count": 3,
+        "type": "download"
+      }
+    ],
+    "errorCode": null,
+    "errorMessage": null
+  },
+  "api_resource_record_list_auth": {
+    "success": true,
+    "data": {
+      "list": [
+        {
+          "createTime": "2022-05-26T07:28:14.672Z",
+          "modifyTime": "2022-05-26T07:28:14.672Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "type": "download",
+          "typeString": "下载",
+          "name": "收到",
+          "ip": "1",
+          "phone": "13188776653",
+          "remark": "",
+          "_id": "628f2c0e53f6ba19c5772b88",
+          "resourceId": 5,
+          "resourceDatabaseId": "628ef3e82b784c43c52bfa17",
+          "resourceTitle": "清水系统5.0版本正式发布",
+          "resourceDesc": "记得双击第四季度四等奖四等奖死就爱是妒忌爱是妒忌随机打劫啊打家劫舍大九十多斤啊多久啊",
+          "resourceDownload": 89
+        },
+        {
+          "createTime": "2022-05-26T07:28:14.640Z",
+          "modifyTime": "2022-05-26T07:28:14.640Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "type": "click",
+          "typeString": "点击",
+          "name": "收到",
+          "ip": "1",
+          "phone": "13188776653",
+          "remark": "",
+          "_id": "628f2c0e53f6ba19c5772b86",
+          "resourceId": 5,
+          "resourceDatabaseId": "628ef3e82b784c43c52bfa17",
+          "resourceTitle": "清水系统5.0版本正式发布",
+          "resourceDesc": "记得双击第四季度四等奖四等奖死就爱是妒忌爱是妒忌随机打劫啊打家劫舍大九十多斤啊多久啊",
+          "resourceDownload": 89
+        },
+        {
+          "createTime": "2022-05-21T06:14:32.922Z",
+          "modifyTime": "2022-05-26T06:14:32.922Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "type": "download",
+          "typeString": "下载",
+          "name": "收到",
+          "ip": "1",
+          "phone": "13188776653",
+          "remark": "",
+          "_id": "628f1ac83e0efb0d65517f57",
+          "resourceId": 1,
+          "resourceDatabaseId": "628ef3e82b784c43c52bfa13",
+          "resourceTitle": "深度解读行业标杆案例——走进天马科技",
+          "resourceDesc": "全国餐饮收入27860亿元，同比增长9.7%，较上年加快了0.7个百分点，终止了2011年以来连续三年增速下滑的颓势",
+          "resourceDownload": 25
+        },
+        {
+          "createTime": "2022-05-26T06:14:32.912Z",
+          "modifyTime": "2022-05-26T06:14:32.912Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "type": "click",
+          "typeString": "点击",
+          "name": "收到",
+          "ip": "1",
+          "phone": "13188776653",
+          "remark": "",
+          "_id": "628f1ac83e0efb0d65517f55",
+          "resourceId": 1,
+          "resourceDatabaseId": "628ef3e82b784c43c52bfa13",
+          "resourceTitle": "深度解读行业标杆案例——走进天马科技",
+          "resourceDesc": "全国餐饮收入27860亿元，同比增长9.7%，较上年加快了0.7个百分点，终止了2011年以来连续三年增速下滑的颓势",
+          "resourceDownload": 25
+        },
+        {
+          "createTime": "2022-05-26T06:11:23.698Z",
+          "modifyTime": "2022-05-26T06:11:23.698Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "type": "download",
+          "typeString": "下载",
+          "name": "收到",
+          "ip": "1",
+          "phone": "13188776653",
+          "remark": "",
+          "_id": "628f1a0b9fb3030d0df3d3bd",
+          "resourceId": 1,
+          "resourceDatabaseId": "628ef3e82b784c43c52bfa13",
+          "resourceTitle": "深度解读行业标杆案例——走进天马科技",
+          "resourceDesc": "全国餐饮收入27860亿元，同比增长9.7%，较上年加快了0.7个百分点，终止了2011年以来连续三年增速下滑的颓势",
+          "resourceDownload": 25
+        }
+      ],
+      "total": 5
+    },
+    "errorCode": null,
+    "errorMessage": null
+  },
+  "api_resource_statics_resourceName_auth": {
+    "success": true,
+    "data": [
+      {
+        "name": "深度解读行业标杆案例——走进天马科技",
+        "count": 3
+      },
+      {
+        "name": "清水系统5.0版本正式发布",
+        "count": 2
+      }
+    ],
+    "errorCode": null,
+    "errorMessage": null
+  },
+  "api_resource_statics_keywords_auth": {
+    "success": true,
+    "data": [
+      {
+        "name": "vv",
+        "count": 7
+      },
+      {
+        "name": "菲菲",
+        "count": 2
+      },
+      {
+        "name": "2",
+        "count": 1
+      },
+      {
+        "name": "空心",
+        "count": 1
+      },
+      {
+        "name": "444",
+        "count": 1
+      },
+      {
+        "name": "12",
+        "count": 1
+      },
+      {
+        "name": "1",
+        "count": 1
+      },
+      {
+        "name": "31",
+        "count": 1
+      },
+      {
+        "name": "23",
+        "count": 1
+      },
+      {
+        "name": "1111",
+        "count": 1
+      },
+      {
+        "name": "是的是的",
+        "count": 1
+      },
+      {
+        "name": "vv123",
+        "count": 1
+      },
+      {
+        "name": "瓜瓜",
+        "count": 1
+      }
+    ],
+    "errorCode": null,
+    "errorMessage": null
+  }
+}

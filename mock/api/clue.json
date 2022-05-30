@@ -1,0 +1,290 @@
+{
+  "api_clue_statics_count_auth": {
+    "success": true,
+    "data": 14,
+    "errorCode": null,
+    "errorMessage": null
+  },
+  "api_clue_statics_need_auth": {
+    "date": "all",
+    "success": true,
+    "data": [
+      {
+        "name": "成为合作伙伴",
+        "count": 7
+      },
+      {
+        "name": "商务合作",
+        "count": 7
+      },
+      {
+        "name": "智能系统",
+        "count": 4
+      }
+    ],
+    "errorCode": null,
+    "errorMessage": null
+  },
+  "api_clue_statics_type_auth":{
+    "success": true,
+    "data": [
+      {
+        "name": "banner",
+        "count": 11
+      },
+      {
+        "name": "侧边栏",
+        "count": 2
+      },
+      {
+        "name": "",
+        "count": 1
+      }
+    ],
+    "errorCode": null,
+    "errorMessage": null
+  },
+  "api_clue_statics_originHref_auth": {
+    "success": true,
+    "data": [
+      {
+        "name": "首页",
+        "count": 1
+      },
+      {
+        "name": "解决方案-传统制造",
+        "count": 1
+      },
+      {
+        "name": "其它",
+        "count": 5
+      },
+      {
+        "name": "解决方案-教育",
+        "count": 11
+      }
+    ],
+    "errorCode": null,
+    "errorMessage": null
+  },
+  "api_clue_list_auth": {
+    "success": true,
+    "data": {
+      "list": [
+        {
+          "createTime": "2022-05-26T16:01:44.577Z",
+          "modifyTime": "2022-05-27T13:48:59.577Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "company": "3",
+          "email": "",
+          "phone": "13822112211",
+          "name": "3",
+          "position": "3",
+          "ip": "1",
+          "need": "商务合作",
+          "origin": "官网",
+          "originHref": "http://localhost:8090/form",
+          "type": "",
+          "date": "2022/5/27",
+          "remark": "",
+          "_id": "6290d6cb59e779ee49db5d6b",
+          "__v": 0
+        },
+        {
+          "createTime": "2022-05-27T13:35:24.765Z",
+          "modifyTime": "2022-05-27T13:35:24.765Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "company": "123",
+          "email": "",
+          "phone": "13991231922",
+          "name": "刚刚",
+          "position": "123",
+          "ip": "1",
+          "need": "商务合作",
+          "origin": "官网",
+          "originHref": "/",
+          "type": "侧边栏",
+          "date": "2022/5/27",
+          "remark": "",
+          "_id": "6290d39c56cfb7ed35221aec",
+          "__v": 0
+        },
+        {
+          "createTime": "2022-05-26T09:02:13.301Z",
+          "modifyTime": "2022-05-26T09:02:13.301Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "company": "asd",
+          "email": "",
+          "phone": "13811223322",
+          "name": "gg",
+          "position": "123",
+          "ip": "1",
+          "need": "智能系统",
+          "origin": "官网",
+          "originHref": "/solution/manufacture",
+          "type": "banner",
+          "date": "2022/5/26",
+          "remark": "",
+          "_id": "628f42150fa5f92acc763f27",
+          "__v": 0
+        },
+        {
+          "createTime": "2022-05-25T15:39:29.635Z",
+          "modifyTime": "2022-05-25T15:39:29.635Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "company": "爱仕达",
+          "email": "",
+          "phone": "13188776653",
+          "name": "收到",
+          "position": "爱仕达",
+          "ip": "1",
+          "need": "成为合作伙伴",
+          "origin": "官网",
+          "originHref": "/solution/education",
+          "type": "banner",
+          "date": "2022/5/25",
+          "remark": "",
+          "_id": "628e4db1fbaab66a2fa9daeb",
+          "__v": 0
+        },
+        {
+          "createTime": "2022-05-25T15:39:13.997Z",
+          "modifyTime": "2022-05-25T15:39:13.997Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "company": "驱蚊器",
+          "email": "",
+          "phone": "13822113322",
+          "name": "阿伟",
+          "position": "231",
+          "ip": "1",
+          "need": "商务合作",
+          "origin": "官网",
+          "originHref": "/solution/education",
+          "type": "banner",
+          "date": "2022/5/25",
+          "remark": "",
+          "_id": "628e4da1fbaab66a2fa9dae1",
+          "__v": 0
+        },
+        {
+          "createTime": "2022-04-25T15:37:34.950Z",
+          "modifyTime": "2022-05-25T15:37:34.950Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "company": "爱仕达",
+          "email": "",
+          "phone": "13722112211",
+          "name": "卡萨丁",
+          "position": "爱仕达",
+          "ip": "1",
+          "need": "商务合作",
+          "origin": "官网",
+          "originHref": "/solution/education",
+          "type": "banner",
+          "date": "2022/5/25",
+          "remark": "",
+          "_id": "628e4d3e28866169bd2206cc",
+          "__v": 0
+        },
+        {
+          "createTime": "2022-05-25T15:37:18.538Z",
+          "modifyTime": "2022-05-25T15:37:18.538Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "company": "1",
+          "email": "",
+          "phone": "13123325532",
+          "name": "1",
+          "position": "1",
+          "ip": "1",
+          "need": "成为合作伙伴",
+          "origin": "官网",
+          "originHref": "/solution/education",
+          "type": "banner",
+          "date": "2022/5/25",
+          "remark": "",
+          "_id": "628e4d2e28866169bd2206c2",
+          "__v": 0
+        },
+        {
+          "createTime": "2022-05-21T14:58:09.400Z",
+          "modifyTime": "2022-05-25T14:58:09.400Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "company": "3",
+          "email": "",
+          "phone": "13188990021",
+          "name": "33",
+          "position": "3",
+          "ip": "1",
+          "need": "成为合作伙伴",
+          "origin": "官网",
+          "originHref": "/solution/education",
+          "type": "banner",
+          "date": "2022/5/25",
+          "remark": "",
+          "_id": "628e441f65ef546339f5d25e",
+          "__v": 0
+        },
+        {
+          "createTime": "2022-05-25T14:58:09.400Z",
+          "modifyTime": "2022-05-25T14:58:09.400Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "company": "3",
+          "email": "",
+          "phone": "13822331122",
+          "name": "13",
+          "position": "3",
+          "ip": "1",
+          "need": "智能系统",
+          "origin": "官网",
+          "originHref": "/solution/education",
+          "type": "banner",
+          "date": "2022/5/25",
+          "remark": "",
+          "_id": "628e440f65ef546339f5d254",
+          "__v": 0
+        },
+        {
+          "createTime": "2022-05-25T14:52:00.156Z",
+          "modifyTime": "2022-05-25T14:52:00.156Z",
+          "createId": 1,
+          "modifyId": 1,
+          "isDelete": false,
+          "company": "收到",
+          "email": "",
+          "phone": "13199221133",
+          "name": "速度快",
+          "position": "a's'd",
+          "ip": "1",
+          "need": "智能系统",
+          "origin": "官网",
+          "originHref": "/solution/education",
+          "type": "banner",
+          "date": "2022/5/25",
+          "remark": "",
+          "_id": "628e43b7756d3b62652b0940",
+          "__v": 0
+        }
+      ],
+      "total": 18
+    },
+    "errorCode": null,
+    "errorMessage": null
+  }
+}

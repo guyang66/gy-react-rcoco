@@ -110,6 +110,9 @@ const ResumeModule = (props) => {
   }
 
   const getList = (columnKey) => {
+    if(!columnKey || columnKey === ''){
+      return
+    }
     const search = searchRef.current.state.value
     const p = {
       column: columnKey,

@@ -1,0 +1,5 @@
+{
+  "port": 8090,
+  "routes": "./mock/routes.json",
+  "host": "0.0.0.0"
+}
