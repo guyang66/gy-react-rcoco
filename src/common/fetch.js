@@ -2,8 +2,6 @@ import axios from 'axios'
 import helper from '@helper'
 import {message, notification, Button} from 'antd'
 import settingStore from "../store/setting-store";
-// todo: 怎么模拟mock？
-
 // todo: 问题2，出现了一个bug，用super登录之后，登出，然后再用admin登录，还是显示的super的账号信息，刷新一下就正常了（或者登出到登录页面刷新一下）。token串掉了，原因是
 // service是一个用axios创建的实例对象，传入的headers参数其实是死的，用super登录之后service实例是super的token初始化好的，我登出的时候并没有刷新浏览器（包括再次登录）
 // 所以即使我cookie中已经存放了admin的token，但是发请求的时候依旧还是用的super的token，刷新浏览器，store会被重新初始化一次，service也会重新生成，所以就变正常了，单页面的2b错误。。。

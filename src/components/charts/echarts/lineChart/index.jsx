@@ -2,7 +2,7 @@ import React, {useState, useEffect}from "react";
 import * as echarts from "echarts";
 
 const ChartView = (props) => {
-  const {data, id, seriesName, title} = props
+  const {data, id, title} = props
   const [chartView, setChartView] = useState(null)
 
   const setOptions = (option) => {

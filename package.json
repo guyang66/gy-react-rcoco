@@ -7,10 +7,12 @@
   "scripts": {
     "clean": "rimraf ./build",
     "start": "npm run down && concurrently 'npm run dev'",
+    "start-mock": "cross-env NODE_ENV=mock npm run down && concurrently 'npm run dev'",
     "dev": "react-app-rewired start",
     "build": "rimraf ./build & react-app-rewired build",
     "down": "node ./scripts/down/index.js",
-    "local": "npm run mock & npm run start",
+    "local": "npm run mock & npm run start-mock",
+    "local2": "cross-env NODE_ENV=mock npm run start-mock",
     "mock": "json-server --watch ./mock/index.js --middlewares ./mock/middlewares.js --config mock/json-server.json",
     "eslint": "eslint . --ext .js,.jsx",
     "eslint-fix": "eslint . --ext .js,.jsx --fix"
@@ -45,6 +47,7 @@
     "chalk": "^4.1.2",
     "classnames": "^2.3.1",
     "concurrently": "4.1.0",
+    "cross-env": "^7.0.3",
     "customize-cra": "^0.9.1",
     "echarts": "^5.3.2",
     "inquirer": "^8.1.1",

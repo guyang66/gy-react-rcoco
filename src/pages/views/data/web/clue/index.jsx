@@ -361,7 +361,7 @@ const ViewModule = (props) => {
               <Button
                 className="btn-info mar-l20"
                 onClick={()=>{
-                  setStpagiaticsOriginHrefChoose([])
+                  setStaticsOriginHrefChoose([])
                   setStaticsPickerValue(null)
                 }}
               >

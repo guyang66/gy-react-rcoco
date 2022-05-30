@@ -272,7 +272,8 @@ const ViewModule = (props) => {
                   <span className="text-overflow-3">{status.desc}</span>
                 )
               }}
-            />            <Column
+            />
+            <Column
               title="分类"
               width={100}
               align="center"

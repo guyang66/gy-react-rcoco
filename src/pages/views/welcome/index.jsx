@@ -67,7 +67,7 @@ const Index = (props) => {
         <div className="welcome-title ">
           <span className="user-name color-orange">{user.name + '，'}</span>
           欢迎来到yy管理平台~
-          <a className="color-main mar-l20" href={utils.getFixUrl("/index")} target="_blank" style={{textDecoration: "underline"}}>前往官网</a>
+          <a className="color-main mar-l20" href={utils.getFixUrl("/index")} target="_blank" style={{textDecoration: "underline"}} rel="noreferrer">前往官网</a>
         </div>
       </div>
 

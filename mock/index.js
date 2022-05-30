@@ -1,6 +1,6 @@
 const path = require('path');
 const fs = require('fs');
-
+const chalk = require('chalk')
 function getFileStat(path) {
   try {
     fs.statSync(path);
@@ -20,7 +20,7 @@ function scanFilesByFolder(dir, cb) {
 
     files.forEach((file) => {
 
-      // 只处理js文件
+      // 只处理json文件
       if(!file.match(/json/)){
         return;
       }
@@ -36,7 +36,7 @@ function scanFilesByFolder(dir, cb) {
     })
 
   } catch (error) {
-    console.log('文件自动加载失败...', error);
+    console.log(chalk.red('文件自动加载失败...' + error))
   }
 }
 
