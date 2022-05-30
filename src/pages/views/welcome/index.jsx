@@ -64,9 +64,10 @@ const Index = (props) => {
   return (
     <div className="welcome-container">
       <div className="module-view-wrap welcome-view-wrap">
-        <div className="welcome-title">
-          <span className="user-name color-main">{user.name + '，'}</span>
+        <div className="welcome-title ">
+          <span className="user-name color-orange">{user.name + '，'}</span>
           欢迎来到yy管理平台~
+          <a className="color-main mar-l20" href={utils.getFixUrl("/index")} target="_blank" style={{textDecoration: "underline"}}>前往官网</a>
         </div>
       </div>
 
@@ -97,7 +98,6 @@ const Index = (props) => {
           <ChartView data={pvVisit} id="chartPvVisit" type="bar" title="页面访问排名（前10）" seriesName="页面访问量" />
         </div>
       </div>
-
 
       <div className="FBH mar-l10 mar-r10 mar-b20">
         <div className="layout-n-1-module mar-l10 mar-r10">

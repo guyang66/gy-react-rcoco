@@ -8,6 +8,11 @@ const ChartView = (props) => {
     if(!data){
       return;
     }
+    if(chartLineView && chartData.length < 1){
+      chartLineView.changeData([{name: '', count: 0}])
+      chartLineView.changeSize(800,200)
+      return;
+    }
     const l = length || 2
     if(chartLineView){
       chartLineView.changeSize(viewLength || 800, Math.max(40 * l, 300))

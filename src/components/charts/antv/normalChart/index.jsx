@@ -28,10 +28,19 @@ const ChartView = (props) => {
 
   // 普通柱状图
   const initChartBar = (chartData) => {
-    if(!data){
+    if(!chartData){
       return;
     }
     const l = length || 1
+
+    if(chartBarView && chartData.length < 1){
+      const empty = {}
+      empty[getXString()] = ''
+      empty[getYString()] = 0
+      chartBarView.changeData([empty])
+      return;
+    }
+
     if(chartBarView){
       chartBarView.changeSize(Math.min(Math.max(470, l * 50), 1000), 350)
       chartBarView.changeData(chartData)
@@ -68,6 +77,14 @@ const ChartView = (props) => {
     if(!data){
       return;
     }
+    if(chartLineView && chartData.length < 1){
+      const empty = {}
+      empty[getXString()] = ''
+      empty[getYString()] = 0
+      chartLineView.changeData([empty])
+      return;
+    }
+
     if(chartLineView){
       chartLineView.changeData(chartData)
       return

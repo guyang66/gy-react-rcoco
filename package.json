@@ -10,6 +10,7 @@
     "dev": "react-app-rewired start",
     "build": "rimraf ./build & react-app-rewired build",
     "down": "node ./scripts/down/index.js",
+    "mock": "json-server --watch ./mock/test.json",
     "eslint": "eslint . --ext .js,.jsx",
     "eslint-fix": "eslint . --ext .js,.jsx --fix"
   },
@@ -58,6 +59,7 @@
     "react": "^17.0.2",
     "react-app-rewire-hot-loader": "^2.0.1",
     "react-app-rewired": "^2.1.5",
+    "react-countup": "^6.2.0",
     "react-document-title": "^2.0.3",
     "react-dom": "^17.0.2",
     "react-error-overlay": "^6.0.9",
@@ -68,7 +70,6 @@
     "stylus": "^0.54.7",
     "stylus-loader": "^3.0.2",
     "wangeditor": "^4.7.9",
-    "react-countup": "^6.2.0",
     "web-vitals": "^1.0.1"
   },
   "devDependencies": {
@@ -81,6 +82,7 @@
     "eslint-plugin-prettier": "^3.4.1",
     "eslint-plugin-react": "^7.19.0",
     "fs-extra": "^10.0.0",
+    "json-server": "^0.17.0",
     "request": "^2.88.2",
     "url-parse": "^1.5.3"
   }
