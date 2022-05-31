@@ -12,7 +12,6 @@
     "build": "rimraf ./build & react-app-rewired build",
     "down": "node ./scripts/down/index.js",
     "local": "npm run mock & npm run start-mock",
-    "local2": "cross-env NODE_ENV=mock npm run start-mock",
     "mock": "json-server --watch ./mock/index.js --middlewares ./mock/middlewares.js --config mock/json-server.json",
     "eslint": "eslint . --ext .js,.jsx",
     "eslint-fix": "eslint . --ext .js,.jsx --fix"
