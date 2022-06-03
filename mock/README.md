@@ -1,6 +1,12 @@
 ### json-server doc（文档）
 https://www.npmjs.com/package/json-server#add-custom-routes
 
+### json-server mock 启动
+安装依赖后，执行
+```
+npm run local
+```
+
 ### json-server 特点
 1、使用json轻松实现mock
 2、不支持post请求，所以如果需要模拟post请求，则需要定制化,并且用中间件来处理（详细请查看文档）

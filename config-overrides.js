@@ -78,7 +78,8 @@ const stylus = () => config => {
   return config
 }
 
-const publicPath = process.env.NODE_ENV === 'production' ? '/admin' : ''
+// 加了publicPath = /admin，生产环境不要直接访问http://{ip}:{port}，因为生产环境有nginx转了一下
+const publicPath = process.env.NODE_ENV === 'production' ? '/admin/' : ''
 
 module.exports = {
   webpack:override(
@@ -86,7 +87,8 @@ module.exports = {
     addDecoratorsLegacy(),
     disableEsLint(),
 
-    // 修改antd主题色
+    // 修改antd主题色as0123456@@
+
     addLessLoader({
       javascriptEnabled: true,
       modifyVars: antdThemeConfig

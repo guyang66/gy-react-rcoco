@@ -37,7 +37,8 @@ pv/uv数据管理：
 ├─ scripts                        脚本
     ├─ down                       下载外部资源脚本
     ├─ deploy                     打包发布脚本
-├─ scripts
+    ├─ tar                        压缩打包build后的资源
+├─ src
     ├─ api                        api接口实现类
         ├─ activity.js
         ├─ ...
@@ -115,7 +116,7 @@ mock服务详细说明请查看./mock/README.md文档
 npm run mock
 ```
 #### mock模式：同时启动mock服务和客户端
-该模式下，可完全脱离服务端运行，不需要服务端支持，但是部分功能受限
+该模式下，可完全脱离服务端运行(避免没有启动服务端的同学，因为接口报错而无法预览)，不需要服务端支持，但是部分功能受限
 ```
 npm run local
 ```
@@ -128,3 +129,77 @@ npm run build
 npm run eslint
 npm run eslint-fix
 ```
+#### 部署脚本
+请设置好/scripts/deploy/config.js中对应服务器参数
+```
+npm run deploy
+```
+
+*** 
+### 生产环境部署
+1、安装nginx
+2、部署
+```
+server {
+  listen       8091;
+  server_name  rcoco;
+  charset utf-8;
+  root /opt/workspace/rcoco/;
+  location /{
+        index  index.html index.htm;
+        try_files $uri /index.html;
+  }
+}
+```
+3、设置nginx代理，保证api能正常调用(需要服务端启动)，完整版如下：
+```
+http {
+    ...
+    server {
+            listen       80;
+            server_name  localhost;
+    
+            location / {
+                # kcoco代理
+                proxy_set_header Host $host;
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header REMOTE_HOST $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                root   html;
+                index  index.html index.htm;
+                proxy_pass http://localhost:8090/;
+            }
+    
+            location /admin/ {
+                root   html;
+                index  index.html index.htm;
+                proxy_pass http://localhost:8091/;
+            }
+    
+            location /admin/api/ {
+                # 设置proxy，把host带过去，不然服务端获取到的ip就和开发环境一样，永远是1
+                proxy_set_header Host $host;
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header REMOTE_HOST $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                root   html;
+                index  index.html index.htm;
+                proxy_pass http://localhost:8090/api/;
+            }
+    
+    }
+    
+    server {
+          listen     8091;
+          server_name  rcoco;
+          charset utf-8;
+          root /opt/workspace/rcoco/;
+          location /{
+                index  index.html index.htm;
+                try_files $uri /index.html;
+            }
+    }
+}
+```
+注意：nginx代理设置完毕后，请勿再使用ip:8091去访问管理后台（会报错，因为生产环境设置了publicPath = /admin/，）
+在该配置下，访问官网用：http://{ip}，访问管理后台：http://{ip}/admin
