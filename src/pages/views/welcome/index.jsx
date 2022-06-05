@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import "./index.styl";
 import apiClue from '@api/clue'
 import apiConfig from '@api/config'
+import apiResource from '@api/resource'
 import {inject, observer} from "mobx-react";
 import CountUp from "react-countup";
 import utils from "@common/utils";
@@ -16,6 +17,9 @@ const Index = (props) => {
   const [clueType, setClueType] = useState([])
   const [pvVisit, setPvVisit] = useState([])
   const [pvTrend, setPvTrend] = useState([])
+  const [downloadCount, setDownloadCount] = useState(0)
+  const [pvToday, setPvToday] = useState(0)
+  const [uvToday, setUvToday] = useState(0)
 
   const getClueCount = () => {
     const d = utils.getCurrentDate()
@@ -36,6 +40,25 @@ const Index = (props) => {
     })
   }
 
+  const getResourceDownload = () => {
+    const p = {
+      date: 'last_one_day',
+    }
+    apiResource.staticsType(p).then(data=>{
+      if(!data){
+        return
+      }
+      let target = 0
+      data.forEach(item=>{
+        if(item.type === 'download'){
+          target = item ? item.count : 0
+        }
+      })
+      setDownloadCount(target)
+      setClueType(data)
+    })
+  }
+
   const getPvVisit = () => {
     apiConfig.staticsPvVisit({top: 10, date: 'all'}).then(data=>{
       if(!data){
@@ -51,14 +74,38 @@ const Index = (props) => {
         return
       }
       setPvTrend(data)
+      let target = 0
+      data.forEach(item=>{
+        if(item.name + '' === utils.getCurrentDate() + ''){
+          target = item ? item.count : 0
+        }
+      })
+      setPvToday(target)
+    })
+  }
+
+  const getUvTrend = () => {
+    apiConfig.staticsUvLine({date: 'last_three_day'}).then(data=>{
+      if(!data){
+        return
+      }
+      let target = 0
+      data.forEach(item=>{
+        if(item.name + '' === utils.getCurrentDate() + ''){
+          target = item ? item.count : 0
+        }
+      })
+      setUvToday(target)
     })
   }
 
   useEffect(()=>{
     getClueCount()
+    getResourceDownload()
     getClueType()
     getPvVisit()
     getPvTrend()
+    getUvTrend()
   },[])
 
   return (
@@ -78,15 +125,15 @@ const Index = (props) => {
         </div>
         <div className="layout-n-4-module mar-l10 mar-r10">
           <div className="dash-bord-title">今日资源下载量</div>
-          <CountUp className="dash-bord-number mar-t10 color-main" duration={0.3} start={0} end={8} />
+          <CountUp className="dash-bord-number mar-t10 color-main" duration={clueCount ? Math.min(clueCount / 10, 2.75) : 0} start={0} end={downloadCount} />
         </div>
         <div className="layout-n-4-module mar-l10 mar-r10">
           <div className="dash-bord-title">今日PV</div>
-          <CountUp className="dash-bord-number mar-t10 color-main" start={0} end={1137} />
+          <CountUp className="dash-bord-number mar-t10 color-main" duration={clueCount ? Math.min(clueCount / 10, 2.75) : 0} start={0} end={pvToday} />
         </div>
         <div className="layout-n-4-module mar-l10 mar-r10">
           <div className="dash-bord-title">今日UV</div>
-          <CountUp className="dash-bord-number mar-t10 color-main" start={0} end={467} />
+          <CountUp className="dash-bord-number mar-t10 color-main" duration={clueCount ? Math.min(clueCount / 10, 2.75) : 0} start={0} end={uvToday} />
         </div>
       </div>
 
