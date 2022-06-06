@@ -77,7 +77,7 @@ const Index = (props) => {
       let target = 0
       data.forEach(item=>{
         if(item.name + '' === utils.getCurrentDate() + ''){
-          target = item ? item.count : 0
+          target = item.count ? item.count : 0
         }
       })
       setPvToday(target)
@@ -92,7 +92,7 @@ const Index = (props) => {
       let target = 0
       data.forEach(item=>{
         if(item.name + '' === utils.getCurrentDate() + ''){
-          target = item ? item.count : 0
+          target = item.count ? item.count : 0
         }
       })
       setUvToday(target)
